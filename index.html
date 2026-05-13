@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>NSE Swing Picks</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root { --bg:#0b1020; --card:#151b30; --txt:#e9edf6; --muted:#8a93ab;
+          --good:#34c38f; --ok:#f5b14f; --weak:#e07a7a; --line:#1f2742; }
+  * { box-sizing:border-box }
+  body { margin:0; font-family:-apple-system,Segoe UI,Roboto,sans-serif;
+         background:var(--bg); color:var(--txt); padding:24px }
+  header { display:flex; justify-content:space-between; align-items:flex-end;
+            margin-bottom:18px; flex-wrap:wrap; gap:8px }
+  h1 { margin:0; font-size:22px }
+  .muted { color:var(--muted); font-size:13px }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:12px;
+           overflow:auto }
+  table { width:100%; border-collapse:collapse; font-size:14px }
+  th, td { padding:10px 12px; text-align:left; border-bottom:1px solid var(--line);
+            white-space:nowrap }
+  th { background:#101632; color:var(--muted); font-weight:600; font-size:12px;
+        text-transform:uppercase; letter-spacing:.04em; position:sticky; top:0 }
+  .good { color:var(--good); font-weight:700 }
+  .ok { color:var(--ok); font-weight:700 }
+  .weak { color:var(--weak); font-weight:700 }
+  footer { color:var(--muted); font-size:12px; margin-top:18px; line-height:1.5 }
+</style>
+</head>
+<body>
+  <header>
+    <div>
+      <h1>NSE Swing Picks</h1>
+      <div class="muted">
+        Nifty 100 universe &middot; 5 fresh signal(s) &middot;
+        Generated 2026-05-13 20:17 IST
+      </div>
+    </div>
+    <div class="muted">Models: Trend-Momentum &middot; Breakout-Volume &middot; Mean-Reversion &middot; Confluence</div>
+  </header>
+  <div class="card">
+    <table>
+      <thead>
+        <tr>
+          <th>Symbol</th><th>Model</th><th>Signal date</th>
+          <th>Trigger</th><th>Target</th><th>Stop</th>
+          <th>R:R</th><th>Hist. hit-rate</th><th>n</th><th>Avg days</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr>
+            <td><strong>MOTHERSON</strong></td>
+            <td>confluence</td>
+            <td>2026-05-13</td>
+            <td>&#8377;126.32</td>
+            <td>&#8377;141.57</td>
+            <td>&#8377;119.78</td>
+            <td>2.33</td>
+            <td class="weak">16%</td>
+            <td>69</td>
+            <td>5.91</td>
+          </tr>
+        
+
+          <tr>
+            <td><strong>MUTHOOTFIN</strong></td>
+            <td>confluence</td>
+            <td>2026-05-13</td>
+            <td>&#8377;3506.40</td>
+            <td>&#8377;3878.14</td>
+            <td>&#8377;3347.08</td>
+            <td>2.33</td>
+            <td class="weak">13%</td>
+            <td>95</td>
+            <td>6.08</td>
+          </tr>
+        
+
+          <tr>
+            <td><strong>CIPLA</strong></td>
+            <td>confluence</td>
+            <td>2026-05-13</td>
+            <td>&#8377;1327.60</td>
+            <td>&#8377;1437.20</td>
+            <td>&#8377;1280.63</td>
+            <td>2.33</td>
+            <td class="weak">12%</td>
+            <td>87</td>
+            <td>6.2</td>
+          </tr>
+        
+
+          <tr>
+            <td><strong>TATASTEEL</strong></td>
+            <td>breakout_volume</td>
+            <td>2026-05-13</td>
+            <td>&#8377;219.62</td>
+            <td>&#8377;233.93</td>
+            <td>&#8377;212.46</td>
+            <td>2.00</td>
+            <td class="weak">9%</td>
+            <td>22</td>
+            <td>9.0</td>
+          </tr>
+        
+
+          <tr>
+            <td><strong>JSWSTEEL</strong></td>
+            <td>confluence</td>
+            <td>2026-05-13</td>
+            <td>&#8377;1274.90</td>
+            <td>&#8377;1372.14</td>
+            <td>&#8377;1233.23</td>
+            <td>2.33</td>
+            <td class="weak">4%</td>
+            <td>89</td>
+            <td>7.75</td>
+          </tr>
+        </tbody>
+    </table>
+  </div>
+  <footer>
+    Hit-rate = empirical fraction of historical comparable signals where the
+    target was touched before the stop, over up to 10 trading sessions. Computed
+    on 5 years of daily OHLCV per symbol with no look-ahead. Educational use only;
+    not investment advice.
+  </footer>
+</body>
+</html>
