@@ -136,7 +136,7 @@ def _page(title: str, current: str, body: str, extra_head: str = "") -> str:
 # --------------------------------------------------------------------------- #
 # Dashboard row helpers
 # --------------------------------------------------------------------------- #
-_NCOLS = 12   # keep in sync with the table header below
+_NCOLS = 13   # keep in sync with the table header below
 
 def _signal_rows_html(signals: list[dict]) -> str:
     """Render the main row + the hidden reason-expand row for each signal."""
@@ -150,13 +150,18 @@ def _signal_rows_html(signals: list[dict]) -> str:
         )
         hit = s.get("hit_rate")
         hit_str = f"{hit*100:.0f}%" if hit is not None else "n/a"
+        prof = s.get("profit_rate")
+        prof_str = f"{prof*100:.0f}%" if prof is not None else "n/a"
+        prof_cls = ""
+        if prof is not None:
+            prof_cls = ("good" if prof >= 0.60
+                        else "ok" if prof >= 0.50 else "weak")
         conf_cls = s.get("confidence_class", "weak")
         cmp_val = s.get("cmp")
         cmp_str = f"&#8377;{cmp_val:.2f}" if cmp_val is not None else "&mdash;"
         cmp_as_of = s.get("cmp_as_of") or ""
         cmp_tooltip = f'title="Today\'s close as of {cmp_as_of}"' if cmp_as_of else ""
 
-        # Inline reason list
         reasons = s.get("reasons") or []
         if reasons:
             reasons_html = (
@@ -177,7 +182,8 @@ def _signal_rows_html(signals: list[dict]) -> str:
             <td>&#8377;{s['target']:.2f}</td>
             <td>&#8377;{s['stop']:.2f}</td>
             <td>{s['reward_risk']:.2f}</td>
-            <td>{hit_str}</td>
+            <td class="{prof_cls}" title="Fraction of historical signals that exited profitably (target hit OR positive timeout). Random baseline ~50%.">{prof_str}</td>
+            <td title="Fraction of historical signals that touched the full target before stop. Random baseline ~33% for 2:1 R:R.">{hit_str}</td>
             <td class="{conf_cls}">{s.get('confidence', '')}</td>
             <td>{s.get('historical_n', 0)}</td>
             <td>{s['signal_date']}</td>
@@ -208,7 +214,9 @@ def _signal_table(signals: list[dict], empty_msg: str) -> str:
     <tr>
       <th>Symbol</th><th>Model</th><th>CMP</th>
       <th>Trigger</th><th>Target</th><th>Stop</th>
-      <th>R:R</th><th>Hit-rate</th><th>Confidence</th><th>n</th>
+      <th>R:R</th><th title="Profit probability">Profit Prob.</th>
+      <th title="Strict target-tagging hit-rate">Hit-rate</th>
+      <th>Confidence</th><th>n</th>
       <th>Signal date</th><th>Why?</th>
     </tr>
   </thead>
@@ -486,15 +494,45 @@ def render_models() -> None:
     <li><strong>Target</strong> = trigger + <em>k_target</em> &times; ATR(14). Sized so reward:risk &ge; 2:1 on every model.</li>
     <li><strong>Time stop</strong> = exit at the close of the 10th session if neither target nor stop has been hit.</li>
   </ul>
-  <h3 style="font-size:14px; margin:14px 0 6px; color:var(--muted); text-transform:uppercase; letter-spacing:.04em">Historical hit-rate (the published probability)</h3>
-  <p>For every fresh signal we replay the same model rules across the prior 5 years of that stock's history, walk every past signal forward up to 10 bars, and report the empirical fraction that hit target before stop. That is the number shown as 'Hit-rate' on the dashboard. It uses only bars <em>after</em> each historical signal &mdash; no look-ahead.</p>
-  <h3 style="font-size:14px; margin:14px 0 6px; color:var(--muted); text-transform:uppercase; letter-spacing:.04em">Confidence label</h3>
+  <h3 style="font-size:14px; margin:14px 0 6px; color:var(--muted); text-transform:uppercase; letter-spacing:.04em">Two probability metrics, and why both exist</h3>
+  <p>The dashboard publishes <strong>two</strong> measures of historical model quality.
+     They answer different questions, and looking at them together is more honest
+     than reading either alone.</p>
   <ul class="reason-list">
-    <li><strong>High</strong>: hit-rate &ge; 65% on a sample of at least 8 historical signals.</li>
-    <li><strong>Medium</strong>: hit-rate between 50% and 64%.</li>
-    <li><strong>Low</strong>: hit-rate below 50%.</li>
-    <li><strong>Unknown</strong>: fewer than 8 historical signals to compute a reliable hit-rate.</li>
+    <li><strong>Profit Probability</strong> &mdash; the fraction of past signals
+        that <em>exited at any positive R-multiple</em>. This counts full target
+        hits AND timeouts that closed above the trigger. It answers:
+        <em>"Did this signal make money?"</em>
+        For a 2:1 R:R system, the random-walk baseline is around 50%, so:
+        <strong>&ge; 60% is High confidence, 50&ndash;59% is Medium, &lt; 50% is Low.</strong></li>
+    <li><strong>Hit-rate</strong> &mdash; the fraction of past signals that
+        <em>touched the full 2&times;ATR target before stop</em>. Stricter measure.
+        For 2:1 R:R, the random-walk baseline is only about 33% because the
+        target sits twice as far from the trigger as the stop. So 25&ndash;40%
+        hit-rates on real strategies are normal, not bad.</li>
   </ul>
+  <p>Why both? A model can have a low hit-rate (rarely tags the exact target)
+     but a strong Profit Probability (often exits profitably even without tagging).
+     That's the most common pattern. The opposite &mdash; high hit-rate, low
+     Profit Probability &mdash; is mathematically impossible.</p>
+
+  <h3 style="font-size:14px; margin:14px 0 6px; color:var(--muted); text-transform:uppercase; letter-spacing:.04em">Confidence label</h3>
+  <p>Confidence is now derived from <strong>Profit Probability</strong> (the more
+     realistic metric), with these thresholds:</p>
+  <ul class="reason-list">
+    <li><strong>High</strong>: profit_rate &ge; 60% &mdash; clear edge over the
+        ~50% random baseline for a 2:1 R:R system.</li>
+    <li><strong>Medium</strong>: profit_rate between 50% and 59%.</li>
+    <li><strong>Low</strong>: profit_rate below 50% &mdash; the signal makes
+        money less than half the time historically.</li>
+    <li><strong>Unknown</strong>: fewer than 8 historical signals to compute
+        a reliable rate.</li>
+  </ul>
+  <h3 style="font-size:14px; margin:14px 0 6px; color:var(--muted); text-transform:uppercase; letter-spacing:.04em">Real-world expectancy</h3>
+  <p>For each backtest we also compute an <strong>average R-multiple</strong> &mdash;
+     the mean profit/loss per signal in risk units. A positive avg R means the
+     model is profitable on average even if individual hit-rates look low.
+     For 2:1 R:R systems, an avg R above +0.3R per signal is typically strong.</p>
 </div></div>
 """
     MODELS_HTML.write_text(_page("About the Models", "models", body))
