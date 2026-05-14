@@ -68,6 +68,7 @@ def run(bootstrap: bool = False) -> dict:
             bt = backtest_symbol_model(sym, df, model)
             d = sig.to_dict()
             d["hit_rate"] = bt.hit_rate
+            d["profit_rate"] = bt.profit_rate
             d["historical_n"] = bt.n_signals
             d["avg_days_to_target"] = bt.avg_days_to_target
             d["avg_r_multiple"] = bt.avg_r_multiple
