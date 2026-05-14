@@ -19,13 +19,14 @@ header { display:flex; justify-content:space-between; align-items:flex-end;
          margin-bottom:18px; flex-wrap:wrap; gap:8px }
 h1 { margin:0; font-size:22px }
 h2 { margin:24px 0 12px; font-size:18px }
+h2 .sub { color:var(--muted); font-size:13px; font-weight:400; margin-left:8px }
 .muted { color:var(--muted); font-size:13px }
 .card { background:var(--card); border:1px solid var(--line); border-radius:12px;
         overflow:auto; margin-bottom:18px }
 .card .pad { padding:16px 18px }
 table { width:100%; border-collapse:collapse; font-size:14px }
 th, td { padding:10px 12px; text-align:left; border-bottom:1px solid var(--line);
-         white-space:nowrap }
+         white-space:nowrap; vertical-align:middle }
 th { background:#101632; color:var(--muted); font-weight:600; font-size:12px;
      text-transform:uppercase; letter-spacing:.04em; position:sticky; top:0 }
 .good { color:var(--good); font-weight:700 }
@@ -33,12 +34,13 @@ th { background:#101632; color:var(--muted); font-weight:600; font-size:12px;
 .weak { color:var(--weak); font-weight:700 }
 .pill { display:inline-block; padding:2px 8px; border-radius:999px;
         font-size:12px; font-weight:600 }
-.pill.target { background:rgba(52,195,143,.15); color:var(--good) }
-.pill.stop   { background:rgba(224,122,122,.15); color:var(--weak) }
-.pill.timeout { background:rgba(245,177,79,.15); color:var(--ok) }
-.pill.open   { background:rgba(110,168,255,.15); color:var(--accent) }
+.pill.target  { background:rgba(52,195,143,.15); color:var(--good) }
+.pill.stop    { background:rgba(224,122,122,.15); color:var(--weak) }
+.pill.timeout { background:rgba(245,177,79,.15);  color:var(--ok) }
+.pill.open    { background:rgba(110,168,255,.15); color:var(--accent) }
+.pill.cap     { background:rgba(110,168,255,.10); color:var(--accent) }
 .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
-        gap:12px }
+        gap:12px; margin-bottom:18px }
 .stat { background:var(--card); border:1px solid var(--line); border-radius:12px;
         padding:14px 16px }
 .stat .label { color:var(--muted); font-size:12px; text-transform:uppercase;
@@ -47,6 +49,15 @@ th { background:#101632; color:var(--muted); font-weight:600; font-size:12px;
 footer { color:var(--muted); font-size:12px; margin-top:24px; line-height:1.6 }
 .reason-list { margin:0; padding-left:20px }
 .reason-list li { margin-bottom:6px }
+.reason-row { display:none; background:#0f1428 }
+.reason-row.open { display:table-row }
+.reason-row td { padding:14px 18px; border-bottom:1px solid var(--line);
+                 white-space:normal }
+.reason-toggle { background:transparent; color:var(--accent); border:1px solid var(--accent);
+                 padding:3px 10px; border-radius:6px; cursor:pointer; font-size:12px;
+                 font-family:inherit; font-weight:600 }
+.reason-toggle:hover { background:rgba(110,168,255,.12) }
+.section-empty { padding:14px 18px; color:var(--muted); font-size:14px }
 </style>
 
 </head>
@@ -56,92 +67,525 @@ footer { color:var(--muted); font-size:12px; margin-top:24px; line-height:1.6 }
 <header>
   <div>
     <h1>NSE Swing Picks &mdash; Today</h1>
-    <div class="muted">Nifty 100 &middot; 5 fresh signal(s)
-       &middot; Generated 2026-05-14 08:49 IST</div>
+    <div class="muted">
+      Multi-cap universe (504 stocks) &middot;
+      8 fresh signal(s) &middot;
+      Generated 2026-05-14 10:25 IST
+    </div>
   </div>
-  <div class="muted">Click any symbol for chart + reasoning</div>
+  <div class="muted">Click any symbol for chart + reasoning, or click <em>Reason</em> for inline details</div>
 </header>
+
+
+<h2>Large Cap <span class="sub">&middot; top 1 by historical hit-rate</span></h2>
+
 <div class="card"><table>
   <thead>
-    <tr><th>Symbol</th><th>Model</th><th>Signal date</th>
-        <th>Trigger</th><th>Target</th><th>Stop</th>
-        <th>R:R</th><th>Hist. hit-rate</th><th>n</th><th>Avg days</th></tr>
+    <tr>
+      <th>Symbol</th><th>Model</th><th>CMP</th>
+      <th>Trigger</th><th>Target</th><th>Stop</th>
+      <th>R:R</th><th>Hit-rate</th><th>Confidence</th><th>n</th>
+      <th>Signal date</th><th>Why?</th>
+    </tr>
   </thead>
   <tbody>
           <tr>
-            <td><strong><a href="stock.html?symbol=MOTHERSON&amp;model=confluence&amp;date=2026-05-13">MOTHERSON</a></strong></td>
+            <td><strong><a href="stock.html?symbol=ADANIENT&amp;model=confluence&amp;date=2026-05-14">ADANIENT</a></strong></td>
             <td>confluence</td>
-            <td>2026-05-13</td>
-            <td>&#8377;126.32</td>
-            <td>&#8377;141.57</td>
-            <td>&#8377;119.78</td>
+            <td title="Today's close as of 2026-05-14">&#8377;2663.00</td>
+            <td>&#8377;2663.00</td>
+            <td>&#8377;2958.74</td>
+            <td>&#8377;2536.25</td>
             <td>2.33</td>
-            <td class="weak">16%</td>
-            <td>69</td>
-            <td>5.91</td>
+            <td>10%</td>
+            <td class="weak">Low</td>
+            <td>68</td>
+            <td>2026-05-14</td>
+            <td><button class="reason-toggle" id="btn-ADANIENT-confluence-2026-05-14" onclick="toggleReason('ADANIENT-confluence-2026-05-14')">Reason</button></td>
           </tr>
-        
-
-          <tr>
-            <td><strong><a href="stock.html?symbol=MUTHOOTFIN&amp;model=confluence&amp;date=2026-05-13">MUTHOOTFIN</a></strong></td>
-            <td>confluence</td>
-            <td>2026-05-13</td>
-            <td>&#8377;3506.40</td>
-            <td>&#8377;3878.14</td>
-            <td>&#8377;3347.08</td>
-            <td>2.33</td>
-            <td class="weak">13%</td>
-            <td>95</td>
-            <td>6.08</td>
-          </tr>
-        
-
-          <tr>
-            <td><strong><a href="stock.html?symbol=CIPLA&amp;model=confluence&amp;date=2026-05-13">CIPLA</a></strong></td>
-            <td>confluence</td>
-            <td>2026-05-13</td>
-            <td>&#8377;1327.60</td>
-            <td>&#8377;1437.20</td>
-            <td>&#8377;1280.63</td>
-            <td>2.33</td>
-            <td class="weak">12%</td>
-            <td>87</td>
-            <td>6.2</td>
-          </tr>
-        
-
-          <tr>
-            <td><strong><a href="stock.html?symbol=TATASTEEL&amp;model=breakout_volume&amp;date=2026-05-13">TATASTEEL</a></strong></td>
-            <td>breakout_volume</td>
-            <td>2026-05-13</td>
-            <td>&#8377;219.62</td>
-            <td>&#8377;233.93</td>
-            <td>&#8377;212.46</td>
-            <td>2.00</td>
-            <td class="weak">9%</td>
-            <td>22</td>
-            <td>9.0</td>
-          </tr>
-        
-
-          <tr>
-            <td><strong><a href="stock.html?symbol=JSWSTEEL&amp;model=confluence&amp;date=2026-05-13">JSWSTEEL</a></strong></td>
-            <td>confluence</td>
-            <td>2026-05-13</td>
-            <td>&#8377;1274.90</td>
-            <td>&#8377;1372.14</td>
-            <td>&#8377;1233.23</td>
-            <td>2.33</td>
-            <td class="weak">4%</td>
-            <td>89</td>
-            <td>7.75</td>
+          <tr class="reason-row" id="reason-ADANIENT-confluence-2026-05-14">
+            <td colspan="12">
+              <strong>Why this stock was picked &mdash; confluence signal on 2026-05-14:</strong>
+              <ul class='reason-list'><li>3 of 4 votes agree (threshold: 3) - high-confidence confluence:</li><li>Trend vote OK: price (Rs.2663.00) > 50-EMA (Rs.2257.17) and 50-EMA is rising.</li><li>Momentum vote OK: MACD (117.16) > Signal (111.07) and RSI (73.8) > 50.</li><li>Volume vote OK: today's volume is at or above 1.2x the 20-day average (43.5L vs. 25.7L).</li></ul>
+              <div class="muted" style="margin-top:8px">
+                See the <a href="models.html#confluence">full confluence model description</a>
+                or click the <a href="stock.html?symbol=ADANIENT&amp;model=confluence&amp;date=2026-05-14">ADANIENT chart</a>
+                for context.
+              </div>
+            </td>
           </tr>
         </tbody>
 </table></div>
 
+
+<h2>Mid Cap <span class="sub">&middot; top 5 by historical hit-rate</span></h2>
+
+<div class="card"><table>
+  <thead>
+    <tr>
+      <th>Symbol</th><th>Model</th><th>CMP</th>
+      <th>Trigger</th><th>Target</th><th>Stop</th>
+      <th>R:R</th><th>Hit-rate</th><th>Confidence</th><th>n</th>
+      <th>Signal date</th><th>Why?</th>
+    </tr>
+  </thead>
+  <tbody>
+          <tr>
+            <td><strong><a href="stock.html?symbol=NLCINDIA&amp;model=confluence&amp;date=2026-05-14">NLCINDIA</a></strong></td>
+            <td>confluence</td>
+            <td title="Today's close as of 2026-05-14">&#8377;369.80</td>
+            <td>&#8377;369.80</td>
+            <td>&#8377;424.83</td>
+            <td>&#8377;346.22</td>
+            <td>2.33</td>
+            <td>23%</td>
+            <td class="weak">Low</td>
+            <td>79</td>
+            <td>2026-05-14</td>
+            <td><button class="reason-toggle" id="btn-NLCINDIA-confluence-2026-05-14" onclick="toggleReason('NLCINDIA-confluence-2026-05-14')">Reason</button></td>
+          </tr>
+          <tr class="reason-row" id="reason-NLCINDIA-confluence-2026-05-14">
+            <td colspan="12">
+              <strong>Why this stock was picked &mdash; confluence signal on 2026-05-14:</strong>
+              <ul class='reason-list'><li>3 of 4 votes agree (threshold: 3) - high-confidence confluence:</li><li>Trend vote OK: price (Rs.369.80) > 50-EMA (Rs.294.49) and 50-EMA is rising.</li><li>Momentum vote OK: MACD (15.24) > Signal (13.26) and RSI (75.7) > 50.</li><li>Volume vote OK: today's volume is at or above 1.2x the 20-day average (358.2L vs. 72.6L).</li></ul>
+              <div class="muted" style="margin-top:8px">
+                See the <a href="models.html#confluence">full confluence model description</a>
+                or click the <a href="stock.html?symbol=NLCINDIA&amp;model=confluence&amp;date=2026-05-14">NLCINDIA chart</a>
+                for context.
+              </div>
+            </td>
+          </tr>
+        
+
+          <tr>
+            <td><strong><a href="stock.html?symbol=IDEA&amp;model=confluence&amp;date=2026-05-14">IDEA</a></strong></td>
+            <td>confluence</td>
+            <td title="Today's close as of 2026-05-14">&#8377;12.74</td>
+            <td>&#8377;12.74</td>
+            <td>&#8377;14.49</td>
+            <td>&#8377;11.99</td>
+            <td>2.33</td>
+            <td>20%</td>
+            <td class="weak">Low</td>
+            <td>80</td>
+            <td>2026-05-14</td>
+            <td><button class="reason-toggle" id="btn-IDEA-confluence-2026-05-14" onclick="toggleReason('IDEA-confluence-2026-05-14')">Reason</button></td>
+          </tr>
+          <tr class="reason-row" id="reason-IDEA-confluence-2026-05-14">
+            <td colspan="12">
+              <strong>Why this stock was picked &mdash; confluence signal on 2026-05-14:</strong>
+              <ul class='reason-list'><li>3 of 4 votes agree (threshold: 3) - high-confidence confluence:</li><li>Trend vote OK: price (Rs.12.74) > 50-EMA (Rs.10.36) and 50-EMA is rising.</li><li>Momentum vote OK: MACD (0.76) > Signal (0.49) and RSI (79.3) > 50.</li><li>Volatility vote OK: price is above Bollinger midline (Rs.10.62) but not yet at the upper band (Rs.12.84) - room to run.</li></ul>
+              <div class="muted" style="margin-top:8px">
+                See the <a href="models.html#confluence">full confluence model description</a>
+                or click the <a href="stock.html?symbol=IDEA&amp;model=confluence&amp;date=2026-05-14">IDEA chart</a>
+                for context.
+              </div>
+            </td>
+          </tr>
+        
+
+          <tr>
+            <td><strong><a href="stock.html?symbol=M&MFIN&amp;model=confluence&amp;date=2026-05-14">M&MFIN</a></strong></td>
+            <td>confluence</td>
+            <td title="Today's close as of 2026-05-14">&#8377;321.70</td>
+            <td>&#8377;321.70</td>
+            <td>&#8377;364.91</td>
+            <td>&#8377;303.18</td>
+            <td>2.33</td>
+            <td>14%</td>
+            <td class="weak">Low</td>
+            <td>96</td>
+            <td>2026-05-14</td>
+            <td><button class="reason-toggle" id="btn-M&MFIN-confluence-2026-05-14" onclick="toggleReason('M&MFIN-confluence-2026-05-14')">Reason</button></td>
+          </tr>
+          <tr class="reason-row" id="reason-M&MFIN-confluence-2026-05-14">
+            <td colspan="12">
+              <strong>Why this stock was picked &mdash; confluence signal on 2026-05-14:</strong>
+              <ul class='reason-list'><li>3 of 4 votes agree (threshold: 3) - high-confidence confluence:</li><li>Trend vote OK: price (Rs.321.70) > 50-EMA (Rs.321.53) and 50-EMA is rising.</li><li>Momentum vote OK: MACD (4.10) > Signal (1.95) and RSI (52.8) > 50.</li><li>Volatility vote OK: price is above Bollinger midline (Rs.314.15) but not yet at the upper band (Rs.340.53) - room to run.</li></ul>
+              <div class="muted" style="margin-top:8px">
+                See the <a href="models.html#confluence">full confluence model description</a>
+                or click the <a href="stock.html?symbol=M&MFIN&amp;model=confluence&amp;date=2026-05-14">M&MFIN chart</a>
+                for context.
+              </div>
+            </td>
+          </tr>
+        
+
+          <tr>
+            <td><strong><a href="stock.html?symbol=ALKEM&amp;model=confluence&amp;date=2026-05-14">ALKEM</a></strong></td>
+            <td>confluence</td>
+            <td title="Today's close as of 2026-05-14">&#8377;5531.50</td>
+            <td>&#8377;5531.50</td>
+            <td>&#8377;6029.37</td>
+            <td>&#8377;5318.13</td>
+            <td>2.33</td>
+            <td>11%</td>
+            <td class="weak">Low</td>
+            <td>80</td>
+            <td>2026-05-14</td>
+            <td><button class="reason-toggle" id="btn-ALKEM-confluence-2026-05-14" onclick="toggleReason('ALKEM-confluence-2026-05-14')">Reason</button></td>
+          </tr>
+          <tr class="reason-row" id="reason-ALKEM-confluence-2026-05-14">
+            <td colspan="12">
+              <strong>Why this stock was picked &mdash; confluence signal on 2026-05-14:</strong>
+              <ul class='reason-list'><li>3 of 4 votes agree (threshold: 3) - high-confidence confluence:</li><li>Trend vote OK: price (Rs.5531.50) > 50-EMA (Rs.5466.87) and 50-EMA is rising.</li><li>Momentum vote OK: MACD (27.10) > Signal (20.71) and RSI (53.5) > 50.</li><li>Volatility vote OK: price is above Bollinger midline (Rs.5489.80) but not yet at the upper band (Rs.5734.94) - room to run.</li></ul>
+              <div class="muted" style="margin-top:8px">
+                See the <a href="models.html#confluence">full confluence model description</a>
+                or click the <a href="stock.html?symbol=ALKEM&amp;model=confluence&amp;date=2026-05-14">ALKEM chart</a>
+                for context.
+              </div>
+            </td>
+          </tr>
+        
+
+          <tr>
+            <td><strong><a href="stock.html?symbol=AIIL&amp;model=confluence&amp;date=2026-05-14">AIIL</a></strong></td>
+            <td>confluence</td>
+            <td title="Today's close as of 2026-05-14">&#8377;497.05</td>
+            <td>&#8377;497.05</td>
+            <td>&#8377;574.72</td>
+            <td>&#8377;463.76</td>
+            <td>2.33</td>
+            <td>11%</td>
+            <td class="weak">Low</td>
+            <td>37</td>
+            <td>2026-05-14</td>
+            <td><button class="reason-toggle" id="btn-AIIL-confluence-2026-05-14" onclick="toggleReason('AIIL-confluence-2026-05-14')">Reason</button></td>
+          </tr>
+          <tr class="reason-row" id="reason-AIIL-confluence-2026-05-14">
+            <td colspan="12">
+              <strong>Why this stock was picked &mdash; confluence signal on 2026-05-14:</strong>
+              <ul class='reason-list'><li>3 of 4 votes agree (threshold: 3) - high-confidence confluence:</li><li>Trend vote OK: price (Rs.497.05) > 50-EMA (Rs.479.71) and 50-EMA is rising.</li><li>Momentum vote OK: MACD (6.35) > Signal (4.76) and RSI (56.5) > 50.</li><li>Volatility vote OK: price is above Bollinger midline (Rs.479.34) but not yet at the upper band (Rs.510.51) - room to run.</li></ul>
+              <div class="muted" style="margin-top:8px">
+                See the <a href="models.html#confluence">full confluence model description</a>
+                or click the <a href="stock.html?symbol=AIIL&amp;model=confluence&amp;date=2026-05-14">AIIL chart</a>
+                for context.
+              </div>
+            </td>
+          </tr>
+        </tbody>
+</table></div>
+
+
+<h2>Small Cap <span class="sub">&middot; top 2 by historical hit-rate</span></h2>
+
+<div class="card"><table>
+  <thead>
+    <tr>
+      <th>Symbol</th><th>Model</th><th>CMP</th>
+      <th>Trigger</th><th>Target</th><th>Stop</th>
+      <th>R:R</th><th>Hit-rate</th><th>Confidence</th><th>n</th>
+      <th>Signal date</th><th>Why?</th>
+    </tr>
+  </thead>
+  <tbody>
+          <tr>
+            <td><strong><a href="stock.html?symbol=CONCORDBIO&amp;model=confluence&amp;date=2026-05-14">CONCORDBIO</a></strong></td>
+            <td>confluence</td>
+            <td title="Today's close as of 2026-05-14">&#8377;1134.20</td>
+            <td>&#8377;1134.20</td>
+            <td>&#8377;1306.57</td>
+            <td>&#8377;1060.33</td>
+            <td>2.33</td>
+            <td>19%</td>
+            <td class="weak">Low</td>
+            <td>52</td>
+            <td>2026-05-14</td>
+            <td><button class="reason-toggle" id="btn-CONCORDBIO-confluence-2026-05-14" onclick="toggleReason('CONCORDBIO-confluence-2026-05-14')">Reason</button></td>
+          </tr>
+          <tr class="reason-row" id="reason-CONCORDBIO-confluence-2026-05-14">
+            <td colspan="12">
+              <strong>Why this stock was picked &mdash; confluence signal on 2026-05-14:</strong>
+              <ul class='reason-list'><li>3 of 4 votes agree (threshold: 3) - high-confidence confluence:</li><li>Trend vote OK: price (Rs.1134.20) > 50-EMA (Rs.1132.46) and 50-EMA is rising.</li><li>Momentum vote OK: MACD (19.91) > Signal (19.19) and RSI (51.5) > 50.</li><li>Volatility vote OK: price is above Bollinger midline (Rs.1121.23) but not yet at the upper band (Rs.1245.75) - room to run.</li></ul>
+              <div class="muted" style="margin-top:8px">
+                See the <a href="models.html#confluence">full confluence model description</a>
+                or click the <a href="stock.html?symbol=CONCORDBIO&amp;model=confluence&amp;date=2026-05-14">CONCORDBIO chart</a>
+                for context.
+              </div>
+            </td>
+          </tr>
+        
+
+          <tr>
+            <td><strong><a href="stock.html?symbol=ATUL&amp;model=confluence&amp;date=2026-05-14">ATUL</a></strong></td>
+            <td>confluence</td>
+            <td title="Today's close as of 2026-05-14">&#8377;7048.50</td>
+            <td>&#8377;7048.50</td>
+            <td>&#8377;7691.80</td>
+            <td>&#8377;6772.80</td>
+            <td>2.33</td>
+            <td>13%</td>
+            <td class="weak">Low</td>
+            <td>77</td>
+            <td>2026-05-14</td>
+            <td><button class="reason-toggle" id="btn-ATUL-confluence-2026-05-14" onclick="toggleReason('ATUL-confluence-2026-05-14')">Reason</button></td>
+          </tr>
+          <tr class="reason-row" id="reason-ATUL-confluence-2026-05-14">
+            <td colspan="12">
+              <strong>Why this stock was picked &mdash; confluence signal on 2026-05-14:</strong>
+              <ul class='reason-list'><li>3 of 4 votes agree (threshold: 3) - high-confidence confluence:</li><li>Trend vote OK: price (Rs.7048.50) > 50-EMA (Rs.6620.17) and 50-EMA is rising.</li><li>Momentum vote OK: MACD (143.60) > Signal (143.09) and RSI (62.4) > 50.</li><li>Volatility vote OK: price is above Bollinger midline (Rs.6831.98) but not yet at the upper band (Rs.7179.90) - room to run.</li></ul>
+              <div class="muted" style="margin-top:8px">
+                See the <a href="models.html#confluence">full confluence model description</a>
+                or click the <a href="stock.html?symbol=ATUL&amp;model=confluence&amp;date=2026-05-14">ATUL chart</a>
+                for context.
+              </div>
+            </td>
+          </tr>
+        </tbody>
+</table></div>
+
+
+
+<h2>All fresh signals <span class="sub">&middot; full list, sorted by hit-rate</span></h2>
+
+<div class="card"><table>
+  <thead>
+    <tr>
+      <th>Symbol</th><th>Model</th><th>CMP</th>
+      <th>Trigger</th><th>Target</th><th>Stop</th>
+      <th>R:R</th><th>Hit-rate</th><th>Confidence</th><th>n</th>
+      <th>Signal date</th><th>Why?</th>
+    </tr>
+  </thead>
+  <tbody>
+          <tr>
+            <td><strong><a href="stock.html?symbol=NLCINDIA&amp;model=confluence&amp;date=2026-05-14">NLCINDIA</a></strong></td>
+            <td>confluence</td>
+            <td title="Today's close as of 2026-05-14">&#8377;369.80</td>
+            <td>&#8377;369.80</td>
+            <td>&#8377;424.83</td>
+            <td>&#8377;346.22</td>
+            <td>2.33</td>
+            <td>23%</td>
+            <td class="weak">Low</td>
+            <td>79</td>
+            <td>2026-05-14</td>
+            <td><button class="reason-toggle" id="btn-NLCINDIA-confluence-2026-05-14" onclick="toggleReason('NLCINDIA-confluence-2026-05-14')">Reason</button></td>
+          </tr>
+          <tr class="reason-row" id="reason-NLCINDIA-confluence-2026-05-14">
+            <td colspan="12">
+              <strong>Why this stock was picked &mdash; confluence signal on 2026-05-14:</strong>
+              <ul class='reason-list'><li>3 of 4 votes agree (threshold: 3) - high-confidence confluence:</li><li>Trend vote OK: price (Rs.369.80) > 50-EMA (Rs.294.49) and 50-EMA is rising.</li><li>Momentum vote OK: MACD (15.24) > Signal (13.26) and RSI (75.7) > 50.</li><li>Volume vote OK: today's volume is at or above 1.2x the 20-day average (358.2L vs. 72.6L).</li></ul>
+              <div class="muted" style="margin-top:8px">
+                See the <a href="models.html#confluence">full confluence model description</a>
+                or click the <a href="stock.html?symbol=NLCINDIA&amp;model=confluence&amp;date=2026-05-14">NLCINDIA chart</a>
+                for context.
+              </div>
+            </td>
+          </tr>
+        
+
+          <tr>
+            <td><strong><a href="stock.html?symbol=IDEA&amp;model=confluence&amp;date=2026-05-14">IDEA</a></strong></td>
+            <td>confluence</td>
+            <td title="Today's close as of 2026-05-14">&#8377;12.74</td>
+            <td>&#8377;12.74</td>
+            <td>&#8377;14.49</td>
+            <td>&#8377;11.99</td>
+            <td>2.33</td>
+            <td>20%</td>
+            <td class="weak">Low</td>
+            <td>80</td>
+            <td>2026-05-14</td>
+            <td><button class="reason-toggle" id="btn-IDEA-confluence-2026-05-14" onclick="toggleReason('IDEA-confluence-2026-05-14')">Reason</button></td>
+          </tr>
+          <tr class="reason-row" id="reason-IDEA-confluence-2026-05-14">
+            <td colspan="12">
+              <strong>Why this stock was picked &mdash; confluence signal on 2026-05-14:</strong>
+              <ul class='reason-list'><li>3 of 4 votes agree (threshold: 3) - high-confidence confluence:</li><li>Trend vote OK: price (Rs.12.74) > 50-EMA (Rs.10.36) and 50-EMA is rising.</li><li>Momentum vote OK: MACD (0.76) > Signal (0.49) and RSI (79.3) > 50.</li><li>Volatility vote OK: price is above Bollinger midline (Rs.10.62) but not yet at the upper band (Rs.12.84) - room to run.</li></ul>
+              <div class="muted" style="margin-top:8px">
+                See the <a href="models.html#confluence">full confluence model description</a>
+                or click the <a href="stock.html?symbol=IDEA&amp;model=confluence&amp;date=2026-05-14">IDEA chart</a>
+                for context.
+              </div>
+            </td>
+          </tr>
+        
+
+          <tr>
+            <td><strong><a href="stock.html?symbol=CONCORDBIO&amp;model=confluence&amp;date=2026-05-14">CONCORDBIO</a></strong></td>
+            <td>confluence</td>
+            <td title="Today's close as of 2026-05-14">&#8377;1134.20</td>
+            <td>&#8377;1134.20</td>
+            <td>&#8377;1306.57</td>
+            <td>&#8377;1060.33</td>
+            <td>2.33</td>
+            <td>19%</td>
+            <td class="weak">Low</td>
+            <td>52</td>
+            <td>2026-05-14</td>
+            <td><button class="reason-toggle" id="btn-CONCORDBIO-confluence-2026-05-14" onclick="toggleReason('CONCORDBIO-confluence-2026-05-14')">Reason</button></td>
+          </tr>
+          <tr class="reason-row" id="reason-CONCORDBIO-confluence-2026-05-14">
+            <td colspan="12">
+              <strong>Why this stock was picked &mdash; confluence signal on 2026-05-14:</strong>
+              <ul class='reason-list'><li>3 of 4 votes agree (threshold: 3) - high-confidence confluence:</li><li>Trend vote OK: price (Rs.1134.20) > 50-EMA (Rs.1132.46) and 50-EMA is rising.</li><li>Momentum vote OK: MACD (19.91) > Signal (19.19) and RSI (51.5) > 50.</li><li>Volatility vote OK: price is above Bollinger midline (Rs.1121.23) but not yet at the upper band (Rs.1245.75) - room to run.</li></ul>
+              <div class="muted" style="margin-top:8px">
+                See the <a href="models.html#confluence">full confluence model description</a>
+                or click the <a href="stock.html?symbol=CONCORDBIO&amp;model=confluence&amp;date=2026-05-14">CONCORDBIO chart</a>
+                for context.
+              </div>
+            </td>
+          </tr>
+        
+
+          <tr>
+            <td><strong><a href="stock.html?symbol=M&MFIN&amp;model=confluence&amp;date=2026-05-14">M&MFIN</a></strong></td>
+            <td>confluence</td>
+            <td title="Today's close as of 2026-05-14">&#8377;321.70</td>
+            <td>&#8377;321.70</td>
+            <td>&#8377;364.91</td>
+            <td>&#8377;303.18</td>
+            <td>2.33</td>
+            <td>14%</td>
+            <td class="weak">Low</td>
+            <td>96</td>
+            <td>2026-05-14</td>
+            <td><button class="reason-toggle" id="btn-M&MFIN-confluence-2026-05-14" onclick="toggleReason('M&MFIN-confluence-2026-05-14')">Reason</button></td>
+          </tr>
+          <tr class="reason-row" id="reason-M&MFIN-confluence-2026-05-14">
+            <td colspan="12">
+              <strong>Why this stock was picked &mdash; confluence signal on 2026-05-14:</strong>
+              <ul class='reason-list'><li>3 of 4 votes agree (threshold: 3) - high-confidence confluence:</li><li>Trend vote OK: price (Rs.321.70) > 50-EMA (Rs.321.53) and 50-EMA is rising.</li><li>Momentum vote OK: MACD (4.10) > Signal (1.95) and RSI (52.8) > 50.</li><li>Volatility vote OK: price is above Bollinger midline (Rs.314.15) but not yet at the upper band (Rs.340.53) - room to run.</li></ul>
+              <div class="muted" style="margin-top:8px">
+                See the <a href="models.html#confluence">full confluence model description</a>
+                or click the <a href="stock.html?symbol=M&MFIN&amp;model=confluence&amp;date=2026-05-14">M&MFIN chart</a>
+                for context.
+              </div>
+            </td>
+          </tr>
+        
+
+          <tr>
+            <td><strong><a href="stock.html?symbol=ATUL&amp;model=confluence&amp;date=2026-05-14">ATUL</a></strong></td>
+            <td>confluence</td>
+            <td title="Today's close as of 2026-05-14">&#8377;7048.50</td>
+            <td>&#8377;7048.50</td>
+            <td>&#8377;7691.80</td>
+            <td>&#8377;6772.80</td>
+            <td>2.33</td>
+            <td>13%</td>
+            <td class="weak">Low</td>
+            <td>77</td>
+            <td>2026-05-14</td>
+            <td><button class="reason-toggle" id="btn-ATUL-confluence-2026-05-14" onclick="toggleReason('ATUL-confluence-2026-05-14')">Reason</button></td>
+          </tr>
+          <tr class="reason-row" id="reason-ATUL-confluence-2026-05-14">
+            <td colspan="12">
+              <strong>Why this stock was picked &mdash; confluence signal on 2026-05-14:</strong>
+              <ul class='reason-list'><li>3 of 4 votes agree (threshold: 3) - high-confidence confluence:</li><li>Trend vote OK: price (Rs.7048.50) > 50-EMA (Rs.6620.17) and 50-EMA is rising.</li><li>Momentum vote OK: MACD (143.60) > Signal (143.09) and RSI (62.4) > 50.</li><li>Volatility vote OK: price is above Bollinger midline (Rs.6831.98) but not yet at the upper band (Rs.7179.90) - room to run.</li></ul>
+              <div class="muted" style="margin-top:8px">
+                See the <a href="models.html#confluence">full confluence model description</a>
+                or click the <a href="stock.html?symbol=ATUL&amp;model=confluence&amp;date=2026-05-14">ATUL chart</a>
+                for context.
+              </div>
+            </td>
+          </tr>
+        
+
+          <tr>
+            <td><strong><a href="stock.html?symbol=ALKEM&amp;model=confluence&amp;date=2026-05-14">ALKEM</a></strong></td>
+            <td>confluence</td>
+            <td title="Today's close as of 2026-05-14">&#8377;5531.50</td>
+            <td>&#8377;5531.50</td>
+            <td>&#8377;6029.37</td>
+            <td>&#8377;5318.13</td>
+            <td>2.33</td>
+            <td>11%</td>
+            <td class="weak">Low</td>
+            <td>80</td>
+            <td>2026-05-14</td>
+            <td><button class="reason-toggle" id="btn-ALKEM-confluence-2026-05-14" onclick="toggleReason('ALKEM-confluence-2026-05-14')">Reason</button></td>
+          </tr>
+          <tr class="reason-row" id="reason-ALKEM-confluence-2026-05-14">
+            <td colspan="12">
+              <strong>Why this stock was picked &mdash; confluence signal on 2026-05-14:</strong>
+              <ul class='reason-list'><li>3 of 4 votes agree (threshold: 3) - high-confidence confluence:</li><li>Trend vote OK: price (Rs.5531.50) > 50-EMA (Rs.5466.87) and 50-EMA is rising.</li><li>Momentum vote OK: MACD (27.10) > Signal (20.71) and RSI (53.5) > 50.</li><li>Volatility vote OK: price is above Bollinger midline (Rs.5489.80) but not yet at the upper band (Rs.5734.94) - room to run.</li></ul>
+              <div class="muted" style="margin-top:8px">
+                See the <a href="models.html#confluence">full confluence model description</a>
+                or click the <a href="stock.html?symbol=ALKEM&amp;model=confluence&amp;date=2026-05-14">ALKEM chart</a>
+                for context.
+              </div>
+            </td>
+          </tr>
+        
+
+          <tr>
+            <td><strong><a href="stock.html?symbol=AIIL&amp;model=confluence&amp;date=2026-05-14">AIIL</a></strong></td>
+            <td>confluence</td>
+            <td title="Today's close as of 2026-05-14">&#8377;497.05</td>
+            <td>&#8377;497.05</td>
+            <td>&#8377;574.72</td>
+            <td>&#8377;463.76</td>
+            <td>2.33</td>
+            <td>11%</td>
+            <td class="weak">Low</td>
+            <td>37</td>
+            <td>2026-05-14</td>
+            <td><button class="reason-toggle" id="btn-AIIL-confluence-2026-05-14" onclick="toggleReason('AIIL-confluence-2026-05-14')">Reason</button></td>
+          </tr>
+          <tr class="reason-row" id="reason-AIIL-confluence-2026-05-14">
+            <td colspan="12">
+              <strong>Why this stock was picked &mdash; confluence signal on 2026-05-14:</strong>
+              <ul class='reason-list'><li>3 of 4 votes agree (threshold: 3) - high-confidence confluence:</li><li>Trend vote OK: price (Rs.497.05) > 50-EMA (Rs.479.71) and 50-EMA is rising.</li><li>Momentum vote OK: MACD (6.35) > Signal (4.76) and RSI (56.5) > 50.</li><li>Volatility vote OK: price is above Bollinger midline (Rs.479.34) but not yet at the upper band (Rs.510.51) - room to run.</li></ul>
+              <div class="muted" style="margin-top:8px">
+                See the <a href="models.html#confluence">full confluence model description</a>
+                or click the <a href="stock.html?symbol=AIIL&amp;model=confluence&amp;date=2026-05-14">AIIL chart</a>
+                for context.
+              </div>
+            </td>
+          </tr>
+        
+
+          <tr>
+            <td><strong><a href="stock.html?symbol=ADANIENT&amp;model=confluence&amp;date=2026-05-14">ADANIENT</a></strong></td>
+            <td>confluence</td>
+            <td title="Today's close as of 2026-05-14">&#8377;2663.00</td>
+            <td>&#8377;2663.00</td>
+            <td>&#8377;2958.74</td>
+            <td>&#8377;2536.25</td>
+            <td>2.33</td>
+            <td>10%</td>
+            <td class="weak">Low</td>
+            <td>68</td>
+            <td>2026-05-14</td>
+            <td><button class="reason-toggle" id="btn-ADANIENT-confluence-2026-05-14" onclick="toggleReason('ADANIENT-confluence-2026-05-14')">Reason</button></td>
+          </tr>
+          <tr class="reason-row" id="reason-ADANIENT-confluence-2026-05-14">
+            <td colspan="12">
+              <strong>Why this stock was picked &mdash; confluence signal on 2026-05-14:</strong>
+              <ul class='reason-list'><li>3 of 4 votes agree (threshold: 3) - high-confidence confluence:</li><li>Trend vote OK: price (Rs.2663.00) > 50-EMA (Rs.2257.17) and 50-EMA is rising.</li><li>Momentum vote OK: MACD (117.16) > Signal (111.07) and RSI (73.8) > 50.</li><li>Volume vote OK: today's volume is at or above 1.2x the 20-day average (43.5L vs. 25.7L).</li></ul>
+              <div class="muted" style="margin-top:8px">
+                See the <a href="models.html#confluence">full confluence model description</a>
+                or click the <a href="stock.html?symbol=ADANIENT&amp;model=confluence&amp;date=2026-05-14">ADANIENT chart</a>
+                for context.
+              </div>
+            </td>
+          </tr>
+        </tbody>
+</table></div>
+
+
+<script>
+function toggleReason(id) {
+  var row = document.getElementById('reason-' + id);
+  var btn = document.getElementById('btn-' + id);
+  if (!row) return;
+  if (row.classList.contains('open')) {
+    row.classList.remove('open');
+    btn.textContent = 'Reason';
+  } else {
+    row.classList.add('open');
+    btn.textContent = 'Hide';
+  }
+}
+</script>
+
+
 <footer>
   Educational research tool only &middot; not investment advice &middot;
   Backtested hit-rates reflect historical behaviour and do not guarantee future results.
+  Current Market Price is today's closing price (not live intraday).
 </footer>
 </body>
 </html>

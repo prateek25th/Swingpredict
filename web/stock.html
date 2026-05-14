@@ -19,13 +19,14 @@ header { display:flex; justify-content:space-between; align-items:flex-end;
          margin-bottom:18px; flex-wrap:wrap; gap:8px }
 h1 { margin:0; font-size:22px }
 h2 { margin:24px 0 12px; font-size:18px }
+h2 .sub { color:var(--muted); font-size:13px; font-weight:400; margin-left:8px }
 .muted { color:var(--muted); font-size:13px }
 .card { background:var(--card); border:1px solid var(--line); border-radius:12px;
         overflow:auto; margin-bottom:18px }
 .card .pad { padding:16px 18px }
 table { width:100%; border-collapse:collapse; font-size:14px }
 th, td { padding:10px 12px; text-align:left; border-bottom:1px solid var(--line);
-         white-space:nowrap }
+         white-space:nowrap; vertical-align:middle }
 th { background:#101632; color:var(--muted); font-weight:600; font-size:12px;
      text-transform:uppercase; letter-spacing:.04em; position:sticky; top:0 }
 .good { color:var(--good); font-weight:700 }
@@ -33,12 +34,13 @@ th { background:#101632; color:var(--muted); font-weight:600; font-size:12px;
 .weak { color:var(--weak); font-weight:700 }
 .pill { display:inline-block; padding:2px 8px; border-radius:999px;
         font-size:12px; font-weight:600 }
-.pill.target { background:rgba(52,195,143,.15); color:var(--good) }
-.pill.stop   { background:rgba(224,122,122,.15); color:var(--weak) }
-.pill.timeout { background:rgba(245,177,79,.15); color:var(--ok) }
-.pill.open   { background:rgba(110,168,255,.15); color:var(--accent) }
+.pill.target  { background:rgba(52,195,143,.15); color:var(--good) }
+.pill.stop    { background:rgba(224,122,122,.15); color:var(--weak) }
+.pill.timeout { background:rgba(245,177,79,.15);  color:var(--ok) }
+.pill.open    { background:rgba(110,168,255,.15); color:var(--accent) }
+.pill.cap     { background:rgba(110,168,255,.10); color:var(--accent) }
 .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
-        gap:12px }
+        gap:12px; margin-bottom:18px }
 .stat { background:var(--card); border:1px solid var(--line); border-radius:12px;
         padding:14px 16px }
 .stat .label { color:var(--muted); font-size:12px; text-transform:uppercase;
@@ -47,6 +49,15 @@ th { background:#101632; color:var(--muted); font-weight:600; font-size:12px;
 footer { color:var(--muted); font-size:12px; margin-top:24px; line-height:1.6 }
 .reason-list { margin:0; padding-left:20px }
 .reason-list li { margin-bottom:6px }
+.reason-row { display:none; background:#0f1428 }
+.reason-row.open { display:table-row }
+.reason-row td { padding:14px 18px; border-bottom:1px solid var(--line);
+                 white-space:normal }
+.reason-toggle { background:transparent; color:var(--accent); border:1px solid var(--accent);
+                 padding:3px 10px; border-radius:6px; cursor:pointer; font-size:12px;
+                 font-family:inherit; font-weight:600 }
+.reason-toggle:hover { background:rgba(110,168,255,.12) }
+.section-empty { padding:14px 18px; color:var(--muted); font-size:14px }
 </style>
 <script src="https://unpkg.com/lightweight-charts@4.1.3/dist/lightweight-charts.standalone.production.js"></script>
 </head>
@@ -91,7 +102,6 @@ async function load() {
   }
   document.getElementById('symHeader').textContent = symbol;
 
-  // 1. Pull per-stock JSON
   let data;
   try {
     const safe = symbol.replace('&', '_AND_').replace('/', '_');
@@ -106,7 +116,6 @@ async function load() {
   document.getElementById('subHeader').textContent =
     data.bars.length + ' bars  ·  ' + data.markers.length + ' historical signal(s)';
 
-  // 2. Render candlestick chart
   const chart = LightweightCharts.createChart(document.getElementById('chart'), {
     layout: { background: { color: '#151b30' }, textColor: '#e9edf6' },
     grid: { vertLines: { color: '#1f2742' }, horzLines: { color: '#1f2742' } },
@@ -135,7 +144,6 @@ async function load() {
          .setData(data.bb_lower);
   }
 
-  // 3. Markers for every historical signal
   const markers = data.markers.map(m => ({
     time: m.time,
     position: 'belowBar',
@@ -156,7 +164,6 @@ async function load() {
     '<span style="color:#6ea8ff">▲</span> still open. ' +
     'Arrow letters: TM = Trend-Momentum, BV = Breakout-Volume, MR = Mean-Reversion, C = Confluence.';
 
-  // 4. "Why this stock" - find the specific prediction matching ?model= & ?date=
   let target = null;
   if (wantedModel && wantedDate) {
     target = data.markers.find(m => m.model === wantedModel && m.time === wantedDate);
@@ -201,7 +208,6 @@ async function load() {
     }
   }
 
-  // 5. Marker table
   const markerTbl = document.getElementById('markerTable');
   if (!data.markers.length) {
     markerTbl.innerHTML = '<p class="muted">No historical signals in the chart window.</p>';
@@ -227,6 +233,7 @@ load();
 <footer>
   Educational research tool only &middot; not investment advice &middot;
   Backtested hit-rates reflect historical behaviour and do not guarantee future results.
+  Current Market Price is today's closing price (not live intraday).
 </footer>
 </body>
 </html>
