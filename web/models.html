@@ -152,15 +152,45 @@ footer { color:var(--muted); font-size:12px; margin-top:24px; line-height:1.6 }
     <li><strong>Target</strong> = trigger + <em>k_target</em> &times; ATR(14). Sized so reward:risk &ge; 2:1 on every model.</li>
     <li><strong>Time stop</strong> = exit at the close of the 10th session if neither target nor stop has been hit.</li>
   </ul>
-  <h3 style="font-size:14px; margin:14px 0 6px; color:var(--muted); text-transform:uppercase; letter-spacing:.04em">Historical hit-rate (the published probability)</h3>
-  <p>For every fresh signal we replay the same model rules across the prior 5 years of that stock's history, walk every past signal forward up to 10 bars, and report the empirical fraction that hit target before stop. That is the number shown as 'Hit-rate' on the dashboard. It uses only bars <em>after</em> each historical signal &mdash; no look-ahead.</p>
-  <h3 style="font-size:14px; margin:14px 0 6px; color:var(--muted); text-transform:uppercase; letter-spacing:.04em">Confidence label</h3>
+  <h3 style="font-size:14px; margin:14px 0 6px; color:var(--muted); text-transform:uppercase; letter-spacing:.04em">Two probability metrics, and why both exist</h3>
+  <p>The dashboard publishes <strong>two</strong> measures of historical model quality.
+     They answer different questions, and looking at them together is more honest
+     than reading either alone.</p>
   <ul class="reason-list">
-    <li><strong>High</strong>: hit-rate &ge; 65% on a sample of at least 8 historical signals.</li>
-    <li><strong>Medium</strong>: hit-rate between 50% and 64%.</li>
-    <li><strong>Low</strong>: hit-rate below 50%.</li>
-    <li><strong>Unknown</strong>: fewer than 8 historical signals to compute a reliable hit-rate.</li>
+    <li><strong>Profit Probability</strong> &mdash; the fraction of past signals
+        that <em>exited at any positive R-multiple</em>. This counts full target
+        hits AND timeouts that closed above the trigger. It answers:
+        <em>"Did this signal make money?"</em>
+        For a 2:1 R:R system, the random-walk baseline is around 50%, so:
+        <strong>&ge; 60% is High confidence, 50&ndash;59% is Medium, &lt; 50% is Low.</strong></li>
+    <li><strong>Hit-rate</strong> &mdash; the fraction of past signals that
+        <em>touched the full 2&times;ATR target before stop</em>. Stricter measure.
+        For 2:1 R:R, the random-walk baseline is only about 33% because the
+        target sits twice as far from the trigger as the stop. So 25&ndash;40%
+        hit-rates on real strategies are normal, not bad.</li>
   </ul>
+  <p>Why both? A model can have a low hit-rate (rarely tags the exact target)
+     but a strong Profit Probability (often exits profitably even without tagging).
+     That's the most common pattern. The opposite &mdash; high hit-rate, low
+     Profit Probability &mdash; is mathematically impossible.</p>
+
+  <h3 style="font-size:14px; margin:14px 0 6px; color:var(--muted); text-transform:uppercase; letter-spacing:.04em">Confidence label</h3>
+  <p>Confidence is now derived from <strong>Profit Probability</strong> (the more
+     realistic metric), with these thresholds:</p>
+  <ul class="reason-list">
+    <li><strong>High</strong>: profit_rate &ge; 60% &mdash; clear edge over the
+        ~50% random baseline for a 2:1 R:R system.</li>
+    <li><strong>Medium</strong>: profit_rate between 50% and 59%.</li>
+    <li><strong>Low</strong>: profit_rate below 50% &mdash; the signal makes
+        money less than half the time historically.</li>
+    <li><strong>Unknown</strong>: fewer than 8 historical signals to compute
+        a reliable rate.</li>
+  </ul>
+  <h3 style="font-size:14px; margin:14px 0 6px; color:var(--muted); text-transform:uppercase; letter-spacing:.04em">Real-world expectancy</h3>
+  <p>For each backtest we also compute an <strong>average R-multiple</strong> &mdash;
+     the mean profit/loss per signal in risk units. A positive avg R means the
+     model is profitable on average even if individual hit-rates look low.
+     For 2:1 R:R systems, an avg R above +0.3R per signal is typically strong.</p>
 </div></div>
 
 <footer>
