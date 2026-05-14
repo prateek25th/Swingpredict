@@ -62,11 +62,11 @@ def main() -> int:
     print(f"Synthetic series: {len(df)} bars, "
           f"range Rs.{df['close'].min():.1f}-{df['close'].max():.1f}")
 
-    # --- 1. confidence label sanity check ----------------------------------
-    print("\nConfidence label thresholds:")
-    for hr in [0.75, 0.60, 0.50, 0.45, 0.30, None]:
-        label, css = ranking.confidence_label(hr)
-        print(f"  hit_rate={hr} -> ({label}, {css})")
+    # --- 1. confidence label sanity check (profit-rate based) --------------
+    print("\nConfidence label thresholds (now driven by profit_rate):")
+    for pr in [0.75, 0.60, 0.55, 0.50, 0.40, None]:
+        label, css = ranking.confidence_label(pr)
+        print(f"  profit_rate={pr} -> ({label}, {css})")
 
     # --- 2. monkey-patch fetch.load + universe.fetch_universe so the
     #        synthetic stocks act like real ones across all 3 caps -----------
@@ -91,7 +91,8 @@ def main() -> int:
         sym = ["BIGCO", "MIDCO", "SMLCO"][i % 3]
         sig = ALL_MODELS[3].to_signal(sym, enriched, dt)
         d = sig.to_dict()
-        d["hit_rate"] = [0.72, 0.51, 0.38][i % 3]
+        d["hit_rate"] = [0.30, 0.20, 0.10][i % 3]
+        d["profit_rate"] = [0.68, 0.55, 0.42][i % 3]
         d["historical_n"] = 12
         fresh.append(d)
 
@@ -99,10 +100,11 @@ def main() -> int:
     ranking.annotate_signals(fresh)
     fresh.sort(key=ranking.sort_key_hit_rate_desc)
 
-    print("\nAnnotated fresh signals:")
+    print("\nAnnotated fresh signals (ranked by profit_rate):")
     for s in fresh:
-        print(f"  {s['symbol']:<7} {s['model']:<10} hit_rate={s['hit_rate']} "
-              f"conf={s['confidence']:<15} cmp={s['cmp']} cat={s['category']}")
+        print(f"  {s['symbol']:<7} {s['model']:<10} "
+              f"profit_rate={s['profit_rate']} hit_rate={s['hit_rate']} "
+              f"conf={s['confidence']:<10} cmp={s['cmp']} cat={s['category']}")
 
     # --- 4. top-N per category ---------------------------------------------
     top = ranking.top_n_per_category(fresh)
@@ -148,6 +150,7 @@ def main() -> int:
         "Large Cap", "Mid Cap", "Small Cap",
         "reason-toggle", "toggleReason",
         "Confidence", "CMP", "Reason",
+        "Profit Prob.", "Hit-rate",
     ]
     missing = [w for w in expected if w not in html]
     if missing:
