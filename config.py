@@ -5,12 +5,13 @@ ROOT = Path(__file__).resolve().parent
 DATA_DIR = ROOT / "data"
 REPORTS_DIR = ROOT / "reports"
 WEB_DIR = ROOT / "web"
+STOCK_DATA_DIR = WEB_DIR / "stockdata"   # per-stock JSON for the chart page
 DATA_DIR.mkdir(exist_ok=True)
 REPORTS_DIR.mkdir(exist_ok=True)
 WEB_DIR.mkdir(exist_ok=True)
+STOCK_DATA_DIR.mkdir(exist_ok=True)
 
 # -- Universe ----------------------------------------------------------------
-# Nifty 100 = top 100 NSE stocks by free-float market cap.
 NIFTY100_URL = (
     "https://archives.nseindia.com/content/indices/ind_nifty100list.csv"
 )
@@ -22,6 +23,9 @@ RECENT_BARS_FOR_SIGNAL = 250
 # -- Holding period (swing horizon) ------------------------------------------
 HOLD_MIN_DAYS = 5      # 1 week
 HOLD_MAX_DAYS = 10     # 2 weeks
+
+# -- Per-stock chart page ----------------------------------------------------
+CHART_HISTORY_DAYS = 126       # ~6 months of bars on the detail page
 
 # -- Risk / reward defaults (ATR multiples) ----------------------------------
 MODEL_PARAMS = {
@@ -76,4 +80,9 @@ MIN_HISTORICAL_SIGNALS_FOR_PROB = 8
 # -- Output paths ------------------------------------------------------------
 SIGNALS_JSON = REPORTS_DIR / "signals.json"
 BACKTEST_JSON = REPORTS_DIR / "backtest.json"
+HISTORY_DB = REPORTS_DIR / "history.db"
+HISTORY_EXPORT_JSON = WEB_DIR / "history.json"   # for client-side reads on stock page
 LATEST_HTML = WEB_DIR / "index.html"
+HISTORY_HTML = WEB_DIR / "history.html"
+MODELS_HTML = WEB_DIR / "models.html"
+STOCK_HTML = WEB_DIR / "stock.html"
