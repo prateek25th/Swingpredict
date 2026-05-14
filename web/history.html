@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Prediction History</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+:root { --bg:#0b1020; --card:#151b30; --txt:#e9edf6; --muted:#8a93ab;
+        --good:#34c38f; --ok:#f5b14f; --weak:#e07a7a; --line:#1f2742;
+        --accent:#6ea8ff; }
+* { box-sizing:border-box }
+body { margin:0; font-family:-apple-system,Segoe UI,Roboto,sans-serif;
+       background:var(--bg); color:var(--txt); padding:24px; line-height:1.5 }
+a { color:var(--accent); text-decoration:none }
+a:hover { text-decoration:underline }
+nav { display:flex; gap:18px; margin-bottom:18px; flex-wrap:wrap; font-size:14px }
+nav .current { color:var(--txt); font-weight:600 }
+header { display:flex; justify-content:space-between; align-items:flex-end;
+         margin-bottom:18px; flex-wrap:wrap; gap:8px }
+h1 { margin:0; font-size:22px }
+h2 { margin:24px 0 12px; font-size:18px }
+.muted { color:var(--muted); font-size:13px }
+.card { background:var(--card); border:1px solid var(--line); border-radius:12px;
+        overflow:auto; margin-bottom:18px }
+.card .pad { padding:16px 18px }
+table { width:100%; border-collapse:collapse; font-size:14px }
+th, td { padding:10px 12px; text-align:left; border-bottom:1px solid var(--line);
+         white-space:nowrap }
+th { background:#101632; color:var(--muted); font-weight:600; font-size:12px;
+     text-transform:uppercase; letter-spacing:.04em; position:sticky; top:0 }
+.good { color:var(--good); font-weight:700 }
+.ok { color:var(--ok); font-weight:700 }
+.weak { color:var(--weak); font-weight:700 }
+.pill { display:inline-block; padding:2px 8px; border-radius:999px;
+        font-size:12px; font-weight:600 }
+.pill.target { background:rgba(52,195,143,.15); color:var(--good) }
+.pill.stop   { background:rgba(224,122,122,.15); color:var(--weak) }
+.pill.timeout { background:rgba(245,177,79,.15); color:var(--ok) }
+.pill.open   { background:rgba(110,168,255,.15); color:var(--accent) }
+.grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+        gap:12px }
+.stat { background:var(--card); border:1px solid var(--line); border-radius:12px;
+        padding:14px 16px }
+.stat .label { color:var(--muted); font-size:12px; text-transform:uppercase;
+               letter-spacing:.04em }
+.stat .value { font-size:24px; font-weight:700; margin-top:4px }
+footer { color:var(--muted); font-size:12px; margin-top:24px; line-height:1.6 }
+.reason-list { margin:0; padding-left:20px }
+.reason-list li { margin-bottom:6px }
+</style>
+
+</head>
+<body>
+<nav><a href="index.html" class="">Today's Picks</a><a href="history.html" class="current">History</a><a href="models.html" class="">About the Models</a></nav>
+
+<header>
+  <div>
+    <h1>Prediction History</h1>
+    <div class="muted">Every pick the system has ever made, with the outcome
+       it actually achieved over its 1-2 week window.</div>
+  </div>
+</header>
+
+<div class="grid">
+  <div class="stat"><div class="label">Total picks</div>
+       <div class="value">5</div></div>
+  <div class="stat"><div class="label">Closed</div>
+       <div class="value">0</div></div>
+  <div class="stat"><div class="label">Still open</div>
+       <div class="value">5</div></div>
+  <div class="stat"><div class="label">Target hit</div>
+       <div class="value good">0</div></div>
+  <div class="stat"><div class="label">Stopped out</div>
+       <div class="value weak">0</div></div>
+  <div class="stat"><div class="label">Timed out</div>
+       <div class="value ok">0</div></div>
+  <div class="stat"><div class="label">Realised hit-rate</div>
+       <div class="value">n/a</div></div>
+  <div class="stat"><div class="label">Avg R-multiple</div>
+       <div class="value">n/a</div></div>
+</div>
+
+<div class="card"><table>
+  <thead>
+    <tr><th>Symbol</th><th>Model</th><th>Signal date</th>
+        <th>Trigger</th><th>Target</th><th>Stop</th>
+        <th>Outcome</th><th>Exit date</th><th>Days</th><th>R-mult</th></tr>
+  </thead>
+  <tbody>
+          <tr>
+            <td><strong><a href="stock.html?symbol=CIPLA&amp;model=confluence&amp;date=2026-05-13">CIPLA</a></strong></td>
+            <td>confluence</td>
+            <td>2026-05-13</td>
+            <td>&#8377;1327.60</td>
+            <td>&#8377;1437.20</td>
+            <td>&#8377;1280.63</td>
+            <td><span class="pill open">OPEN</span></td>
+            <td>&mdash;</td>
+            <td>&mdash;</td>
+            <td class="">&mdash;</td>
+          </tr>
+        
+
+          <tr>
+            <td><strong><a href="stock.html?symbol=JSWSTEEL&amp;model=confluence&amp;date=2026-05-13">JSWSTEEL</a></strong></td>
+            <td>confluence</td>
+            <td>2026-05-13</td>
+            <td>&#8377;1274.90</td>
+            <td>&#8377;1372.14</td>
+            <td>&#8377;1233.23</td>
+            <td><span class="pill open">OPEN</span></td>
+            <td>&mdash;</td>
+            <td>&mdash;</td>
+            <td class="">&mdash;</td>
+          </tr>
+        
+
+          <tr>
+            <td><strong><a href="stock.html?symbol=MOTHERSON&amp;model=confluence&amp;date=2026-05-13">MOTHERSON</a></strong></td>
+            <td>confluence</td>
+            <td>2026-05-13</td>
+            <td>&#8377;126.32</td>
+            <td>&#8377;141.57</td>
+            <td>&#8377;119.78</td>
+            <td><span class="pill open">OPEN</span></td>
+            <td>&mdash;</td>
+            <td>&mdash;</td>
+            <td class="">&mdash;</td>
+          </tr>
+        
+
+          <tr>
+            <td><strong><a href="stock.html?symbol=MUTHOOTFIN&amp;model=confluence&amp;date=2026-05-13">MUTHOOTFIN</a></strong></td>
+            <td>confluence</td>
+            <td>2026-05-13</td>
+            <td>&#8377;3506.40</td>
+            <td>&#8377;3878.14</td>
+            <td>&#8377;3347.08</td>
+            <td><span class="pill open">OPEN</span></td>
+            <td>&mdash;</td>
+            <td>&mdash;</td>
+            <td class="">&mdash;</td>
+          </tr>
+        
+
+          <tr>
+            <td><strong><a href="stock.html?symbol=TATASTEEL&amp;model=breakout_volume&amp;date=2026-05-13">TATASTEEL</a></strong></td>
+            <td>breakout_volume</td>
+            <td>2026-05-13</td>
+            <td>&#8377;219.62</td>
+            <td>&#8377;233.93</td>
+            <td>&#8377;212.46</td>
+            <td><span class="pill open">OPEN</span></td>
+            <td>&mdash;</td>
+            <td>&mdash;</td>
+            <td class="">&mdash;</td>
+          </tr>
+        </tbody>
+</table></div>
+
+<footer>
+  Educational research tool only &middot; not investment advice &middot;
+  Backtested hit-rates reflect historical behaviour and do not guarantee future results.
+</footer>
+</body>
+</html>

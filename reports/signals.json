@@ -1,5 +1,5 @@
 {
-  "generated_at_ist": "2026-05-13 20:17 IST",
+  "generated_at_ist": "2026-05-14 08:49 IST",
   "n_universe": 104,
   "n_signals": 5,
   "signals": [
@@ -13,6 +13,12 @@
       "atr": 4.36,
       "expected_hold_days": 10,
       "reward_risk": 2.33,
+      "reasons": [
+        "3 of 4 votes agree (threshold: 3) - high-confidence confluence:",
+        "Trend vote OK: price (Rs.126.32) > 50-EMA (Rs.121.93) and 50-EMA is rising.",
+        "Momentum vote OK: MACD (2.15) > Signal (2.09) and RSI (53.7) > 50.",
+        "Volatility vote OK: price is above Bollinger midline (Rs.125.52) but not yet at the upper band (Rs.132.85) - room to run."
+      ],
       "notes": "",
       "hit_rate": 0.159,
       "historical_n": 69,
@@ -29,6 +35,12 @@
       "atr": 106.21,
       "expected_hold_days": 10,
       "reward_risk": 2.33,
+      "reasons": [
+        "3 of 4 votes agree (threshold: 3) - high-confidence confluence:",
+        "Trend vote OK: price (Rs.3506.40) > 50-EMA (Rs.3462.12) and 50-EMA is rising.",
+        "Volatility vote OK: price is above Bollinger midline (Rs.3504.03) but not yet at the upper band (Rs.3635.46) - room to run.",
+        "Volume vote OK: today's volume is at or above 1.2x the 20-day average (13.9L vs. 5.6L)."
+      ],
       "notes": "",
       "hit_rate": 0.126,
       "historical_n": 95,
@@ -45,6 +57,13 @@
       "atr": 31.31,
       "expected_hold_days": 10,
       "reward_risk": 2.33,
+      "reasons": [
+        "4 of 4 votes agree (threshold: 3) - high-confidence confluence:",
+        "Trend vote OK: price (Rs.1327.60) > 50-EMA (Rs.1301.21) and 50-EMA is rising.",
+        "Momentum vote OK: MACD (17.68) > Signal (16.93) and RSI (56.6) > 50.",
+        "Volatility vote OK: price is above Bollinger midline (Rs.1299.91) but not yet at the upper band (Rs.1387.27) - room to run.",
+        "Volume vote OK: today's volume is at or above 1.2x the 20-day average (60.2L vs. 19.1L)."
+      ],
       "notes": "",
       "hit_rate": 0.115,
       "historical_n": 87,
@@ -61,6 +80,12 @@
       "atr": 4.77,
       "expected_hold_days": 10,
       "reward_risk": 2.0,
+      "reasons": [
+        "Close (Rs.219.62) broke above the prior 20-day Donchian high (Rs.219.20) - fresh momentum.",
+        "Volume on the breakout is 1.9x the 20-day average - real participation, not a low-liquidity fakeout.",
+        "Bollinger bandwidth was in the bottom 10% of the last 100 bars within the past 10 sessions - the stock was coiled before this expansion.",
+        "Price is above the 50-EMA (Rs.205.79) - the breakout aligns with the larger trend."
+      ],
       "notes": "",
       "hit_rate": 0.091,
       "historical_n": 22,
@@ -77,6 +102,12 @@
       "atr": 27.78,
       "expected_hold_days": 10,
       "reward_risk": 2.33,
+      "reasons": [
+        "3 of 4 votes agree (threshold: 3) - high-confidence confluence:",
+        "Trend vote OK: price (Rs.1274.90) > 50-EMA (Rs.1229.44) and 50-EMA is rising.",
+        "Volatility vote OK: price is above Bollinger midline (Rs.1265.09) but not yet at the upper band (Rs.1298.74) - room to run.",
+        "Volume vote OK: today's volume is at or above 1.2x the 20-day average (23.7L vs. 18.6L)."
+      ],
       "notes": "",
       "hit_rate": 0.045,
       "historical_n": 89,
