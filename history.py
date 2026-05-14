@@ -52,23 +52,24 @@ log = logging.getLogger(__name__)
 
 _SCHEMA = """
 CREATE TABLE IF NOT EXISTS predictions (
-    symbol            TEXT    NOT NULL,
-    model             TEXT    NOT NULL,
-    signal_date       TEXT    NOT NULL,
-    trigger           REAL    NOT NULL,
-    target            REAL    NOT NULL,
-    stop              REAL    NOT NULL,
-    atr               REAL,
-    reward_risk       REAL,
-    hit_rate_at_pick  REAL,
-    historical_n      INTEGER,
-    reasons_json      TEXT,
-    status            TEXT    NOT NULL DEFAULT 'open',
-    exit_date         TEXT,
-    exit_price        REAL,
-    days_held         INTEGER,
-    r_multiple        REAL,
-    created_at        TEXT    NOT NULL,
+    symbol              TEXT    NOT NULL,
+    model               TEXT    NOT NULL,
+    signal_date         TEXT    NOT NULL,
+    trigger             REAL    NOT NULL,
+    target              REAL    NOT NULL,
+    stop                REAL    NOT NULL,
+    atr                 REAL,
+    reward_risk         REAL,
+    hit_rate_at_pick    REAL,
+    profit_rate_at_pick REAL,
+    historical_n        INTEGER,
+    reasons_json        TEXT,
+    status              TEXT    NOT NULL DEFAULT 'open',
+    exit_date           TEXT,
+    exit_price          REAL,
+    days_held           INTEGER,
+    r_multiple          REAL,
+    created_at          TEXT    NOT NULL,
     PRIMARY KEY (symbol, model, signal_date)
 );
 
@@ -76,6 +77,15 @@ CREATE INDEX IF NOT EXISTS ix_predictions_status      ON predictions(status);
 CREATE INDEX IF NOT EXISTS ix_predictions_signal_date ON predictions(signal_date);
 CREATE INDEX IF NOT EXISTS ix_predictions_symbol      ON predictions(symbol);
 """
+
+
+def _ensure_profit_rate_column(con: sqlite3.Connection) -> None:
+    """Schema migration: add profit_rate_at_pick column if it's missing.
+    Run on every connection so upgrades from v3 -> v3a are transparent.
+    """
+    cols = {row[1] for row in con.execute("PRAGMA table_info(predictions)").fetchall()}
+    if "profit_rate_at_pick" not in cols:
+        con.execute("ALTER TABLE predictions ADD COLUMN profit_rate_at_pick REAL")
 
 
 @contextmanager
@@ -86,6 +96,7 @@ def _conn():
     con.row_factory = sqlite3.Row
     try:
         con.executescript(_SCHEMA)
+        _ensure_profit_rate_column(con)
         yield con
         con.commit()
     finally:
@@ -122,15 +133,16 @@ def record_predictions(fresh_signals: list[dict]) -> int:
                 """
                 INSERT OR IGNORE INTO predictions
                   (symbol, model, signal_date, trigger, target, stop, atr,
-                   reward_risk, hit_rate_at_pick, historical_n, reasons_json,
-                   status, created_at)
-                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'open', ?)
+                   reward_risk, hit_rate_at_pick, profit_rate_at_pick,
+                   historical_n, reasons_json, status, created_at)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'open', ?)
                 """,
                 (
                     s["symbol"], s["model"], s["signal_date"],
                     s["trigger"], s["target"], s["stop"], s.get("atr"),
                     s.get("reward_risk"),
-                    s.get("hit_rate"), s.get("historical_n", 0),
+                    s.get("hit_rate"), s.get("profit_rate"),
+                    s.get("historical_n", 0),
                     json.dumps(s.get("reasons", [])),
                     now,
                 ),
