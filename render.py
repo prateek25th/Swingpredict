@@ -1,26 +1,23 @@
-"""HTML renderer for all four static pages of the dashboard.
+"""HTML renderer for the four static pages.
 
 Pages
 -----
-- index.html    : today's fresh picks (the home page)
-- history.html  : every prediction ever made + outcome
-- models.html   : plain-English explainers for each of the 4 models
-- stock.html    : per-stock detail page (template; reads ?symbol= from URL)
-
-All pages share a tiny inline CSS block so the site stays as a self-contained
-set of static files (no build step, no framework).
+- index.html    : Top 5 fresh picks per cap category + full list below.
+- history.html  : every prediction the system has ever made, with outcomes.
+- models.html   : plain-English explainers for each of the 4 models.
+- stock.html    : per-stock detail page (template; reads ?symbol= from URL).
 """
 from __future__ import annotations
 
-import json
-from datetime import datetime
-
 from config import (
+    CATEGORY_ORDER,
     HISTORY_HTML,
     LATEST_HTML,
     MODELS_HTML,
     STOCK_HTML,
 )
+from ranking import annotate_signals, top_n_per_category
+from universe import CATEGORY_LABELS
 
 
 # --------------------------------------------------------------------------- #
@@ -41,13 +38,14 @@ header { display:flex; justify-content:space-between; align-items:flex-end;
          margin-bottom:18px; flex-wrap:wrap; gap:8px }
 h1 { margin:0; font-size:22px }
 h2 { margin:24px 0 12px; font-size:18px }
+h2 .sub { color:var(--muted); font-size:13px; font-weight:400; margin-left:8px }
 .muted { color:var(--muted); font-size:13px }
 .card { background:var(--card); border:1px solid var(--line); border-radius:12px;
         overflow:auto; margin-bottom:18px }
 .card .pad { padding:16px 18px }
 table { width:100%; border-collapse:collapse; font-size:14px }
 th, td { padding:10px 12px; text-align:left; border-bottom:1px solid var(--line);
-         white-space:nowrap }
+         white-space:nowrap; vertical-align:middle }
 th { background:#101632; color:var(--muted); font-weight:600; font-size:12px;
      text-transform:uppercase; letter-spacing:.04em; position:sticky; top:0 }
 .good { color:var(--good); font-weight:700 }
@@ -55,12 +53,13 @@ th { background:#101632; color:var(--muted); font-weight:600; font-size:12px;
 .weak { color:var(--weak); font-weight:700 }
 .pill { display:inline-block; padding:2px 8px; border-radius:999px;
         font-size:12px; font-weight:600 }
-.pill.target { background:rgba(52,195,143,.15); color:var(--good) }
-.pill.stop   { background:rgba(224,122,122,.15); color:var(--weak) }
-.pill.timeout { background:rgba(245,177,79,.15); color:var(--ok) }
-.pill.open   { background:rgba(110,168,255,.15); color:var(--accent) }
+.pill.target  { background:rgba(52,195,143,.15); color:var(--good) }
+.pill.stop    { background:rgba(224,122,122,.15); color:var(--weak) }
+.pill.timeout { background:rgba(245,177,79,.15);  color:var(--ok) }
+.pill.open    { background:rgba(110,168,255,.15); color:var(--accent) }
+.pill.cap     { background:rgba(110,168,255,.10); color:var(--accent) }
 .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
-        gap:12px }
+        gap:12px; margin-bottom:18px }
 .stat { background:var(--card); border:1px solid var(--line); border-radius:12px;
         padding:14px 16px }
 .stat .label { color:var(--muted); font-size:12px; text-transform:uppercase;
@@ -69,7 +68,34 @@ th { background:#101632; color:var(--muted); font-weight:600; font-size:12px;
 footer { color:var(--muted); font-size:12px; margin-top:24px; line-height:1.6 }
 .reason-list { margin:0; padding-left:20px }
 .reason-list li { margin-bottom:6px }
+.reason-row { display:none; background:#0f1428 }
+.reason-row.open { display:table-row }
+.reason-row td { padding:14px 18px; border-bottom:1px solid var(--line);
+                 white-space:normal }
+.reason-toggle { background:transparent; color:var(--accent); border:1px solid var(--accent);
+                 padding:3px 10px; border-radius:6px; cursor:pointer; font-size:12px;
+                 font-family:inherit; font-weight:600 }
+.reason-toggle:hover { background:rgba(110,168,255,.12) }
+.section-empty { padding:14px 18px; color:var(--muted); font-size:14px }
 """
+
+_REASON_TOGGLE_JS = """
+<script>
+function toggleReason(id) {
+  var row = document.getElementById('reason-' + id);
+  var btn = document.getElementById('btn-' + id);
+  if (!row) return;
+  if (row.classList.contains('open')) {
+    row.classList.remove('open');
+    btn.textContent = 'Reason';
+  } else {
+    row.classList.add('open');
+    btn.textContent = 'Hide';
+  }
+}
+</script>
+"""
+
 
 def _nav(current: str) -> str:
     items = [
@@ -100,6 +126,7 @@ def _page(title: str, current: str, body: str, extra_head: str = "") -> str:
 <footer>
   Educational research tool only &middot; not investment advice &middot;
   Backtested hit-rates reflect historical behaviour and do not guarantee future results.
+  Current Market Price is today's closing price (not live intraday).
 </footer>
 </body>
 </html>
@@ -107,56 +134,130 @@ def _page(title: str, current: str, body: str, extra_head: str = "") -> str:
 
 
 # --------------------------------------------------------------------------- #
-# Page 1 : today's picks
+# Dashboard row helpers
 # --------------------------------------------------------------------------- #
-def render_dashboard(report: dict) -> None:
-    rows = []
-    for s in report["signals"]:
-        hit = s.get("hit_rate")
-        hit_str = f"{hit*100:.0f}%" if hit is not None else "n/a"
-        hit_cls = (
-            "good" if (hit or 0) >= 0.60 else "ok" if (hit or 0) >= 0.45 else "weak"
-        )
+_NCOLS = 12   # keep in sync with the table header below
+
+def _signal_rows_html(signals: list[dict]) -> str:
+    """Render the main row + the hidden reason-expand row for each signal."""
+    if not signals:
+        return ''
+    parts = []
+    for s in signals:
         sym_link = (
             f'<a href="stock.html?symbol={s["symbol"]}'
             f'&amp;model={s["model"]}&amp;date={s["signal_date"]}">{s["symbol"]}</a>'
         )
-        rows.append(f"""
+        hit = s.get("hit_rate")
+        hit_str = f"{hit*100:.0f}%" if hit is not None else "n/a"
+        conf_cls = s.get("confidence_class", "weak")
+        cmp_val = s.get("cmp")
+        cmp_str = f"&#8377;{cmp_val:.2f}" if cmp_val is not None else "&mdash;"
+        cmp_as_of = s.get("cmp_as_of") or ""
+        cmp_tooltip = f'title="Today\'s close as of {cmp_as_of}"' if cmp_as_of else ""
+
+        # Inline reason list
+        reasons = s.get("reasons") or []
+        if reasons:
+            reasons_html = (
+                "<ul class='reason-list'>"
+                + "".join(f"<li>{r}</li>" for r in reasons)
+                + "</ul>"
+            )
+        else:
+            reasons_html = "<em class='muted'>No reasoning recorded for this signal.</em>"
+
+        sid = s.get("signal_id", "")
+        parts.append(f"""
           <tr>
             <td><strong>{sym_link}</strong></td>
             <td>{s['model']}</td>
-            <td>{s['signal_date']}</td>
+            <td {cmp_tooltip}>{cmp_str}</td>
             <td>&#8377;{s['trigger']:.2f}</td>
             <td>&#8377;{s['target']:.2f}</td>
             <td>&#8377;{s['stop']:.2f}</td>
             <td>{s['reward_risk']:.2f}</td>
-            <td class="{hit_cls}">{hit_str}</td>
+            <td>{hit_str}</td>
+            <td class="{conf_cls}">{s.get('confidence', '')}</td>
             <td>{s.get('historical_n', 0)}</td>
-            <td>{s.get('avg_days_to_target') or '&mdash;'}</td>
+            <td>{s['signal_date']}</td>
+            <td><button class="reason-toggle" id="btn-{sid}" onclick="toggleReason('{sid}')">Reason</button></td>
+          </tr>
+          <tr class="reason-row" id="reason-{sid}">
+            <td colspan="{_NCOLS}">
+              <strong>Why this stock was picked &mdash; {s['model']} signal on {s['signal_date']}:</strong>
+              {reasons_html}
+              <div class="muted" style="margin-top:8px">
+                See the <a href="models.html#{s['model']}">full {s['model']} model description</a>
+                or click the <a href="stock.html?symbol={s['symbol']}&amp;model={s['model']}&amp;date={s['signal_date']}">{s['symbol']} chart</a>
+                for context.
+              </div>
+            </td>
           </tr>
         """)
-    body_table = "\n".join(rows) if rows else (
-        '<tr><td colspan="10" style="text-align:center;opacity:.6">'
-        'No fresh signals today. Check back tomorrow after market close.</td></tr>'
+    return "\n".join(parts)
+
+
+def _signal_table(signals: list[dict], empty_msg: str) -> str:
+    body = _signal_rows_html(signals)
+    if not body:
+        return f'<div class="card"><div class="section-empty">{empty_msg}</div></div>'
+    return f"""
+<div class="card"><table>
+  <thead>
+    <tr>
+      <th>Symbol</th><th>Model</th><th>CMP</th>
+      <th>Trigger</th><th>Target</th><th>Stop</th>
+      <th>R:R</th><th>Hit-rate</th><th>Confidence</th><th>n</th>
+      <th>Signal date</th><th>Why?</th>
+    </tr>
+  </thead>
+  <tbody>{body}</tbody>
+</table></div>
+"""
+
+
+# --------------------------------------------------------------------------- #
+# Page 1 : today's picks
+# --------------------------------------------------------------------------- #
+def render_dashboard(report: dict) -> None:
+    signals = annotate_signals(report["signals"])
+    top = top_n_per_category(signals)
+
+    sections = []
+    for cat in CATEGORY_ORDER:
+        label = CATEGORY_LABELS[cat]
+        picks = top[cat]
+        n = len(picks)
+        sub = f"top {n} by historical hit-rate" if n else "no fresh signals"
+        sections.append(f"""
+<h2>{label} <span class="sub">&middot; {sub}</span></h2>
+{_signal_table(picks, f"No fresh {label.lower()} signals today.")}
+""")
+
+    full_table = _signal_table(
+        signals,
+        "No fresh signals across the entire universe today. Check back tomorrow.",
     )
 
     body = f"""
 <header>
   <div>
     <h1>NSE Swing Picks &mdash; Today</h1>
-    <div class="muted">Nifty 100 &middot; {report['n_signals']} fresh signal(s)
-       &middot; Generated {report['generated_at_ist']}</div>
+    <div class="muted">
+      Multi-cap universe ({report['n_universe']} stocks) &middot;
+      {report['n_signals']} fresh signal(s) &middot;
+      Generated {report['generated_at_ist']}
+    </div>
   </div>
-  <div class="muted">Click any symbol for chart + reasoning</div>
+  <div class="muted">Click any symbol for chart + reasoning, or click <em>Reason</em> for inline details</div>
 </header>
-<div class="card"><table>
-  <thead>
-    <tr><th>Symbol</th><th>Model</th><th>Signal date</th>
-        <th>Trigger</th><th>Target</th><th>Stop</th>
-        <th>R:R</th><th>Hist. hit-rate</th><th>n</th><th>Avg days</th></tr>
-  </thead>
-  <tbody>{body_table}</tbody>
-</table></div>
+
+{''.join(sections)}
+
+<h2>All fresh signals <span class="sub">&middot; full list, sorted by hit-rate</span></h2>
+{full_table}
+{_REASON_TOGGLE_JS}
 """
     LATEST_HTML.write_text(_page("NSE Swing Picks", "home", body))
 
@@ -165,7 +266,6 @@ def render_dashboard(report: dict) -> None:
 # Page 2 : history
 # --------------------------------------------------------------------------- #
 def render_history(history: list[dict], stats: dict) -> None:
-    # Newest first
     history = sorted(history, key=lambda e: e["signal_date"], reverse=True)
     rows = []
     for h in history:
@@ -387,7 +487,14 @@ def render_models() -> None:
     <li><strong>Time stop</strong> = exit at the close of the 10th session if neither target nor stop has been hit.</li>
   </ul>
   <h3 style="font-size:14px; margin:14px 0 6px; color:var(--muted); text-transform:uppercase; letter-spacing:.04em">Historical hit-rate (the published probability)</h3>
-  <p style="margin:0">For every fresh signal we replay the same model rules across the prior 5 years of that stock's history, walk every past signal forward up to 10 bars, and report the empirical fraction that hit target before stop. That is the number shown as 'Hist. hit-rate' on the dashboard. It uses only bars <em>after</em> each historical signal &mdash; no look-ahead.</p>
+  <p>For every fresh signal we replay the same model rules across the prior 5 years of that stock's history, walk every past signal forward up to 10 bars, and report the empirical fraction that hit target before stop. That is the number shown as 'Hit-rate' on the dashboard. It uses only bars <em>after</em> each historical signal &mdash; no look-ahead.</p>
+  <h3 style="font-size:14px; margin:14px 0 6px; color:var(--muted); text-transform:uppercase; letter-spacing:.04em">Confidence label</h3>
+  <ul class="reason-list">
+    <li><strong>High</strong>: hit-rate &ge; 65% on a sample of at least 8 historical signals.</li>
+    <li><strong>Medium</strong>: hit-rate between 50% and 64%.</li>
+    <li><strong>Low</strong>: hit-rate below 50%.</li>
+    <li><strong>Unknown</strong>: fewer than 8 historical signals to compute a reliable hit-rate.</li>
+  </ul>
 </div></div>
 """
     MODELS_HTML.write_text(_page("About the Models", "models", body))
@@ -397,9 +504,6 @@ def render_models() -> None:
 # Page 4 : per-stock detail (template; reads ?symbol= from URL)
 # --------------------------------------------------------------------------- #
 def render_stock_page() -> None:
-    """The detail page is a single template that fetches data client-side
-    based on the ?symbol=... &model=... &date=... URL params."""
-
     extra_head = (
         '<script src="https://unpkg.com/lightweight-charts@4.1.3/dist/lightweight-charts.standalone.production.js"></script>'
     )
@@ -443,7 +547,6 @@ async function load() {
   }
   document.getElementById('symHeader').textContent = symbol;
 
-  // 1. Pull per-stock JSON
   let data;
   try {
     const safe = symbol.replace('&', '_AND_').replace('/', '_');
@@ -458,7 +561,6 @@ async function load() {
   document.getElementById('subHeader').textContent =
     data.bars.length + ' bars  \u00B7  ' + data.markers.length + ' historical signal(s)';
 
-  // 2. Render candlestick chart
   const chart = LightweightCharts.createChart(document.getElementById('chart'), {
     layout: { background: { color: '#151b30' }, textColor: '#e9edf6' },
     grid: { vertLines: { color: '#1f2742' }, horzLines: { color: '#1f2742' } },
@@ -487,7 +589,6 @@ async function load() {
          .setData(data.bb_lower);
   }
 
-  // 3. Markers for every historical signal
   const markers = data.markers.map(m => ({
     time: m.time,
     position: 'belowBar',
@@ -508,7 +609,6 @@ async function load() {
     '<span style="color:#6ea8ff">\u25B2</span> still open. ' +
     'Arrow letters: TM = Trend-Momentum, BV = Breakout-Volume, MR = Mean-Reversion, C = Confluence.';
 
-  // 4. "Why this stock" - find the specific prediction matching ?model= & ?date=
   let target = null;
   if (wantedModel && wantedDate) {
     target = data.markers.find(m => m.model === wantedModel && m.time === wantedDate);
@@ -553,7 +653,6 @@ async function load() {
     }
   }
 
-  // 5. Marker table
   const markerTbl = document.getElementById('markerTable');
   if (!data.markers.length) {
     markerTbl.innerHTML = '<p class="muted">No historical signals in the chart window.</p>';
