@@ -16,7 +16,7 @@ import pandas as pd
 import yfinance as yf
 
 from config import DATA_DIR, HISTORY_YEARS
-from universe import fetch_nifty100, to_yf_symbol
+from universe import fetch_universe, to_yf_symbol
 
 log = logging.getLogger(__name__)
 
@@ -58,7 +58,8 @@ def fetch_one(symbol: str, years: float = HISTORY_YEARS) -> pd.DataFrame | None:
 
 def update_universe(bootstrap: bool = False, max_workers: int = 6) -> dict[str, int]:
     """Refresh history for every symbol in the universe."""
-    symbols = fetch_nifty100()
+    entries = fetch_universe()
+    symbols = [e.symbol for e in entries]
     log.info("Refreshing %d symbols (bootstrap=%s)...", len(symbols), bootstrap)
 
     summary: dict[str, int] = {}
