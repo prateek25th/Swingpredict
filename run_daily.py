@@ -2,14 +2,15 @@
 
 Sequence
 --------
-1. Refresh OHLCV for every symbol (incremental tail pull).
+1. Refresh OHLCV across the full multi-cap universe (large + mid + small).
 2. Update outcomes of still-open predictions in the SQLite history DB.
 3. Scan every symbol for fresh signals from all four models.
 4. Backtest each fresh signal -> attach hit-rate, expected days, R-multiple.
-5. Record the fresh signals into history (idempotent on same-day re-runs).
-6. Export the SQLite history table as JSON for the static front-end.
-7. Export per-stock JSON for the chart page.
-8. Render all four HTML pages: index, history, models, stock template.
+5. Attach CMP (today's close) and confidence label to every signal.
+6. Record the fresh signals into history (idempotent on same-day re-runs).
+7. Export SQLite -> JSON snapshot for the static front-end.
+8. Export per-stock JSON for the chart page.
+9. Render all four HTML pages.
 """
 from __future__ import annotations
 
@@ -19,7 +20,7 @@ from datetime import datetime
 
 from config import BACKTEST_JSON, SIGNALS_JSON
 from fetch import update_universe, load
-from universe import fetch_nifty100
+from universe import fetch_universe
 from backtest import backtest_symbol_model
 
 from trend_momentum import TrendMomentumModel
@@ -30,6 +31,8 @@ from confluence import ConfluenceModel
 import history
 import stock_export
 import render
+import cmp as cmp_mod
+import ranking
 
 ALL_MODELS = [
     TrendMomentumModel(),
@@ -42,15 +45,16 @@ log = logging.getLogger(__name__)
 
 
 def run(bootstrap: bool = False) -> dict:
-    # 1. Refresh OHLCV
+    # 1. Refresh OHLCV across the whole multi-cap universe.
     update_universe(bootstrap=bootstrap)
-    symbols = fetch_nifty100()
+    entries = fetch_universe()
+    symbols = [e.symbol for e in entries]
 
-    # 2. Resolve outcomes of any predictions still open from prior runs.
+    # 2. Resolve outcomes of predictions still open from prior runs.
     outcomes = history.update_open_predictions()
     log.info("Outcome update: %s", outcomes)
 
-    # 3-4. Scan for fresh signals + backtest each.
+    # 3-4. Scan for fresh signals and backtest each.
     fresh_signals: list[dict] = []
     backtests: list[dict] = []
     for sym in symbols:
@@ -70,16 +74,17 @@ def run(bootstrap: bool = False) -> dict:
             fresh_signals.append(d)
             backtests.append(bt.to_dict())
 
-    # Sort: highest hit-rate first; nulls last.
-    fresh_signals.sort(
-        key=lambda x: (x.get("hit_rate") is None, -(x.get("hit_rate") or 0))
-    )
+    # 5. CMP + confidence label + category tag.
+    cmp_mod.attach_cmp(fresh_signals)
+    ranking.annotate_signals(fresh_signals)
 
-    # 5. Persist fresh signals into the SQLite history.
+    # Sort: highest hit-rate first; nulls last.
+    fresh_signals.sort(key=ranking.sort_key_hit_rate_desc)
+
+    # 6. Persist into SQLite history.
     new_recorded = history.record_predictions(fresh_signals)
     log.info("Recorded %d new predictions in history.", new_recorded)
 
-    # Today's signals JSON (for the dashboard's "today" tab).
     report = {
         "generated_at_ist": datetime.now().strftime("%Y-%m-%d %H:%M IST"),
         "n_universe": len(symbols),
@@ -89,24 +94,24 @@ def run(bootstrap: bool = False) -> dict:
     SIGNALS_JSON.write_text(json.dumps(report, indent=2, default=str))
     BACKTEST_JSON.write_text(json.dumps(backtests, indent=2, default=str))
 
-    # 6. Export full history as JSON for the static front-end.
+    # 7. Export full history as JSON for the static front-end.
     history.export_snapshot_json()
     history_rows = history.get_all()
     stats = history.aggregate_stats()
 
-    # 7. Per-stock JSON for the chart page.
+    # 8. Per-stock JSON for the chart page.
     n_exported = stock_export.export_all_with_history(history_rows)
     log.info("Exported chart data for %d stocks.", n_exported)
 
-    # 8. Render all HTML pages.
+    # 9. Render all HTML pages.
     render.render_dashboard(report)
     render.render_history(history_rows, stats)
     render.render_models()
     render.render_stock_page()
 
     log.info(
-        "Done. %d fresh signals; history has %d total (%d open).",
-        len(fresh_signals), stats["total"], stats["open"],
+        "Done. Universe=%d. %d fresh signals; history has %d total (%d open).",
+        len(symbols), len(fresh_signals), stats["total"], stats["open"],
     )
     return report
 
