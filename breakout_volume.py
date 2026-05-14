@@ -1,17 +1,4 @@
-"""Model 2 -- Breakout with Volume confirmation.
-
-Rationale
----------
-Classic Turtle-style breakout filtered for the two failure modes that kill
-naive breakout systems: low volume and a *non-coiled* setup.
-
-Entry rules:
-1. Today's close >= prior 20-bar Donchian high (excluding today).
-2. Volume >= 1.5x 20-day average.
-3. Bollinger bandwidth was in the bottom decile (over 100 bars) at some
-   point in the prior 10 bars (the squeeze that preceded the expansion).
-4. Close > 50-EMA (don't fight the bigger trend).
-"""
+"""Model 2 -- Breakout with Volume confirmation."""
 from __future__ import annotations
 
 import pandas as pd
@@ -24,6 +11,7 @@ P = MODEL_PARAMS["breakout_volume"]
 
 class BreakoutVolumeModel(BaseModel):
     name = "breakout_volume"
+    pretty_name = "Breakout + Volume"
     k_stop = P["k_stop"]
     k_target = P["k_target"]
 
@@ -35,7 +23,6 @@ class BreakoutVolumeModel(BaseModel):
         ema50 = df["ema50"]
         bw = df["bb_width"]
 
-        # 20-bar Donchian high *excluding today's bar*.
         prior_don_high = h.shift(1).rolling(P["donchian_period"]).max()
         breakout = c >= prior_don_high
 
@@ -48,3 +35,18 @@ class BreakoutVolumeModel(BaseModel):
 
         sig = breakout & big_volume & was_squeezed & regime_ok
         return sig.fillna(False)
+
+    def reasons_at(self, df: pd.DataFrame, idx) -> list[str]:
+        c = float(df.loc[idx, "close"])
+        ema50 = float(df.loc[idx, "ema50"])
+        vol = float(df.loc[idx, "volume"])
+        vol_avg = float(df.loc[idx, "vol_avg20"])
+        vol_mult = vol / max(vol_avg, 1)
+        pos = df.index.get_loc(idx)
+        prior_high = float(df["high"].iloc[max(0, pos - 20):pos].max())
+        return [
+            f"Close (Rs.{c:.2f}) broke above the prior 20-day Donchian high (Rs.{prior_high:.2f}) - fresh momentum.",
+            f"Volume on the breakout is {vol_mult:.1f}x the 20-day average - real participation, not a low-liquidity fakeout.",
+            f"Bollinger bandwidth was in the bottom 10% of the last 100 bars within the past 10 sessions - the stock was coiled before this expansion.",
+            f"Price is above the 50-EMA (Rs.{ema50:.2f}) - the breakout aligns with the larger trend.",
+        ]
