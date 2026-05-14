@@ -1,18 +1,4 @@
-"""Model 3 -- Bollinger / RSI Mean-Reversion (in-trend).
-
-Rationale
----------
-We don't catch falling knives -- we buy *temporary* oversold conditions
-inside a structural uptrend. This is widely documented as more robust than
-plain RSI<30 on Indian equities, where deep oversold often signals real
-damage rather than a buyable dip.
-
-Entry rules:
-1. Low of today touched / pierced the lower Bollinger Band (20, 2 sigma).
-2. RSI(14) < 30 at the close of today.
-3. 50-EMA is still rising (regime filter -- only bounce trades *with* the trend).
-4. Today's close > today's open (rejection / hammer-style bar, not free-fall).
-"""
+"""Model 3 -- Bollinger / RSI Mean-Reversion (in-trend)."""
 from __future__ import annotations
 
 import pandas as pd
@@ -25,6 +11,7 @@ P = MODEL_PARAMS["mean_reversion"]
 
 class MeanReversionModel(BaseModel):
     name = "mean_reversion"
+    pretty_name = "Mean-Reversion (in-trend)"
     k_stop = P["k_stop"]
     k_target = P["k_target"]
 
@@ -43,3 +30,17 @@ class MeanReversionModel(BaseModel):
 
         sig = touched_band & oversold & uptrend & rejection_bar
         return sig.fillna(False)
+
+    def reasons_at(self, df: pd.DataFrame, idx) -> list[str]:
+        c = float(df.loc[idx, "close"])
+        o = float(df.loc[idx, "open"])
+        low = float(df.loc[idx, "low"])
+        rsi = float(df.loc[idx, "rsi14"])
+        bb_low = float(df.loc[idx, "bb_lower"])
+        ema50 = float(df.loc[idx, "ema50"])
+        return [
+            f"Today's low (Rs.{low:.2f}) touched or pierced the lower Bollinger Band (Rs.{bb_low:.2f}) - a statistical overshoot of normal volatility.",
+            f"RSI(14) is at {rsi:.1f}, below the 30 oversold threshold - momentum is fully washed out.",
+            f"50-EMA (Rs.{ema50:.2f}) is still rising - we're buying a dip *inside* an uptrend, not a falling knife.",
+            f"Today closed (Rs.{c:.2f}) above today's open (Rs.{o:.2f}) - a rejection bar showing buyers stepped in.",
+        ]
