@@ -27,9 +27,11 @@ class BacktestSummary:
     n_target_hit: int
     n_stop_hit: int
     n_timeout: int
-    hit_rate: float | None         # probability of target before stop
+    n_profitable: int              # signals that exited with R > 0 (target OR positive timeout)
+    hit_rate: float | None         # fraction that touched the full target before stop
+    profit_rate: float | None      # fraction that exited profitably (target OR positive timeout)
     avg_days_to_target: float | None
-    avg_r_multiple: float | None   # expectancy in R units
+    avg_r_multiple: float | None   # expectancy in R units across all outcomes
     last_signals_outcomes: list[dict]
 
     def to_dict(self) -> dict:
@@ -111,7 +113,17 @@ def backtest_symbol_model(symbol: str, df: pd.DataFrame, model: BaseModel,
         })
 
     n = len(outcomes)
+    # Profit Probability = fraction that exited at any positive R-multiple.
+    # Target hits are always positive; stops always negative; timeouts can be
+    # either side. This counts every profitable outcome regardless of how it
+    # exited -- a more honest measure of "did this signal make money?" than
+    # the strict "did it tag the exact target?" hit-rate.
+    n_profitable = sum(
+        1 for o in outcomes
+        if o["outcome"] == "target" or (o["outcome"] == "timeout" and o["r_multiple"] > 0)
+    )
     hit_rate = (target_hits / n) if n >= MIN_HISTORICAL_SIGNALS_FOR_PROB else None
+    profit_rate = (n_profitable / n) if n >= MIN_HISTORICAL_SIGNALS_FOR_PROB else None
     avg_d = float(np.mean(days_to_target)) if days_to_target else None
     avg_r = float(np.mean(r_multiples)) if r_multiples else None
 
@@ -122,7 +134,9 @@ def backtest_symbol_model(symbol: str, df: pd.DataFrame, model: BaseModel,
         n_target_hit=target_hits,
         n_stop_hit=stop_hits,
         n_timeout=timeouts,
+        n_profitable=n_profitable,
         hit_rate=round(hit_rate, 3) if hit_rate is not None else None,
+        profit_rate=round(profit_rate, 3) if profit_rate is not None else None,
         avg_days_to_target=round(avg_d, 2) if avg_d is not None else None,
         avg_r_multiple=round(avg_r, 3) if avg_r is not None else None,
         last_signals_outcomes=outcomes[-5:],
