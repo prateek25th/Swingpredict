@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Stock detail</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+:root { --bg:#0b1020; --card:#151b30; --txt:#e9edf6; --muted:#8a93ab;
+        --good:#34c38f; --ok:#f5b14f; --weak:#e07a7a; --line:#1f2742;
+        --accent:#6ea8ff; }
+* { box-sizing:border-box }
+body { margin:0; font-family:-apple-system,Segoe UI,Roboto,sans-serif;
+       background:var(--bg); color:var(--txt); padding:24px; line-height:1.5 }
+a { color:var(--accent); text-decoration:none }
+a:hover { text-decoration:underline }
+nav { display:flex; gap:18px; margin-bottom:18px; flex-wrap:wrap; font-size:14px }
+nav .current { color:var(--txt); font-weight:600 }
+header { display:flex; justify-content:space-between; align-items:flex-end;
+         margin-bottom:18px; flex-wrap:wrap; gap:8px }
+h1 { margin:0; font-size:22px }
+h2 { margin:24px 0 12px; font-size:18px }
+.muted { color:var(--muted); font-size:13px }
+.card { background:var(--card); border:1px solid var(--line); border-radius:12px;
+        overflow:auto; margin-bottom:18px }
+.card .pad { padding:16px 18px }
+table { width:100%; border-collapse:collapse; font-size:14px }
+th, td { padding:10px 12px; text-align:left; border-bottom:1px solid var(--line);
+         white-space:nowrap }
+th { background:#101632; color:var(--muted); font-weight:600; font-size:12px;
+     text-transform:uppercase; letter-spacing:.04em; position:sticky; top:0 }
+.good { color:var(--good); font-weight:700 }
+.ok { color:var(--ok); font-weight:700 }
+.weak { color:var(--weak); font-weight:700 }
+.pill { display:inline-block; padding:2px 8px; border-radius:999px;
+        font-size:12px; font-weight:600 }
+.pill.target { background:rgba(52,195,143,.15); color:var(--good) }
+.pill.stop   { background:rgba(224,122,122,.15); color:var(--weak) }
+.pill.timeout { background:rgba(245,177,79,.15); color:var(--ok) }
+.pill.open   { background:rgba(110,168,255,.15); color:var(--accent) }
+.grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+        gap:12px }
+.stat { background:var(--card); border:1px solid var(--line); border-radius:12px;
+        padding:14px 16px }
+.stat .label { color:var(--muted); font-size:12px; text-transform:uppercase;
+               letter-spacing:.04em }
+.stat .value { font-size:24px; font-weight:700; margin-top:4px }
+footer { color:var(--muted); font-size:12px; margin-top:24px; line-height:1.6 }
+.reason-list { margin:0; padding-left:20px }
+.reason-list li { margin-bottom:6px }
+</style>
+<script src="https://unpkg.com/lightweight-charts@4.1.3/dist/lightweight-charts.standalone.production.js"></script>
+</head>
+<body>
+<nav><a href="index.html" class="current">Today's Picks</a><a href="history.html" class="">History</a><a href="models.html" class="">About the Models</a></nav>
+
+<header>
+  <div>
+    <h1 id="symHeader">Stock detail</h1>
+    <div class="muted" id="subHeader">Loading...</div>
+  </div>
+  <div class="muted"><a href="index.html">&larr; Back to today's picks</a></div>
+</header>
+
+<div class="card"><div class="pad">
+  <div id="chart" style="width:100%; height:500px"></div>
+  <div class="muted" id="chartLegend" style="margin-top:10px"></div>
+</div></div>
+
+<div class="card"><div class="pad">
+  <h2 style="margin-top:0">Why this stock was picked</h2>
+  <div id="whyBlock">Loading reasoning...</div>
+</div></div>
+
+<div class="card"><div class="pad">
+  <h2 style="margin-top:0">All historical signals for this stock</h2>
+  <div id="markerTable"></div>
+</div></div>
+
+<script>
+const params = new URLSearchParams(location.search);
+const symbol = params.get('symbol');
+const wantedModel = params.get('model');
+const wantedDate = params.get('date');
+
+function fmtRs(v) { return '₹' + Number(v).toFixed(2); }
+
+async function load() {
+  if (!symbol) {
+    document.getElementById('subHeader').textContent = 'No symbol specified in URL.';
+    return;
+  }
+  document.getElementById('symHeader').textContent = symbol;
+
+  // 1. Pull per-stock JSON
+  let data;
+  try {
+    const safe = symbol.replace('&', '_AND_').replace('/', '_');
+    const resp = await fetch('stockdata/' + safe + '.json');
+    if (!resp.ok) throw new Error(resp.status);
+    data = await resp.json();
+  } catch (e) {
+    document.getElementById('subHeader').textContent =
+      'Stock data file not found. (' + e + ')';
+    return;
+  }
+  document.getElementById('subHeader').textContent =
+    data.bars.length + ' bars  ·  ' + data.markers.length + ' historical signal(s)';
+
+  // 2. Render candlestick chart
+  const chart = LightweightCharts.createChart(document.getElementById('chart'), {
+    layout: { background: { color: '#151b30' }, textColor: '#e9edf6' },
+    grid: { vertLines: { color: '#1f2742' }, horzLines: { color: '#1f2742' } },
+    timeScale: { borderColor: '#1f2742' },
+    rightPriceScale: { borderColor: '#1f2742' },
+    crosshair: { mode: 0 },
+    autoSize: true,
+  });
+  const candles = chart.addCandlestickSeries({
+    upColor: '#34c38f', downColor: '#e07a7a',
+    borderUpColor: '#34c38f', borderDownColor: '#e07a7a',
+    wickUpColor: '#34c38f', wickDownColor: '#e07a7a',
+  });
+  candles.setData(data.bars);
+
+  if (data.ema50.length) {
+    chart.addLineSeries({ color: '#6ea8ff', lineWidth: 2, priceLineVisible: false })
+         .setData(data.ema50);
+  }
+  if (data.bb_upper.length) {
+    chart.addLineSeries({ color: '#8a93ab', lineWidth: 1, priceLineVisible: false, lineStyle: 2 })
+         .setData(data.bb_upper);
+  }
+  if (data.bb_lower.length) {
+    chart.addLineSeries({ color: '#8a93ab', lineWidth: 1, priceLineVisible: false, lineStyle: 2 })
+         .setData(data.bb_lower);
+  }
+
+  // 3. Markers for every historical signal
+  const markers = data.markers.map(m => ({
+    time: m.time,
+    position: 'belowBar',
+    color: m.status === 'target' ? '#34c38f'
+         : m.status === 'stop'   ? '#e07a7a'
+         : m.status === 'timeout'? '#f5b14f'
+         : '#6ea8ff',
+    shape: 'arrowUp',
+    text: m.model.split('_').map(w=>w[0].toUpperCase()).join(''),
+  }));
+  candles.setMarkers(markers);
+
+  document.getElementById('chartLegend').innerHTML =
+    'Blue line = 50-EMA &nbsp;·&nbsp; Grey dashed = Bollinger Bands(20,2) &nbsp;·&nbsp; ' +
+    '<span class="good">▲</span> target hit &nbsp;' +
+    '<span class="weak">▲</span> stopped &nbsp;' +
+    '<span class="ok">▲</span> timed out &nbsp;' +
+    '<span style="color:#6ea8ff">▲</span> still open. ' +
+    'Arrow letters: TM = Trend-Momentum, BV = Breakout-Volume, MR = Mean-Reversion, C = Confluence.';
+
+  // 4. "Why this stock" - find the specific prediction matching ?model= & ?date=
+  let target = null;
+  if (wantedModel && wantedDate) {
+    target = data.markers.find(m => m.model === wantedModel && m.time === wantedDate);
+  }
+  if (!target && data.markers.length) {
+    target = data.markers[data.markers.length - 1];
+  }
+
+  const whyDiv = document.getElementById('whyBlock');
+  if (!target) {
+    whyDiv.textContent = 'No specific signal selected.';
+  } else {
+    try {
+      const histResp = await fetch('history.json');
+      const hist = await histResp.json();
+      const match = hist.find(h =>
+        h.symbol === symbol && h.model === target.model && h.signal_date === target.time);
+      if (match) {
+        const reasons = (match.reasons || []).map(r => '<li>' + r + '</li>').join('');
+        whyDiv.innerHTML = `
+          <p><strong>Model:</strong> ${match.model} &nbsp;·&nbsp;
+             <strong>Signal date:</strong> ${match.signal_date}</p>
+          <p>
+            <strong>Trigger:</strong> ${fmtRs(match.trigger)} &nbsp;·&nbsp;
+            <strong>Target:</strong> ${fmtRs(match.target)} &nbsp;·&nbsp;
+            <strong>Stop:</strong> ${fmtRs(match.stop)} &nbsp;·&nbsp;
+            <strong>R:R:</strong> ${Number(match.reward_risk).toFixed(2)}
+          </p>
+          <p><strong>Status:</strong> <span class="pill ${match.status}">${match.status.toUpperCase()}</span>
+            ${match.exit_date ? '· exited ' + match.exit_date + ' at ' + fmtRs(match.exit_price) : ''}
+          </p>
+          <h3 style="font-size:14px; margin:14px 0 6px; color:var(--muted); text-transform:uppercase; letter-spacing:.04em">Confirming signals that day</h3>
+          <ul class="reason-list">${reasons || '<li>(no reasons recorded)</li>'}</ul>
+          <p class="muted" style="margin-top:10px">
+            See the <a href="models.html#${match.model}">full model description</a> for the complete rule set.
+          </p>`;
+      } else {
+        whyDiv.textContent = 'Signal found on chart but not in history (it may be older than the history file).';
+      }
+    } catch (e) {
+      whyDiv.textContent = 'Could not load history: ' + e;
+    }
+  }
+
+  // 5. Marker table
+  const markerTbl = document.getElementById('markerTable');
+  if (!data.markers.length) {
+    markerTbl.innerHTML = '<p class="muted">No historical signals in the chart window.</p>';
+  } else {
+    const rows = [...data.markers].reverse().map(m => `
+      <tr>
+        <td>${m.time}</td>
+        <td>${m.model}</td>
+        <td><span class="pill ${m.status}">${m.status.toUpperCase()}</span></td>
+        <td>${fmtRs(m.trigger)}</td>
+        <td>${fmtRs(m.target)}</td>
+        <td>${fmtRs(m.stop)}</td>
+      </tr>`).join('');
+    markerTbl.innerHTML = `<table>
+      <thead><tr><th>Date</th><th>Model</th><th>Outcome</th><th>Trigger</th><th>Target</th><th>Stop</th></tr></thead>
+      <tbody>${rows}</tbody>
+    </table>`;
+  }
+}
+load();
+</script>
+
+<footer>
+  Educational research tool only &middot; not investment advice &middot;
+  Backtested hit-rates reflect historical behaviour and do not guarantee future results.
+</footer>
+</body>
+</html>

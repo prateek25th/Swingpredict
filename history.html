@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>NSE Swing Picks</title>
+<title>Prediction History</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 :root { --bg:#0b1020; --card:#151b30; --txt:#e9edf6; --muted:#8a93ab;
@@ -51,51 +51,42 @@ footer { color:var(--muted); font-size:12px; margin-top:24px; line-height:1.6 }
 
 </head>
 <body>
-<nav><a href="index.html" class="current">Today's Picks</a><a href="history.html" class="">History</a><a href="models.html" class="">About the Models</a></nav>
+<nav><a href="index.html" class="">Today's Picks</a><a href="history.html" class="current">History</a><a href="models.html" class="">About the Models</a></nav>
 
 <header>
   <div>
-    <h1>NSE Swing Picks &mdash; Today</h1>
-    <div class="muted">Nifty 100 &middot; 5 fresh signal(s)
-       &middot; Generated 2026-05-14 08:49 IST</div>
+    <h1>Prediction History</h1>
+    <div class="muted">Every pick the system has ever made, with the outcome
+       it actually achieved over its 1-2 week window.</div>
   </div>
-  <div class="muted">Click any symbol for chart + reasoning</div>
 </header>
+
+<div class="grid">
+  <div class="stat"><div class="label">Total picks</div>
+       <div class="value">5</div></div>
+  <div class="stat"><div class="label">Closed</div>
+       <div class="value">0</div></div>
+  <div class="stat"><div class="label">Still open</div>
+       <div class="value">5</div></div>
+  <div class="stat"><div class="label">Target hit</div>
+       <div class="value good">0</div></div>
+  <div class="stat"><div class="label">Stopped out</div>
+       <div class="value weak">0</div></div>
+  <div class="stat"><div class="label">Timed out</div>
+       <div class="value ok">0</div></div>
+  <div class="stat"><div class="label">Realised hit-rate</div>
+       <div class="value">n/a</div></div>
+  <div class="stat"><div class="label">Avg R-multiple</div>
+       <div class="value">n/a</div></div>
+</div>
+
 <div class="card"><table>
   <thead>
     <tr><th>Symbol</th><th>Model</th><th>Signal date</th>
         <th>Trigger</th><th>Target</th><th>Stop</th>
-        <th>R:R</th><th>Hist. hit-rate</th><th>n</th><th>Avg days</th></tr>
+        <th>Outcome</th><th>Exit date</th><th>Days</th><th>R-mult</th></tr>
   </thead>
   <tbody>
-          <tr>
-            <td><strong><a href="stock.html?symbol=MOTHERSON&amp;model=confluence&amp;date=2026-05-13">MOTHERSON</a></strong></td>
-            <td>confluence</td>
-            <td>2026-05-13</td>
-            <td>&#8377;126.32</td>
-            <td>&#8377;141.57</td>
-            <td>&#8377;119.78</td>
-            <td>2.33</td>
-            <td class="weak">16%</td>
-            <td>69</td>
-            <td>5.91</td>
-          </tr>
-        
-
-          <tr>
-            <td><strong><a href="stock.html?symbol=MUTHOOTFIN&amp;model=confluence&amp;date=2026-05-13">MUTHOOTFIN</a></strong></td>
-            <td>confluence</td>
-            <td>2026-05-13</td>
-            <td>&#8377;3506.40</td>
-            <td>&#8377;3878.14</td>
-            <td>&#8377;3347.08</td>
-            <td>2.33</td>
-            <td class="weak">13%</td>
-            <td>95</td>
-            <td>6.08</td>
-          </tr>
-        
-
           <tr>
             <td><strong><a href="stock.html?symbol=CIPLA&amp;model=confluence&amp;date=2026-05-13">CIPLA</a></strong></td>
             <td>confluence</td>
@@ -103,24 +94,10 @@ footer { color:var(--muted); font-size:12px; margin-top:24px; line-height:1.6 }
             <td>&#8377;1327.60</td>
             <td>&#8377;1437.20</td>
             <td>&#8377;1280.63</td>
-            <td>2.33</td>
-            <td class="weak">12%</td>
-            <td>87</td>
-            <td>6.2</td>
-          </tr>
-        
-
-          <tr>
-            <td><strong><a href="stock.html?symbol=TATASTEEL&amp;model=breakout_volume&amp;date=2026-05-13">TATASTEEL</a></strong></td>
-            <td>breakout_volume</td>
-            <td>2026-05-13</td>
-            <td>&#8377;219.62</td>
-            <td>&#8377;233.93</td>
-            <td>&#8377;212.46</td>
-            <td>2.00</td>
-            <td class="weak">9%</td>
-            <td>22</td>
-            <td>9.0</td>
+            <td><span class="pill open">OPEN</span></td>
+            <td>&mdash;</td>
+            <td>&mdash;</td>
+            <td class="">&mdash;</td>
           </tr>
         
 
@@ -131,10 +108,52 @@ footer { color:var(--muted); font-size:12px; margin-top:24px; line-height:1.6 }
             <td>&#8377;1274.90</td>
             <td>&#8377;1372.14</td>
             <td>&#8377;1233.23</td>
-            <td>2.33</td>
-            <td class="weak">4%</td>
-            <td>89</td>
-            <td>7.75</td>
+            <td><span class="pill open">OPEN</span></td>
+            <td>&mdash;</td>
+            <td>&mdash;</td>
+            <td class="">&mdash;</td>
+          </tr>
+        
+
+          <tr>
+            <td><strong><a href="stock.html?symbol=MOTHERSON&amp;model=confluence&amp;date=2026-05-13">MOTHERSON</a></strong></td>
+            <td>confluence</td>
+            <td>2026-05-13</td>
+            <td>&#8377;126.32</td>
+            <td>&#8377;141.57</td>
+            <td>&#8377;119.78</td>
+            <td><span class="pill open">OPEN</span></td>
+            <td>&mdash;</td>
+            <td>&mdash;</td>
+            <td class="">&mdash;</td>
+          </tr>
+        
+
+          <tr>
+            <td><strong><a href="stock.html?symbol=MUTHOOTFIN&amp;model=confluence&amp;date=2026-05-13">MUTHOOTFIN</a></strong></td>
+            <td>confluence</td>
+            <td>2026-05-13</td>
+            <td>&#8377;3506.40</td>
+            <td>&#8377;3878.14</td>
+            <td>&#8377;3347.08</td>
+            <td><span class="pill open">OPEN</span></td>
+            <td>&mdash;</td>
+            <td>&mdash;</td>
+            <td class="">&mdash;</td>
+          </tr>
+        
+
+          <tr>
+            <td><strong><a href="stock.html?symbol=TATASTEEL&amp;model=breakout_volume&amp;date=2026-05-13">TATASTEEL</a></strong></td>
+            <td>breakout_volume</td>
+            <td>2026-05-13</td>
+            <td>&#8377;219.62</td>
+            <td>&#8377;233.93</td>
+            <td>&#8377;212.46</td>
+            <td><span class="pill open">OPEN</span></td>
+            <td>&mdash;</td>
+            <td>&mdash;</td>
+            <td class="">&mdash;</td>
           </tr>
         </tbody>
 </table></div>
