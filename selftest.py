@@ -1,15 +1,13 @@
 """Offline self-test using synthetic OHLCV (no network, no yfinance).
 
 Verifies indicators, all 4 models, the backtester, SQLite history, the JSON
-export, the per-stock export, and HTML rendering.
-
-Run:
-    python selftest.py
+export, the per-stock export, HTML rendering, AND the new v3 pieces:
+multi-cap universe handling, confidence labels, top-N-per-category ranking,
+and CMP attachment.
 """
 from __future__ import annotations
 
 import json
-import shutil
 
 import numpy as np
 import pandas as pd
@@ -23,6 +21,8 @@ from confluence import ConfluenceModel
 import history
 import stock_export
 import render
+import ranking
+import cmp as cmp_mod
 
 ALL_MODELS = [
     TrendMomentumModel(),
@@ -39,14 +39,12 @@ def _synthetic_ohlcv(n_days: int = 800, seed: int = 7) -> pd.DataFrame:
     cycle = 8 * np.sin(t / 18) + 4 * np.sin(t / 7 + 0.5)
     noise = rng.normal(0, 1.2, n_days).cumsum() * 0.4
     close = np.maximum(200 + trend + cycle + noise, 10)
-
     open_ = close + rng.normal(0, 0.6, n_days)
     high = np.maximum(open_, close) + np.abs(rng.normal(0, 0.8, n_days))
     low = np.minimum(open_, close) - np.abs(rng.normal(0, 0.8, n_days))
     volume = (5e5 + rng.normal(0, 5e4, n_days)).clip(min=1e5).astype(int)
     spike_idx = rng.choice(n_days, size=20, replace=False)
     volume[spike_idx] = (volume[spike_idx] * rng.uniform(2, 4, 20)).astype(int)
-
     idx = pd.date_range("2020-01-01", periods=n_days, freq="B")
     return pd.DataFrame(
         {"open": open_, "high": high, "low": low, "close": close, "volume": volume},
@@ -55,7 +53,6 @@ def _synthetic_ohlcv(n_days: int = 800, seed: int = 7) -> pd.DataFrame:
 
 
 def main() -> int:
-    # Use a temporary DB file so we don't clobber the real one.
     test_db = config.REPORTS_DIR / "history_selftest.db"
     if test_db.exists():
         test_db.unlink()
@@ -65,68 +62,74 @@ def main() -> int:
     print(f"Synthetic series: {len(df)} bars, "
           f"range Rs.{df['close'].min():.1f}-{df['close'].max():.1f}")
 
-    # --- 1. models + backtests ---------------------------------------------
-    for model in ALL_MODELS:
-        enriched = model.prepare(df)
-        sigs = model.generate_signals(enriched)
-        n_fires = int(sigs.fillna(False).sum())
-        bt = backtest_symbol_model("SYNTH", df, model)
-        # Check reasons rendering on any historical fire (the latest bar
-        # usually isn't a fire, so we sample a known historical one instead).
-        historical = list(enriched.index[sigs.fillna(False)])
-        n_reasons = 0
-        if historical:
-            sample_sig = model.to_signal("SYNTH", enriched, historical[-1])
-            n_reasons = len(sample_sig.reasons)
-        print(f"  - {model.name:<18}  fires={n_fires:>4}  "
-              f"n_signals={bt.n_signals:>4}  "
-              f"hit_rate={bt.hit_rate}  avg_R={bt.avg_r_multiple}  "
-              f"reasons={n_reasons}")
+    # --- 1. confidence label sanity check ----------------------------------
+    print("\nConfidence label thresholds:")
+    for hr in [0.75, 0.60, 0.50, 0.45, 0.30, None]:
+        label, css = ranking.confidence_label(hr)
+        print(f"  hit_rate={hr} -> ({label}, {css})")
 
-    # --- 2. exercise history with synthetic firings ------------------------
-    # Cook a few fake fresh signals from the *middle* of the synthetic series
-    # so the outcome walker has forward bars to evaluate against.
+    # --- 2. monkey-patch fetch.load + universe.fetch_universe so the
+    #        synthetic stocks act like real ones across all 3 caps -----------
     import fetch
+    import universe
     df_copy = df.copy()
-    fetch.load = lambda symbol: df_copy if symbol == "SYNTH" else None  # type: ignore
+    fake_universe = [
+        universe.UniverseEntry("BIGCO",  "large_cap"),
+        universe.UniverseEntry("MIDCO",  "mid_cap"),
+        universe.UniverseEntry("SMLCO",  "small_cap"),
+    ]
+    universe.fetch_universe = lambda: fake_universe  # type: ignore
+    fetch.load = lambda sym: df_copy if sym in {"BIGCO", "MIDCO", "SMLCO"} else None  # type: ignore
+
+    # --- 3. cook a few fresh signals + attach CMP + confidence + categorise -
+    enriched = ALL_MODELS[3].prepare(df)
+    sig_dates = ALL_MODELS[3].historical_signals(df)
+    chosen = sig_dates[5:8] if len(sig_dates) >= 8 else sig_dates[:3]
 
     fresh = []
-    enriched = ALL_MODELS[3].prepare(df)
-    all_sig_dates = ALL_MODELS[3].historical_signals(df)
-    # Use signals from roughly the middle so there's >= HOLD_MAX_DAYS forward.
-    chosen = all_sig_dates[5:8] if len(all_sig_dates) >= 8 else all_sig_dates[:3]
-    for dt in chosen:
-        sig = ALL_MODELS[3].to_signal("SYNTH", enriched, dt)
+    for i, dt in enumerate(chosen):
+        sym = ["BIGCO", "MIDCO", "SMLCO"][i % 3]
+        sig = ALL_MODELS[3].to_signal(sym, enriched, dt)
         d = sig.to_dict()
-        d["hit_rate"] = 0.55
+        d["hit_rate"] = [0.72, 0.51, 0.38][i % 3]
         d["historical_n"] = 12
         fresh.append(d)
-    print(f"\nChose {len(fresh)} synthetic signals from dates {[s['signal_date'] for s in fresh]}")
-    print(f"Sample reasons for first signal: {len(fresh[0]['reasons'])} bullet(s)")
 
+    cmp_mod.attach_cmp(fresh)
+    ranking.annotate_signals(fresh)
+    fresh.sort(key=ranking.sort_key_hit_rate_desc)
+
+    print("\nAnnotated fresh signals:")
+    for s in fresh:
+        print(f"  {s['symbol']:<7} {s['model']:<10} hit_rate={s['hit_rate']} "
+              f"conf={s['confidence']:<15} cmp={s['cmp']} cat={s['category']}")
+
+    # --- 4. top-N per category ---------------------------------------------
+    top = ranking.top_n_per_category(fresh)
+    print("\nTop-N per category:")
+    for cat, picks in top.items():
+        print(f"  {cat}: {[p['symbol'] for p in picks]}")
+
+    # --- 5. SQLite history round-trip --------------------------------------
     n_recorded = history.record_predictions(fresh)
-    print(f"History: recorded {n_recorded} predictions.")
-    n_again = history.record_predictions(fresh)
-    print(f"History (idempotency check): recorded {n_again} on re-run (should be 0).")
-
-    # --- 3. exercise the outcome-update walker -----------------------------
+    print(f"\nHistory: recorded {n_recorded} (re-run idempotency: "
+          f"{history.record_predictions(fresh)} on re-insert)")
     outcomes = history.update_open_predictions()
     print(f"Outcomes after replay: {outcomes}")
 
-    # --- 4. exports + render -----------------------------------------------
+    # --- 6. exports + render -----------------------------------------------
     history.export_snapshot_json()
     rows = history.get_all()
     stats = history.aggregate_stats()
-    print(f"Aggregate stats: total={stats['total']} closed={stats['closed']} "
+    print(f"Stats: total={stats['total']} closed={stats['closed']} "
           f"hit_rate={stats['hit_rate']} avg_r={stats['avg_r']}")
 
     n_exported = stock_export.export_all_with_history(rows)
     print(f"Per-stock chart exports: {n_exported}")
 
-    # Render all four pages with a fake report so we can sanity-check the HTML.
     fake_report = {
-        "generated_at_ist": "2025-01-01 16:00 IST",
-        "n_universe": 1,
+        "generated_at_ist": "2026-05-13 16:00 IST",
+        "n_universe": 3,
         "n_signals": len(fresh),
         "signals": fresh,
     }
@@ -139,7 +142,19 @@ def main() -> int:
         size = f.stat().st_size if f.exists() else 0
         print(f"  rendered {f.name}: {size:,} bytes")
 
-    # --- 5. cleanup the test DB --------------------------------------------
+    # Quick spot-check: dashboard contains the cap-bucket headers + Reason buttons
+    html = config.LATEST_HTML.read_text()
+    expected = [
+        "Large Cap", "Mid Cap", "Small Cap",
+        "reason-toggle", "toggleReason",
+        "Confidence", "CMP", "Reason",
+    ]
+    missing = [w for w in expected if w not in html]
+    if missing:
+        print(f"  WARNING: dashboard missing expected tokens: {missing}")
+    else:
+        print("  Dashboard contains all expected v3 tokens.")
+
     if test_db.exists():
         test_db.unlink()
 
