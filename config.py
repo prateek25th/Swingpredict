@@ -80,10 +80,11 @@ MIN_HISTORICAL_SIGNALS_FOR_PROB = 8
 # -- Top-N ranking per market-cap category -----------------------------------
 TOP_N_PER_CATEGORY = 5     # how many picks to feature per cap bucket
 
-# -- Confidence thresholds (applied to historical hit-rate) ------------------
-CONFIDENCE_HIGH_MIN = 0.65   # >= this   -> "High"
-CONFIDENCE_MED_MIN  = 0.50   # in [med, high) -> "Medium"; below -> "Low"
-# n/a hit-rate (too few historical signals) -> "Unknown"
+# -- Confidence thresholds (applied to PROFIT PROBABILITY, not hit-rate) -----
+# Random baseline for profit_rate at 2:1 R:R is ~50%, so:
+CONFIDENCE_HIGH_MIN = 0.60   # >= 60% profit_rate -> "High" (clear edge)
+CONFIDENCE_MED_MIN  = 0.50   # 50-59%             -> "Medium"; below -> "Low"
+# n/a profit_rate (too few historical signals) -> "Unknown"
 
 CATEGORY_ORDER = ["large_cap", "mid_cap", "small_cap"]
 
