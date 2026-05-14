@@ -1,7 +1,7 @@
 """Base Signal dataclass + BaseModel class for the four swing-trading models."""
 from __future__ import annotations
 
-from dataclasses import dataclass, asdict
+from dataclasses import dataclass, asdict, field
 from typing import Iterable
 
 import pandas as pd
@@ -21,6 +21,9 @@ class Signal:
     atr: float
     expected_hold_days: int
     reward_risk: float
+    # Plain-English bullet list explaining which conditions were true on the
+    # signal bar -- the per-stock detail page uses this for the "why" section.
+    reasons: list[str] = field(default_factory=list)
     notes: str = ""
 
     def to_dict(self) -> dict:
@@ -29,6 +32,7 @@ class Signal:
 
 class BaseModel:
     name: str = "base"
+    pretty_name: str = "Base"
     k_stop: float = 1.5
     k_target: float = 3.0
 
@@ -38,8 +42,12 @@ class BaseModel:
     def generate_signals(self, df: pd.DataFrame) -> pd.Series:  # noqa: ARG002
         raise NotImplementedError
 
+    def reasons_at(self, df_enriched: pd.DataFrame, idx) -> list[str]:  # noqa: ARG002
+        """Return plain-English bullet list explaining why the model fired on
+        the given bar. Subclasses override; default is empty."""
+        return []
+
     def _levels(self, close: float, atr_val: float) -> tuple[float, float, float]:
-        """Return (trigger, target, stop) given today's close and ATR."""
         trigger = close
         stop = round(close - self.k_stop * atr_val, 2)
         target = round(close + self.k_target * atr_val, 2)
@@ -60,10 +68,10 @@ class BaseModel:
             atr=round(atr_val, 2),
             expected_hold_days=HOLD_MAX_DAYS,
             reward_risk=round(rr, 2),
+            reasons=self.reasons_at(df_enriched, idx),
         )
 
     def latest_signal(self, symbol: str, df: pd.DataFrame) -> Signal | None:
-        """Return a Signal iff the most recent bar fires the model."""
         e = self.prepare(df)
         sigs = self.generate_signals(e)
         if sigs.empty or not bool(sigs.iloc[-1]):
