@@ -77,6 +77,16 @@ MODEL_PARAMS = {
 BACKTEST_LOOKBACK_YEARS = 5
 MIN_HISTORICAL_SIGNALS_FOR_PROB = 8
 
+# -- Top-N ranking per market-cap category -----------------------------------
+TOP_N_PER_CATEGORY = 5     # how many picks to feature per cap bucket
+
+# -- Confidence thresholds (applied to historical hit-rate) ------------------
+CONFIDENCE_HIGH_MIN = 0.65   # >= this   -> "High"
+CONFIDENCE_MED_MIN  = 0.50   # in [med, high) -> "Medium"; below -> "Low"
+# n/a hit-rate (too few historical signals) -> "Unknown"
+
+CATEGORY_ORDER = ["large_cap", "mid_cap", "small_cap"]
+
 # -- Output paths ------------------------------------------------------------
 SIGNALS_JSON = REPORTS_DIR / "signals.json"
 BACKTEST_JSON = REPORTS_DIR / "backtest.json"
