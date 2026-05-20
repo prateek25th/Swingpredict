@@ -1,7 +1,7 @@
 {
-  "generated_at_ist": "2026-05-19 23:48 IST",
+  "generated_at_ist": "2026-05-21 00:15 IST",
   "n_universe": 504,
-  "n_signals": 35,
+  "n_signals": 36,
   "signals": [
     {
       "model": "trend_momentum",
@@ -200,7 +200,7 @@
         "3 of 4 votes agree (threshold: 3) - high-confidence confluence:",
         "Trend vote OK: price (Rs.328.00) > 50-EMA (Rs.287.71) and 50-EMA is rising.",
         "Volatility vote OK: price is above Bollinger midline (Rs.313.86) but not yet at the upper band (Rs.332.07) - room to run.",
-        "Volume vote OK: today's volume is at or above 1.2x the 20-day average (208.0L vs. 68.4L)."
+        "Volume vote OK: today's volume is at or above 1.2x the 20-day average (208.1L vs. 68.4L)."
       ],
       "notes": "",
       "hit_rate": 0.288,
@@ -459,6 +459,36 @@
     },
     {
       "model": "confluence",
+      "symbol": "GRANULES",
+      "signal_date": "2026-05-19",
+      "trigger": 766.45,
+      "target": 846.97,
+      "stop": 731.94,
+      "atr": 23.01,
+      "expected_hold_days": 10,
+      "reward_risk": 2.33,
+      "reasons": [
+        "3 of 4 votes agree (threshold: 3) - high-confidence confluence:",
+        "Trend vote OK: price (Rs.766.45) > 50-EMA (Rs.672.24) and 50-EMA is rising.",
+        "Volatility vote OK: price is above Bollinger midline (Rs.719.16) but not yet at the upper band (Rs.770.66) - room to run.",
+        "Volume vote OK: today's volume is at or above 1.2x the 20-day average (18.7L vs. 15.0L)."
+      ],
+      "notes": "",
+      "hit_rate": 0.167,
+      "profit_rate": 0.464,
+      "historical_n": 84,
+      "avg_days_to_target": 6.86,
+      "avg_r_multiple": 0.158,
+      "cmp": 766.45,
+      "cmp_as_of": "2026-05-19",
+      "category": "small_cap",
+      "category_label": "Small Cap",
+      "confidence": "Low",
+      "confidence_class": "weak",
+      "signal_id": "GRANULES-confluence-2026-05-19"
+    },
+    {
+      "model": "confluence",
       "symbol": "DEEPAKFERT",
       "signal_date": "2026-05-19",
       "trigger": 1324.5,
@@ -531,7 +561,7 @@
         "3 of 4 votes agree (threshold: 3) - high-confidence confluence:",
         "Momentum vote OK: MACD (-32.72) > Signal (-36.73) and RSI (50.5) > 50.",
         "Volatility vote OK: price is above Bollinger midline (Rs.1168.33) but not yet at the upper band (Rs.1245.85) - room to run.",
-        "Volume vote OK: today's volume is at or above 1.2x the 20-day average (321.7L vs. 142.3L)."
+        "Volume vote OK: today's volume is at or above 1.2x the 20-day average (321.8L vs. 142.3L)."
       ],
       "notes": "",
       "hit_rate": 0.127,
@@ -636,6 +666,36 @@
       "confidence": "Low",
       "confidence_class": "weak",
       "signal_id": "POLICYBZR-confluence-2026-05-19"
+    },
+    {
+      "model": "confluence",
+      "symbol": "EMCURE",
+      "signal_date": "2026-05-20",
+      "trigger": 1734.0,
+      "target": 1959.46,
+      "stop": 1637.37,
+      "atr": 64.42,
+      "expected_hold_days": 10,
+      "reward_risk": 2.33,
+      "reasons": [
+        "3 of 4 votes agree (threshold: 3) - high-confidence confluence:",
+        "Trend vote OK: price (Rs.1734.00) > 50-EMA (Rs.1614.83) and 50-EMA is rising.",
+        "Momentum vote OK: MACD (28.83) > Signal (28.30) and RSI (59.7) > 50.",
+        "Volatility vote OK: price is above Bollinger midline (Rs.1672.33) but not yet at the upper band (Rs.1768.06) - room to run."
+      ],
+      "notes": "",
+      "hit_rate": 0.1,
+      "profit_rate": 0.425,
+      "historical_n": 40,
+      "avg_days_to_target": 6.25,
+      "avg_r_multiple": -0.083,
+      "cmp": 1734.0,
+      "cmp_as_of": "2026-05-20",
+      "category": "small_cap",
+      "category_label": "Small Cap",
+      "confidence": "Low",
+      "confidence_class": "weak",
+      "signal_id": "EMCURE-confluence-2026-05-20"
     },
     {
       "model": "confluence",
@@ -921,7 +981,7 @@
         "3 of 4 votes agree (threshold: 3) - high-confidence confluence:",
         "Trend vote OK: price (Rs.36.58) > 50-EMA (Rs.33.77) and 50-EMA is rising.",
         "Volatility vote OK: price is above Bollinger midline (Rs.36.09) but not yet at the upper band (Rs.37.97) - room to run.",
-        "Volume vote OK: today's volume is at or above 1.2x the 20-day average (1314.1L vs. 670.0L)."
+        "Volume vote OK: today's volume is at or above 1.2x the 20-day average (1314.8L vs. 670.1L)."
       ],
       "notes": "",
       "hit_rate": 0.2,
@@ -997,37 +1057,6 @@
       "confidence": "Unknown",
       "confidence_class": "muted",
       "signal_id": "ACMESOLAR-trend_momentum-2026-05-19"
-    },
-    {
-      "model": "trend_momentum",
-      "symbol": "KPIL",
-      "signal_date": "2026-05-19",
-      "trigger": 1251.5,
-      "target": 1377.4,
-      "stop": 1188.55,
-      "atr": 41.97,
-      "expected_hold_days": 10,
-      "reward_risk": 2.0,
-      "reasons": [
-        "Price (Rs.1251.50) is above its 50-day EMA (Rs.1202.91) - structural uptrend intact.",
-        "50-EMA is sloping up vs. 5 days ago - trend is healthy, not just a bounce.",
-        "RSI(14) is at 54.4, inside the 40-55 pullback zone - momentum has cooled enough to offer a low-risk entry.",
-        "MACD histogram has turned up for two bars - momentum is rotating from down to up.",
-        "Today's volume (3.0L) is at or above the 20-day average (1.8L) - participation confirms the signal."
-      ],
-      "notes": "",
-      "hit_rate": null,
-      "profit_rate": null,
-      "historical_n": 5,
-      "avg_days_to_target": null,
-      "avg_r_multiple": -0.522,
-      "cmp": 1251.5,
-      "cmp_as_of": "2026-05-19",
-      "category": "small_cap",
-      "category_label": "Small Cap",
-      "confidence": "Unknown",
-      "confidence_class": "muted",
-      "signal_id": "KPIL-trend_momentum-2026-05-19"
     },
     {
       "model": "trend_momentum",
