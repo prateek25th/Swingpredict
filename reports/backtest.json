@@ -1,58 +1,58 @@
 [
   {
-    "symbol": "HYUNDAI",
+    "symbol": "ADANIPOWER",
     "model": "confluence",
-    "n_signals": 25,
-    "n_target_hit": 6,
-    "n_stop_hit": 12,
-    "n_timeout": 7,
-    "n_profitable": 9,
-    "hit_rate": 0.24,
-    "profit_rate": 0.36,
-    "avg_days_to_target": 7.17,
-    "avg_r_multiple": 0.185,
+    "n_signals": 80,
+    "n_target_hit": 16,
+    "n_stop_hit": 32,
+    "n_timeout": 32,
+    "n_profitable": 36,
+    "hit_rate": 0.2,
+    "profit_rate": 0.45,
+    "avg_days_to_target": 4.5,
+    "avg_r_multiple": 0.168,
     "last_signals_outcomes": [
       {
-        "signal_date": "2025-12-01",
-        "trigger": 2395.7,
-        "target": 2622.96,
-        "stop": 2298.3,
+        "signal_date": "2026-02-05",
+        "trigger": 153.45,
+        "target": 172.87,
+        "stop": 145.13,
         "outcome": "stop",
-        "days": 5,
+        "days": 6,
         "r_multiple": -1.0
       },
       {
-        "signal_date": "2026-01-19",
-        "trigger": 2346.4,
-        "target": 2508.01,
-        "stop": 2277.14,
-        "outcome": "stop",
-        "days": 2,
-        "r_multiple": -1.0
+        "signal_date": "2026-03-13",
+        "trigger": 146.57,
+        "target": 165.39,
+        "stop": 138.51,
+        "outcome": "timeout",
+        "days": 10,
+        "r_multiple": 0.48
       },
       {
-        "signal_date": "2026-04-17",
-        "trigger": 1902.8,
-        "target": 2140.27,
-        "stop": 1801.03,
-        "outcome": "stop",
-        "days": 5,
-        "r_multiple": -1.0
+        "signal_date": "2026-04-13",
+        "trigger": 181.35,
+        "target": 205.49,
+        "stop": 171.0,
+        "outcome": "target",
+        "days": 4,
+        "r_multiple": 2.33
       },
       {
-        "signal_date": "2026-05-11",
-        "trigger": 1906.9,
-        "target": 2091.81,
-        "stop": 1827.65,
-        "outcome": "stop",
-        "days": 2,
-        "r_multiple": -1.0
+        "signal_date": "2026-04-16",
+        "trigger": 193.19,
+        "target": 218.11,
+        "stop": 182.51,
+        "outcome": "target",
+        "days": 7,
+        "r_multiple": 2.33
       },
       {
-        "signal_date": "2026-05-22",
-        "trigger": 1848.6,
-        "target": 2034.65,
-        "stop": 1768.87,
+        "signal_date": "2026-05-25",
+        "trigger": 233.38,
+        "target": 262.98,
+        "stop": 220.7,
         "outcome": "timeout",
         "days": 0,
         "r_multiple": 0.0
@@ -60,59 +60,719 @@
     ]
   },
   {
-    "symbol": "KOTAKBANK",
+    "symbol": "BAJAJ-AUTO",
     "model": "confluence",
-    "n_signals": 86,
-    "n_target_hit": 9,
-    "n_stop_hit": 45,
-    "n_timeout": 32,
-    "n_profitable": 33,
-    "hit_rate": 0.105,
-    "profit_rate": 0.384,
-    "avg_days_to_target": 5.22,
-    "avg_r_multiple": -0.129,
+    "n_signals": 99,
+    "n_target_hit": 23,
+    "n_stop_hit": 35,
+    "n_timeout": 41,
+    "n_profitable": 55,
+    "hit_rate": 0.232,
+    "profit_rate": 0.556,
+    "avg_days_to_target": 6.0,
+    "avg_r_multiple": 0.431,
     "last_signals_outcomes": [
       {
-        "signal_date": "2026-02-23",
-        "trigger": 430.7,
-        "target": 461.14,
-        "stop": 417.65,
+        "signal_date": "2026-04-30",
+        "trigger": 9994.0,
+        "target": 10861.29,
+        "stop": 9622.31,
+        "outcome": "timeout",
+        "days": 10,
+        "r_multiple": 1.23
+      },
+      {
+        "signal_date": "2026-05-07",
+        "trigger": 10605.0,
+        "target": 11519.9,
+        "stop": 10212.9,
+        "outcome": "stop",
+        "days": 7,
+        "r_multiple": -1.0
+      },
+      {
+        "signal_date": "2026-05-11",
+        "trigger": 10595.5,
+        "target": 11491.37,
+        "stop": 10211.56,
+        "outcome": "stop",
+        "days": 5,
+        "r_multiple": -1.0
+      },
+      {
+        "signal_date": "2026-05-21",
+        "trigger": 10667.0,
+        "target": 11577.79,
+        "stop": 10276.66,
+        "outcome": "timeout",
+        "days": 2,
+        "r_multiple": -0.45
+      },
+      {
+        "signal_date": "2026-05-25",
+        "trigger": 10491.0,
+        "target": 11411.21,
+        "stop": 10096.62,
+        "outcome": "timeout",
+        "days": 0,
+        "r_multiple": 0.0
+      }
+    ]
+  },
+  {
+    "symbol": "BAJAJHLDNG",
+    "model": "confluence",
+    "n_signals": 97,
+    "n_target_hit": 17,
+    "n_stop_hit": 35,
+    "n_timeout": 45,
+    "n_profitable": 46,
+    "hit_rate": 0.175,
+    "profit_rate": 0.474,
+    "avg_days_to_target": 4.82,
+    "avg_r_multiple": 0.209,
+    "last_signals_outcomes": [
+      {
+        "signal_date": "2026-04-16",
+        "trigger": 10205.0,
+        "target": 11361.96,
+        "stop": 9709.16,
+        "outcome": "timeout",
+        "days": 10,
+        "r_multiple": 0.13
+      },
+      {
+        "signal_date": "2026-04-20",
+        "trigger": 10388.0,
+        "target": 11492.23,
+        "stop": 9914.76,
+        "outcome": "timeout",
+        "days": 10,
+        "r_multiple": -0.03
+      },
+      {
+        "signal_date": "2026-05-14",
+        "trigger": 10357.0,
+        "target": 11443.44,
+        "stop": 9891.38,
+        "outcome": "timeout",
+        "days": 7,
+        "r_multiple": 0.61
+      },
+      {
+        "signal_date": "2026-05-21",
+        "trigger": 10402.0,
+        "target": 11505.47,
+        "stop": 9929.09,
+        "outcome": "timeout",
+        "days": 2,
+        "r_multiple": 0.51
+      },
+      {
+        "signal_date": "2026-05-25",
+        "trigger": 10642.0,
+        "target": 11705.55,
+        "stop": 10186.19,
+        "outcome": "timeout",
+        "days": 0,
+        "r_multiple": 0.0
+      }
+    ]
+  },
+  {
+    "symbol": "BPCL",
+    "model": "confluence",
+    "n_signals": 82,
+    "n_target_hit": 17,
+    "n_stop_hit": 32,
+    "n_timeout": 33,
+    "n_profitable": 43,
+    "hit_rate": 0.207,
+    "profit_rate": 0.524,
+    "avg_days_to_target": 6.18,
+    "avg_r_multiple": 0.37,
+    "last_signals_outcomes": [
+      {
+        "signal_date": "2026-02-09",
+        "trigger": 388.3,
+        "target": 422.75,
+        "stop": 373.54,
         "outcome": "stop",
         "days": 4,
         "r_multiple": -1.0
       },
       {
-        "signal_date": "2026-04-08",
-        "trigger": 380.15,
-        "target": 418.14,
-        "stop": 363.87,
-        "outcome": "timeout",
-        "days": 10,
-        "r_multiple": -0.6
+        "signal_date": "2026-02-27",
+        "trigger": 385.4,
+        "target": 416.54,
+        "stop": 372.06,
+        "outcome": "stop",
+        "days": 1,
+        "r_multiple": -1.0
       },
       {
-        "signal_date": "2026-04-30",
-        "trigger": 383.3,
-        "target": 416.28,
-        "stop": 369.16,
+        "signal_date": "2026-04-15",
+        "trigger": 310.45,
+        "target": 354.85,
+        "stop": 291.42,
+        "outcome": "timeout",
+        "days": 10,
+        "r_multiple": -0.34
+      },
+      {
+        "signal_date": "2026-05-06",
+        "trigger": 314.05,
+        "target": 347.81,
+        "stop": 299.58,
+        "outcome": "stop",
+        "days": 3,
+        "r_multiple": -1.0
+      },
+      {
+        "signal_date": "2026-05-25",
+        "trigger": 308.25,
+        "target": 341.82,
+        "stop": 293.86,
+        "outcome": "timeout",
+        "days": 0,
+        "r_multiple": 0.0
+      }
+    ]
+  },
+  {
+    "symbol": "DRREDDY",
+    "model": "confluence",
+    "n_signals": 82,
+    "n_target_hit": 6,
+    "n_stop_hit": 41,
+    "n_timeout": 35,
+    "n_profitable": 32,
+    "hit_rate": 0.073,
+    "profit_rate": 0.39,
+    "avg_days_to_target": 6.5,
+    "avg_r_multiple": -0.052,
+    "last_signals_outcomes": [
+      {
+        "signal_date": "2026-04-24",
+        "trigger": 1317.1,
+        "target": 1455.93,
+        "stop": 1257.6,
+        "outcome": "timeout",
+        "days": 10,
+        "r_multiple": -0.39
+      },
+      {
+        "signal_date": "2026-04-29",
+        "trigger": 1329.8,
+        "target": 1472.8,
+        "stop": 1268.52,
+        "outcome": "stop",
+        "days": 4,
+        "r_multiple": -1.0
+      },
+      {
+        "signal_date": "2026-05-06",
+        "trigger": 1311.0,
+        "target": 1443.7,
+        "stop": 1254.13,
+        "outcome": "stop",
+        "days": 5,
+        "r_multiple": -1.0
+      },
+      {
+        "signal_date": "2026-05-15",
+        "trigger": 1336.7,
+        "target": 1470.45,
+        "stop": 1279.38,
+        "outcome": "timeout",
+        "days": 6,
+        "r_multiple": -0.09
+      },
+      {
+        "signal_date": "2026-05-25",
+        "trigger": 1331.4,
+        "target": 1448.6,
+        "stop": 1281.17,
+        "outcome": "timeout",
+        "days": 0,
+        "r_multiple": 0.0
+      }
+    ]
+  },
+  {
+    "symbol": "EICHERMOT",
+    "model": "confluence",
+    "n_signals": 84,
+    "n_target_hit": 11,
+    "n_stop_hit": 35,
+    "n_timeout": 38,
+    "n_profitable": 38,
+    "hit_rate": 0.131,
+    "profit_rate": 0.452,
+    "avg_days_to_target": 5.91,
+    "avg_r_multiple": 0.085,
+    "last_signals_outcomes": [
+      {
+        "signal_date": "2026-04-15",
+        "trigger": 7128.0,
+        "target": 8002.83,
+        "stop": 6753.07,
+        "outcome": "timeout",
+        "days": 10,
+        "r_multiple": 0.16
+      },
+      {
+        "signal_date": "2026-04-17",
+        "trigger": 7189.5,
+        "target": 8012.33,
+        "stop": 6836.86,
+        "outcome": "timeout",
+        "days": 10,
+        "r_multiple": -0.23
+      },
+      {
+        "signal_date": "2026-04-21",
+        "trigger": 7240.5,
+        "target": 8004.82,
+        "stop": 6912.93,
+        "outcome": "timeout",
+        "days": 10,
+        "r_multiple": 0.19
+      },
+      {
+        "signal_date": "2026-05-05",
+        "trigger": 7301.5,
+        "target": 7956.11,
+        "stop": 7020.95,
+        "outcome": "stop",
+        "days": 6,
+        "r_multiple": -1.0
+      },
+      {
+        "signal_date": "2026-05-25",
+        "trigger": 7414.0,
+        "target": 8093.99,
+        "stop": 7122.57,
+        "outcome": "timeout",
+        "days": 0,
+        "r_multiple": 0.0
+      }
+    ]
+  },
+  {
+    "symbol": "GAIL",
+    "model": "breakout_volume",
+    "n_signals": 19,
+    "n_target_hit": 2,
+    "n_stop_hit": 14,
+    "n_timeout": 3,
+    "n_profitable": 3,
+    "hit_rate": 0.105,
+    "profit_rate": 0.158,
+    "avg_days_to_target": 6.5,
+    "avg_r_multiple": -0.559,
+    "last_signals_outcomes": [
+      {
+        "signal_date": "2025-03-24",
+        "trigger": 174.79,
+        "target": 190.94,
+        "stop": 166.72,
+        "outcome": "stop",
+        "days": 3,
+        "r_multiple": -1.0
+      },
+      {
+        "signal_date": "2025-06-11",
+        "trigger": 192.93,
+        "target": 206.19,
+        "stop": 186.3,
+        "outcome": "stop",
+        "days": 1,
+        "r_multiple": -1.0
+      },
+      {
+        "signal_date": "2025-10-29",
+        "trigger": 179.06,
+        "target": 189.42,
+        "stop": 173.88,
+        "outcome": "stop",
+        "days": 3,
+        "r_multiple": -1.0
+      },
+      {
+        "signal_date": "2026-01-02",
+        "trigger": 170.08,
+        "target": 178.31,
+        "stop": 165.96,
         "outcome": "stop",
         "days": 2,
         "r_multiple": -1.0
       },
       {
-        "signal_date": "2026-05-07",
-        "trigger": 379.4,
-        "target": 413.06,
-        "stop": 364.98,
+        "signal_date": "2026-05-25",
+        "trigger": 168.67,
+        "target": 183.22,
+        "stop": 161.39,
+        "outcome": "timeout",
+        "days": 0,
+        "r_multiple": 0.0
+      }
+    ]
+  },
+  {
+    "symbol": "GAIL",
+    "model": "confluence",
+    "n_signals": 78,
+    "n_target_hit": 8,
+    "n_stop_hit": 30,
+    "n_timeout": 40,
+    "n_profitable": 36,
+    "hit_rate": 0.103,
+    "profit_rate": 0.462,
+    "avg_days_to_target": 4.88,
+    "avg_r_multiple": 0.067,
+    "last_signals_outcomes": [
+      {
+        "signal_date": "2026-02-12",
+        "trigger": 163.72,
+        "target": 176.44,
+        "stop": 158.27,
         "outcome": "timeout",
         "days": 10,
-        "r_multiple": 0.1
+        "r_multiple": 1.14
       },
       {
-        "signal_date": "2026-05-22",
-        "trigger": 384.15,
-        "target": 416.92,
-        "stop": 370.1,
+        "signal_date": "2026-02-16",
+        "trigger": 164.82,
+        "target": 177.34,
+        "stop": 159.45,
+        "outcome": "timeout",
+        "days": 10,
+        "r_multiple": 0.05
+      },
+      {
+        "signal_date": "2026-04-08",
+        "trigger": 153.3,
+        "target": 171.81,
+        "stop": 145.37,
+        "outcome": "timeout",
+        "days": 10,
+        "r_multiple": 1.47
+      },
+      {
+        "signal_date": "2026-04-15",
+        "trigger": 156.12,
+        "target": 173.43,
+        "stop": 148.7,
+        "outcome": "timeout",
+        "days": 10,
+        "r_multiple": 1.29
+      },
+      {
+        "signal_date": "2026-05-25",
+        "trigger": 168.67,
+        "target": 185.65,
+        "stop": 161.39,
+        "outcome": "timeout",
+        "days": 0,
+        "r_multiple": 0.0
+      }
+    ]
+  },
+  {
+    "symbol": "HINDALCO",
+    "model": "confluence",
+    "n_signals": 77,
+    "n_target_hit": 12,
+    "n_stop_hit": 30,
+    "n_timeout": 35,
+    "n_profitable": 43,
+    "hit_rate": 0.156,
+    "profit_rate": 0.558,
+    "avg_days_to_target": 5.58,
+    "avg_r_multiple": 0.387,
+    "last_signals_outcomes": [
+      {
+        "signal_date": "2026-03-05",
+        "trigger": 954.95,
+        "target": 1063.61,
+        "stop": 908.38,
+        "outcome": "stop",
+        "days": 6,
+        "r_multiple": -1.0
+      },
+      {
+        "signal_date": "2026-04-07",
+        "trigger": 954.5,
+        "target": 1067.11,
+        "stop": 906.24,
+        "outcome": "timeout",
+        "days": 10,
+        "r_multiple": 1.77
+      },
+      {
+        "signal_date": "2026-05-15",
+        "trigger": 1067.5,
+        "target": 1167.94,
+        "stop": 1024.45,
+        "outcome": "timeout",
+        "days": 6,
+        "r_multiple": 0.75
+      },
+      {
+        "signal_date": "2026-05-20",
+        "trigger": 1085.5,
+        "target": 1187.67,
+        "stop": 1041.71,
+        "outcome": "timeout",
+        "days": 3,
+        "r_multiple": 0.32
+      },
+      {
+        "signal_date": "2026-05-25",
+        "trigger": 1099.6,
+        "target": 1201.68,
+        "stop": 1055.85,
+        "outcome": "timeout",
+        "days": 0,
+        "r_multiple": 0.0
+      }
+    ]
+  },
+  {
+    "symbol": "INDHOTEL",
+    "model": "confluence",
+    "n_signals": 86,
+    "n_target_hit": 7,
+    "n_stop_hit": 44,
+    "n_timeout": 35,
+    "n_profitable": 33,
+    "hit_rate": 0.081,
+    "profit_rate": 0.384,
+    "avg_days_to_target": 8.0,
+    "avg_r_multiple": -0.092,
+    "last_signals_outcomes": [
+      {
+        "signal_date": "2026-04-17",
+        "trigger": 659.3,
+        "target": 733.31,
+        "stop": 627.58,
+        "outcome": "stop",
+        "days": 9,
+        "r_multiple": -1.0
+      },
+      {
+        "signal_date": "2026-04-27",
+        "trigger": 647.85,
+        "target": 714.79,
+        "stop": 619.16,
+        "outcome": "timeout",
+        "days": 10,
+        "r_multiple": 0.47
+      },
+      {
+        "signal_date": "2026-05-06",
+        "trigger": 666.15,
+        "target": 724.89,
+        "stop": 640.97,
+        "outcome": "stop",
+        "days": 4,
+        "r_multiple": -1.0
+      },
+      {
+        "signal_date": "2026-05-19",
+        "trigger": 652.75,
+        "target": 716.57,
+        "stop": 625.4,
+        "outcome": "timeout",
+        "days": 4,
+        "r_multiple": 0.39
+      },
+      {
+        "signal_date": "2026-05-25",
+        "trigger": 663.55,
+        "target": 724.72,
+        "stop": 637.33,
+        "outcome": "timeout",
+        "days": 0,
+        "r_multiple": 0.0
+      }
+    ]
+  },
+  {
+    "symbol": "IOC",
+    "model": "confluence",
+    "n_signals": 80,
+    "n_target_hit": 16,
+    "n_stop_hit": 31,
+    "n_timeout": 33,
+    "n_profitable": 40,
+    "hit_rate": 0.2,
+    "profit_rate": 0.5,
+    "avg_days_to_target": 6.12,
+    "avg_r_multiple": 0.261,
+    "last_signals_outcomes": [
+      {
+        "signal_date": "2025-12-31",
+        "trigger": 164.39,
+        "target": 175.19,
+        "stop": 159.76,
+        "outcome": "stop",
+        "days": 4,
+        "r_multiple": -1.0
+      },
+      {
+        "signal_date": "2026-01-28",
+        "trigger": 160.82,
+        "target": 173.37,
+        "stop": 155.44,
+        "outcome": "target",
+        "days": 6,
+        "r_multiple": 2.33
+      },
+      {
+        "signal_date": "2026-02-24",
+        "trigger": 177.95,
+        "target": 191.97,
+        "stop": 171.93,
+        "outcome": "stop",
+        "days": 5,
+        "r_multiple": -1.0
+      },
+      {
+        "signal_date": "2026-05-07",
+        "trigger": 146.89,
+        "target": 159.51,
+        "stop": 141.48,
+        "outcome": "stop",
+        "days": 2,
+        "r_multiple": -1.0
+      },
+      {
+        "signal_date": "2026-05-25",
+        "trigger": 143.95,
+        "target": 158.08,
+        "stop": 137.89,
+        "outcome": "timeout",
+        "days": 0,
+        "r_multiple": 0.0
+      }
+    ]
+  },
+  {
+    "symbol": "INDIGO",
+    "model": "confluence",
+    "n_signals": 88,
+    "n_target_hit": 9,
+    "n_stop_hit": 40,
+    "n_timeout": 39,
+    "n_profitable": 35,
+    "hit_rate": 0.102,
+    "profit_rate": 0.398,
+    "avg_days_to_target": 7.44,
+    "avg_r_multiple": 0.01,
+    "last_signals_outcomes": [
+      {
+        "signal_date": "2025-11-20",
+        "trigger": 5785.5,
+        "target": 6171.63,
+        "stop": 5620.02,
+        "outcome": "stop",
+        "days": 9,
+        "r_multiple": -1.0
+      },
+      {
+        "signal_date": "2026-02-03",
+        "trigger": 4946.2,
+        "target": 5419.03,
+        "stop": 4743.56,
+        "outcome": "timeout",
+        "days": 10,
+        "r_multiple": 0.15
+      },
+      {
+        "signal_date": "2026-04-15",
+        "trigger": 4638.0,
+        "target": 5355.05,
+        "stop": 4330.69,
+        "outcome": "timeout",
+        "days": 10,
+        "r_multiple": -0.95
+      },
+      {
+        "signal_date": "2026-04-27",
+        "trigger": 4561.2,
+        "target": 5111.23,
+        "stop": 4325.47,
+        "outcome": "stop",
+        "days": 3,
+        "r_multiple": -1.0
+      },
+      {
+        "signal_date": "2026-05-25",
+        "trigger": 4501.9,
+        "target": 4970.53,
+        "stop": 4301.06,
+        "outcome": "timeout",
+        "days": 0,
+        "r_multiple": 0.0
+      }
+    ]
+  },
+  {
+    "symbol": "LT",
+    "model": "confluence",
+    "n_signals": 92,
+    "n_target_hit": 8,
+    "n_stop_hit": 35,
+    "n_timeout": 49,
+    "n_profitable": 40,
+    "hit_rate": 0.087,
+    "profit_rate": 0.435,
+    "avg_days_to_target": 7.75,
+    "avg_r_multiple": 0.083,
+    "last_signals_outcomes": [
+      {
+        "signal_date": "2025-12-23",
+        "trigger": 4058.8,
+        "target": 4252.1,
+        "stop": 3975.96,
+        "outcome": "timeout",
+        "days": 10,
+        "r_multiple": 1.19
+      },
+      {
+        "signal_date": "2026-01-05",
+        "trigger": 4150.4,
+        "target": 4331.71,
+        "stop": 4072.7,
+        "outcome": "stop",
+        "days": 3,
+        "r_multiple": -1.0
+      },
+      {
+        "signal_date": "2026-02-03",
+        "trigger": 4038.8,
+        "target": 4340.39,
+        "stop": 3909.55,
+        "outcome": "timeout",
+        "days": 10,
+        "r_multiple": 1.86
+      },
+      {
+        "signal_date": "2026-04-10",
+        "trigger": 3959.9,
+        "target": 4442.79,
+        "stop": 3752.95,
+        "outcome": "timeout",
+        "days": 10,
+        "r_multiple": 0.26
+      },
+      {
+        "signal_date": "2026-05-25",
+        "trigger": 4033.4,
+        "target": 4335.79,
+        "stop": 3903.8,
         "outcome": "timeout",
         "days": 0,
         "r_multiple": 0.0
@@ -122,25 +782,16 @@
   {
     "symbol": "NTPC",
     "model": "trend_momentum",
-    "n_signals": 20,
+    "n_signals": 21,
     "n_target_hit": 7,
     "n_stop_hit": 4,
-    "n_timeout": 9,
-    "n_profitable": 13,
-    "hit_rate": 0.35,
-    "profit_rate": 0.65,
+    "n_timeout": 10,
+    "n_profitable": 14,
+    "hit_rate": 0.333,
+    "profit_rate": 0.667,
     "avg_days_to_target": 7.71,
-    "avg_r_multiple": 0.671,
+    "avg_r_multiple": 0.645,
     "last_signals_outcomes": [
-      {
-        "signal_date": "2024-06-07",
-        "trigger": 343.76,
-        "target": 391.36,
-        "stop": 319.96,
-        "outcome": "timeout",
-        "days": 10,
-        "r_multiple": 0.09
-      },
       {
         "signal_date": "2024-09-12",
         "trigger": 388.99,
@@ -174,305 +825,134 @@
         "target": 413.61,
         "stop": 376.17,
         "outcome": "timeout",
+        "days": 1,
+        "r_multiple": 0.11
+      },
+      {
+        "signal_date": "2026-05-25",
+        "trigger": 390.05,
+        "target": 414.59,
+        "stop": 377.78,
+        "outcome": "timeout",
         "days": 0,
         "r_multiple": 0.0
       }
     ]
   },
   {
-    "symbol": "SIEMENS",
+    "symbol": "UNIONBANK",
     "model": "confluence",
-    "n_signals": 92,
-    "n_target_hit": 16,
-    "n_stop_hit": 34,
-    "n_timeout": 42,
-    "n_profitable": 51,
-    "hit_rate": 0.174,
-    "profit_rate": 0.554,
-    "avg_days_to_target": 5.69,
-    "avg_r_multiple": 0.343,
+    "n_signals": 78,
+    "n_target_hit": 12,
+    "n_stop_hit": 36,
+    "n_timeout": 30,
+    "n_profitable": 35,
+    "hit_rate": 0.154,
+    "profit_rate": 0.449,
+    "avg_days_to_target": 6.42,
+    "avg_r_multiple": 0.171,
     "last_signals_outcomes": [
       {
-        "signal_date": "2026-02-03",
-        "trigger": 3211.7,
-        "target": 3525.37,
-        "stop": 3077.27,
+        "signal_date": "2026-02-23",
+        "trigger": 197.78,
+        "target": 218.19,
+        "stop": 189.03,
+        "outcome": "stop",
+        "days": 7,
+        "r_multiple": -1.0
+      },
+      {
+        "signal_date": "2026-02-25",
+        "trigger": 199.3,
+        "target": 219.78,
+        "stop": 190.52,
         "outcome": "stop",
         "days": 4,
         "r_multiple": -1.0
       },
       {
-        "signal_date": "2026-02-06",
-        "trigger": 3176.2,
-        "target": 3520.97,
-        "stop": 3028.44,
-        "outcome": "timeout",
-        "days": 10,
-        "r_multiple": 0.2
-      },
-      {
-        "signal_date": "2026-02-20",
-        "trigger": 3206.2,
-        "target": 3562.87,
-        "stop": 3053.34,
-        "outcome": "timeout",
-        "days": 10,
-        "r_multiple": 0.15
-      },
-      {
-        "signal_date": "2026-04-10",
-        "trigger": 3388.5,
-        "target": 3815.73,
-        "stop": 3205.4,
-        "outcome": "target",
-        "days": 7,
-        "r_multiple": 2.33
-      },
-      {
-        "signal_date": "2026-05-22",
-        "trigger": 3811.7,
-        "target": 4254.46,
-        "stop": 3621.95,
-        "outcome": "timeout",
-        "days": 0,
-        "r_multiple": 0.0
-      }
-    ]
-  },
-  {
-    "symbol": "TRENT",
-    "model": "confluence",
-    "n_signals": 86,
-    "n_target_hit": 15,
-    "n_stop_hit": 33,
-    "n_timeout": 38,
-    "n_profitable": 42,
-    "hit_rate": 0.174,
-    "profit_rate": 0.488,
-    "avg_days_to_target": 6.87,
-    "avg_r_multiple": 0.266,
-    "last_signals_outcomes": [
-      {
-        "signal_date": "2026-02-04",
-        "trigger": 4012.6,
-        "target": 4439.87,
-        "stop": 3829.48,
-        "outcome": "timeout",
-        "days": 10,
-        "r_multiple": 0.95
-      },
-      {
-        "signal_date": "2026-02-10",
-        "trigger": 4184.4,
-        "target": 4626.75,
-        "stop": 3994.82,
-        "outcome": "stop",
-        "days": 10,
-        "r_multiple": -1.0
-      },
-      {
-        "signal_date": "2026-04-06",
-        "trigger": 3833.6,
-        "target": 4362.19,
-        "stop": 3607.06,
-        "outcome": "target",
-        "days": 10,
-        "r_multiple": 2.33
-      },
-      {
         "signal_date": "2026-04-09",
-        "trigger": 3850.7,
-        "target": 4365.51,
-        "stop": 3630.07,
+        "trigger": 184.69,
+        "target": 212.34,
+        "stop": 172.84,
+        "outcome": "timeout",
+        "days": 10,
+        "r_multiple": -0.65
+      },
+      {
+        "signal_date": "2026-04-13",
+        "trigger": 184.68,
+        "target": 212.3,
+        "stop": 172.84,
+        "outcome": "stop",
+        "days": 10,
+        "r_multiple": -1.0
+      },
+      {
+        "signal_date": "2026-05-25",
+        "trigger": 168.87,
+        "target": 186.09,
+        "stop": 161.49,
+        "outcome": "timeout",
+        "days": 0,
+        "r_multiple": 0.0
+      }
+    ]
+  },
+  {
+    "symbol": "VBL",
+    "model": "confluence",
+    "n_signals": 98,
+    "n_target_hit": 21,
+    "n_stop_hit": 39,
+    "n_timeout": 38,
+    "n_profitable": 50,
+    "hit_rate": 0.214,
+    "profit_rate": 0.51,
+    "avg_days_to_target": 5.86,
+    "avg_r_multiple": 0.324,
+    "last_signals_outcomes": [
+      {
+        "signal_date": "2025-12-22",
+        "trigger": 484.58,
+        "target": 523.99,
+        "stop": 467.69,
+        "outcome": "timeout",
+        "days": 10,
+        "r_multiple": 0.78
+      },
+      {
+        "signal_date": "2026-01-02",
+        "trigger": 492.71,
+        "target": 528.33,
+        "stop": 477.45,
+        "outcome": "timeout",
+        "days": 10,
+        "r_multiple": 0.43
+      },
+      {
+        "signal_date": "2026-04-17",
+        "trigger": 473.45,
+        "target": 527.2,
+        "stop": 450.41,
         "outcome": "target",
         "days": 7,
         "r_multiple": 2.33
-      },
-      {
-        "signal_date": "2026-05-22",
-        "trigger": 4296.5,
-        "target": 4710.58,
-        "stop": 4119.04,
-        "outcome": "timeout",
-        "days": 0,
-        "r_multiple": 0.0
-      }
-    ]
-  },
-  {
-    "symbol": "WIPRO",
-    "model": "confluence",
-    "n_signals": 83,
-    "n_target_hit": 10,
-    "n_stop_hit": 34,
-    "n_timeout": 39,
-    "n_profitable": 40,
-    "hit_rate": 0.12,
-    "profit_rate": 0.482,
-    "avg_days_to_target": 6.7,
-    "avg_r_multiple": 0.16,
-    "last_signals_outcomes": [
-      {
-        "signal_date": "2026-04-07",
-        "trigger": 204.72,
-        "target": 224.53,
-        "stop": 196.23,
-        "outcome": "timeout",
-        "days": 10,
-        "r_multiple": -0.08
-      },
-      {
-        "signal_date": "2026-04-10",
-        "trigger": 204.88,
-        "target": 224.69,
-        "stop": 196.39,
-        "outcome": "timeout",
-        "days": 10,
-        "r_multiple": 0.02
-      },
-      {
-        "signal_date": "2026-04-16",
-        "trigger": 210.26,
-        "target": 230.04,
-        "stop": 201.78,
-        "outcome": "stop",
-        "days": 6,
-        "r_multiple": -1.0
-      },
-      {
-        "signal_date": "2026-04-27",
-        "trigger": 205.05,
-        "target": 223.02,
-        "stop": 197.35,
-        "outcome": "stop",
-        "days": 8,
-        "r_multiple": -1.0
-      },
-      {
-        "signal_date": "2026-05-22",
-        "trigger": 203.11,
-        "target": 217.7,
-        "stop": 196.86,
-        "outcome": "timeout",
-        "days": 0,
-        "r_multiple": 0.0
-      }
-    ]
-  },
-  {
-    "symbol": "3MINDIA",
-    "model": "confluence",
-    "n_signals": 91,
-    "n_target_hit": 7,
-    "n_stop_hit": 46,
-    "n_timeout": 38,
-    "n_profitable": 27,
-    "hit_rate": 0.077,
-    "profit_rate": 0.297,
-    "avg_days_to_target": 4.86,
-    "avg_r_multiple": -0.249,
-    "last_signals_outcomes": [
-      {
-        "signal_date": "2026-02-12",
-        "trigger": 37515.0,
-        "target": 41766.08,
-        "stop": 35693.11,
-        "outcome": "stop",
-        "days": 1,
-        "r_multiple": -1.0
-      },
-      {
-        "signal_date": "2026-02-27",
-        "trigger": 37505.0,
-        "target": 41661.74,
-        "stop": 35723.54,
-        "outcome": "stop",
-        "days": 1,
-        "r_multiple": -1.0
       },
       {
         "signal_date": "2026-04-22",
-        "trigger": 32550.0,
-        "target": 36212.58,
-        "stop": 30980.32,
-        "outcome": "timeout",
-        "days": 10,
-        "r_multiple": 0.06
-      },
-      {
-        "signal_date": "2026-04-28",
-        "trigger": 33260.0,
-        "target": 36867.27,
-        "stop": 31714.03,
-        "outcome": "stop",
-        "days": 8,
-        "r_multiple": -1.0
-      },
-      {
-        "signal_date": "2026-05-22",
-        "trigger": 33315.0,
-        "target": 37001.3,
-        "stop": 31735.16,
-        "outcome": "timeout",
-        "days": 0,
-        "r_multiple": 0.0
-      }
-    ]
-  },
-  {
-    "symbol": "DIXON",
-    "model": "breakout_volume",
-    "n_signals": 14,
-    "n_target_hit": 8,
-    "n_stop_hit": 1,
-    "n_timeout": 5,
-    "n_profitable": 11,
-    "hit_rate": 0.571,
-    "profit_rate": 0.786,
-    "avg_days_to_target": 5.0,
-    "avg_r_multiple": 1.207,
-    "last_signals_outcomes": [
-      {
-        "signal_date": "2023-12-11",
-        "trigger": 6367.54,
-        "target": 6907.12,
-        "stop": 6097.75,
-        "outcome": "timeout",
-        "days": 10,
-        "r_multiple": 0.31
-      },
-      {
-        "signal_date": "2024-09-16",
-        "trigger": 13979.08,
-        "target": 15345.54,
-        "stop": 13295.85,
-        "outcome": "timeout",
-        "days": 10,
-        "r_multiple": -0.27
-      },
-      {
-        "signal_date": "2025-07-02",
-        "trigger": 15156.25,
-        "target": 16669.11,
-        "stop": 14399.83,
-        "outcome": "timeout",
-        "days": 10,
-        "r_multiple": 1.24
-      },
-      {
-        "signal_date": "2025-09-01",
-        "trigger": 17574.18,
-        "target": 18868.5,
-        "stop": 16927.02,
+        "trigger": 494.48,
+        "target": 548.58,
+        "stop": 471.29,
         "outcome": "timeout",
         "days": 10,
         "r_multiple": 0.62
       },
       {
-        "signal_date": "2026-05-22",
-        "trigger": 11722.0,
-        "target": 13017.38,
-        "stop": 11074.31,
+        "signal_date": "2026-05-25",
+        "trigger": 530.7,
+        "target": 581.86,
+        "stop": 508.77,
         "outcome": "timeout",
         "days": 0,
         "r_multiple": 0.0
@@ -480,299 +960,59 @@
     ]
   },
   {
-    "symbol": "DIXON",
+    "symbol": "ASHOKLEY",
     "model": "confluence",
-    "n_signals": 80,
-    "n_target_hit": 13,
-    "n_stop_hit": 27,
-    "n_timeout": 40,
-    "n_profitable": 41,
-    "hit_rate": 0.163,
-    "profit_rate": 0.512,
-    "avg_days_to_target": 5.31,
-    "avg_r_multiple": 0.336,
+    "n_signals": 92,
+    "n_target_hit": 9,
+    "n_stop_hit": 36,
+    "n_timeout": 47,
+    "n_profitable": 44,
+    "hit_rate": 0.098,
+    "profit_rate": 0.478,
+    "avg_days_to_target": 5.67,
+    "avg_r_multiple": 0.112,
     "last_signals_outcomes": [
       {
-        "signal_date": "2026-04-08",
-        "trigger": 10636.0,
-        "target": 12253.0,
-        "stop": 9943.0,
-        "outcome": "timeout",
-        "days": 10,
-        "r_multiple": 0.33
-      },
-      {
-        "signal_date": "2026-04-16",
-        "trigger": 11287.0,
-        "target": 12819.66,
-        "stop": 10630.14,
-        "outcome": "timeout",
-        "days": 10,
-        "r_multiple": -0.18
-      },
-      {
-        "signal_date": "2026-04-20",
-        "trigger": 11211.0,
-        "target": 12630.03,
-        "stop": 10602.84,
-        "outcome": "timeout",
-        "days": 10,
-        "r_multiple": 0.32
-      },
-      {
-        "signal_date": "2026-04-27",
-        "trigger": 11252.0,
-        "target": 12608.41,
-        "stop": 10670.68,
-        "outcome": "stop",
-        "days": 9,
-        "r_multiple": -1.0
-      },
-      {
-        "signal_date": "2026-05-22",
-        "trigger": 11722.0,
-        "target": 13233.28,
-        "stop": 11074.31,
-        "outcome": "timeout",
-        "days": 0,
-        "r_multiple": 0.0
-      }
-    ]
-  },
-  {
-    "symbol": "FLUOROCHEM",
-    "model": "confluence",
-    "n_signals": 80,
-    "n_target_hit": 13,
-    "n_stop_hit": 31,
-    "n_timeout": 36,
-    "n_profitable": 34,
-    "hit_rate": 0.163,
-    "profit_rate": 0.425,
-    "avg_days_to_target": 5.69,
-    "avg_r_multiple": 0.106,
-    "last_signals_outcomes": [
-      {
-        "signal_date": "2026-03-25",
-        "trigger": 3256.6,
-        "target": 3729.47,
-        "stop": 3053.94,
+        "signal_date": "2026-01-30",
+        "trigger": 196.69,
+        "target": 216.01,
+        "stop": 188.41,
         "outcome": "stop",
         "days": 1,
         "r_multiple": -1.0
       },
       {
-        "signal_date": "2026-04-10",
-        "trigger": 3346.6,
-        "target": 3824.74,
-        "stop": 3141.68,
+        "signal_date": "2026-02-04",
+        "trigger": 200.92,
+        "target": 222.33,
+        "stop": 191.74,
         "outcome": "timeout",
         "days": 10,
-        "r_multiple": 0.29
+        "r_multiple": 0.81
       },
       {
-        "signal_date": "2026-04-23",
-        "trigger": 3313.3,
-        "target": 3707.86,
-        "stop": 3144.2,
-        "outcome": "target",
-        "days": 7,
-        "r_multiple": 2.33
-      },
-      {
-        "signal_date": "2026-05-04",
-        "trigger": 3750.8,
-        "target": 4166.13,
-        "stop": 3572.8,
-        "outcome": "stop",
-        "days": 6,
-        "r_multiple": -1.0
-      },
-      {
-        "signal_date": "2026-05-22",
-        "trigger": 3834.0,
-        "target": 4227.21,
-        "stop": 3665.48,
-        "outcome": "timeout",
-        "days": 0,
-        "r_multiple": 0.0
-      }
-    ]
-  },
-  {
-    "symbol": "POWERINDIA",
-    "model": "confluence",
-    "n_signals": 93,
-    "n_target_hit": 25,
-    "n_stop_hit": 26,
-    "n_timeout": 42,
-    "n_profitable": 49,
-    "hit_rate": 0.269,
-    "profit_rate": 0.527,
-    "avg_days_to_target": 5.88,
-    "avg_r_multiple": 0.523,
-    "last_signals_outcomes": [
-      {
-        "signal_date": "2026-03-10",
-        "trigger": 25225.0,
-        "target": 28432.96,
-        "stop": 23850.16,
-        "outcome": "stop",
-        "days": 4,
-        "r_multiple": -1.0
-      },
-      {
-        "signal_date": "2026-03-20",
-        "trigger": 25025.0,
-        "target": 28140.23,
-        "stop": 23689.9,
+        "signal_date": "2026-02-11",
+        "trigger": 206.35,
+        "target": 228.24,
+        "stop": 196.97,
         "outcome": "timeout",
         "days": 10,
-        "r_multiple": 0.67
-      },
-      {
-        "signal_date": "2026-04-09",
-        "trigger": 27315.0,
-        "target": 30878.07,
-        "stop": 25787.97,
-        "outcome": "target",
-        "days": 9,
-        "r_multiple": 2.33
-      },
-      {
-        "signal_date": "2026-04-16",
-        "trigger": 28255.0,
-        "target": 31795.04,
-        "stop": 26737.84,
-        "outcome": "target",
-        "days": 5,
-        "r_multiple": 2.33
-      },
-      {
-        "signal_date": "2026-05-22",
-        "trigger": 35555.0,
-        "target": 39907.92,
-        "stop": 33689.46,
-        "outcome": "timeout",
-        "days": 0,
-        "r_multiple": 0.0
-      }
-    ]
-  },
-  {
-    "symbol": "JSWINFRA",
-    "model": "trend_momentum",
-    "n_signals": 9,
-    "n_target_hit": 0,
-    "n_stop_hit": 5,
-    "n_timeout": 4,
-    "n_profitable": 1,
-    "hit_rate": 0.0,
-    "profit_rate": 0.111,
-    "avg_days_to_target": null,
-    "avg_r_multiple": -0.647,
-    "last_signals_outcomes": [
-      {
-        "signal_date": "2024-04-01",
-        "trigger": 246.02,
-        "target": 281.13,
-        "stop": 228.46,
-        "outcome": "timeout",
-        "days": 10,
-        "r_multiple": -0.56
-      },
-      {
-        "signal_date": "2024-08-29",
-        "trigger": 324.92,
-        "target": 354.76,
-        "stop": 310.0,
-        "outcome": "stop",
-        "days": 4,
-        "r_multiple": -1.0
-      },
-      {
-        "signal_date": "2024-12-30",
-        "trigger": 318.58,
-        "target": 347.62,
-        "stop": 304.07,
-        "outcome": "stop",
-        "days": 9,
-        "r_multiple": -1.0
-      },
-      {
-        "signal_date": "2025-04-25",
-        "trigger": 302.77,
-        "target": 338.65,
-        "stop": 284.84,
-        "outcome": "stop",
-        "days": 5,
-        "r_multiple": -1.0
-      },
-      {
-        "signal_date": "2026-05-22",
-        "trigger": 274.6,
-        "target": 302.21,
-        "stop": 260.79,
-        "outcome": "timeout",
-        "days": 0,
-        "r_multiple": 0.0
-      }
-    ]
-  },
-  {
-    "symbol": "JSWINFRA",
-    "model": "confluence",
-    "n_signals": 37,
-    "n_target_hit": 6,
-    "n_stop_hit": 15,
-    "n_timeout": 16,
-    "n_profitable": 17,
-    "hit_rate": 0.162,
-    "profit_rate": 0.459,
-    "avg_days_to_target": 8.83,
-    "avg_r_multiple": 0.234,
-    "last_signals_outcomes": [
-      {
-        "signal_date": "2026-03-05",
-        "trigger": 261.45,
-        "target": 288.25,
-        "stop": 249.97,
-        "outcome": "stop",
-        "days": 7,
-        "r_multiple": -1.0
-      },
-      {
-        "signal_date": "2026-04-09",
-        "trigger": 256.7,
-        "target": 292.08,
-        "stop": 241.54,
-        "outcome": "timeout",
-        "days": 10,
-        "r_multiple": 1.47
-      },
-      {
-        "signal_date": "2026-04-16",
-        "trigger": 272.59,
-        "target": 307.98,
-        "stop": 257.42,
-        "outcome": "timeout",
-        "days": 10,
-        "r_multiple": -0.04
+        "r_multiple": 0.56
       },
       {
         "signal_date": "2026-05-07",
-        "trigger": 281.2,
-        "target": 311.23,
-        "stop": 268.33,
+        "trigger": 170.78,
+        "target": 191.34,
+        "stop": 161.97,
         "outcome": "stop",
-        "days": 4,
+        "days": 2,
         "r_multiple": -1.0
       },
       {
-        "signal_date": "2026-05-22",
-        "trigger": 274.6,
-        "target": 306.82,
-        "stop": 260.79,
+        "signal_date": "2026-05-25",
+        "trigger": 164.08,
+        "target": 183.63,
+        "stop": 155.7,
         "outcome": "timeout",
         "days": 0,
         "r_multiple": 0.0
@@ -780,59 +1020,512 @@
     ]
   },
   {
-    "symbol": "LICI",
-    "model": "confluence",
-    "n_signals": 54,
-    "n_target_hit": 10,
-    "n_stop_hit": 27,
-    "n_timeout": 17,
-    "n_profitable": 21,
-    "hit_rate": 0.185,
-    "profit_rate": 0.389,
-    "avg_days_to_target": 6.7,
-    "avg_r_multiple": 0.025,
+    "symbol": "FEDERALBNK",
+    "model": "trend_momentum",
+    "n_signals": 9,
+    "n_target_hit": 3,
+    "n_stop_hit": 3,
+    "n_timeout": 3,
+    "n_profitable": 5,
+    "hit_rate": 0.333,
+    "profit_rate": 0.556,
+    "avg_days_to_target": 9.0,
+    "avg_r_multiple": 0.34,
     "last_signals_outcomes": [
       {
-        "signal_date": "2026-02-09",
-        "trigger": 895.45,
-        "target": 966.68,
-        "stop": 864.92,
+        "signal_date": "2022-10-03",
+        "trigger": 114.06,
+        "target": 127.01,
+        "stop": 107.59,
+        "outcome": "target",
+        "days": 8,
+        "r_multiple": 2.0
+      },
+      {
+        "signal_date": "2022-12-01",
+        "trigger": 130.15,
+        "target": 139.21,
+        "stop": 125.62,
+        "outcome": "target",
+        "days": 10,
+        "r_multiple": 2.0
+      },
+      {
+        "signal_date": "2022-12-06",
+        "trigger": 132.21,
+        "target": 141.71,
+        "stop": 127.45,
+        "outcome": "timeout",
+        "days": 10,
+        "r_multiple": 0.03
+      },
+      {
+        "signal_date": "2024-01-15",
+        "trigger": 151.13,
+        "target": 160.37,
+        "stop": 146.51,
+        "outcome": "stop",
+        "days": 1,
+        "r_multiple": -1.0
+      },
+      {
+        "signal_date": "2026-05-25",
+        "trigger": 289.25,
+        "target": 310.73,
+        "stop": 278.51,
+        "outcome": "timeout",
+        "days": 0,
+        "r_multiple": 0.0
+      }
+    ]
+  },
+  {
+    "symbol": "FORTIS",
+    "model": "confluence",
+    "n_signals": 95,
+    "n_target_hit": 15,
+    "n_stop_hit": 33,
+    "n_timeout": 47,
+    "n_profitable": 44,
+    "hit_rate": 0.158,
+    "profit_rate": 0.463,
+    "avg_days_to_target": 6.13,
+    "avg_r_multiple": 0.214,
+    "last_signals_outcomes": [
+      {
+        "signal_date": "2026-01-07",
+        "trigger": 940.85,
+        "target": 1012.62,
+        "stop": 910.09,
+        "outcome": "stop",
+        "days": 2,
+        "r_multiple": -1.0
+      },
+      {
+        "signal_date": "2026-01-14",
+        "trigger": 909.95,
+        "target": 984.86,
+        "stop": 877.85,
         "outcome": "stop",
         "days": 4,
+        "r_multiple": -1.0
+      },
+      {
+        "signal_date": "2026-02-11",
+        "trigger": 918.85,
+        "target": 1001.77,
+        "stop": 883.31,
+        "outcome": "timeout",
+        "days": 10,
+        "r_multiple": 0.33
+      },
+      {
+        "signal_date": "2026-04-20",
+        "trigger": 890.9,
+        "target": 987.36,
+        "stop": 849.56,
+        "outcome": "timeout",
+        "days": 10,
+        "r_multiple": 1.5
+      },
+      {
+        "signal_date": "2026-05-25",
+        "trigger": 970.35,
+        "target": 1054.73,
+        "stop": 934.19,
+        "outcome": "timeout",
+        "days": 0,
+        "r_multiple": 0.0
+      }
+    ]
+  },
+  {
+    "symbol": "GVT&D",
+    "model": "confluence",
+    "n_signals": 100,
+    "n_target_hit": 20,
+    "n_stop_hit": 30,
+    "n_timeout": 50,
+    "n_profitable": 53,
+    "hit_rate": 0.2,
+    "profit_rate": 0.53,
+    "avg_days_to_target": 6.15,
+    "avg_r_multiple": 0.363,
+    "last_signals_outcomes": [
+      {
+        "signal_date": "2026-04-09",
+        "trigger": 3911.3,
+        "target": 4659.72,
+        "stop": 3590.55,
+        "outcome": "target",
+        "days": 10,
+        "r_multiple": 2.33
+      },
+      {
+        "signal_date": "2026-04-16",
+        "trigger": 4074.2,
+        "target": 4779.52,
+        "stop": 3771.92,
+        "outcome": "timeout",
+        "days": 10,
+        "r_multiple": 1.3
+      },
+      {
+        "signal_date": "2026-04-27",
+        "trigger": 4556.8,
+        "target": 5209.95,
+        "stop": 4276.88,
+        "outcome": "timeout",
+        "days": 10,
+        "r_multiple": -0.44
+      },
+      {
+        "signal_date": "2026-05-20",
+        "trigger": 4679.4,
+        "target": 5393.57,
+        "stop": 4373.33,
+        "outcome": "timeout",
+        "days": 3,
+        "r_multiple": 0.31
+      },
+      {
+        "signal_date": "2026-05-25",
+        "trigger": 4774.7,
+        "target": 5495.79,
+        "stop": 4465.66,
+        "outcome": "timeout",
+        "days": 0,
+        "r_multiple": 0.0
+      }
+    ]
+  },
+  {
+    "symbol": "HINDPETRO",
+    "model": "confluence",
+    "n_signals": 80,
+    "n_target_hit": 13,
+    "n_stop_hit": 36,
+    "n_timeout": 31,
+    "n_profitable": 40,
+    "hit_rate": 0.163,
+    "profit_rate": 0.5,
+    "avg_days_to_target": 6.54,
+    "avg_r_multiple": 0.248,
+    "last_signals_outcomes": [
+      {
+        "signal_date": "2026-02-06",
+        "trigger": 463.15,
+        "target": 514.42,
+        "stop": 441.18,
+        "outcome": "stop",
+        "days": 9,
+        "r_multiple": -1.0
+      },
+      {
+        "signal_date": "2026-02-17",
+        "trigger": 454.25,
+        "target": 497.99,
+        "stop": 435.5,
+        "outcome": "stop",
+        "days": 2,
+        "r_multiple": -1.0
+      },
+      {
+        "signal_date": "2026-05-07",
+        "trigger": 396.5,
+        "target": 443.15,
+        "stop": 376.51,
+        "outcome": "stop",
+        "days": 2,
+        "r_multiple": -1.0
+      },
+      {
+        "signal_date": "2026-05-13",
+        "trigger": 390.1,
+        "target": 438.45,
+        "stop": 369.38,
+        "outcome": "stop",
+        "days": 2,
+        "r_multiple": -1.0
+      },
+      {
+        "signal_date": "2026-05-25",
+        "trigger": 403.35,
+        "target": 452.42,
+        "stop": 382.32,
+        "outcome": "timeout",
+        "days": 0,
+        "r_multiple": 0.0
+      }
+    ]
+  },
+  {
+    "symbol": "ICICIGI",
+    "model": "confluence",
+    "n_signals": 83,
+    "n_target_hit": 6,
+    "n_stop_hit": 39,
+    "n_timeout": 38,
+    "n_profitable": 33,
+    "hit_rate": 0.072,
+    "profit_rate": 0.398,
+    "avg_days_to_target": 6.0,
+    "avg_r_multiple": -0.095,
+    "last_signals_outcomes": [
+      {
+        "signal_date": "2026-04-17",
+        "trigger": 1891.6,
+        "target": 2084.15,
+        "stop": 1809.08,
+        "outcome": "stop",
+        "days": 4,
+        "r_multiple": -1.0
+      },
+      {
+        "signal_date": "2026-05-07",
+        "trigger": 1850.2,
+        "target": 2005.71,
+        "stop": 1783.55,
+        "outcome": "stop",
+        "days": 3,
+        "r_multiple": -1.0
+      },
+      {
+        "signal_date": "2026-05-14",
+        "trigger": 1848.9,
+        "target": 2014.63,
+        "stop": 1777.87,
+        "outcome": "stop",
+        "days": 4,
+        "r_multiple": -1.0
+      },
+      {
+        "signal_date": "2026-05-19",
+        "trigger": 1822.8,
+        "target": 1979.35,
+        "stop": 1755.71,
+        "outcome": "timeout",
+        "days": 4,
+        "r_multiple": 0.47
+      },
+      {
+        "signal_date": "2026-05-25",
+        "trigger": 1854.3,
+        "target": 2008.35,
+        "stop": 1788.28,
+        "outcome": "timeout",
+        "days": 0,
+        "r_multiple": 0.0
+      }
+    ]
+  },
+  {
+    "symbol": "IREDA",
+    "model": "trend_momentum",
+    "n_signals": 2,
+    "n_target_hit": 0,
+    "n_stop_hit": 1,
+    "n_timeout": 1,
+    "n_profitable": 0,
+    "hit_rate": null,
+    "profit_rate": null,
+    "avg_days_to_target": null,
+    "avg_r_multiple": -0.5,
+    "last_signals_outcomes": [
+      {
+        "signal_date": "2024-02-29",
+        "trigger": 149.26,
+        "target": 180.01,
+        "stop": 133.88,
+        "outcome": "stop",
+        "days": 7,
+        "r_multiple": -1.0
+      },
+      {
+        "signal_date": "2026-05-25",
+        "trigger": 129.77,
+        "target": 140.93,
+        "stop": 124.19,
+        "outcome": "timeout",
+        "days": 0,
+        "r_multiple": 0.0
+      }
+    ]
+  },
+  {
+    "symbol": "KEI",
+    "model": "confluence",
+    "n_signals": 101,
+    "n_target_hit": 12,
+    "n_stop_hit": 41,
+    "n_timeout": 48,
+    "n_profitable": 49,
+    "hit_rate": 0.119,
+    "profit_rate": 0.485,
+    "avg_days_to_target": 6.58,
+    "avg_r_multiple": 0.124,
+    "last_signals_outcomes": [
+      {
+        "signal_date": "2026-04-08",
+        "trigger": 4507.2,
+        "target": 5181.14,
+        "stop": 4218.37,
+        "outcome": "timeout",
+        "days": 10,
+        "r_multiple": 1.15
+      },
+      {
+        "signal_date": "2026-04-13",
+        "trigger": 4458.7,
+        "target": 5113.39,
+        "stop": 4178.12,
+        "outcome": "timeout",
+        "days": 10,
+        "r_multiple": 1.8
+      },
+      {
+        "signal_date": "2026-04-16",
+        "trigger": 4647.4,
+        "target": 5280.74,
+        "stop": 4375.97,
+        "outcome": "timeout",
+        "days": 10,
+        "r_multiple": 0.77
+      },
+      {
+        "signal_date": "2026-04-21",
+        "trigger": 4825.7,
+        "target": 5483.37,
+        "stop": 4543.84,
+        "outcome": "timeout",
+        "days": 10,
+        "r_multiple": 0.68
+      },
+      {
+        "signal_date": "2026-05-25",
+        "trigger": 5281.5,
+        "target": 5882.95,
+        "stop": 5023.74,
+        "outcome": "timeout",
+        "days": 0,
+        "r_multiple": 0.0
+      }
+    ]
+  },
+  {
+    "symbol": "LLOYDSME",
+    "model": "confluence",
+    "n_signals": 49,
+    "n_target_hit": 5,
+    "n_stop_hit": 18,
+    "n_timeout": 26,
+    "n_profitable": 26,
+    "hit_rate": 0.102,
+    "profit_rate": 0.531,
+    "avg_days_to_target": 7.6,
+    "avg_r_multiple": 0.211,
+    "last_signals_outcomes": [
+      {
+        "signal_date": "2026-02-25",
+        "trigger": 1251.8,
+        "target": 1423.93,
+        "stop": 1178.03,
+        "outcome": "stop",
+        "days": 4,
+        "r_multiple": -1.0
+      },
+      {
+        "signal_date": "2026-03-17",
+        "trigger": 1236.3,
+        "target": 1427.53,
+        "stop": 1154.34,
+        "outcome": "timeout",
+        "days": 10,
+        "r_multiple": 1.85
+      },
+      {
+        "signal_date": "2026-03-20",
+        "trigger": 1245.8,
+        "target": 1445.97,
+        "stop": 1160.01,
+        "outcome": "target",
+        "days": 9,
+        "r_multiple": 2.33
+      },
+      {
+        "signal_date": "2026-04-09",
+        "trigger": 1487.0,
+        "target": 1696.27,
+        "stop": 1397.31,
+        "outcome": "target",
+        "days": 9,
+        "r_multiple": 2.33
+      },
+      {
+        "signal_date": "2026-05-25",
+        "trigger": 1801.4,
+        "target": 1999.24,
+        "stop": 1716.61,
+        "outcome": "timeout",
+        "days": 0,
+        "r_multiple": 0.0
+      }
+    ]
+  },
+  {
+    "symbol": "OBEROIRLTY",
+    "model": "confluence",
+    "n_signals": 81,
+    "n_target_hit": 10,
+    "n_stop_hit": 26,
+    "n_timeout": 45,
+    "n_profitable": 40,
+    "hit_rate": 0.123,
+    "profit_rate": 0.494,
+    "avg_days_to_target": 7.3,
+    "avg_r_multiple": 0.28,
+    "last_signals_outcomes": [
+      {
+        "signal_date": "2025-12-31",
+        "trigger": 1666.28,
+        "target": 1801.69,
+        "stop": 1608.25,
+        "outcome": "timeout",
+        "days": 10,
+        "r_multiple": -0.38
+      },
+      {
+        "signal_date": "2026-01-06",
+        "trigger": 1721.84,
+        "target": 1861.42,
+        "stop": 1662.01,
+        "outcome": "stop",
+        "days": 3,
         "r_multiple": -1.0
       },
       {
         "signal_date": "2026-04-08",
-        "trigger": 793.7,
-        "target": 881.77,
-        "stop": 755.95,
+        "trigger": 1633.78,
+        "target": 1832.21,
+        "stop": 1548.74,
         "outcome": "timeout",
         "days": 10,
-        "r_multiple": 0.48
+        "r_multiple": 0.84
       },
       {
-        "signal_date": "2026-04-10",
-        "trigger": 798.35,
-        "target": 882.49,
-        "stop": 762.29,
+        "signal_date": "2026-04-15",
+        "trigger": 1703.59,
+        "target": 1902.64,
+        "stop": 1618.29,
         "outcome": "timeout",
         "days": 10,
-        "r_multiple": 0.59
+        "r_multiple": -0.06
       },
       {
-        "signal_date": "2026-04-27",
-        "trigger": 819.5,
-        "target": 887.1,
-        "stop": 790.53,
-        "outcome": "timeout",
-        "days": 10,
-        "r_multiple": -0.73
-      },
-      {
-        "signal_date": "2026-05-22",
-        "trigger": 812.95,
-        "target": 873.86,
-        "stop": 786.84,
+        "signal_date": "2026-05-25",
+        "trigger": 1712.4,
+        "target": 1882.14,
+        "stop": 1639.66,
         "outcome": "timeout",
         "days": 0,
         "r_multiple": 0.0
@@ -840,59 +1533,92 @@
     ]
   },
   {
-    "symbol": "MFSL",
-    "model": "confluence",
-    "n_signals": 68,
-    "n_target_hit": 9,
-    "n_stop_hit": 31,
-    "n_timeout": 28,
-    "n_profitable": 27,
-    "hit_rate": 0.132,
-    "profit_rate": 0.397,
-    "avg_days_to_target": 6.44,
-    "avg_r_multiple": 0.007,
+    "symbol": "PREMIERENE",
+    "model": "trend_momentum",
+    "n_signals": 2,
+    "n_target_hit": 0,
+    "n_stop_hit": 0,
+    "n_timeout": 2,
+    "n_profitable": 0,
+    "hit_rate": null,
+    "profit_rate": null,
+    "avg_days_to_target": null,
+    "avg_r_multiple": -0.021,
     "last_signals_outcomes": [
       {
-        "signal_date": "2026-02-05",
-        "trigger": 1701.5,
-        "target": 1848.71,
-        "stop": 1638.41,
-        "outcome": "target",
-        "days": 7,
-        "r_multiple": 2.33
+        "signal_date": "2026-05-18",
+        "trigger": 986.9,
+        "target": 1079.53,
+        "stop": 940.58,
+        "outcome": "timeout",
+        "days": 5,
+        "r_multiple": -0.04
       },
       {
-        "signal_date": "2026-02-17",
-        "trigger": 1857.9,
-        "target": 2010.01,
-        "stop": 1792.71,
+        "signal_date": "2026-05-25",
+        "trigger": 985.0,
+        "target": 1080.15,
+        "stop": 937.42,
+        "outcome": "timeout",
+        "days": 0,
+        "r_multiple": 0.0
+      }
+    ]
+  },
+  {
+    "symbol": "PRESTIGE",
+    "model": "trend_momentum",
+    "n_signals": 12,
+    "n_target_hit": 1,
+    "n_stop_hit": 7,
+    "n_timeout": 4,
+    "n_profitable": 3,
+    "hit_rate": 0.083,
+    "profit_rate": 0.25,
+    "avg_days_to_target": 3.0,
+    "avg_r_multiple": -0.412,
+    "last_signals_outcomes": [
+      {
+        "signal_date": "2024-07-11",
+        "trigger": 1763.98,
+        "target": 2023.39,
+        "stop": 1634.27,
+        "outcome": "timeout",
+        "days": 10,
+        "r_multiple": 0.51
+      },
+      {
+        "signal_date": "2024-07-16",
+        "trigger": 1804.14,
+        "target": 2062.33,
+        "stop": 1675.05,
+        "outcome": "stop",
+        "days": 4,
+        "r_multiple": -1.0
+      },
+      {
+        "signal_date": "2024-07-23",
+        "trigger": 1758.54,
+        "target": 2030.45,
+        "stop": 1622.58,
         "outcome": "stop",
         "days": 9,
         "r_multiple": -1.0
       },
       {
-        "signal_date": "2026-04-16",
-        "trigger": 1695.2,
-        "target": 1893.24,
-        "stop": 1610.33,
+        "signal_date": "2024-08-14",
+        "trigger": 1783.73,
+        "target": 2024.82,
+        "stop": 1663.19,
         "outcome": "stop",
-        "days": 5,
+        "days": 7,
         "r_multiple": -1.0
       },
       {
-        "signal_date": "2026-05-08",
-        "trigger": 1699.7,
-        "target": 1852.71,
-        "stop": 1634.12,
-        "outcome": "stop",
-        "days": 3,
-        "r_multiple": -1.0
-      },
-      {
-        "signal_date": "2026-05-22",
-        "trigger": 1680.0,
-        "target": 1845.02,
-        "stop": 1609.28,
+        "signal_date": "2026-05-25",
+        "trigger": 1401.4,
+        "target": 1550.85,
+        "stop": 1326.68,
         "outcome": "timeout",
         "days": 0,
         "r_multiple": 0.0
@@ -900,59 +1626,119 @@
     ]
   },
   {
-    "symbol": "POLICYBZR",
+    "symbol": "TATAELXSI",
     "model": "confluence",
-    "n_signals": 81,
-    "n_target_hit": 12,
-    "n_stop_hit": 34,
-    "n_timeout": 35,
-    "n_profitable": 34,
-    "hit_rate": 0.148,
-    "profit_rate": 0.42,
-    "avg_days_to_target": 7.83,
-    "avg_r_multiple": 0.083,
+    "n_signals": 62,
+    "n_target_hit": 17,
+    "n_stop_hit": 28,
+    "n_timeout": 17,
+    "n_profitable": 29,
+    "hit_rate": 0.274,
+    "profit_rate": 0.468,
+    "avg_days_to_target": 5.0,
+    "avg_r_multiple": 0.384,
     "last_signals_outcomes": [
       {
-        "signal_date": "2026-04-22",
-        "trigger": 1625.8,
-        "target": 1816.82,
-        "stop": 1543.94,
-        "outcome": "timeout",
-        "days": 10,
-        "r_multiple": 0.93
+        "signal_date": "2025-10-23",
+        "trigger": 5471.0,
+        "target": 5906.82,
+        "stop": 5284.22,
+        "outcome": "stop",
+        "days": 9,
+        "r_multiple": -1.0
       },
       {
-        "signal_date": "2026-04-27",
-        "trigger": 1663.0,
-        "target": 1857.83,
-        "stop": 1579.5,
-        "outcome": "timeout",
-        "days": 10,
-        "r_multiple": -0.25
+        "signal_date": "2025-12-24",
+        "trigger": 5387.5,
+        "target": 5818.18,
+        "stop": 5202.92,
+        "outcome": "stop",
+        "days": 3,
+        "r_multiple": -1.0
       },
       {
-        "signal_date": "2026-05-14",
-        "trigger": 1681.4,
-        "target": 1881.89,
-        "stop": 1595.47,
+        "signal_date": "2026-01-06",
+        "trigger": 5345.0,
+        "target": 5752.87,
+        "stop": 5170.2,
+        "outcome": "target",
+        "days": 1,
+        "r_multiple": 2.33
+      },
+      {
+        "signal_date": "2026-04-21",
+        "trigger": 4650.7,
+        "target": 5173.7,
+        "stop": 4426.56,
+        "outcome": "stop",
+        "days": 1,
+        "r_multiple": -1.0
+      },
+      {
+        "signal_date": "2026-05-25",
+        "trigger": 4327.2,
+        "target": 4713.73,
+        "stop": 4161.55,
         "outcome": "timeout",
+        "days": 0,
+        "r_multiple": 0.0
+      }
+    ]
+  },
+  {
+    "symbol": "TIINDIA",
+    "model": "confluence",
+    "n_signals": 88,
+    "n_target_hit": 15,
+    "n_stop_hit": 45,
+    "n_timeout": 28,
+    "n_profitable": 39,
+    "hit_rate": 0.17,
+    "profit_rate": 0.443,
+    "avg_days_to_target": 5.33,
+    "avg_r_multiple": 0.1,
+    "last_signals_outcomes": [
+      {
+        "signal_date": "2026-04-10",
+        "trigger": 2744.8,
+        "target": 3107.83,
+        "stop": 2589.22,
+        "outcome": "target",
+        "days": 8,
+        "r_multiple": 2.33
+      },
+      {
+        "signal_date": "2026-05-06",
+        "trigger": 2917.0,
+        "target": 3255.35,
+        "stop": 2771.99,
+        "outcome": "stop",
         "days": 6,
-        "r_multiple": 1.29
+        "r_multiple": -1.0
       },
       {
-        "signal_date": "2026-05-19",
-        "trigger": 1804.8,
-        "target": 2015.0,
-        "stop": 1714.71,
+        "signal_date": "2026-05-11",
+        "trigger": 2992.2,
+        "target": 3327.28,
+        "stop": 2848.59,
+        "outcome": "stop",
+        "days": 3,
+        "r_multiple": -1.0
+      },
+      {
+        "signal_date": "2026-05-20",
+        "trigger": 2970.9,
+        "target": 3367.78,
+        "stop": 2800.81,
         "outcome": "timeout",
         "days": 3,
-        "r_multiple": -0.14
+        "r_multiple": 0.45
       },
       {
-        "signal_date": "2026-05-22",
-        "trigger": 1792.4,
-        "target": 2000.55,
-        "stop": 1703.19,
+        "signal_date": "2026-05-25",
+        "trigger": 3047.6,
+        "target": 3424.45,
+        "stop": 2886.09,
         "outcome": "timeout",
         "days": 0,
         "r_multiple": 0.0
@@ -961,664 +1747,58 @@
   },
   {
     "symbol": "ACMESOLAR",
-    "model": "trend_momentum",
-    "n_signals": 3,
-    "n_target_hit": 0,
-    "n_stop_hit": 0,
-    "n_timeout": 3,
-    "n_profitable": 2,
-    "hit_rate": null,
-    "profit_rate": null,
-    "avg_days_to_target": null,
-    "avg_r_multiple": 0.301,
-    "last_signals_outcomes": [
-      {
-        "signal_date": "2026-05-19",
-        "trigger": 282.85,
-        "target": 318.41,
-        "stop": 265.07,
-        "outcome": "timeout",
-        "days": 3,
-        "r_multiple": 0.41
-      },
-      {
-        "signal_date": "2026-05-20",
-        "trigger": 281.65,
-        "target": 316.53,
-        "stop": 264.21,
-        "outcome": "timeout",
-        "days": 2,
-        "r_multiple": 0.49
-      },
-      {
-        "signal_date": "2026-05-22",
-        "trigger": 290.2,
-        "target": 324.44,
-        "stop": 273.08,
-        "outcome": "timeout",
-        "days": 0,
-        "r_multiple": 0.0
-      }
-    ]
-  },
-  {
-    "symbol": "AAVAS",
     "model": "confluence",
-    "n_signals": 75,
-    "n_target_hit": 11,
-    "n_stop_hit": 30,
-    "n_timeout": 34,
-    "n_profitable": 27,
-    "hit_rate": 0.147,
-    "profit_rate": 0.36,
-    "avg_days_to_target": 5.55,
-    "avg_r_multiple": 0.016,
+    "n_signals": 19,
+    "n_target_hit": 3,
+    "n_stop_hit": 9,
+    "n_timeout": 7,
+    "n_profitable": 8,
+    "hit_rate": 0.158,
+    "profit_rate": 0.421,
+    "avg_days_to_target": 4.33,
+    "avg_r_multiple": 0.055,
     "last_signals_outcomes": [
       {
-        "signal_date": "2025-10-23",
-        "trigger": 1668.2,
-        "target": 1805.1,
-        "stop": 1609.53,
-        "outcome": "stop",
-        "days": 9,
-        "r_multiple": -1.0
-      },
-      {
-        "signal_date": "2025-10-28",
-        "trigger": 1663.2,
-        "target": 1804.21,
-        "stop": 1602.77,
-        "outcome": "stop",
-        "days": 6,
-        "r_multiple": -1.0
-      },
-      {
-        "signal_date": "2025-11-12",
-        "trigger": 1704.0,
-        "target": 1892.69,
-        "stop": 1623.13,
-        "outcome": "stop",
-        "days": 6,
-        "r_multiple": -1.0
-      },
-      {
-        "signal_date": "2026-04-20",
-        "trigger": 1355.8,
-        "target": 1524.09,
-        "stop": 1283.68,
-        "outcome": "timeout",
-        "days": 10,
-        "r_multiple": 0.36
-      },
-      {
-        "signal_date": "2026-05-22",
-        "trigger": 1396.9,
-        "target": 1556.34,
-        "stop": 1328.57,
-        "outcome": "timeout",
-        "days": 0,
-        "r_multiple": 0.0
-      }
-    ]
-  },
-  {
-    "symbol": "ABFRL",
-    "model": "confluence",
-    "n_signals": 81,
-    "n_target_hit": 2,
-    "n_stop_hit": 38,
-    "n_timeout": 41,
-    "n_profitable": 30,
-    "hit_rate": 0.025,
-    "profit_rate": 0.37,
-    "avg_days_to_target": 7.5,
-    "avg_r_multiple": -0.227,
-    "last_signals_outcomes": [
-      {
-        "signal_date": "2026-04-13",
-        "trigger": 61.96,
-        "target": 72.51,
-        "stop": 57.44,
-        "outcome": "timeout",
-        "days": 10,
-        "r_multiple": 0.36
-      },
-      {
-        "signal_date": "2026-04-20",
-        "trigger": 64.78,
-        "target": 75.0,
-        "stop": 60.4,
-        "outcome": "timeout",
-        "days": 10,
-        "r_multiple": 0.26
-      },
-      {
-        "signal_date": "2026-04-27",
-        "trigger": 63.92,
-        "target": 73.31,
-        "stop": 59.9,
-        "outcome": "timeout",
-        "days": 10,
-        "r_multiple": 0.27
-      },
-      {
-        "signal_date": "2026-04-29",
-        "trigger": 65.05,
-        "target": 74.21,
-        "stop": 61.12,
-        "outcome": "timeout",
-        "days": 10,
-        "r_multiple": -0.37
-      },
-      {
-        "signal_date": "2026-05-22",
-        "trigger": 67.35,
-        "target": 75.77,
-        "stop": 63.74,
-        "outcome": "timeout",
-        "days": 0,
-        "r_multiple": 0.0
-      }
-    ]
-  },
-  {
-    "symbol": "AEGISLOG",
-    "model": "confluence",
-    "n_signals": 34,
-    "n_target_hit": 8,
-    "n_stop_hit": 15,
-    "n_timeout": 11,
-    "n_profitable": 15,
-    "hit_rate": 0.235,
-    "profit_rate": 0.441,
-    "avg_days_to_target": 5.38,
-    "avg_r_multiple": 0.187,
-    "last_signals_outcomes": [
-      {
-        "signal_date": "2026-01-30",
-        "trigger": 730.5,
-        "target": 818.42,
-        "stop": 692.82,
-        "outcome": "stop",
-        "days": 3,
-        "r_multiple": -1.0
-      },
-      {
-        "signal_date": "2026-04-10",
-        "trigger": 632.45,
-        "target": 734.54,
-        "stop": 588.7,
-        "outcome": "target",
-        "days": 4,
-        "r_multiple": 2.33
-      },
-      {
-        "signal_date": "2026-04-17",
-        "trigger": 709.3,
-        "target": 833.76,
-        "stop": 655.96,
+        "signal_date": "2026-02-04",
+        "trigger": 228.53,
+        "target": 261.75,
+        "stop": 214.29,
         "outcome": "timeout",
         "days": 10,
         "r_multiple": 0.17
       },
       {
-        "signal_date": "2026-04-22",
-        "trigger": 713.5,
-        "target": 835.1,
-        "stop": 661.39,
-        "outcome": "timeout",
-        "days": 10,
-        "r_multiple": 0.5
-      },
-      {
-        "signal_date": "2026-05-22",
-        "trigger": 724.45,
-        "target": 820.18,
-        "stop": 683.42,
-        "outcome": "timeout",
-        "days": 0,
-        "r_multiple": 0.0
-      }
-    ]
-  },
-  {
-    "symbol": "ANGELONE",
-    "model": "confluence",
-    "n_signals": 67,
-    "n_target_hit": 19,
-    "n_stop_hit": 23,
-    "n_timeout": 25,
-    "n_profitable": 35,
-    "hit_rate": 0.284,
-    "profit_rate": 0.522,
-    "avg_days_to_target": 6.26,
-    "avg_r_multiple": 0.495,
-    "last_signals_outcomes": [
-      {
-        "signal_date": "2026-02-03",
-        "trigger": 256.91,
-        "target": 295.43,
-        "stop": 240.39,
-        "outcome": "timeout",
-        "days": 10,
-        "r_multiple": -0.11
-      },
-      {
-        "signal_date": "2026-03-18",
-        "trigger": 234.5,
-        "target": 269.83,
-        "stop": 219.36,
-        "outcome": "stop",
-        "days": 3,
-        "r_multiple": -1.0
-      },
-      {
-        "signal_date": "2026-04-06",
-        "trigger": 246.05,
-        "target": 283.73,
-        "stop": 229.9,
-        "outcome": "target",
-        "days": 3,
-        "r_multiple": 2.33
-      },
-      {
-        "signal_date": "2026-05-19",
-        "trigger": 328.0,
-        "target": 370.17,
-        "stop": 309.93,
-        "outcome": "timeout",
-        "days": 3,
-        "r_multiple": 0.63
-      },
-      {
-        "signal_date": "2026-05-22",
-        "trigger": 339.35,
-        "target": 381.44,
-        "stop": 321.31,
-        "outcome": "timeout",
-        "days": 0,
-        "r_multiple": 0.0
-      }
-    ]
-  },
-  {
-    "symbol": "CGCL",
-    "model": "confluence",
-    "n_signals": 90,
-    "n_target_hit": 7,
-    "n_stop_hit": 34,
-    "n_timeout": 49,
-    "n_profitable": 27,
-    "hit_rate": 0.078,
-    "profit_rate": 0.3,
-    "avg_days_to_target": 4.86,
-    "avg_r_multiple": -0.19,
-    "last_signals_outcomes": [
-      {
-        "signal_date": "2026-04-09",
-        "trigger": 177.91,
-        "target": 204.93,
-        "stop": 166.33,
-        "outcome": "timeout",
-        "days": 10,
-        "r_multiple": 0.47
-      },
-      {
-        "signal_date": "2026-04-15",
-        "trigger": 185.64,
-        "target": 211.69,
-        "stop": 174.48,
-        "outcome": "timeout",
-        "days": 10,
-        "r_multiple": -0.17
-      },
-      {
-        "signal_date": "2026-05-04",
-        "trigger": 194.85,
-        "target": 217.63,
-        "stop": 185.09,
-        "outcome": "stop",
-        "days": 7,
-        "r_multiple": -1.0
-      },
-      {
-        "signal_date": "2026-05-06",
-        "trigger": 200.52,
-        "target": 223.85,
-        "stop": 190.52,
-        "outcome": "stop",
-        "days": 3,
-        "r_multiple": -1.0
-      },
-      {
-        "signal_date": "2026-05-22",
-        "trigger": 190.65,
-        "target": 213.43,
-        "stop": 180.89,
-        "outcome": "timeout",
-        "days": 0,
-        "r_multiple": 0.0
-      }
-    ]
-  },
-  {
-    "symbol": "DEEPAKFERT",
-    "model": "confluence",
-    "n_signals": 83,
-    "n_target_hit": 15,
-    "n_stop_hit": 30,
-    "n_timeout": 38,
-    "n_profitable": 39,
-    "hit_rate": 0.181,
-    "profit_rate": 0.47,
-    "avg_days_to_target": 5.0,
-    "avg_r_multiple": 0.289,
-    "last_signals_outcomes": [
-      {
-        "signal_date": "2026-04-13",
-        "trigger": 1071.65,
-        "target": 1241.7,
-        "stop": 998.77,
-        "outcome": "target",
-        "days": 3,
-        "r_multiple": 2.33
-      },
-      {
-        "signal_date": "2026-04-20",
-        "trigger": 1229.05,
-        "target": 1424.22,
-        "stop": 1145.41,
-        "outcome": "timeout",
-        "days": 10,
-        "r_multiple": 0.72
-      },
-      {
-        "signal_date": "2026-05-13",
-        "trigger": 1268.5,
-        "target": 1452.98,
-        "stop": 1189.44,
-        "outcome": "target",
-        "days": 7,
-        "r_multiple": 2.33
-      },
-      {
-        "signal_date": "2026-05-19",
-        "trigger": 1324.5,
-        "target": 1515.2,
-        "stop": 1242.77,
-        "outcome": "timeout",
-        "days": 3,
-        "r_multiple": 1.83
-      },
-      {
-        "signal_date": "2026-05-22",
-        "trigger": 1473.9,
-        "target": 1676.19,
-        "stop": 1387.2,
-        "outcome": "timeout",
-        "days": 0,
-        "r_multiple": 0.0
-      }
-    ]
-  },
-  {
-    "symbol": "ELECON",
-    "model": "confluence",
-    "n_signals": 74,
-    "n_target_hit": 14,
-    "n_stop_hit": 31,
-    "n_timeout": 29,
-    "n_profitable": 36,
-    "hit_rate": 0.189,
-    "profit_rate": 0.486,
-    "avg_days_to_target": 6.79,
-    "avg_r_multiple": 0.228,
-    "last_signals_outcomes": [
-      {
-        "signal_date": "2026-01-08",
-        "trigger": 503.35,
-        "target": 571.16,
-        "stop": 474.29,
-        "outcome": "stop",
-        "days": 1,
-        "r_multiple": -1.0
-      },
-      {
-        "signal_date": "2026-02-09",
-        "trigger": 480.05,
-        "target": 560.26,
-        "stop": 445.68,
-        "outcome": "stop",
-        "days": 3,
-        "r_multiple": -1.0
-      },
-      {
-        "signal_date": "2026-04-10",
-        "trigger": 419.5,
-        "target": 487.69,
-        "stop": 390.28,
-        "outcome": "target",
-        "days": 7,
-        "r_multiple": 2.33
-      },
-      {
-        "signal_date": "2026-04-27",
-        "trigger": 497.45,
-        "target": 581.63,
-        "stop": 461.37,
-        "outcome": "timeout",
-        "days": 10,
-        "r_multiple": 0.88
-      },
-      {
-        "signal_date": "2026-05-22",
-        "trigger": 533.25,
-        "target": 614.9,
-        "stop": 498.26,
-        "outcome": "timeout",
-        "days": 0,
-        "r_multiple": 0.0
-      }
-    ]
-  },
-  {
-    "symbol": "FACT",
-    "model": "trend_momentum",
-    "n_signals": 13,
-    "n_target_hit": 1,
-    "n_stop_hit": 7,
-    "n_timeout": 5,
-    "n_profitable": 5,
-    "hit_rate": 0.077,
-    "profit_rate": 0.385,
-    "avg_days_to_target": 10.0,
-    "avg_r_multiple": -0.334,
-    "last_signals_outcomes": [
-      {
-        "signal_date": "2025-01-23",
-        "trigger": 968.87,
-        "target": 1102.59,
-        "stop": 902.01,
+        "signal_date": "2026-02-10",
+        "trigger": 236.85,
+        "target": 268.95,
+        "stop": 223.09,
         "outcome": "stop",
         "days": 2,
         "r_multiple": -1.0
       },
       {
-        "signal_date": "2025-07-15",
-        "trigger": 976.06,
-        "target": 1082.7,
-        "stop": 922.75,
-        "outcome": "stop",
-        "days": 10,
-        "r_multiple": -1.0
-      },
-      {
-        "signal_date": "2025-07-24",
-        "trigger": 976.31,
-        "target": 1071.81,
-        "stop": 928.57,
-        "outcome": "stop",
-        "days": 2,
-        "r_multiple": -1.0
-      },
-      {
-        "signal_date": "2025-08-05",
-        "trigger": 968.22,
-        "target": 1067.27,
-        "stop": 918.69,
-        "outcome": "stop",
-        "days": 2,
-        "r_multiple": -1.0
-      },
-      {
-        "signal_date": "2026-05-22",
-        "trigger": 879.25,
-        "target": 968.35,
-        "stop": 834.7,
-        "outcome": "timeout",
-        "days": 0,
-        "r_multiple": 0.0
-      }
-    ]
-  },
-  {
-    "symbol": "HONASA",
-    "model": "breakout_volume",
-    "n_signals": 1,
-    "n_target_hit": 0,
-    "n_stop_hit": 0,
-    "n_timeout": 1,
-    "n_profitable": 0,
-    "hit_rate": null,
-    "profit_rate": null,
-    "avg_days_to_target": null,
-    "avg_r_multiple": 0.0,
-    "last_signals_outcomes": [
-      {
-        "signal_date": "2026-05-22",
-        "trigger": 384.35,
-        "target": 424.14,
-        "stop": 364.45,
-        "outcome": "timeout",
-        "days": 0,
-        "r_multiple": 0.0
-      }
-    ]
-  },
-  {
-    "symbol": "IRB",
-    "model": "confluence",
-    "n_signals": 75,
-    "n_target_hit": 17,
-    "n_stop_hit": 33,
-    "n_timeout": 25,
-    "n_profitable": 35,
-    "hit_rate": 0.227,
-    "profit_rate": 0.467,
-    "avg_days_to_target": 5.18,
-    "avg_r_multiple": 0.221,
-    "last_signals_outcomes": [
-      {
-        "signal_date": "2026-03-18",
-        "trigger": 20.89,
-        "target": 23.0,
-        "stop": 19.98,
-        "outcome": "stop",
-        "days": 3,
-        "r_multiple": -1.0
-      },
-      {
-        "signal_date": "2026-04-01",
-        "trigger": 21.61,
-        "target": 24.42,
-        "stop": 20.4,
-        "outcome": "stop",
-        "days": 2,
-        "r_multiple": -1.0
-      },
-      {
-        "signal_date": "2026-04-08",
-        "trigger": 20.94,
-        "target": 23.93,
-        "stop": 19.66,
+        "signal_date": "2026-02-19",
+        "trigger": 228.73,
+        "target": 260.66,
+        "stop": 215.05,
         "outcome": "timeout",
         "days": 10,
-        "r_multiple": 0.95
+        "r_multiple": -0.02
       },
       {
-        "signal_date": "2026-04-10",
-        "trigger": 21.66,
-        "target": 24.62,
-        "stop": 20.39,
-        "outcome": "timeout",
-        "days": 10,
-        "r_multiple": 0.16
-      },
-      {
-        "signal_date": "2026-05-22",
-        "trigger": 22.03,
-        "target": 24.75,
-        "stop": 20.87,
-        "outcome": "timeout",
-        "days": 0,
-        "r_multiple": 0.0
-      }
-    ]
-  },
-  {
-    "symbol": "MMTC",
-    "model": "trend_momentum",
-    "n_signals": 5,
-    "n_target_hit": 0,
-    "n_stop_hit": 2,
-    "n_timeout": 3,
-    "n_profitable": 0,
-    "hit_rate": null,
-    "profit_rate": null,
-    "avg_days_to_target": null,
-    "avg_r_multiple": -0.601,
-    "last_signals_outcomes": [
-      {
-        "signal_date": "2022-03-15",
-        "trigger": 47.7,
-        "target": 55.4,
-        "stop": 43.85,
-        "outcome": "timeout",
-        "days": 10,
-        "r_multiple": -0.83
-      },
-      {
-        "signal_date": "2025-07-22",
-        "trigger": 70.29,
-        "target": 77.63,
-        "stop": 66.62,
-        "outcome": "stop",
-        "days": 4,
-        "r_multiple": -1.0
-      },
-      {
-        "signal_date": "2025-10-29",
-        "trigger": 68.75,
-        "target": 75.82,
-        "stop": 65.21,
+        "signal_date": "2026-03-13",
+        "trigger": 255.61,
+        "target": 293.44,
+        "stop": 239.4,
         "outcome": "stop",
         "days": 6,
         "r_multiple": -1.0
       },
       {
-        "signal_date": "2026-05-19",
-        "trigger": 65.03,
-        "target": 73.21,
-        "stop": 60.94,
-        "outcome": "timeout",
-        "days": 3,
-        "r_multiple": -0.18
-      },
-      {
-        "signal_date": "2026-05-22",
-        "trigger": 64.31,
-        "target": 72.05,
-        "stop": 60.44,
+        "signal_date": "2026-05-25",
+        "trigger": 300.6,
+        "target": 341.86,
+        "stop": 282.92,
         "outcome": "timeout",
         "days": 0,
         "r_multiple": 0.0
@@ -1626,59 +1806,419 @@
     ]
   },
   {
-    "symbol": "MINDACORP",
-    "model": "breakout_volume",
-    "n_signals": 21,
-    "n_target_hit": 3,
-    "n_stop_hit": 10,
-    "n_timeout": 8,
-    "n_profitable": 10,
-    "hit_rate": 0.143,
-    "profit_rate": 0.476,
-    "avg_days_to_target": 4.67,
-    "avg_r_multiple": 0.049,
+    "symbol": "ABSLAMC",
+    "model": "trend_momentum",
+    "n_signals": 5,
+    "n_target_hit": 1,
+    "n_stop_hit": 2,
+    "n_timeout": 2,
+    "n_profitable": 1,
+    "hit_rate": null,
+    "profit_rate": null,
+    "avg_days_to_target": 7.0,
+    "avg_r_multiple": -0.115,
     "last_signals_outcomes": [
       {
-        "signal_date": "2025-07-17",
-        "trigger": 534.97,
-        "target": 578.77,
-        "stop": 513.08,
+        "signal_date": "2024-01-31",
+        "trigger": 456.04,
+        "target": 492.88,
+        "stop": 437.62,
+        "outcome": "timeout",
+        "days": 10,
+        "r_multiple": -0.58
+      },
+      {
+        "signal_date": "2024-02-02",
+        "trigger": 458.0,
+        "target": 494.3,
+        "stop": 439.85,
+        "outcome": "stop",
+        "days": 7,
+        "r_multiple": -1.0
+      },
+      {
+        "signal_date": "2024-05-28",
+        "trigger": 506.11,
+        "target": 553.0,
+        "stop": 482.67,
+        "outcome": "target",
+        "days": 7,
+        "r_multiple": 2.0
+      },
+      {
+        "signal_date": "2024-10-01",
+        "trigger": 729.84,
+        "target": 804.32,
+        "stop": 692.6,
+        "outcome": "stop",
+        "days": 3,
+        "r_multiple": -1.0
+      },
+      {
+        "signal_date": "2026-05-25",
+        "trigger": 1016.2,
+        "target": 1139.37,
+        "stop": 954.62,
+        "outcome": "timeout",
+        "days": 0,
+        "r_multiple": 0.0
+      }
+    ]
+  },
+  {
+    "symbol": "ARE&M",
+    "model": "confluence",
+    "n_signals": 30,
+    "n_target_hit": 4,
+    "n_stop_hit": 16,
+    "n_timeout": 10,
+    "n_profitable": 8,
+    "hit_rate": 0.133,
+    "profit_rate": 0.267,
+    "avg_days_to_target": 4.5,
+    "avg_r_multiple": -0.169,
+    "last_signals_outcomes": [
+      {
+        "signal_date": "2025-10-28",
+        "trigger": 998.33,
+        "target": 1055.14,
+        "stop": 973.98,
+        "outcome": "stop",
+        "days": 6,
+        "r_multiple": -1.0
+      },
+      {
+        "signal_date": "2025-10-31",
+        "trigger": 999.12,
+        "target": 1055.43,
+        "stop": 974.99,
+        "outcome": "stop",
+        "days": 3,
+        "r_multiple": -1.0
+      },
+      {
+        "signal_date": "2026-02-04",
+        "trigger": 885.7,
+        "target": 967.09,
+        "stop": 850.82,
+        "outcome": "stop",
+        "days": 7,
+        "r_multiple": -1.0
+      },
+      {
+        "signal_date": "2026-04-22",
+        "trigger": 898.7,
+        "target": 1015.78,
+        "stop": 848.52,
+        "outcome": "timeout",
+        "days": 10,
+        "r_multiple": -0.03
+      },
+      {
+        "signal_date": "2026-05-25",
+        "trigger": 883.4,
+        "target": 988.16,
+        "stop": 838.5,
+        "outcome": "timeout",
+        "days": 0,
+        "r_multiple": 0.0
+      }
+    ]
+  },
+  {
+    "symbol": "ANURAS",
+    "model": "confluence",
+    "n_signals": 63,
+    "n_target_hit": 9,
+    "n_stop_hit": 25,
+    "n_timeout": 29,
+    "n_profitable": 27,
+    "hit_rate": 0.143,
+    "profit_rate": 0.429,
+    "avg_days_to_target": 5.22,
+    "avg_r_multiple": 0.085,
+    "last_signals_outcomes": [
+      {
+        "signal_date": "2026-03-11",
+        "trigger": 1299.0,
+        "target": 1467.95,
+        "stop": 1226.59,
+        "outcome": "stop",
+        "days": 2,
+        "r_multiple": -1.0
+      },
+      {
+        "signal_date": "2026-04-09",
+        "trigger": 1275.9,
+        "target": 1415.9,
+        "stop": 1215.9,
+        "outcome": "timeout",
+        "days": 10,
+        "r_multiple": 1.08
+      },
+      {
+        "signal_date": "2026-04-21",
+        "trigger": 1318.1,
+        "target": 1453.41,
+        "stop": 1260.11,
+        "outcome": "timeout",
+        "days": 10,
+        "r_multiple": 0.73
+      },
+      {
+        "signal_date": "2026-04-23",
+        "trigger": 1341.0,
+        "target": 1477.45,
+        "stop": 1282.52,
+        "outcome": "stop",
+        "days": 5,
+        "r_multiple": -1.0
+      },
+      {
+        "signal_date": "2026-05-25",
+        "trigger": 1371.1,
+        "target": 1500.05,
+        "stop": 1315.84,
+        "outcome": "timeout",
+        "days": 0,
+        "r_multiple": 0.0
+      }
+    ]
+  },
+  {
+    "symbol": "BEML",
+    "model": "trend_momentum",
+    "n_signals": 6,
+    "n_target_hit": 0,
+    "n_stop_hit": 3,
+    "n_timeout": 3,
+    "n_profitable": 2,
+    "hit_rate": null,
+    "profit_rate": null,
+    "avg_days_to_target": null,
+    "avg_r_multiple": -0.212,
+    "last_signals_outcomes": [
+      {
+        "signal_date": "2022-10-12",
+        "trigger": 746.14,
+        "target": 821.34,
+        "stop": 708.54,
+        "outcome": "timeout",
+        "days": 10,
+        "r_multiple": 0.81
+      },
+      {
+        "signal_date": "2022-11-09",
+        "trigger": 762.77,
+        "target": 833.53,
+        "stop": 727.39,
+        "outcome": "stop",
+        "days": 6,
+        "r_multiple": -1.0
+      },
+      {
+        "signal_date": "2024-02-28",
+        "trigger": 1599.85,
+        "target": 1879.37,
+        "stop": 1460.09,
+        "outcome": "stop",
+        "days": 9,
+        "r_multiple": -1.0
+      },
+      {
+        "signal_date": "2025-10-31",
+        "trigger": 2196.74,
+        "target": 2387.1,
+        "stop": 2101.56,
+        "outcome": "stop",
+        "days": 3,
+        "r_multiple": -1.0
+      },
+      {
+        "signal_date": "2026-05-25",
+        "trigger": 1823.8,
+        "target": 2028.25,
+        "stop": 1721.58,
+        "outcome": "timeout",
+        "days": 0,
+        "r_multiple": 0.0
+      }
+    ]
+  },
+  {
+    "symbol": "BLUEJET",
+    "model": "confluence",
+    "n_signals": 26,
+    "n_target_hit": 3,
+    "n_stop_hit": 12,
+    "n_timeout": 11,
+    "n_profitable": 12,
+    "hit_rate": 0.115,
+    "profit_rate": 0.462,
+    "avg_days_to_target": 5.67,
+    "avg_r_multiple": 0.175,
+    "last_signals_outcomes": [
+      {
+        "signal_date": "2025-07-09",
+        "trigger": 910.25,
+        "target": 1044.66,
+        "stop": 852.64,
+        "outcome": "stop",
+        "days": 10,
+        "r_multiple": -1.0
+      },
+      {
+        "signal_date": "2025-07-16",
+        "trigger": 955.67,
+        "target": 1089.96,
+        "stop": 898.11,
+        "outcome": "stop",
+        "days": 5,
+        "r_multiple": -1.0
+      },
+      {
+        "signal_date": "2025-11-03",
+        "trigger": 674.05,
+        "target": 744.87,
+        "stop": 643.7,
+        "outcome": "stop",
+        "days": 1,
+        "r_multiple": -1.0
+      },
+      {
+        "signal_date": "2026-04-17",
+        "trigger": 422.65,
+        "target": 492.98,
+        "stop": 392.51,
+        "outcome": "timeout",
+        "days": 10,
+        "r_multiple": 0.73
+      },
+      {
+        "signal_date": "2026-05-25",
+        "trigger": 481.4,
+        "target": 561.13,
+        "stop": 447.23,
+        "outcome": "timeout",
+        "days": 0,
+        "r_multiple": 0.0
+      }
+    ]
+  },
+  {
+    "symbol": "CESC",
+    "model": "confluence",
+    "n_signals": 74,
+    "n_target_hit": 10,
+    "n_stop_hit": 34,
+    "n_timeout": 30,
+    "n_profitable": 33,
+    "hit_rate": 0.135,
+    "profit_rate": 0.446,
+    "avg_days_to_target": 7.0,
+    "avg_r_multiple": 0.063,
+    "last_signals_outcomes": [
+      {
+        "signal_date": "2026-03-05",
+        "trigger": 155.54,
+        "target": 172.46,
+        "stop": 148.29,
+        "outcome": "stop",
+        "days": 2,
+        "r_multiple": -1.0
+      },
+      {
+        "signal_date": "2026-03-12",
+        "trigger": 159.42,
+        "target": 178.59,
+        "stop": 151.2,
+        "outcome": "stop",
+        "days": 7,
+        "r_multiple": -1.0
+      },
+      {
+        "signal_date": "2026-04-10",
+        "trigger": 157.52,
+        "target": 173.53,
+        "stop": 150.66,
+        "outcome": "target",
+        "days": 4,
+        "r_multiple": 2.33
+      },
+      {
+        "signal_date": "2026-04-16",
+        "trigger": 170.48,
+        "target": 188.74,
+        "stop": 162.65,
+        "outcome": "target",
+        "days": 7,
+        "r_multiple": 2.33
+      },
+      {
+        "signal_date": "2026-05-25",
+        "trigger": 185.59,
+        "target": 206.7,
+        "stop": 176.54,
+        "outcome": "timeout",
+        "days": 0,
+        "r_multiple": 0.0
+      }
+    ]
+  },
+  {
+    "symbol": "FINCABLES",
+    "model": "confluence",
+    "n_signals": 72,
+    "n_target_hit": 12,
+    "n_stop_hit": 28,
+    "n_timeout": 32,
+    "n_profitable": 34,
+    "hit_rate": 0.167,
+    "profit_rate": 0.472,
+    "avg_days_to_target": 5.92,
+    "avg_r_multiple": 0.195,
+    "last_signals_outcomes": [
+      {
+        "signal_date": "2026-01-06",
+        "trigger": 781.9,
+        "target": 843.68,
+        "stop": 755.42,
         "outcome": "stop",
         "days": 4,
         "r_multiple": -1.0
       },
       {
-        "signal_date": "2025-09-17",
-        "trigger": 531.21,
-        "target": 574.35,
-        "stop": 509.64,
-        "outcome": "target",
-        "days": 5,
-        "r_multiple": 2.0
-      },
-      {
-        "signal_date": "2025-09-19",
-        "trigger": 548.69,
-        "target": 593.72,
-        "stop": 526.18,
-        "outcome": "target",
-        "days": 3,
-        "r_multiple": 2.0
-      },
-      {
-        "signal_date": "2025-09-24",
-        "trigger": 578.51,
-        "target": 637.2,
-        "stop": 549.17,
+        "signal_date": "2026-02-06",
+        "trigger": 771.2,
+        "target": 845.11,
+        "stop": 739.53,
         "outcome": "timeout",
         "days": 10,
-        "r_multiple": 0.1
+        "r_multiple": 0.65
       },
       {
-        "signal_date": "2026-05-22",
-        "trigger": 574.65,
-        "target": 636.97,
-        "stop": 543.49,
+        "signal_date": "2026-04-10",
+        "trigger": 847.75,
+        "target": 974.14,
+        "stop": 793.58,
+        "outcome": "target",
+        "days": 6,
+        "r_multiple": 2.33
+      },
+      {
+        "signal_date": "2026-04-21",
+        "trigger": 953.5,
+        "target": 1083.77,
+        "stop": 897.67,
+        "outcome": "target",
+        "days": 10,
+        "r_multiple": 2.33
+      },
+      {
+        "signal_date": "2026-05-25",
+        "trigger": 1068.9,
+        "target": 1227.93,
+        "stop": 1000.75,
         "outcome": "timeout",
         "days": 0,
         "r_multiple": 0.0
@@ -1686,59 +2226,239 @@
     ]
   },
   {
-    "symbol": "NIVABUPA",
+    "symbol": "HFCL",
     "model": "confluence",
-    "n_signals": 20,
-    "n_target_hit": 2,
-    "n_stop_hit": 8,
-    "n_timeout": 10,
-    "n_profitable": 6,
-    "hit_rate": 0.1,
-    "profit_rate": 0.3,
-    "avg_days_to_target": 3.5,
-    "avg_r_multiple": -0.118,
+    "n_signals": 76,
+    "n_target_hit": 11,
+    "n_stop_hit": 32,
+    "n_timeout": 33,
+    "n_profitable": 31,
+    "hit_rate": 0.145,
+    "profit_rate": 0.408,
+    "avg_days_to_target": 5.45,
+    "avg_r_multiple": 0.045,
     "last_signals_outcomes": [
       {
-        "signal_date": "2026-01-07",
-        "trigger": 76.34,
-        "target": 81.42,
-        "stop": 74.16,
-        "outcome": "timeout",
-        "days": 10,
-        "r_multiple": 0.3
-      },
-      {
-        "signal_date": "2026-01-30",
-        "trigger": 78.87,
-        "target": 85.62,
-        "stop": 75.98,
+        "signal_date": "2026-03-11",
+        "trigger": 72.06,
+        "target": 82.32,
+        "stop": 67.66,
         "outcome": "stop",
-        "days": 10,
+        "days": 8,
         "r_multiple": -1.0
       },
       {
-        "signal_date": "2026-04-13",
-        "trigger": 74.31,
-        "target": 82.98,
-        "stop": 70.59,
-        "outcome": "timeout",
-        "days": 10,
-        "r_multiple": 0.72
+        "signal_date": "2026-03-27",
+        "trigger": 70.76,
+        "target": 82.13,
+        "stop": 65.89,
+        "outcome": "target",
+        "days": 8,
+        "r_multiple": 2.33
+      },
+      {
+        "signal_date": "2026-04-06",
+        "trigger": 72.88,
+        "target": 84.88,
+        "stop": 67.74,
+        "outcome": "target",
+        "days": 5,
+        "r_multiple": 2.33
       },
       {
         "signal_date": "2026-04-16",
-        "trigger": 78.5,
-        "target": 87.56,
-        "stop": 74.62,
-        "outcome": "timeout",
-        "days": 10,
-        "r_multiple": -0.05
+        "trigger": 91.48,
+        "target": 106.04,
+        "stop": 85.24,
+        "outcome": "target",
+        "days": 7,
+        "r_multiple": 2.33
       },
       {
-        "signal_date": "2026-05-22",
-        "trigger": 85.99,
-        "target": 96.12,
-        "stop": 81.65,
+        "signal_date": "2026-05-25",
+        "trigger": 162.84,
+        "target": 191.35,
+        "stop": 150.62,
+        "outcome": "timeout",
+        "days": 0,
+        "r_multiple": 0.0
+      }
+    ]
+  },
+  {
+    "symbol": "NBCC",
+    "model": "confluence",
+    "n_signals": 78,
+    "n_target_hit": 15,
+    "n_stop_hit": 26,
+    "n_timeout": 37,
+    "n_profitable": 39,
+    "hit_rate": 0.192,
+    "profit_rate": 0.5,
+    "avg_days_to_target": 5.13,
+    "avg_r_multiple": 0.253,
+    "last_signals_outcomes": [
+      {
+        "signal_date": "2025-12-22",
+        "trigger": 116.21,
+        "target": 129.26,
+        "stop": 110.62,
+        "outcome": "timeout",
+        "days": 10,
+        "r_multiple": 0.39
+      },
+      {
+        "signal_date": "2026-04-17",
+        "trigger": 94.32,
+        "target": 106.15,
+        "stop": 89.25,
+        "outcome": "timeout",
+        "days": 10,
+        "r_multiple": -0.53
+      },
+      {
+        "signal_date": "2026-05-04",
+        "trigger": 92.52,
+        "target": 101.73,
+        "stop": 88.57,
+        "outcome": "target",
+        "days": 4,
+        "r_multiple": 2.33
+      },
+      {
+        "signal_date": "2026-05-06",
+        "trigger": 94.94,
+        "target": 104.22,
+        "stop": 90.96,
+        "outcome": "stop",
+        "days": 8,
+        "r_multiple": -1.0
+      },
+      {
+        "signal_date": "2026-05-25",
+        "trigger": 96.79,
+        "target": 107.3,
+        "stop": 92.29,
+        "outcome": "timeout",
+        "days": 0,
+        "r_multiple": 0.0
+      }
+    ]
+  },
+  {
+    "symbol": "PNBHOUSING",
+    "model": "confluence",
+    "n_signals": 73,
+    "n_target_hit": 10,
+    "n_stop_hit": 30,
+    "n_timeout": 33,
+    "n_profitable": 26,
+    "hit_rate": 0.137,
+    "profit_rate": 0.356,
+    "avg_days_to_target": 6.0,
+    "avg_r_multiple": -0.007,
+    "last_signals_outcomes": [
+      {
+        "signal_date": "2025-12-12",
+        "trigger": 937.1,
+        "target": 1025.42,
+        "stop": 899.25,
+        "outcome": "stop",
+        "days": 3,
+        "r_multiple": -1.0
+      },
+      {
+        "signal_date": "2025-12-19",
+        "trigger": 927.8,
+        "target": 1022.46,
+        "stop": 887.23,
+        "outcome": "timeout",
+        "days": 10,
+        "r_multiple": 1.88
+      },
+      {
+        "signal_date": "2026-01-05",
+        "trigger": 1003.9,
+        "target": 1093.51,
+        "stop": 965.49,
+        "outcome": "stop",
+        "days": 5,
+        "r_multiple": -1.0
+      },
+      {
+        "signal_date": "2026-04-10",
+        "trigger": 864.75,
+        "target": 977.92,
+        "stop": 816.25,
+        "outcome": "target",
+        "days": 6,
+        "r_multiple": 2.33
+      },
+      {
+        "signal_date": "2026-05-25",
+        "trigger": 1085.6,
+        "target": 1183.78,
+        "stop": 1043.52,
+        "outcome": "timeout",
+        "days": 0,
+        "r_multiple": 0.0
+      }
+    ]
+  },
+  {
+    "symbol": "POLYMED",
+    "model": "trend_momentum",
+    "n_signals": 11,
+    "n_target_hit": 3,
+    "n_stop_hit": 3,
+    "n_timeout": 5,
+    "n_profitable": 7,
+    "hit_rate": 0.273,
+    "profit_rate": 0.636,
+    "avg_days_to_target": 7.33,
+    "avg_r_multiple": 0.56,
+    "last_signals_outcomes": [
+      {
+        "signal_date": "2024-10-07",
+        "trigger": 2306.8,
+        "target": 2591.44,
+        "stop": 2164.48,
+        "outcome": "target",
+        "days": 5,
+        "r_multiple": 2.0
+      },
+      {
+        "signal_date": "2024-10-14",
+        "trigger": 2383.31,
+        "target": 2709.29,
+        "stop": 2220.33,
+        "outcome": "timeout",
+        "days": 10,
+        "r_multiple": 1.45
+      },
+      {
+        "signal_date": "2024-11-26",
+        "trigger": 2759.05,
+        "target": 3250.57,
+        "stop": 2513.3,
+        "outcome": "timeout",
+        "days": 10,
+        "r_multiple": 0.83
+      },
+      {
+        "signal_date": "2025-05-19",
+        "trigger": 2437.62,
+        "target": 2790.68,
+        "stop": 2261.09,
+        "outcome": "stop",
+        "days": 9,
+        "r_multiple": -1.0
+      },
+      {
+        "signal_date": "2026-05-25",
+        "trigger": 1547.2,
+        "target": 1747.41,
+        "stop": 1447.09,
         "outcome": "timeout",
         "days": 0,
         "r_multiple": 0.0
@@ -1748,25 +2468,16 @@
   {
     "symbol": "SAMMAANCAP",
     "model": "breakout_volume",
-    "n_signals": 14,
+    "n_signals": 15,
     "n_target_hit": 0,
     "n_stop_hit": 6,
-    "n_timeout": 8,
-    "n_profitable": 5,
+    "n_timeout": 9,
+    "n_profitable": 6,
     "hit_rate": 0.0,
-    "profit_rate": 0.357,
+    "profit_rate": 0.4,
     "avg_days_to_target": null,
-    "avg_r_multiple": -0.18,
+    "avg_r_multiple": -0.064,
     "last_signals_outcomes": [
-      {
-        "signal_date": "2024-02-23",
-        "trigger": 204.38,
-        "target": 234.15,
-        "stop": 189.5,
-        "outcome": "stop",
-        "days": 3,
-        "r_multiple": -1.0
-      },
       {
         "signal_date": "2025-06-25",
         "trigger": 143.5,
@@ -1791,8 +2502,8 @@
         "target": 172.01,
         "stop": 145.38,
         "outcome": "timeout",
-        "days": 1,
-        "r_multiple": 0.81
+        "days": 2,
+        "r_multiple": 1.61
       },
       {
         "signal_date": "2026-05-22",
@@ -1800,65 +2511,74 @@
         "target": 180.17,
         "stop": 152.11,
         "outcome": "timeout",
+        "days": 1,
+        "r_multiple": 0.76
+      },
+      {
+        "signal_date": "2026-05-25",
+        "trigger": 168.56,
+        "target": 187.58,
+        "stop": 159.05,
+        "outcome": "timeout",
         "days": 0,
         "r_multiple": 0.0
       }
     ]
   },
   {
-    "symbol": "SAMMAANCAP",
+    "symbol": "SCHNEIDER",
     "model": "confluence",
-    "n_signals": 81,
-    "n_target_hit": 7,
-    "n_stop_hit": 36,
-    "n_timeout": 38,
-    "n_profitable": 31,
-    "hit_rate": 0.086,
-    "profit_rate": 0.383,
-    "avg_days_to_target": 4.71,
-    "avg_r_multiple": -0.093,
+    "n_signals": 85,
+    "n_target_hit": 21,
+    "n_stop_hit": 30,
+    "n_timeout": 34,
+    "n_profitable": 42,
+    "hit_rate": 0.247,
+    "profit_rate": 0.494,
+    "avg_days_to_target": 6.9,
+    "avg_r_multiple": 0.404,
     "last_signals_outcomes": [
       {
-        "signal_date": "2026-02-19",
-        "trigger": 151.39,
-        "target": 165.85,
-        "stop": 145.19,
-        "outcome": "stop",
-        "days": 7,
-        "r_multiple": -1.0
+        "signal_date": "2026-02-05",
+        "trigger": 732.35,
+        "target": 843.32,
+        "stop": 684.79,
+        "outcome": "target",
+        "days": 8,
+        "r_multiple": 2.33
       },
       {
-        "signal_date": "2026-03-27",
-        "trigger": 148.35,
-        "target": 169.72,
-        "stop": 139.19,
-        "outcome": "timeout",
-        "days": 10,
-        "r_multiple": 0.88
+        "signal_date": "2026-04-06",
+        "trigger": 926.25,
+        "target": 1078.08,
+        "stop": 861.18,
+        "outcome": "target",
+        "days": 9,
+        "r_multiple": 2.33
       },
       {
         "signal_date": "2026-04-08",
-        "trigger": 152.7,
-        "target": 174.18,
-        "stop": 143.49,
-        "outcome": "timeout",
+        "trigger": 973.8,
+        "target": 1125.18,
+        "stop": 908.92,
+        "outcome": "target",
         "days": 10,
-        "r_multiple": -0.92
+        "r_multiple": 2.33
       },
       {
-        "signal_date": "2026-05-07",
-        "trigger": 151.78,
-        "target": 167.51,
-        "stop": 145.04,
-        "outcome": "stop",
-        "days": 2,
-        "r_multiple": -1.0
+        "signal_date": "2026-04-10",
+        "trigger": 1010.1,
+        "target": 1160.69,
+        "stop": 945.56,
+        "outcome": "target",
+        "days": 9,
+        "r_multiple": 2.33
       },
       {
-        "signal_date": "2026-05-22",
-        "trigger": 161.46,
-        "target": 183.28,
-        "stop": 152.11,
+        "signal_date": "2026-05-25",
+        "trigger": 1364.7,
+        "target": 1597.63,
+        "stop": 1264.87,
         "outcome": "timeout",
         "days": 0,
         "r_multiple": 0.0
@@ -1866,59 +2586,239 @@
     ]
   },
   {
-    "symbol": "SHYAMMETL",
+    "symbol": "STARHEALTH",
     "model": "confluence",
-    "n_signals": 79,
-    "n_target_hit": 10,
-    "n_stop_hit": 37,
-    "n_timeout": 32,
-    "n_profitable": 30,
-    "hit_rate": 0.127,
-    "profit_rate": 0.38,
-    "avg_days_to_target": 5.8,
-    "avg_r_multiple": -0.036,
+    "n_signals": 61,
+    "n_target_hit": 9,
+    "n_stop_hit": 19,
+    "n_timeout": 33,
+    "n_profitable": 33,
+    "hit_rate": 0.148,
+    "profit_rate": 0.541,
+    "avg_days_to_target": 7.11,
+    "avg_r_multiple": 0.285,
     "last_signals_outcomes": [
       {
-        "signal_date": "2026-04-16",
-        "trigger": 863.55,
-        "target": 969.18,
-        "stop": 818.28,
+        "signal_date": "2026-04-01",
+        "trigger": 469.9,
+        "target": 523.28,
+        "stop": 447.02,
+        "outcome": "timeout",
+        "days": 10,
+        "r_multiple": 1.46
+      },
+      {
+        "signal_date": "2026-04-07",
+        "trigger": 460.85,
+        "target": 514.89,
+        "stop": 437.69,
+        "outcome": "target",
+        "days": 9,
+        "r_multiple": 2.33
+      },
+      {
+        "signal_date": "2026-04-21",
+        "trigger": 514.05,
+        "target": 568.45,
+        "stop": 490.74,
+        "outcome": "target",
+        "days": 6,
+        "r_multiple": 2.33
+      },
+      {
+        "signal_date": "2026-05-21",
+        "trigger": 526.65,
+        "target": 580.24,
+        "stop": 503.68,
+        "outcome": "timeout",
+        "days": 2,
+        "r_multiple": -0.04
+      },
+      {
+        "signal_date": "2026-05-25",
+        "trigger": 525.65,
+        "target": 579.01,
+        "stop": 502.78,
+        "outcome": "timeout",
+        "days": 0,
+        "r_multiple": 0.0
+      }
+    ]
+  },
+  {
+    "symbol": "SUMICHEM",
+    "model": "confluence",
+    "n_signals": 68,
+    "n_target_hit": 4,
+    "n_stop_hit": 32,
+    "n_timeout": 32,
+    "n_profitable": 29,
+    "hit_rate": 0.059,
+    "profit_rate": 0.426,
+    "avg_days_to_target": 4.0,
+    "avg_r_multiple": -0.076,
+    "last_signals_outcomes": [
+      {
+        "signal_date": "2026-04-20",
+        "trigger": 446.25,
+        "target": 498.2,
+        "stop": 423.98,
+        "outcome": "stop",
+        "days": 8,
+        "r_multiple": -1.0
+      },
+      {
+        "signal_date": "2026-05-04",
+        "trigger": 449.0,
+        "target": 505.03,
+        "stop": 424.99,
+        "outcome": "target",
+        "days": 3,
+        "r_multiple": 2.33
+      },
+      {
+        "signal_date": "2026-05-13",
+        "trigger": 455.55,
+        "target": 521.76,
+        "stop": 427.17,
+        "outcome": "timeout",
+        "days": 8,
+        "r_multiple": 0.81
+      },
+      {
+        "signal_date": "2026-05-19",
+        "trigger": 468.9,
+        "target": 533.97,
+        "stop": 441.01,
+        "outcome": "timeout",
+        "days": 4,
+        "r_multiple": 0.35
+      },
+      {
+        "signal_date": "2026-05-25",
+        "trigger": 478.65,
+        "target": 539.49,
+        "stop": 452.58,
+        "outcome": "timeout",
+        "days": 0,
+        "r_multiple": 0.0
+      }
+    ]
+  },
+  {
+    "symbol": "TECHNOE",
+    "model": "breakout_volume",
+    "n_signals": 11,
+    "n_target_hit": 2,
+    "n_stop_hit": 2,
+    "n_timeout": 7,
+    "n_profitable": 6,
+    "hit_rate": 0.182,
+    "profit_rate": 0.545,
+    "avg_days_to_target": 5.5,
+    "avg_r_multiple": 0.32,
+    "last_signals_outcomes": [
+      {
+        "signal_date": "2024-12-18",
+        "trigger": 1565.62,
+        "target": 1780.39,
+        "stop": 1458.23,
+        "outcome": "timeout",
+        "days": 10,
+        "r_multiple": 1.07
+      },
+      {
+        "signal_date": "2024-12-20",
+        "trigger": 1615.16,
+        "target": 1835.6,
+        "stop": 1504.94,
+        "outcome": "timeout",
+        "days": 10,
+        "r_multiple": -0.76
+      },
+      {
+        "signal_date": "2025-06-27",
+        "trigger": 1581.81,
+        "target": 1771.57,
+        "stop": 1486.94,
+        "outcome": "timeout",
+        "days": 10,
+        "r_multiple": 0.07
+      },
+      {
+        "signal_date": "2025-08-22",
+        "trigger": 1535.5,
+        "target": 1708.91,
+        "stop": 1448.8,
+        "outcome": "timeout",
+        "days": 10,
+        "r_multiple": -0.17
+      },
+      {
+        "signal_date": "2026-05-25",
+        "trigger": 1373.0,
+        "target": 1528.12,
+        "stop": 1295.44,
+        "outcome": "timeout",
+        "days": 0,
+        "r_multiple": 0.0
+      }
+    ]
+  },
+  {
+    "symbol": "TEJASNET",
+    "model": "confluence",
+    "n_signals": 76,
+    "n_target_hit": 15,
+    "n_stop_hit": 29,
+    "n_timeout": 32,
+    "n_profitable": 36,
+    "hit_rate": 0.197,
+    "profit_rate": 0.474,
+    "avg_days_to_target": 4.33,
+    "avg_r_multiple": 0.22,
+    "last_signals_outcomes": [
+      {
+        "signal_date": "2026-03-02",
+        "trigger": 484.7,
+        "target": 580.87,
+        "stop": 443.48,
         "outcome": "stop",
         "days": 4,
         "r_multiple": -1.0
       },
       {
-        "signal_date": "2026-04-23",
-        "trigger": 826.95,
-        "target": 932.62,
-        "stop": 781.66,
-        "outcome": "timeout",
-        "days": 10,
-        "r_multiple": 1.26
+        "signal_date": "2026-04-13",
+        "trigger": 442.55,
+        "target": 535.24,
+        "stop": 402.82,
+        "outcome": "stop",
+        "days": 7,
+        "r_multiple": -1.0
       },
       {
-        "signal_date": "2026-04-27",
-        "trigger": 886.15,
-        "target": 1002.68,
-        "stop": 836.21,
-        "outcome": "timeout",
-        "days": 10,
-        "r_multiple": -0.29
+        "signal_date": "2026-05-06",
+        "trigger": 463.2,
+        "target": 538.51,
+        "stop": 430.93,
+        "outcome": "target",
+        "days": 1,
+        "r_multiple": 2.33
       },
       {
-        "signal_date": "2026-05-20",
-        "trigger": 922.6,
-        "target": 1034.13,
-        "stop": 874.8,
+        "signal_date": "2026-05-19",
+        "trigger": 462.7,
+        "target": 566.7,
+        "stop": 418.13,
         "outcome": "timeout",
-        "days": 2,
-        "r_multiple": 0.53
+        "days": 4,
+        "r_multiple": 0.25
       },
       {
-        "signal_date": "2026-05-22",
-        "trigger": 947.8,
-        "target": 1054.96,
-        "stop": 901.88,
+        "signal_date": "2026-05-25",
+        "trigger": 473.95,
+        "target": 567.77,
+        "stop": 433.74,
         "outcome": "timeout",
         "days": 0,
         "r_multiple": 0.0
@@ -1926,59 +2826,119 @@
     ]
   },
   {
-    "symbol": "ZFCVINDIA",
+    "symbol": "TIMKEN",
     "model": "confluence",
-    "n_signals": 92,
-    "n_target_hit": 15,
-    "n_stop_hit": 39,
-    "n_timeout": 38,
-    "n_profitable": 45,
-    "hit_rate": 0.163,
-    "profit_rate": 0.489,
-    "avg_days_to_target": 6.67,
-    "avg_r_multiple": 0.126,
+    "n_signals": 79,
+    "n_target_hit": 11,
+    "n_stop_hit": 29,
+    "n_timeout": 39,
+    "n_profitable": 39,
+    "hit_rate": 0.139,
+    "profit_rate": 0.494,
+    "avg_days_to_target": 6.27,
+    "avg_r_multiple": 0.184,
     "last_signals_outcomes": [
       {
-        "signal_date": "2026-02-04",
-        "trigger": 15327.0,
-        "target": 16989.13,
-        "stop": 14614.66,
+        "signal_date": "2026-02-23",
+        "trigger": 3215.5,
+        "target": 3587.17,
+        "stop": 3056.21,
         "outcome": "timeout",
         "days": 10,
-        "r_multiple": 0.32
+        "r_multiple": 0.7
       },
       {
-        "signal_date": "2026-04-01",
-        "trigger": 14375.0,
-        "target": 16447.45,
-        "stop": 13486.81,
+        "signal_date": "2026-04-08",
+        "trigger": 3444.9,
+        "target": 3940.13,
+        "stop": 3232.66,
         "outcome": "timeout",
         "days": 10,
-        "r_multiple": 0.14
+        "r_multiple": 0.73
       },
       {
-        "signal_date": "2026-04-17",
-        "trigger": 14500.0,
-        "target": 16382.34,
-        "stop": 13693.28,
+        "signal_date": "2026-05-08",
+        "trigger": 3595.0,
+        "target": 3998.61,
+        "stop": 3422.02,
+        "outcome": "stop",
+        "days": 6,
+        "r_multiple": -1.0
+      },
+      {
+        "signal_date": "2026-05-19",
+        "trigger": 3538.0,
+        "target": 3944.57,
+        "stop": 3363.75,
+        "outcome": "timeout",
+        "days": 4,
+        "r_multiple": 0.48
+      },
+      {
+        "signal_date": "2026-05-25",
+        "trigger": 3621.2,
+        "target": 4055.38,
+        "stop": 3435.12,
+        "outcome": "timeout",
+        "days": 0,
+        "r_multiple": 0.0
+      }
+    ]
+  },
+  {
+    "symbol": "TITAGARH",
+    "model": "confluence",
+    "n_signals": 82,
+    "n_target_hit": 23,
+    "n_stop_hit": 32,
+    "n_timeout": 27,
+    "n_profitable": 41,
+    "hit_rate": 0.28,
+    "profit_rate": 0.5,
+    "avg_days_to_target": 6.48,
+    "avg_r_multiple": 0.396,
+    "last_signals_outcomes": [
+      {
+        "signal_date": "2025-12-22",
+        "trigger": 816.5,
+        "target": 901.23,
+        "stop": 780.19,
+        "outcome": "target",
+        "days": 3,
+        "r_multiple": 2.33
+      },
+      {
+        "signal_date": "2025-12-26",
+        "trigger": 897.75,
+        "target": 998.83,
+        "stop": 854.43,
+        "outcome": "stop",
+        "days": 8,
+        "r_multiple": -1.0
+      },
+      {
+        "signal_date": "2026-01-30",
+        "trigger": 821.0,
+        "target": 920.01,
+        "stop": 778.57,
+        "outcome": "stop",
+        "days": 1,
+        "r_multiple": -1.0
+      },
+      {
+        "signal_date": "2026-04-13",
+        "trigger": 696.8,
+        "target": 803.33,
+        "stop": 651.14,
         "outcome": "timeout",
         "days": 10,
-        "r_multiple": 0.25
+        "r_multiple": 1.95
       },
       {
-        "signal_date": "2026-04-22",
-        "trigger": 15184.0,
-        "target": 17140.58,
-        "stop": 14345.47,
-        "outcome": "timeout",
-        "days": 10,
-        "r_multiple": -0.59
-      },
-      {
-        "signal_date": "2026-05-22",
-        "trigger": 14805.0,
-        "target": 16441.62,
-        "stop": 14103.59,
+        "signal_date": "2026-05-25",
+        "trigger": 832.1,
+        "target": 943.86,
+        "stop": 784.2,
         "outcome": "timeout",
         "days": 0,
         "r_multiple": 0.0
