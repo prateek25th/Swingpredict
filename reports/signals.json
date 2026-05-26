@@ -1,7 +1,7 @@
 {
-  "generated_at_ist": "2026-05-25 22:51 IST",
+  "generated_at_ist": "2026-05-27 00:57 IST",
   "n_universe": 504,
-  "n_signals": 50,
+  "n_signals": 51,
   "signals": [
     {
       "model": "trend_momentum",
@@ -67,6 +67,36 @@
     },
     {
       "model": "confluence",
+      "symbol": "HBLENGINE",
+      "signal_date": "2026-05-26",
+      "trigger": 799.45,
+      "target": 912.17,
+      "stop": 751.14,
+      "atr": 32.21,
+      "expected_hold_days": 10,
+      "reward_risk": 2.33,
+      "reasons": [
+        "3 of 4 votes agree (threshold: 3) - high-confidence confluence:",
+        "Trend vote OK: price (Rs.799.45) > 50-EMA (Rs.766.93) and 50-EMA is rising.",
+        "Volatility vote OK: price is above Bollinger midline (Rs.794.72) but not yet at the upper band (Rs.857.21) - room to run.",
+        "Volume vote OK: today's volume is at or above 1.2x the 20-day average (36.9L vs. 18.0L)."
+      ],
+      "notes": "",
+      "hit_rate": 0.174,
+      "profit_rate": 0.565,
+      "historical_n": 23,
+      "avg_days_to_target": 5.5,
+      "avg_r_multiple": 0.381,
+      "cmp": 799.45,
+      "cmp_as_of": "2026-05-26",
+      "category": "small_cap",
+      "category_label": "Small Cap",
+      "confidence": "Medium",
+      "confidence_class": "ok",
+      "signal_id": "HBLENGINE-confluence-2026-05-26"
+    },
+    {
+      "model": "confluence",
       "symbol": "HINDALCO",
       "signal_date": "2026-05-25",
       "trigger": 1099.6,
@@ -111,7 +141,7 @@
         "50-EMA is sloping up vs. 5 days ago - trend is healthy, not just a bounce.",
         "RSI(14) is at 53.1, inside the 40-55 pullback zone - momentum has cooled enough to offer a low-risk entry.",
         "MACD histogram has turned up for two bars - momentum is rotating from down to up.",
-        "Today's volume (93.4L) is at or above the 20-day average (84.3L) - participation confirms the signal."
+        "Today's volume (93.5L) is at or above the 20-day average (84.3L) - participation confirms the signal."
       ],
       "notes": "",
       "hit_rate": 0.333,
@@ -382,7 +412,7 @@
         "3 of 4 votes agree (threshold: 3) - high-confidence confluence:",
         "Momentum vote OK: MACD (-1.62) > Signal (-2.05) and RSI (53.4) > 50.",
         "Volatility vote OK: price is above Bollinger midline (Rs.141.08) but not yet at the upper band (Rs.149.43) - room to run.",
-        "Volume vote OK: today's volume is at or above 1.2x the 20-day average (245.2L vs. 156.3L)."
+        "Volume vote OK: today's volume is at or above 1.2x the 20-day average (245.3L vs. 156.3L)."
       ],
       "notes": "",
       "hit_rate": 0.2,
@@ -412,7 +442,7 @@
         "3 of 4 votes agree (threshold: 3) - high-confidence confluence:",
         "Trend vote OK: price (Rs.96.79) > 50-EMA (Rs.93.06) and 50-EMA is rising.",
         "Volatility vote OK: price is above Bollinger midline (Rs.94.20) but not yet at the upper band (Rs.98.60) - room to run.",
-        "Volume vote OK: today's volume is at or above 1.2x the 20-day average (344.1L vs. 125.3L)."
+        "Volume vote OK: today's volume is at or above 1.2x the 20-day average (344.2L vs. 125.3L)."
       ],
       "notes": "",
       "hit_rate": 0.192,
@@ -594,7 +624,7 @@
         "3 of 4 votes agree (threshold: 3) - high-confidence confluence:",
         "Momentum vote OK: MACD (-3.57) > Signal (-4.24) and RSI (52.8) > 50.",
         "Volatility vote OK: price is above Bollinger midline (Rs.159.83) but not yet at the upper band (Rs.172.29) - room to run.",
-        "Volume vote OK: today's volume is at or above 1.2x the 20-day average (306.7L vs. 208.1L)."
+        "Volume vote OK: today's volume is at or above 1.2x the 20-day average (306.8L vs. 208.1L)."
       ],
       "notes": "",
       "hit_rate": 0.098,
@@ -702,6 +732,36 @@
     },
     {
       "model": "confluence",
+      "symbol": "CANBK",
+      "signal_date": "2026-05-25",
+      "trigger": 133.7,
+      "target": 147.34,
+      "stop": 127.85,
+      "atr": 3.9,
+      "expected_hold_days": 10,
+      "reward_risk": 2.33,
+      "reasons": [
+        "3 of 4 votes agree (threshold: 3) - high-confidence confluence:",
+        "Momentum vote OK: MACD (-2.39) > Signal (-2.52) and RSI (51.8) > 50.",
+        "Volatility vote OK: price is above Bollinger midline (Rs.131.85) but not yet at the upper band (Rs.139.90) - room to run.",
+        "Volume vote OK: today's volume is at or above 1.2x the 20-day average (279.9L vs. 233.1L)."
+      ],
+      "notes": "",
+      "hit_rate": 0.188,
+      "profit_rate": 0.471,
+      "historical_n": 85,
+      "avg_days_to_target": 5.81,
+      "avg_r_multiple": 0.17,
+      "cmp": 133.7,
+      "cmp_as_of": "2026-05-25",
+      "category": "large_cap",
+      "category_label": "Large Cap",
+      "confidence": "Low",
+      "confidence_class": "weak",
+      "signal_id": "CANBK-confluence-2026-05-25"
+    },
+    {
+      "model": "confluence",
       "symbol": "TATAELXSI",
       "signal_date": "2026-05-25",
       "trigger": 4327.2,
@@ -804,7 +864,7 @@
         "3 of 4 votes agree (threshold: 3) - high-confidence confluence:",
         "Trend vote OK: price (Rs.168.67) > 50-EMA (Rs.159.33) and 50-EMA is rising.",
         "Volatility vote OK: price is above Bollinger midline (Rs.162.68) but not yet at the upper band (Rs.170.05) - room to run.",
-        "Volume vote OK: today's volume is at or above 1.2x the 20-day average (364.2L vs. 102.3L)."
+        "Volume vote OK: today's volume is at or above 1.2x the 20-day average (364.3L vs. 102.3L)."
       ],
       "notes": "",
       "hit_rate": 0.103,
@@ -864,7 +924,7 @@
         "3 of 4 votes agree (threshold: 3) - high-confidence confluence:",
         "Trend vote OK: price (Rs.233.38) > 50-EMA (Rs.198.05) and 50-EMA is rising.",
         "Volatility vote OK: price is above Bollinger midline (Rs.222.51) but not yet at the upper band (Rs.233.87) - room to run.",
-        "Volume vote OK: today's volume is at or above 1.2x the 20-day average (738.1L vs. 414.3L)."
+        "Volume vote OK: today's volume is at or above 1.2x the 20-day average (738.5L vs. 414.3L)."
       ],
       "notes": "",
       "hit_rate": 0.2,
@@ -894,7 +954,7 @@
         "3 of 4 votes agree (threshold: 3) - high-confidence confluence:",
         "Momentum vote OK: MACD (-3.88) > Signal (-4.50) and RSI (51.9) > 50.",
         "Volatility vote OK: price is above Bollinger midline (Rs.164.07) but not yet at the upper band (Rs.171.11) - room to run.",
-        "Volume vote OK: today's volume is at or above 1.2x the 20-day average (191.0L vs. 131.6L)."
+        "Volume vote OK: today's volume is at or above 1.2x the 20-day average (191.1L vs. 131.6L)."
       ],
       "notes": "",
       "hit_rate": 0.154,
@@ -1104,7 +1164,7 @@
         "3 of 4 votes agree (threshold: 3) - high-confidence confluence:",
         "Trend vote OK: price (Rs.162.84) > 50-EMA (Rs.112.84) and 50-EMA is rising.",
         "Volatility vote OK: price is above Bollinger midline (Rs.137.46) but not yet at the upper band (Rs.168.73) - room to run.",
-        "Volume vote OK: today's volume is at or above 1.2x the 20-day average (1067.1L vs. 853.6L)."
+        "Volume vote OK: today's volume is at or above 1.2x the 20-day average (1067.2L vs. 853.6L)."
       ],
       "notes": "",
       "hit_rate": 0.145,
@@ -1302,36 +1362,6 @@
       "signal_id": "PNBHOUSING-confluence-2026-05-25"
     },
     {
-      "model": "confluence",
-      "symbol": "ARE&M",
-      "signal_date": "2026-05-25",
-      "trigger": 883.4,
-      "target": 988.16,
-      "stop": 838.5,
-      "atr": 29.93,
-      "expected_hold_days": 10,
-      "reward_risk": 2.33,
-      "reasons": [
-        "3 of 4 votes agree (threshold: 3) - high-confidence confluence:",
-        "Trend vote OK: price (Rs.883.40) > 50-EMA (Rs.829.15) and 50-EMA is rising.",
-        "Volatility vote OK: price is above Bollinger midline (Rs.857.34) but not yet at the upper band (Rs.922.27) - room to run.",
-        "Volume vote OK: today's volume is at or above 1.2x the 20-day average (78.3L vs. 9.3L)."
-      ],
-      "notes": "",
-      "hit_rate": 0.133,
-      "profit_rate": 0.267,
-      "historical_n": 30,
-      "avg_days_to_target": 4.5,
-      "avg_r_multiple": -0.169,
-      "cmp": 883.4,
-      "cmp_as_of": "2026-05-25",
-      "category": "small_cap",
-      "category_label": "Small Cap",
-      "confidence": "Low",
-      "confidence_class": "weak",
-      "signal_id": "ARE&M-confluence-2026-05-25"
-    },
-    {
       "model": "trend_momentum",
       "symbol": "PRESTIGE",
       "signal_date": "2026-05-25",
@@ -1407,7 +1437,7 @@
         "50-EMA is sloping up vs. 5 days ago - trend is healthy, not just a bounce.",
         "RSI(14) is at 51.2, inside the 40-55 pullback zone - momentum has cooled enough to offer a low-risk entry.",
         "MACD histogram has turned up for two bars - momentum is rotating from down to up.",
-        "Today's volume (71.7L) is at or above the 20-day average (62.0L) - participation confirms the signal."
+        "Today's volume (71.8L) is at or above the 20-day average (62.0L) - participation confirms the signal."
       ],
       "notes": "",
       "hit_rate": null,
@@ -1438,7 +1468,7 @@
         "50-EMA is sloping up vs. 5 days ago - trend is healthy, not just a bounce.",
         "RSI(14) is at 50.1, inside the 40-55 pullback zone - momentum has cooled enough to offer a low-risk entry.",
         "MACD histogram has turned up for two bars - momentum is rotating from down to up.",
-        "Today's volume (32.9L) is at or above the 20-day average (18.4L) - participation confirms the signal."
+        "Today's volume (33.0L) is at or above the 20-day average (18.4L) - participation confirms the signal."
       ],
       "notes": "",
       "hit_rate": null,
