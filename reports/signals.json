@@ -1,5 +1,5 @@
 {
-  "generated_at_ist": "2026-06-05 23:01 IST",
+  "generated_at_ist": "2026-06-09 01:06 IST",
   "n_universe": 504,
   "n_signals": 32,
   "signals": [
@@ -351,7 +351,7 @@
         "3 of 4 votes agree (threshold: 3) - high-confidence confluence:",
         "Momentum vote OK: MACD (-0.52) > Signal (-1.28) and RSI (56.6) > 50.",
         "Volatility vote OK: price is above Bollinger midline (Rs.130.32) but not yet at the upper band (Rs.136.26) - room to run.",
-        "Volume vote OK: today's volume is at or above 1.2x the 20-day average (471.3L vs. 300.3L)."
+        "Volume vote OK: today's volume is at or above 1.2x the 20-day average (471.4L vs. 300.3L)."
       ],
       "notes": "",
       "hit_rate": 0.186,
@@ -472,7 +472,7 @@
         "3 of 4 votes agree (threshold: 3) - high-confidence confluence:",
         "Trend vote OK: price (Rs.28.59) > 50-EMA (Rs.27.28) and 50-EMA is rising.",
         "Momentum vote OK: MACD (0.06) > Signal (0.02) and RSI (60.3) > 50.",
-        "Volume vote OK: today's volume is at or above 1.2x the 20-day average (662.2L vs. 375.7L)."
+        "Volume vote OK: today's volume is at or above 1.2x the 20-day average (662.5L vs. 375.8L)."
       ],
       "notes": "",
       "hit_rate": 0.284,
@@ -743,7 +743,7 @@
         "3 of 4 votes agree (threshold: 3) - high-confidence confluence:",
         "Trend vote OK: price (Rs.23.30) > 50-EMA (Rs.21.44) and 50-EMA is rising.",
         "Volatility vote OK: price is above Bollinger midline (Rs.22.45) but not yet at the upper band (Rs.23.46) - room to run.",
-        "Volume vote OK: today's volume is at or above 1.2x the 20-day average (1479.6L vs. 1174.7L)."
+        "Volume vote OK: today's volume is at or above 1.2x the 20-day average (1481.1L vs. 1174.8L)."
       ],
       "notes": "",
       "hit_rate": 0.2,
@@ -894,7 +894,7 @@
         "50-EMA is sloping up vs. 5 days ago - trend is healthy, not just a bounce.",
         "RSI(14) is at 48.2, inside the 40-55 pullback zone - momentum has cooled enough to offer a low-risk entry.",
         "MACD histogram has turned up for two bars - momentum is rotating from down to up.",
-        "Today's volume (224.6L) is at or above the 20-day average (99.3L) - participation confirms the signal."
+        "Today's volume (224.7L) is at or above the 20-day average (99.3L) - participation confirms the signal."
       ],
       "notes": "",
       "hit_rate": 0.125,
