@@ -1,5 +1,5 @@
 {
-  "generated_at_ist": "2026-06-25 18:09 IST",
+  "generated_at_ist": "2026-06-26 18:03 IST",
   "n_universe": 500,
   "n_signals": 35,
   "signals": [
@@ -380,7 +380,7 @@
         "3 of 4 votes agree (threshold: 3) - high-confidence confluence:",
         "Momentum vote OK: MACD (0.57) > Signal (-0.83) and RSI (57.4) > 50.",
         "Volatility vote OK: price is above Bollinger midline (Rs.150.74) but not yet at the upper band (Rs.164.84) - room to run.",
-        "Volume vote OK: today's volume is at or above 1.2x the 20-day average (609.2L vs. 338.1L)."
+        "Volume vote OK: today's volume is at or above 1.2x the 20-day average (609.4L vs. 338.1L)."
       ],
       "notes": "",
       "hit_rate": 0.097,
