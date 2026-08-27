@@ -1,7 +1,7 @@
 {
-  "generated_at_ist": "2026-08-26 16:33 IST",
+  "generated_at_ist": "2026-08-28 02:13 IST",
   "n_universe": 500,
-  "n_signals": 37,
+  "n_signals": 38,
   "signals": [
     {
       "model": "breakout_volume",
@@ -485,6 +485,36 @@
     },
     {
       "model": "confluence",
+      "symbol": "ANURAS",
+      "signal_date": "2026-08-26",
+      "trigger": 1267.6,
+      "target": 1340.14,
+      "stop": 1236.51,
+      "atr": 20.73,
+      "expected_hold_days": 10,
+      "reward_risk": 2.33,
+      "reasons": [
+        "3 of 4 votes agree (threshold: 3) - high-confidence confluence:",
+        "Trend vote OK: price (Rs.1267.60) > 50-EMA (Rs.1247.54) and 50-EMA is rising.",
+        "Momentum vote OK: MACD (2.62) > Signal (-6.30) and RSI (66.8) > 50.",
+        "Volume vote OK: today's volume is at or above 1.2x the 20-day average (3.7L vs. 3.0L)."
+      ],
+      "notes": "",
+      "hit_rate": 0.141,
+      "profit_rate": 0.422,
+      "historical_n": 64,
+      "avg_days_to_target": 5.22,
+      "avg_r_multiple": 0.068,
+      "cmp": 1267.6,
+      "cmp_as_of": "2026-08-26",
+      "category": "small_cap",
+      "category_label": "Small Cap",
+      "confidence": "Low",
+      "confidence_class": "weak",
+      "signal_id": "ANURAS-confluence-2026-08-26"
+    },
+    {
+      "model": "confluence",
       "symbol": "TATASTEEL",
       "signal_date": "2026-08-26",
       "trigger": 188.01,
@@ -497,7 +527,7 @@
         "3 of 4 votes agree (threshold: 3) - high-confidence confluence:",
         "Momentum vote OK: MACD (-0.82) > Signal (-1.08) and RSI (52.4) > 50.",
         "Volatility vote OK: price is above Bollinger midline (Rs.187.23) but not yet at the upper band (Rs.192.87) - room to run.",
-        "Volume vote OK: today's volume is at or above 1.2x the 20-day average (321.8L vs. 232.0L)."
+        "Volume vote OK: today's volume is at or above 1.2x the 20-day average (322.0L vs. 232.0L)."
       ],
       "notes": "",
       "hit_rate": 0.133,
@@ -799,7 +829,7 @@
         "3 of 4 votes agree (threshold: 3) - high-confidence confluence:",
         "Trend vote OK: price (Rs.88.21) > 50-EMA (Rs.85.45) and 50-EMA is rising.",
         "Momentum vote OK: MACD (0.27) > Signal (-0.04) and RSI (63.5) > 50.",
-        "Volume vote OK: today's volume is at or above 1.2x the 20-day average (261.7L vs. 194.5L)."
+        "Volume vote OK: today's volume is at or above 1.2x the 20-day average (261.8L vs. 194.5L)."
       ],
       "notes": "",
       "hit_rate": 0.109,
@@ -829,7 +859,7 @@
         "3 of 4 votes agree (threshold: 3) - high-confidence confluence:",
         "Trend vote OK: price (Rs.44.00) > 50-EMA (Rs.42.38) and 50-EMA is rising.",
         "Volatility vote OK: price is above Bollinger midline (Rs.43.31) but not yet at the upper band (Rs.44.98) - room to run.",
-        "Volume vote OK: today's volume is at or above 1.2x the 20-day average (949.2L vs. 221.8L)."
+        "Volume vote OK: today's volume is at or above 1.2x the 20-day average (950.5L vs. 221.9L)."
       ],
       "notes": "",
       "hit_rate": 0.037,
