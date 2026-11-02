@@ -1,5 +1,5 @@
 {
-  "generated_at_ist": "2026-10-30 22:18 IST",
+  "generated_at_ist": "2026-11-03 01:59 IST",
   "n_universe": 501,
   "n_signals": 31,
   "signals": [
@@ -502,7 +502,7 @@
         "3 of 4 votes agree (threshold: 3) - high-confidence confluence:",
         "Trend vote OK: price (Rs.77.74) > 50-EMA (Rs.74.49) and 50-EMA is rising.",
         "Momentum vote OK: MACD (0.15) > Signal (-0.58) and RSI (64.0) > 50.",
-        "Volume vote OK: today's volume is at or above 1.2x the 20-day average (150.9L vs. 95.4L)."
+        "Volume vote OK: today's volume is at or above 1.2x the 20-day average (151.0L vs. 95.4L)."
       ],
       "notes": "",
       "hit_rate": 0.183,
@@ -622,7 +622,7 @@
         "3 of 4 votes agree (threshold: 3) - high-confidence confluence:",
         "Momentum vote OK: MACD (-0.19) > Signal (-0.96) and RSI (51.3) > 50.",
         "Volatility vote OK: price is above Bollinger midline (Rs.360.80) but not yet at the upper band (Rs.376.82) - room to run.",
-        "Volume vote OK: today's volume is at or above 1.2x the 20-day average (74.7L vs. 41.3L)."
+        "Volume vote OK: today's volume is at or above 1.2x the 20-day average (80.3L vs. 41.6L)."
       ],
       "notes": "",
       "hit_rate": 0.101,
