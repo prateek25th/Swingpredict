@@ -1560,6 +1560,66 @@
     ]
   },
   {
+    "symbol": "EMBASSY",
+    "model": "confluence",
+    "n_signals": 103,
+    "n_target_hit": 8,
+    "n_stop_hit": 39,
+    "n_timeout": 56,
+    "n_profitable": 50,
+    "hit_rate": 0.078,
+    "profit_rate": 0.485,
+    "avg_days_to_target": 5.62,
+    "avg_r_multiple": 0.08,
+    "last_signals_outcomes": [
+      {
+        "signal_date": "2026-07-06",
+        "trigger": 441.95,
+        "target": 460.99,
+        "stop": 433.8,
+        "outcome": "timeout",
+        "days": 10,
+        "r_multiple": 0.12
+      },
+      {
+        "signal_date": "2026-08-06",
+        "trigger": 440.95,
+        "target": 462.17,
+        "stop": 431.85,
+        "outcome": "timeout",
+        "days": 10,
+        "r_multiple": -0.63
+      },
+      {
+        "signal_date": "2026-08-14",
+        "trigger": 452.61,
+        "target": 474.47,
+        "stop": 443.24,
+        "outcome": "stop",
+        "days": 1,
+        "r_multiple": -1.0
+      },
+      {
+        "signal_date": "2026-09-08",
+        "trigger": 439.87,
+        "target": 458.29,
+        "stop": 431.98,
+        "outcome": "stop",
+        "days": 9,
+        "r_multiple": -1.0
+      },
+      {
+        "signal_date": "2026-11-11",
+        "trigger": 420.1,
+        "target": 441.57,
+        "stop": 410.9,
+        "outcome": "timeout",
+        "days": 0,
+        "r_multiple": 0.0
+      }
+    ]
+  },
+  {
     "symbol": "FEDERALBNK",
     "model": "confluence",
     "n_signals": 101,
@@ -1850,9 +1910,9 @@
       },
       {
         "signal_date": "2026-11-11",
-        "trigger": 1820.5,
-        "target": 2036.65,
-        "stop": 1727.86,
+        "trigger": 1810.5,
+        "target": 2025.6,
+        "stop": 1718.31,
         "outcome": "timeout",
         "days": 0,
         "r_multiple": 0.0

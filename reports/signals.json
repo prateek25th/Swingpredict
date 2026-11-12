@@ -1,7 +1,7 @@
 {
-  "generated_at_ist": "2026-11-11 23:30 IST",
+  "generated_at_ist": "2026-11-13 00:01 IST",
   "n_universe": 501,
-  "n_signals": 97,
+  "n_signals": 98,
   "signals": [
     {
       "model": "breakout_volume",
@@ -228,7 +228,7 @@
         "3 of 4 votes agree (threshold: 3) - high-confidence confluence:",
         "Momentum vote OK: MACD (-3.87) > Signal (-8.16) and RSI (58.2) > 50.",
         "Volatility vote OK: price is above Bollinger midline (Rs.193.83) but not yet at the upper band (Rs.219.30) - room to run.",
-        "Volume vote OK: today's volume is at or above 1.2x the 20-day average (51.6L vs. 31.9L)."
+        "Volume vote OK: today's volume is at or above 1.2x the 20-day average (51.7L vs. 31.9L)."
       ],
       "notes": "",
       "hit_rate": 0.32,
@@ -258,7 +258,7 @@
         "3 of 4 votes agree (threshold: 3) - high-confidence confluence:",
         "Momentum vote OK: MACD (-0.28) > Signal (-0.60) and RSI (54.7) > 50.",
         "Volatility vote OK: price is above Bollinger midline (Rs.39.38) but not yet at the upper band (Rs.41.11) - room to run.",
-        "Volume vote OK: today's volume is at or above 1.2x the 20-day average (49.8L vs. 41.3L)."
+        "Volume vote OK: today's volume is at or above 1.2x the 20-day average (49.9L vs. 41.3L)."
       ],
       "notes": "",
       "hit_rate": 0.298,
@@ -577,6 +577,36 @@
     },
     {
       "model": "confluence",
+      "symbol": "EMBASSY",
+      "signal_date": "2026-11-11",
+      "trigger": 420.1,
+      "target": 441.57,
+      "stop": 410.9,
+      "atr": 6.13,
+      "expected_hold_days": 10,
+      "reward_risk": 2.33,
+      "reasons": [
+        "3 of 4 votes agree (threshold: 3) - high-confidence confluence:",
+        "Momentum vote OK: MACD (-2.84) > Signal (-4.23) and RSI (51.4) > 50.",
+        "Volatility vote OK: price is above Bollinger midline (Rs.416.93) but not yet at the upper band (Rs.430.91) - room to run.",
+        "Volume vote OK: today's volume is at or above 1.2x the 20-day average (15.2L vs. 5.3L)."
+      ],
+      "notes": "",
+      "hit_rate": 0.078,
+      "profit_rate": 0.485,
+      "historical_n": 103,
+      "avg_days_to_target": 5.62,
+      "avg_r_multiple": 0.08,
+      "cmp": 420.1,
+      "cmp_as_of": "2026-11-11",
+      "category": "mid_cap",
+      "category_label": "Mid Cap",
+      "confidence": "Low",
+      "confidence_class": "weak",
+      "signal_id": "EMBASSY-confluence-2026-11-11"
+    },
+    {
+      "model": "confluence",
       "symbol": "TECHNOE",
       "signal_date": "2026-11-11",
       "trigger": 971.05,
@@ -740,7 +770,7 @@
         "3 of 4 votes agree (threshold: 3) - high-confidence confluence:",
         "Trend vote OK: price (Rs.361.60) > 50-EMA (Rs.338.26) and 50-EMA is rising.",
         "Momentum vote OK: MACD (3.29) > Signal (2.01) and RSI (68.0) > 50.",
-        "Volume vote OK: today's volume is at or above 1.2x the 20-day average (144.5L vs. 89.0L)."
+        "Volume vote OK: today's volume is at or above 1.2x the 20-day average (144.6L vs. 89.0L)."
       ],
       "notes": "",
       "hit_rate": 0.168,
@@ -1734,7 +1764,7 @@
         "3 of 4 votes agree (threshold: 3) - high-confidence confluence:",
         "Momentum vote OK: MACD (-1.62) > Signal (-3.85) and RSI (55.5) > 50.",
         "Volatility vote OK: price is above Bollinger midline (Rs.396.11) but not yet at the upper band (Rs.413.00) - room to run.",
-        "Volume vote OK: today's volume is at or above 1.2x the 20-day average (107.5L vs. 78.3L)."
+        "Volume vote OK: today's volume is at or above 1.2x the 20-day average (107.6L vs. 78.3L)."
       ],
       "notes": "",
       "hit_rate": 0.148,
@@ -1794,7 +1824,7 @@
         "3 of 4 votes agree (threshold: 3) - high-confidence confluence:",
         "Momentum vote OK: MACD (-0.76) > Signal (-1.99) and RSI (56.6) > 50.",
         "Volatility vote OK: price is above Bollinger midline (Rs.168.69) but not yet at the upper band (Rs.176.66) - room to run.",
-        "Volume vote OK: today's volume is at or above 1.2x the 20-day average (263.8L vs. 144.1L)."
+        "Volume vote OK: today's volume is at or above 1.2x the 20-day average (264.2L vs. 144.1L)."
       ],
       "notes": "",
       "hit_rate": 0.129,
@@ -2216,7 +2246,7 @@
         "3 of 4 votes agree (threshold: 3) - high-confidence confluence:",
         "Momentum vote OK: MACD (-2.85) > Signal (-7.54) and RSI (56.1) > 50.",
         "Volatility vote OK: price is above Bollinger midline (Rs.372.48) but not yet at the upper band (Rs.398.41) - room to run.",
-        "Volume vote OK: today's volume is at or above 1.2x the 20-day average (15.9L vs. 5.0L)."
+        "Volume vote OK: today's volume is at or above 1.2x the 20-day average (16.0L vs. 5.0L)."
       ],
       "notes": "",
       "hit_rate": 0.059,
@@ -2266,16 +2296,16 @@
       "model": "confluence",
       "symbol": "GODFRYPHLP",
       "signal_date": "2026-11-11",
-      "trigger": 1820.5,
-      "target": 2036.65,
-      "stop": 1727.86,
-      "atr": 61.76,
+      "trigger": 1810.5,
+      "target": 2025.6,
+      "stop": 1718.31,
+      "atr": 61.46,
       "expected_hold_days": 10,
       "reward_risk": 2.33,
       "reasons": [
         "3 of 4 votes agree (threshold: 3) - high-confidence confluence:",
-        "Momentum vote OK: MACD (-25.58) > Signal (-43.52) and RSI (52.9) > 50.",
-        "Volatility vote OK: price is above Bollinger midline (Rs.1764.65) but not yet at the upper band (Rs.1887.55) - room to run.",
+        "Momentum vote OK: MACD (-26.76) > Signal (-45.00) and RSI (52.7) > 50.",
+        "Volatility vote OK: price is above Bollinger midline (Rs.1754.96) but not yet at the upper band (Rs.1877.18) - room to run.",
         "Volume vote OK: today's volume is at or above 1.2x the 20-day average (6.3L vs. 3.0L)."
       ],
       "notes": "",
@@ -2284,7 +2314,7 @@
       "historical_n": 89,
       "avg_days_to_target": 5.0,
       "avg_r_multiple": 0.141,
-      "cmp": 1820.5,
+      "cmp": 1810.5,
       "cmp_as_of": "2026-11-11",
       "category": "mid_cap",
       "category_label": "Mid Cap",
@@ -2306,7 +2336,7 @@
         "3 of 4 votes agree (threshold: 3) - high-confidence confluence:",
         "Momentum vote OK: MACD (-0.79) > Signal (-2.94) and RSI (58.9) > 50.",
         "Volatility vote OK: price is above Bollinger midline (Rs.161.04) but not yet at the upper band (Rs.175.24) - room to run.",
-        "Volume vote OK: today's volume is at or above 1.2x the 20-day average (180.0L vs. 125.0L)."
+        "Volume vote OK: today's volume is at or above 1.2x the 20-day average (180.1L vs. 125.0L)."
       ],
       "notes": "",
       "hit_rate": 0.085,
@@ -2368,7 +2398,7 @@
         "Trend vote OK: price (Rs.400.00) > 50-EMA (Rs.399.42) and 50-EMA is rising.",
         "Momentum vote OK: MACD (0.95) > Signal (-0.75) and RSI (53.3) > 50.",
         "Volatility vote OK: price is above Bollinger midline (Rs.393.35) but not yet at the upper band (Rs.408.04) - room to run.",
-        "Volume vote OK: today's volume is at or above 1.2x the 20-day average (94.9L vs. 75.2L)."
+        "Volume vote OK: today's volume is at or above 1.2x the 20-day average (95.0L vs. 75.2L)."
       ],
       "notes": "",
       "hit_rate": 0.175,
@@ -2398,7 +2428,7 @@
         "3 of 4 votes agree (threshold: 3) - high-confidence confluence:",
         "Momentum vote OK: MACD (-0.13) > Signal (-0.43) and RSI (57.9) > 50.",
         "Volatility vote OK: price is above Bollinger midline (Rs.30.13) but not yet at the upper band (Rs.31.91) - room to run.",
-        "Volume vote OK: today's volume is at or above 1.2x the 20-day average (153.8L vs. 45.2L)."
+        "Volume vote OK: today's volume is at or above 1.2x the 20-day average (153.9L vs. 45.2L)."
       ],
       "notes": "",
       "hit_rate": 0.155,
