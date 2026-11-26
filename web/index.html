@@ -69,8 +69,8 @@ footer { color:var(--muted); font-size:12px; margin-top:24px; line-height:1.6 }
     <h1>NSE Swing Picks &mdash; Today</h1>
     <div class="muted">
       Multi-cap universe (501 stocks) &middot;
-      21 fresh signal(s) &middot;
-      Generated 2026-11-26 01:34 IST
+      29 fresh signal(s) &middot;
+      Generated 2026-11-27 01:16 IST
     </div>
   </div>
   <div class="muted">Click any symbol for chart + reasoning, or click <em>Reason</em> for inline details</div>
@@ -92,27 +92,83 @@ footer { color:var(--muted); font-size:12px; margin-top:24px; line-height:1.6 }
   </thead>
   <tbody>
           <tr>
-            <td><strong><a href="stock.html?symbol=EICHERMOT&amp;model=confluence&amp;date=2026-11-23">EICHERMOT</a></strong></td>
+            <td><strong><a href="stock.html?symbol=MOTHERSON&amp;model=trend_momentum&amp;date=2026-11-25">MOTHERSON</a></strong></td>
+            <td>trend_momentum</td>
+            <td title="Today's close as of 2026-11-25">&#8377;166.26</td>
+            <td>&#8377;166.26</td>
+            <td>&#8377;183.04</td>
+            <td>&#8377;157.87</td>
+            <td>2.00</td>
+            <td class="ok" title="Fraction of historical signals that exited profitably (target hit OR positive timeout). Random baseline ~50%.">57%</td>
+            <td title="Fraction of historical signals that touched the full target before stop. Random baseline ~33% for 2:1 R:R.">24%</td>
+            <td class="ok">Medium</td>
+            <td>21</td>
+            <td>2026-11-25</td>
+            <td><button class="reason-toggle" id="btn-MOTHERSON-trend_momentum-2026-11-25" onclick="toggleReason('MOTHERSON-trend_momentum-2026-11-25')">Reason</button></td>
+          </tr>
+          <tr class="reason-row" id="reason-MOTHERSON-trend_momentum-2026-11-25">
+            <td colspan="13">
+              <strong>Why this stock was picked &mdash; trend_momentum signal on 2026-11-25:</strong>
+              <ul class='reason-list'><li>Price (Rs.166.26) is above its 50-day EMA (Rs.160.92) - structural uptrend intact.</li><li>50-EMA is sloping up vs. 5 days ago - trend is healthy, not just a bounce.</li><li>RSI(14) is at 55.0, inside the 40-55 pullback zone - momentum has cooled enough to offer a low-risk entry.</li><li>MACD histogram has turned up for two bars - momentum is rotating from down to up.</li><li>Today's volume (272.9L) is at or above the 20-day average (193.6L) - participation confirms the signal.</li></ul>
+              <div class="muted" style="margin-top:8px">
+                See the <a href="models.html#trend_momentum">full trend_momentum model description</a>
+                or click the <a href="stock.html?symbol=MOTHERSON&amp;model=trend_momentum&amp;date=2026-11-25">MOTHERSON chart</a>
+                for context.
+              </div>
+            </td>
+          </tr>
+        
+
+          <tr>
+            <td><strong><a href="stock.html?symbol=BAJAJ-AUTO&amp;model=confluence&amp;date=2026-11-25">BAJAJ-AUTO</a></strong></td>
             <td>confluence</td>
-            <td title="Today's close as of 2026-11-23">&#8377;8172.50</td>
-            <td>&#8377;8172.50</td>
-            <td>&#8377;8898.22</td>
-            <td>&#8377;7861.48</td>
+            <td title="Today's close as of 2026-11-25">&#8377;10868.00</td>
+            <td>&#8377;10868.00</td>
+            <td>&#8377;11716.95</td>
+            <td>&#8377;10504.16</td>
             <td>2.33</td>
-            <td class="weak" title="Fraction of historical signals that exited profitably (target hit OR positive timeout). Random baseline ~50%.">46%</td>
+            <td class="ok" title="Fraction of historical signals that exited profitably (target hit OR positive timeout). Random baseline ~50%.">56%</td>
+            <td title="Fraction of historical signals that touched the full target before stop. Random baseline ~33% for 2:1 R:R.">23%</td>
+            <td class="ok">Medium</td>
+            <td>108</td>
+            <td>2026-11-25</td>
+            <td><button class="reason-toggle" id="btn-BAJAJ-AUTO-confluence-2026-11-25" onclick="toggleReason('BAJAJ-AUTO-confluence-2026-11-25')">Reason</button></td>
+          </tr>
+          <tr class="reason-row" id="reason-BAJAJ-AUTO-confluence-2026-11-25">
+            <td colspan="13">
+              <strong>Why this stock was picked &mdash; confluence signal on 2026-11-25:</strong>
+              <ul class='reason-list'><li>3 of 4 votes agree (threshold: 3) - high-confidence confluence:</li><li>Trend vote OK: price (Rs.10868.00) > 50-EMA (Rs.10722.56) and 50-EMA is rising.</li><li>Momentum vote OK: MACD (63.30) > Signal (51.60) and RSI (55.8) > 50.</li><li>Volatility vote OK: price is above Bollinger midline (Rs.10686.70) but not yet at the upper band (Rs.11126.28) - room to run.</li></ul>
+              <div class="muted" style="margin-top:8px">
+                See the <a href="models.html#confluence">full confluence model description</a>
+                or click the <a href="stock.html?symbol=BAJAJ-AUTO&amp;model=confluence&amp;date=2026-11-25">BAJAJ-AUTO chart</a>
+                for context.
+              </div>
+            </td>
+          </tr>
+        
+
+          <tr>
+            <td><strong><a href="stock.html?symbol=ETERNAL&amp;model=confluence&amp;date=2026-11-25">ETERNAL</a></strong></td>
+            <td>confluence</td>
+            <td title="Today's close as of 2026-11-25">&#8377;371.70</td>
+            <td>&#8377;371.70</td>
+            <td>&#8377;406.20</td>
+            <td>&#8377;356.91</td>
+            <td>2.33</td>
+            <td class="weak" title="Fraction of historical signals that exited profitably (target hit OR positive timeout). Random baseline ~50%.">49%</td>
             <td title="Fraction of historical signals that touched the full target before stop. Random baseline ~33% for 2:1 R:R.">14%</td>
             <td class="weak">Low</td>
-            <td>91</td>
-            <td>2026-11-23</td>
-            <td><button class="reason-toggle" id="btn-EICHERMOT-confluence-2026-11-23" onclick="toggleReason('EICHERMOT-confluence-2026-11-23')">Reason</button></td>
+            <td>92</td>
+            <td>2026-11-25</td>
+            <td><button class="reason-toggle" id="btn-ETERNAL-confluence-2026-11-25" onclick="toggleReason('ETERNAL-confluence-2026-11-25')">Reason</button></td>
           </tr>
-          <tr class="reason-row" id="reason-EICHERMOT-confluence-2026-11-23">
+          <tr class="reason-row" id="reason-ETERNAL-confluence-2026-11-25">
             <td colspan="13">
-              <strong>Why this stock was picked &mdash; confluence signal on 2026-11-23:</strong>
-              <ul class='reason-list'><li>4 of 4 votes agree (threshold: 3) - high-confidence confluence:</li><li>Trend vote OK: price (Rs.8172.50) > 50-EMA (Rs.7510.33) and 50-EMA is rising.</li><li>Momentum vote OK: MACD (198.77) > Signal (129.10) and RSI (71.5) > 50.</li><li>Volatility vote OK: price is above Bollinger midline (Rs.7568.45) but not yet at the upper band (Rs.8197.53) - room to run.</li><li>Volume vote OK: today's volume is at or above 1.2x the 20-day average (7.6L vs. 5.9L).</li></ul>
+              <strong>Why this stock was picked &mdash; confluence signal on 2026-11-25:</strong>
+              <ul class='reason-list'><li>3 of 4 votes agree (threshold: 3) - high-confidence confluence:</li><li>Trend vote OK: price (Rs.371.70) > 50-EMA (Rs.340.65) and 50-EMA is rising.</li><li>Volatility vote OK: price is above Bollinger midline (Rs.356.36) but not yet at the upper band (Rs.384.44) - room to run.</li><li>Volume vote OK: today's volume is at or above 1.2x the 20-day average (296.9L vs. 237.4L).</li></ul>
               <div class="muted" style="margin-top:8px">
                 See the <a href="models.html#confluence">full confluence model description</a>
-                or click the <a href="stock.html?symbol=EICHERMOT&amp;model=confluence&amp;date=2026-11-23">EICHERMOT chart</a>
+                or click the <a href="stock.html?symbol=ETERNAL&amp;model=confluence&amp;date=2026-11-25">ETERNAL chart</a>
                 for context.
               </div>
             </td>
@@ -120,111 +176,55 @@ footer { color:var(--muted); font-size:12px; margin-top:24px; line-height:1.6 }
         
 
           <tr>
-            <td><strong><a href="stock.html?symbol=NESTLEIND&amp;model=confluence&amp;date=2026-11-23">NESTLEIND</a></strong></td>
+            <td><strong><a href="stock.html?symbol=BRITANNIA&amp;model=confluence&amp;date=2026-11-25">BRITANNIA</a></strong></td>
             <td>confluence</td>
-            <td title="Today's close as of 2026-11-23">&#8377;1305.90</td>
-            <td>&#8377;1305.90</td>
-            <td>&#8377;1417.58</td>
-            <td>&#8377;1258.04</td>
+            <td title="Today's close as of 2026-11-25">&#8377;5076.20</td>
+            <td>&#8377;5076.20</td>
+            <td>&#8377;5510.35</td>
+            <td>&#8377;4890.14</td>
             <td>2.33</td>
-            <td class="weak" title="Fraction of historical signals that exited profitably (target hit OR positive timeout). Random baseline ~50%.">43%</td>
-            <td title="Fraction of historical signals that touched the full target before stop. Random baseline ~33% for 2:1 R:R.">7%</td>
-            <td class="weak">Low</td>
-            <td>95</td>
-            <td>2026-11-23</td>
-            <td><button class="reason-toggle" id="btn-NESTLEIND-confluence-2026-11-23" onclick="toggleReason('NESTLEIND-confluence-2026-11-23')">Reason</button></td>
-          </tr>
-          <tr class="reason-row" id="reason-NESTLEIND-confluence-2026-11-23">
-            <td colspan="13">
-              <strong>Why this stock was picked &mdash; confluence signal on 2026-11-23:</strong>
-              <ul class='reason-list'><li>3 of 4 votes agree (threshold: 3) - high-confidence confluence:</li><li>Trend vote OK: price (Rs.1305.90) > 50-EMA (Rs.1301.49) and 50-EMA is rising.</li><li>Momentum vote OK: MACD (6.98) > Signal (-4.36) and RSI (55.5) > 50.</li><li>Volatility vote OK: price is above Bollinger midline (Rs.1251.33) but not yet at the upper band (Rs.1356.91) - room to run.</li></ul>
-              <div class="muted" style="margin-top:8px">
-                See the <a href="models.html#confluence">full confluence model description</a>
-                or click the <a href="stock.html?symbol=NESTLEIND&amp;model=confluence&amp;date=2026-11-23">NESTLEIND chart</a>
-                for context.
-              </div>
-            </td>
-          </tr>
-        
-
-          <tr>
-            <td><strong><a href="stock.html?symbol=TORNTPHARM&amp;model=confluence&amp;date=2026-11-23">TORNTPHARM</a></strong></td>
-            <td>confluence</td>
-            <td title="Today's close as of 2026-11-23">&#8377;4763.70</td>
-            <td>&#8377;4763.70</td>
-            <td>&#8377;5113.00</td>
-            <td>&#8377;4614.00</td>
-            <td>2.33</td>
-            <td class="weak" title="Fraction of historical signals that exited profitably (target hit OR positive timeout). Random baseline ~50%.">41%</td>
-            <td title="Fraction of historical signals that touched the full target before stop. Random baseline ~33% for 2:1 R:R.">9%</td>
-            <td class="weak">Low</td>
-            <td>118</td>
-            <td>2026-11-23</td>
-            <td><button class="reason-toggle" id="btn-TORNTPHARM-confluence-2026-11-23" onclick="toggleReason('TORNTPHARM-confluence-2026-11-23')">Reason</button></td>
-          </tr>
-          <tr class="reason-row" id="reason-TORNTPHARM-confluence-2026-11-23">
-            <td colspan="13">
-              <strong>Why this stock was picked &mdash; confluence signal on 2026-11-23:</strong>
-              <ul class='reason-list'><li>3 of 4 votes agree (threshold: 3) - high-confidence confluence:</li><li>Momentum vote OK: MACD (-1.34) > Signal (-9.79) and RSI (56.9) > 50.</li><li>Volatility vote OK: price is above Bollinger midline (Rs.4667.10) but not yet at the upper band (Rs.4811.69) - room to run.</li><li>Volume vote OK: today's volume is at or above 1.2x the 20-day average (5.9L vs. 3.5L).</li></ul>
-              <div class="muted" style="margin-top:8px">
-                See the <a href="models.html#confluence">full confluence model description</a>
-                or click the <a href="stock.html?symbol=TORNTPHARM&amp;model=confluence&amp;date=2026-11-23">TORNTPHARM chart</a>
-                for context.
-              </div>
-            </td>
-          </tr>
-        
-
-          <tr>
-            <td><strong><a href="stock.html?symbol=JINDALSTEL&amp;model=confluence&amp;date=2026-11-23">JINDALSTEL</a></strong></td>
-            <td>confluence</td>
-            <td title="Today's close as of 2026-11-23">&#8377;1131.30</td>
-            <td>&#8377;1131.30</td>
-            <td>&#8377;1237.08</td>
-            <td>&#8377;1085.97</td>
-            <td>2.33</td>
-            <td class="weak" title="Fraction of historical signals that exited profitably (target hit OR positive timeout). Random baseline ~50%.">40%</td>
-            <td title="Fraction of historical signals that touched the full target before stop. Random baseline ~33% for 2:1 R:R.">6%</td>
-            <td class="weak">Low</td>
-            <td>95</td>
-            <td>2026-11-23</td>
-            <td><button class="reason-toggle" id="btn-JINDALSTEL-confluence-2026-11-23" onclick="toggleReason('JINDALSTEL-confluence-2026-11-23')">Reason</button></td>
-          </tr>
-          <tr class="reason-row" id="reason-JINDALSTEL-confluence-2026-11-23">
-            <td colspan="13">
-              <strong>Why this stock was picked &mdash; confluence signal on 2026-11-23:</strong>
-              <ul class='reason-list'><li>3 of 4 votes agree (threshold: 3) - high-confidence confluence:</li><li>Trend vote OK: price (Rs.1131.30) > 50-EMA (Rs.1106.71) and 50-EMA is rising.</li><li>Volatility vote OK: price is above Bollinger midline (Rs.1116.30) but not yet at the upper band (Rs.1199.94) - room to run.</li><li>Volume vote OK: today's volume is at or above 1.2x the 20-day average (16.2L vs. 12.8L).</li></ul>
-              <div class="muted" style="margin-top:8px">
-                See the <a href="models.html#confluence">full confluence model description</a>
-                or click the <a href="stock.html?symbol=JINDALSTEL&amp;model=confluence&amp;date=2026-11-23">JINDALSTEL chart</a>
-                for context.
-              </div>
-            </td>
-          </tr>
-        
-
-          <tr>
-            <td><strong><a href="stock.html?symbol=TCS&amp;model=confluence&amp;date=2026-11-23">TCS</a></strong></td>
-            <td>confluence</td>
-            <td title="Today's close as of 2026-11-23">&#8377;2460.00</td>
-            <td>&#8377;2460.00</td>
-            <td>&#8377;2703.70</td>
-            <td>&#8377;2355.56</td>
-            <td>2.33</td>
-            <td class="weak" title="Fraction of historical signals that exited profitably (target hit OR positive timeout). Random baseline ~50%.">34%</td>
+            <td class="weak" title="Fraction of historical signals that exited profitably (target hit OR positive timeout). Random baseline ~50%.">48%</td>
             <td title="Fraction of historical signals that touched the full target before stop. Random baseline ~33% for 2:1 R:R.">15%</td>
             <td class="weak">Low</td>
-            <td>79</td>
-            <td>2026-11-23</td>
-            <td><button class="reason-toggle" id="btn-TCS-confluence-2026-11-23" onclick="toggleReason('TCS-confluence-2026-11-23')">Reason</button></td>
+            <td>94</td>
+            <td>2026-11-25</td>
+            <td><button class="reason-toggle" id="btn-BRITANNIA-confluence-2026-11-25" onclick="toggleReason('BRITANNIA-confluence-2026-11-25')">Reason</button></td>
           </tr>
-          <tr class="reason-row" id="reason-TCS-confluence-2026-11-23">
+          <tr class="reason-row" id="reason-BRITANNIA-confluence-2026-11-25">
             <td colspan="13">
-              <strong>Why this stock was picked &mdash; confluence signal on 2026-11-23:</strong>
-              <ul class='reason-list'><li>3 of 4 votes agree (threshold: 3) - high-confidence confluence:</li><li>Trend vote OK: price (Rs.2460.00) > 50-EMA (Rs.2356.61) and 50-EMA is rising.</li><li>Volatility vote OK: price is above Bollinger midline (Rs.2453.54) but not yet at the upper band (Rs.2557.65) - room to run.</li><li>Volume vote OK: today's volume is at or above 1.2x the 20-day average (73.9L vs. 35.1L).</li></ul>
+              <strong>Why this stock was picked &mdash; confluence signal on 2026-11-25:</strong>
+              <ul class='reason-list'><li>3 of 4 votes agree (threshold: 3) - high-confidence confluence:</li><li>Trend vote OK: price (Rs.5076.20) > 50-EMA (Rs.4865.13) and 50-EMA is rising.</li><li>Momentum vote OK: MACD (25.92) > Signal (-4.42) and RSI (63.7) > 50.</li><li>Volume vote OK: today's volume is at or above 1.2x the 20-day average (6.0L vs. 3.1L).</li></ul>
               <div class="muted" style="margin-top:8px">
                 See the <a href="models.html#confluence">full confluence model description</a>
-                or click the <a href="stock.html?symbol=TCS&amp;model=confluence&amp;date=2026-11-23">TCS chart</a>
+                or click the <a href="stock.html?symbol=BRITANNIA&amp;model=confluence&amp;date=2026-11-25">BRITANNIA chart</a>
+                for context.
+              </div>
+            </td>
+          </tr>
+        
+
+          <tr>
+            <td><strong><a href="stock.html?symbol=VBL&amp;model=confluence&amp;date=2026-11-25">VBL</a></strong></td>
+            <td>confluence</td>
+            <td title="Today's close as of 2026-11-25">&#8377;437.10</td>
+            <td>&#8377;437.10</td>
+            <td>&#8377;476.00</td>
+            <td>&#8377;420.43</td>
+            <td>2.33</td>
+            <td class="weak" title="Fraction of historical signals that exited profitably (target hit OR positive timeout). Random baseline ~50%.">47%</td>
+            <td title="Fraction of historical signals that touched the full target before stop. Random baseline ~33% for 2:1 R:R.">19%</td>
+            <td class="weak">Low</td>
+            <td>108</td>
+            <td>2026-11-25</td>
+            <td><button class="reason-toggle" id="btn-VBL-confluence-2026-11-25" onclick="toggleReason('VBL-confluence-2026-11-25')">Reason</button></td>
+          </tr>
+          <tr class="reason-row" id="reason-VBL-confluence-2026-11-25">
+            <td colspan="13">
+              <strong>Why this stock was picked &mdash; confluence signal on 2026-11-25:</strong>
+              <ul class='reason-list'><li>3 of 4 votes agree (threshold: 3) - high-confidence confluence:</li><li>Trend vote OK: price (Rs.437.10) > 50-EMA (Rs.426.84) and 50-EMA is rising.</li><li>Momentum vote OK: MACD (2.57) > Signal (1.73) and RSI (57.0) > 50.</li><li>Volatility vote OK: price is above Bollinger midline (Rs.423.06) but not yet at the upper band (Rs.451.11) - room to run.</li></ul>
+              <div class="muted" style="margin-top:8px">
+                See the <a href="models.html#confluence">full confluence model description</a>
+                or click the <a href="stock.html?symbol=VBL&amp;model=confluence&amp;date=2026-11-25">VBL chart</a>
                 for context.
               </div>
             </td>
@@ -233,7 +233,7 @@ footer { color:var(--muted); font-size:12px; margin-top:24px; line-height:1.6 }
 </table></div>
 
 
-<h2>Mid Cap <span class="sub">&middot; top 4 by historical hit-rate</span></h2>
+<h2>Mid Cap <span class="sub">&middot; top 5 by historical hit-rate</span></h2>
 
 <div class="card"><table>
   <thead>
@@ -248,83 +248,27 @@ footer { color:var(--muted); font-size:12px; margin-top:24px; line-height:1.6 }
   </thead>
   <tbody>
           <tr>
-            <td><strong><a href="stock.html?symbol=PERSISTENT&amp;model=breakout_volume&amp;date=2026-11-23">PERSISTENT</a></strong></td>
-            <td>breakout_volume</td>
-            <td title="Today's close as of 2026-11-23">&#8377;6282.50</td>
-            <td>&#8377;6282.50</td>
-            <td>&#8377;6802.01</td>
-            <td>&#8377;6022.75</td>
-            <td>2.00</td>
-            <td class="weak" title="Fraction of historical signals that exited profitably (target hit OR positive timeout). Random baseline ~50%.">42%</td>
-            <td title="Fraction of historical signals that touched the full target before stop. Random baseline ~33% for 2:1 R:R.">21%</td>
-            <td class="weak">Low</td>
-            <td>19</td>
-            <td>2026-11-23</td>
-            <td><button class="reason-toggle" id="btn-PERSISTENT-breakout_volume-2026-11-23" onclick="toggleReason('PERSISTENT-breakout_volume-2026-11-23')">Reason</button></td>
-          </tr>
-          <tr class="reason-row" id="reason-PERSISTENT-breakout_volume-2026-11-23">
-            <td colspan="13">
-              <strong>Why this stock was picked &mdash; breakout_volume signal on 2026-11-23:</strong>
-              <ul class='reason-list'><li>Close (Rs.6282.50) broke above the prior 20-day Donchian high (Rs.6240.00) - fresh momentum.</li><li>Volume on the breakout is 2.1x the 20-day average - real participation, not a low-liquidity fakeout.</li><li>Bollinger bandwidth was in the bottom 10% of the last 100 bars within the past 10 sessions - the stock was coiled before this expansion.</li><li>Price is above the 50-EMA (Rs.5796.05) - the breakout aligns with the larger trend.</li></ul>
-              <div class="muted" style="margin-top:8px">
-                See the <a href="models.html#breakout_volume">full breakout_volume model description</a>
-                or click the <a href="stock.html?symbol=PERSISTENT&amp;model=breakout_volume&amp;date=2026-11-23">PERSISTENT chart</a>
-                for context.
-              </div>
-            </td>
-          </tr>
-        
-
-          <tr>
-            <td><strong><a href="stock.html?symbol=LTF&amp;model=confluence&amp;date=2026-11-23">LTF</a></strong></td>
+            <td><strong><a href="stock.html?symbol=BLUESTARCO&amp;model=confluence&amp;date=2026-11-25">BLUESTARCO</a></strong></td>
             <td>confluence</td>
-            <td title="Today's close as of 2026-11-23">&#8377;274.00</td>
-            <td>&#8377;274.00</td>
-            <td>&#8377;304.18</td>
-            <td>&#8377;261.07</td>
+            <td title="Today's close as of 2026-11-25">&#8377;1821.50</td>
+            <td>&#8377;1821.50</td>
+            <td>&#8377;2037.35</td>
+            <td>&#8377;1728.99</td>
             <td>2.33</td>
-            <td class="weak" title="Fraction of historical signals that exited profitably (target hit OR positive timeout). Random baseline ~50%.">42%</td>
-            <td title="Fraction of historical signals that touched the full target before stop. Random baseline ~33% for 2:1 R:R.">12%</td>
-            <td class="weak">Low</td>
-            <td>88</td>
-            <td>2026-11-23</td>
-            <td><button class="reason-toggle" id="btn-LTF-confluence-2026-11-23" onclick="toggleReason('LTF-confluence-2026-11-23')">Reason</button></td>
-          </tr>
-          <tr class="reason-row" id="reason-LTF-confluence-2026-11-23">
-            <td colspan="13">
-              <strong>Why this stock was picked &mdash; confluence signal on 2026-11-23:</strong>
-              <ul class='reason-list'><li>3 of 4 votes agree (threshold: 3) - high-confidence confluence:</li><li>Trend vote OK: price (Rs.274.00) > 50-EMA (Rs.273.78) and 50-EMA is rising.</li><li>Momentum vote OK: MACD (2.96) > Signal (1.49) and RSI (53.9) > 50.</li><li>Volatility vote OK: price is above Bollinger midline (Rs.265.36) but not yet at the upper band (Rs.294.78) - room to run.</li></ul>
-              <div class="muted" style="margin-top:8px">
-                See the <a href="models.html#confluence">full confluence model description</a>
-                or click the <a href="stock.html?symbol=LTF&amp;model=confluence&amp;date=2026-11-23">LTF chart</a>
-                for context.
-              </div>
-            </td>
-          </tr>
-        
-
-          <tr>
-            <td><strong><a href="stock.html?symbol=POLICYBZR&amp;model=confluence&amp;date=2026-11-23">POLICYBZR</a></strong></td>
-            <td>confluence</td>
-            <td title="Today's close as of 2026-11-23">&#8377;1089.10</td>
-            <td>&#8377;1089.10</td>
-            <td>&#8377;1279.51</td>
-            <td>&#8377;1007.50</td>
-            <td>2.33</td>
-            <td class="weak" title="Fraction of historical signals that exited profitably (target hit OR positive timeout). Random baseline ~50%.">40%</td>
+            <td class="weak" title="Fraction of historical signals that exited profitably (target hit OR positive timeout). Random baseline ~50%.">43%</td>
             <td title="Fraction of historical signals that touched the full target before stop. Random baseline ~33% for 2:1 R:R.">14%</td>
             <td class="weak">Low</td>
-            <td>90</td>
-            <td>2026-11-23</td>
-            <td><button class="reason-toggle" id="btn-POLICYBZR-confluence-2026-11-23" onclick="toggleReason('POLICYBZR-confluence-2026-11-23')">Reason</button></td>
+            <td>100</td>
+            <td>2026-11-25</td>
+            <td><button class="reason-toggle" id="btn-BLUESTARCO-confluence-2026-11-25" onclick="toggleReason('BLUESTARCO-confluence-2026-11-25')">Reason</button></td>
           </tr>
-          <tr class="reason-row" id="reason-POLICYBZR-confluence-2026-11-23">
+          <tr class="reason-row" id="reason-BLUESTARCO-confluence-2026-11-25">
             <td colspan="13">
-              <strong>Why this stock was picked &mdash; confluence signal on 2026-11-23:</strong>
-              <ul class='reason-list'><li>3 of 4 votes agree (threshold: 3) - high-confidence confluence:</li><li>Momentum vote OK: MACD (-22.70) > Signal (-44.39) and RSI (53.4) > 50.</li><li>Volatility vote OK: price is above Bollinger midline (Rs.1009.05) but not yet at the upper band (Rs.1109.53) - room to run.</li><li>Volume vote OK: today's volume is at or above 1.2x the 20-day average (104.2L vs. 38.5L).</li></ul>
+              <strong>Why this stock was picked &mdash; confluence signal on 2026-11-25:</strong>
+              <ul class='reason-list'><li>3 of 4 votes agree (threshold: 3) - high-confidence confluence:</li><li>Trend vote OK: price (Rs.1821.50) > 50-EMA (Rs.1601.12) and 50-EMA is rising.</li><li>Momentum vote OK: MACD (55.94) > Signal (31.30) and RSI (74.2) > 50.</li><li>Volume vote OK: today's volume is at or above 1.2x the 20-day average (8.6L vs. 6.8L).</li></ul>
               <div class="muted" style="margin-top:8px">
                 See the <a href="models.html#confluence">full confluence model description</a>
-                or click the <a href="stock.html?symbol=POLICYBZR&amp;model=confluence&amp;date=2026-11-23">POLICYBZR chart</a>
+                or click the <a href="stock.html?symbol=BLUESTARCO&amp;model=confluence&amp;date=2026-11-25">BLUESTARCO chart</a>
                 for context.
               </div>
             </td>
@@ -332,27 +276,111 @@ footer { color:var(--muted); font-size:12px; margin-top:24px; line-height:1.6 }
         
 
           <tr>
-            <td><strong><a href="stock.html?symbol=VMM&amp;model=confluence&amp;date=2026-11-23">VMM</a></strong></td>
+            <td><strong><a href="stock.html?symbol=COLPAL&amp;model=confluence&amp;date=2026-11-25">COLPAL</a></strong></td>
             <td>confluence</td>
-            <td title="Today's close as of 2026-11-23">&#8377;94.50</td>
-            <td>&#8377;94.50</td>
-            <td>&#8377;104.52</td>
-            <td>&#8377;90.20</td>
+            <td title="Today's close as of 2026-11-25">&#8377;1825.00</td>
+            <td>&#8377;1825.00</td>
+            <td>&#8377;1988.22</td>
+            <td>&#8377;1755.05</td>
             <td>2.33</td>
-            <td class="weak" title="Fraction of historical signals that exited profitably (target hit OR positive timeout). Random baseline ~50%.">35%</td>
-            <td title="Fraction of historical signals that touched the full target before stop. Random baseline ~33% for 2:1 R:R.">10%</td>
+            <td class="weak" title="Fraction of historical signals that exited profitably (target hit OR positive timeout). Random baseline ~50%.">43%</td>
+            <td title="Fraction of historical signals that touched the full target before stop. Random baseline ~33% for 2:1 R:R.">8%</td>
             <td class="weak">Low</td>
-            <td>20</td>
-            <td>2026-11-23</td>
-            <td><button class="reason-toggle" id="btn-VMM-confluence-2026-11-23" onclick="toggleReason('VMM-confluence-2026-11-23')">Reason</button></td>
+            <td>91</td>
+            <td>2026-11-25</td>
+            <td><button class="reason-toggle" id="btn-COLPAL-confluence-2026-11-25" onclick="toggleReason('COLPAL-confluence-2026-11-25')">Reason</button></td>
           </tr>
-          <tr class="reason-row" id="reason-VMM-confluence-2026-11-23">
+          <tr class="reason-row" id="reason-COLPAL-confluence-2026-11-25">
             <td colspan="13">
-              <strong>Why this stock was picked &mdash; confluence signal on 2026-11-23:</strong>
-              <ul class='reason-list'><li>3 of 4 votes agree (threshold: 3) - high-confidence confluence:</li><li>Momentum vote OK: MACD (-0.53) > Signal (-0.97) and RSI (52.1) > 50.</li><li>Volatility vote OK: price is above Bollinger midline (Rs.91.62) but not yet at the upper band (Rs.98.50) - room to run.</li><li>Volume vote OK: today's volume is at or above 1.2x the 20-day average (139.5L vs. 68.6L).</li></ul>
+              <strong>Why this stock was picked &mdash; confluence signal on 2026-11-25:</strong>
+              <ul class='reason-list'><li>4 of 4 votes agree (threshold: 3) - high-confidence confluence:</li><li>Trend vote OK: price (Rs.1825.00) > 50-EMA (Rs.1746.73) and 50-EMA is rising.</li><li>Momentum vote OK: MACD (16.98) > Signal (-1.63) and RSI (63.6) > 50.</li><li>Volatility vote OK: price is above Bollinger midline (Rs.1684.08) but not yet at the upper band (Rs.1832.01) - room to run.</li><li>Volume vote OK: today's volume is at or above 1.2x the 20-day average (8.9L vs. 4.4L).</li></ul>
               <div class="muted" style="margin-top:8px">
                 See the <a href="models.html#confluence">full confluence model description</a>
-                or click the <a href="stock.html?symbol=VMM&amp;model=confluence&amp;date=2026-11-23">VMM chart</a>
+                or click the <a href="stock.html?symbol=COLPAL&amp;model=confluence&amp;date=2026-11-25">COLPAL chart</a>
+                for context.
+              </div>
+            </td>
+          </tr>
+        
+
+          <tr>
+            <td><strong><a href="stock.html?symbol=LUPIN&amp;model=confluence&amp;date=2026-11-25">LUPIN</a></strong></td>
+            <td>confluence</td>
+            <td title="Today's close as of 2026-11-25">&#8377;2003.80</td>
+            <td>&#8377;2003.80</td>
+            <td>&#8377;2148.82</td>
+            <td>&#8377;1941.65</td>
+            <td>2.33</td>
+            <td class="weak" title="Fraction of historical signals that exited profitably (target hit OR positive timeout). Random baseline ~50%.">41%</td>
+            <td title="Fraction of historical signals that touched the full target before stop. Random baseline ~33% for 2:1 R:R.">15%</td>
+            <td class="weak">Low</td>
+            <td>95</td>
+            <td>2026-11-25</td>
+            <td><button class="reason-toggle" id="btn-LUPIN-confluence-2026-11-25" onclick="toggleReason('LUPIN-confluence-2026-11-25')">Reason</button></td>
+          </tr>
+          <tr class="reason-row" id="reason-LUPIN-confluence-2026-11-25">
+            <td colspan="13">
+              <strong>Why this stock was picked &mdash; confluence signal on 2026-11-25:</strong>
+              <ul class='reason-list'><li>3 of 4 votes agree (threshold: 3) - high-confidence confluence:</li><li>Momentum vote OK: MACD (-4.52) > Signal (-7.81) and RSI (51.3) > 50.</li><li>Volatility vote OK: price is above Bollinger midline (Rs.1992.86) but not yet at the upper band (Rs.2037.11) - room to run.</li><li>Volume vote OK: today's volume is at or above 1.2x the 20-day average (11.1L vs. 7.5L).</li></ul>
+              <div class="muted" style="margin-top:8px">
+                See the <a href="models.html#confluence">full confluence model description</a>
+                or click the <a href="stock.html?symbol=LUPIN&amp;model=confluence&amp;date=2026-11-25">LUPIN chart</a>
+                for context.
+              </div>
+            </td>
+          </tr>
+        
+
+          <tr>
+            <td><strong><a href="stock.html?symbol=MPHASIS&amp;model=confluence&amp;date=2026-11-25">MPHASIS</a></strong></td>
+            <td>confluence</td>
+            <td title="Today's close as of 2026-11-25">&#8377;2532.90</td>
+            <td>&#8377;2532.90</td>
+            <td>&#8377;2829.23</td>
+            <td>&#8377;2405.90</td>
+            <td>2.33</td>
+            <td class="weak" title="Fraction of historical signals that exited profitably (target hit OR positive timeout). Random baseline ~50%.">37%</td>
+            <td title="Fraction of historical signals that touched the full target before stop. Random baseline ~33% for 2:1 R:R.">6%</td>
+            <td class="weak">Low</td>
+            <td>97</td>
+            <td>2026-11-25</td>
+            <td><button class="reason-toggle" id="btn-MPHASIS-confluence-2026-11-25" onclick="toggleReason('MPHASIS-confluence-2026-11-25')">Reason</button></td>
+          </tr>
+          <tr class="reason-row" id="reason-MPHASIS-confluence-2026-11-25">
+            <td colspan="13">
+              <strong>Why this stock was picked &mdash; confluence signal on 2026-11-25:</strong>
+              <ul class='reason-list'><li>3 of 4 votes agree (threshold: 3) - high-confidence confluence:</li><li>Trend vote OK: price (Rs.2532.90) > 50-EMA (Rs.2427.91) and 50-EMA is rising.</li><li>Volatility vote OK: price is above Bollinger midline (Rs.2479.14) but not yet at the upper band (Rs.2615.61) - room to run.</li><li>Volume vote OK: today's volume is at or above 1.2x the 20-day average (9.5L vs. 7.8L).</li></ul>
+              <div class="muted" style="margin-top:8px">
+                See the <a href="models.html#confluence">full confluence model description</a>
+                or click the <a href="stock.html?symbol=MPHASIS&amp;model=confluence&amp;date=2026-11-25">MPHASIS chart</a>
+                for context.
+              </div>
+            </td>
+          </tr>
+        
+
+          <tr>
+            <td><strong><a href="stock.html?symbol=SBICARD&amp;model=confluence&amp;date=2026-11-25">SBICARD</a></strong></td>
+            <td>confluence</td>
+            <td title="Today's close as of 2026-11-25">&#8377;589.00</td>
+            <td>&#8377;589.00</td>
+            <td>&#8377;646.19</td>
+            <td>&#8377;564.49</td>
+            <td>2.33</td>
+            <td class="weak" title="Fraction of historical signals that exited profitably (target hit OR positive timeout). Random baseline ~50%.">25%</td>
+            <td title="Fraction of historical signals that touched the full target before stop. Random baseline ~33% for 2:1 R:R.">11%</td>
+            <td class="weak">Low</td>
+            <td>71</td>
+            <td>2026-11-25</td>
+            <td><button class="reason-toggle" id="btn-SBICARD-confluence-2026-11-25" onclick="toggleReason('SBICARD-confluence-2026-11-25')">Reason</button></td>
+          </tr>
+          <tr class="reason-row" id="reason-SBICARD-confluence-2026-11-25">
+            <td colspan="13">
+              <strong>Why this stock was picked &mdash; confluence signal on 2026-11-25:</strong>
+              <ul class='reason-list'><li>3 of 4 votes agree (threshold: 3) - high-confidence confluence:</li><li>Momentum vote OK: MACD (2.45) > Signal (-0.54) and RSI (57.2) > 50.</li><li>Volatility vote OK: price is above Bollinger midline (Rs.564.09) but not yet at the upper band (Rs.611.47) - room to run.</li><li>Volume vote OK: today's volume is at or above 1.2x the 20-day average (12.8L vs. 10.0L).</li></ul>
+              <div class="muted" style="margin-top:8px">
+                See the <a href="models.html#confluence">full confluence model description</a>
+                or click the <a href="stock.html?symbol=SBICARD&amp;model=confluence&amp;date=2026-11-25">SBICARD chart</a>
                 for context.
               </div>
             </td>
@@ -376,27 +404,55 @@ footer { color:var(--muted); font-size:12px; margin-top:24px; line-height:1.6 }
   </thead>
   <tbody>
           <tr>
-            <td><strong><a href="stock.html?symbol=BRIGADE&amp;model=confluence&amp;date=2026-11-23">BRIGADE</a></strong></td>
+            <td><strong><a href="stock.html?symbol=ACMESOLAR&amp;model=trend_momentum&amp;date=2026-11-25">ACMESOLAR</a></strong></td>
+            <td>trend_momentum</td>
+            <td title="Today's close as of 2026-11-25">&#8377;416.70</td>
+            <td>&#8377;416.70</td>
+            <td>&#8377;461.95</td>
+            <td>&#8377;394.08</td>
+            <td>2.00</td>
+            <td class="good" title="Fraction of historical signals that exited profitably (target hit OR positive timeout). Random baseline ~50%.">62%</td>
+            <td title="Fraction of historical signals that touched the full target before stop. Random baseline ~33% for 2:1 R:R.">38%</td>
+            <td class="good">High</td>
+            <td>8</td>
+            <td>2026-11-25</td>
+            <td><button class="reason-toggle" id="btn-ACMESOLAR-trend_momentum-2026-11-25" onclick="toggleReason('ACMESOLAR-trend_momentum-2026-11-25')">Reason</button></td>
+          </tr>
+          <tr class="reason-row" id="reason-ACMESOLAR-trend_momentum-2026-11-25">
+            <td colspan="13">
+              <strong>Why this stock was picked &mdash; trend_momentum signal on 2026-11-25:</strong>
+              <ul class='reason-list'><li>Price (Rs.416.70) is above its 50-day EMA (Rs.409.33) - structural uptrend intact.</li><li>50-EMA is sloping up vs. 5 days ago - trend is healthy, not just a bounce.</li><li>RSI(14) is at 52.9, inside the 40-55 pullback zone - momentum has cooled enough to offer a low-risk entry.</li><li>MACD histogram has turned up for two bars - momentum is rotating from down to up.</li><li>Today's volume (9.4L) is at or above the 20-day average (8.8L) - participation confirms the signal.</li></ul>
+              <div class="muted" style="margin-top:8px">
+                See the <a href="models.html#trend_momentum">full trend_momentum model description</a>
+                or click the <a href="stock.html?symbol=ACMESOLAR&amp;model=trend_momentum&amp;date=2026-11-25">ACMESOLAR chart</a>
+                for context.
+              </div>
+            </td>
+          </tr>
+        
+
+          <tr>
+            <td><strong><a href="stock.html?symbol=NEULANDLAB&amp;model=confluence&amp;date=2026-11-25">NEULANDLAB</a></strong></td>
             <td>confluence</td>
-            <td title="Today's close as of 2026-11-23">&#8377;581.65</td>
-            <td>&#8377;581.65</td>
-            <td>&#8377;652.33</td>
-            <td>&#8377;551.36</td>
+            <td title="Today's close as of 2026-11-25">&#8377;20968.00</td>
+            <td>&#8377;20968.00</td>
+            <td>&#8377;23465.57</td>
+            <td>&#8377;19897.61</td>
             <td>2.33</td>
             <td class="ok" title="Fraction of historical signals that exited profitably (target hit OR positive timeout). Random baseline ~50%.">50%</td>
-            <td title="Fraction of historical signals that touched the full target before stop. Random baseline ~33% for 2:1 R:R.">12%</td>
+            <td title="Fraction of historical signals that touched the full target before stop. Random baseline ~33% for 2:1 R:R.">20%</td>
             <td class="ok">Medium</td>
-            <td>107</td>
-            <td>2026-11-23</td>
-            <td><button class="reason-toggle" id="btn-BRIGADE-confluence-2026-11-23" onclick="toggleReason('BRIGADE-confluence-2026-11-23')">Reason</button></td>
+            <td>90</td>
+            <td>2026-11-25</td>
+            <td><button class="reason-toggle" id="btn-NEULANDLAB-confluence-2026-11-25" onclick="toggleReason('NEULANDLAB-confluence-2026-11-25')">Reason</button></td>
           </tr>
-          <tr class="reason-row" id="reason-BRIGADE-confluence-2026-11-23">
+          <tr class="reason-row" id="reason-NEULANDLAB-confluence-2026-11-25">
             <td colspan="13">
-              <strong>Why this stock was picked &mdash; confluence signal on 2026-11-23:</strong>
-              <ul class='reason-list'><li>3 of 4 votes agree (threshold: 3) - high-confidence confluence:</li><li>Trend vote OK: price (Rs.581.65) > 50-EMA (Rs.569.59) and 50-EMA is rising.</li><li>Momentum vote OK: MACD (0.78) > Signal (-4.95) and RSI (59.4) > 50.</li><li>Volatility vote OK: price is above Bollinger midline (Rs.550.45) but not yet at the upper band (Rs.583.03) - room to run.</li></ul>
+              <strong>Why this stock was picked &mdash; confluence signal on 2026-11-25:</strong>
+              <ul class='reason-list'><li>3 of 4 votes agree (threshold: 3) - high-confidence confluence:</li><li>Trend vote OK: price (Rs.20968.00) > 50-EMA (Rs.20702.05) and 50-EMA is rising.</li><li>Momentum vote OK: MACD (150.52) > Signal (35.85) and RSI (54.8) > 50.</li><li>Volatility vote OK: price is above Bollinger midline (Rs.20332.60) but not yet at the upper band (Rs.21896.36) - room to run.</li></ul>
               <div class="muted" style="margin-top:8px">
                 See the <a href="models.html#confluence">full confluence model description</a>
-                or click the <a href="stock.html?symbol=BRIGADE&amp;model=confluence&amp;date=2026-11-23">BRIGADE chart</a>
+                or click the <a href="stock.html?symbol=NEULANDLAB&amp;model=confluence&amp;date=2026-11-25">NEULANDLAB chart</a>
                 for context.
               </div>
             </td>
@@ -404,27 +460,27 @@ footer { color:var(--muted); font-size:12px; margin-top:24px; line-height:1.6 }
         
 
           <tr>
-            <td><strong><a href="stock.html?symbol=GRAPHITE&amp;model=confluence&amp;date=2026-11-23">GRAPHITE</a></strong></td>
+            <td><strong><a href="stock.html?symbol=TITAGARH&amp;model=confluence&amp;date=2026-11-25">TITAGARH</a></strong></td>
             <td>confluence</td>
-            <td title="Today's close as of 2026-11-23">&#8377;789.90</td>
-            <td>&#8377;789.90</td>
-            <td>&#8377;883.70</td>
-            <td>&#8377;749.70</td>
+            <td title="Today's close as of 2026-11-25">&#8377;745.00</td>
+            <td>&#8377;745.00</td>
+            <td>&#8377;832.63</td>
+            <td>&#8377;707.44</td>
             <td>2.33</td>
-            <td class="weak" title="Fraction of historical signals that exited profitably (target hit OR positive timeout). Random baseline ~50%.">49%</td>
-            <td title="Fraction of historical signals that touched the full target before stop. Random baseline ~33% for 2:1 R:R.">23%</td>
+            <td class="weak" title="Fraction of historical signals that exited profitably (target hit OR positive timeout). Random baseline ~50%.">48%</td>
+            <td title="Fraction of historical signals that touched the full target before stop. Random baseline ~33% for 2:1 R:R.">25%</td>
             <td class="weak">Low</td>
-            <td>82</td>
-            <td>2026-11-23</td>
-            <td><button class="reason-toggle" id="btn-GRAPHITE-confluence-2026-11-23" onclick="toggleReason('GRAPHITE-confluence-2026-11-23')">Reason</button></td>
+            <td>91</td>
+            <td>2026-11-25</td>
+            <td><button class="reason-toggle" id="btn-TITAGARH-confluence-2026-11-25" onclick="toggleReason('TITAGARH-confluence-2026-11-25')">Reason</button></td>
           </tr>
-          <tr class="reason-row" id="reason-GRAPHITE-confluence-2026-11-23">
+          <tr class="reason-row" id="reason-TITAGARH-confluence-2026-11-25">
             <td colspan="13">
-              <strong>Why this stock was picked &mdash; confluence signal on 2026-11-23:</strong>
-              <ul class='reason-list'><li>3 of 4 votes agree (threshold: 3) - high-confidence confluence:</li><li>Trend vote OK: price (Rs.789.90) > 50-EMA (Rs.764.56) and 50-EMA is rising.</li><li>Momentum vote OK: MACD (5.77) > Signal (2.26) and RSI (54.9) > 50.</li><li>Volatility vote OK: price is above Bollinger midline (Rs.762.93) but not yet at the upper band (Rs.813.68) - room to run.</li></ul>
+              <strong>Why this stock was picked &mdash; confluence signal on 2026-11-25:</strong>
+              <ul class='reason-list'><li>3 of 4 votes agree (threshold: 3) - high-confidence confluence:</li><li>Momentum vote OK: MACD (-1.57) > Signal (-8.88) and RSI (55.7) > 50.</li><li>Volatility vote OK: price is above Bollinger midline (Rs.706.30) but not yet at the upper band (Rs.766.01) - room to run.</li><li>Volume vote OK: today's volume is at or above 1.2x the 20-day average (17.8L vs. 9.9L).</li></ul>
               <div class="muted" style="margin-top:8px">
                 See the <a href="models.html#confluence">full confluence model description</a>
-                or click the <a href="stock.html?symbol=GRAPHITE&amp;model=confluence&amp;date=2026-11-23">GRAPHITE chart</a>
+                or click the <a href="stock.html?symbol=TITAGARH&amp;model=confluence&amp;date=2026-11-25">TITAGARH chart</a>
                 for context.
               </div>
             </td>
@@ -432,27 +488,27 @@ footer { color:var(--muted); font-size:12px; margin-top:24px; line-height:1.6 }
         
 
           <tr>
-            <td><strong><a href="stock.html?symbol=INOXINDIA&amp;model=confluence&amp;date=2026-11-23">INOXINDIA</a></strong></td>
+            <td><strong><a href="stock.html?symbol=GRANULES&amp;model=confluence&amp;date=2026-11-25">GRANULES</a></strong></td>
             <td>confluence</td>
-            <td title="Today's close as of 2026-11-23">&#8377;2088.00</td>
-            <td>&#8377;2088.00</td>
-            <td>&#8377;2414.36</td>
-            <td>&#8377;1948.13</td>
+            <td title="Today's close as of 2026-11-25">&#8377;840.80</td>
+            <td>&#8377;840.80</td>
+            <td>&#8377;950.13</td>
+            <td>&#8377;793.94</td>
             <td>2.33</td>
             <td class="weak" title="Fraction of historical signals that exited profitably (target hit OR positive timeout). Random baseline ~50%.">48%</td>
             <td title="Fraction of historical signals that touched the full target before stop. Random baseline ~33% for 2:1 R:R.">16%</td>
             <td class="weak">Low</td>
-            <td>44</td>
-            <td>2026-11-23</td>
-            <td><button class="reason-toggle" id="btn-INOXINDIA-confluence-2026-11-23" onclick="toggleReason('INOXINDIA-confluence-2026-11-23')">Reason</button></td>
+            <td>92</td>
+            <td>2026-11-25</td>
+            <td><button class="reason-toggle" id="btn-GRANULES-confluence-2026-11-25" onclick="toggleReason('GRANULES-confluence-2026-11-25')">Reason</button></td>
           </tr>
-          <tr class="reason-row" id="reason-INOXINDIA-confluence-2026-11-23">
+          <tr class="reason-row" id="reason-GRANULES-confluence-2026-11-25">
             <td colspan="13">
-              <strong>Why this stock was picked &mdash; confluence signal on 2026-11-23:</strong>
-              <ul class='reason-list'><li>3 of 4 votes agree (threshold: 3) - high-confidence confluence:</li><li>Trend vote OK: price (Rs.2088.00) > 50-EMA (Rs.1998.27) and 50-EMA is rising.</li><li>Momentum vote OK: MACD (23.91) > Signal (-4.69) and RSI (58.2) > 50.</li><li>Volatility vote OK: price is above Bollinger midline (Rs.1955.03) but not yet at the upper band (Rs.2137.17) - room to run.</li></ul>
+              <strong>Why this stock was picked &mdash; confluence signal on 2026-11-25:</strong>
+              <ul class='reason-list'><li>3 of 4 votes agree (threshold: 3) - high-confidence confluence:</li><li>Momentum vote OK: MACD (-0.09) > Signal (-4.50) and RSI (56.6) > 50.</li><li>Volatility vote OK: price is above Bollinger midline (Rs.816.08) but not yet at the upper band (Rs.853.17) - room to run.</li><li>Volume vote OK: today's volume is at or above 1.2x the 20-day average (23.1L vs. 18.6L).</li></ul>
               <div class="muted" style="margin-top:8px">
                 See the <a href="models.html#confluence">full confluence model description</a>
-                or click the <a href="stock.html?symbol=INOXINDIA&amp;model=confluence&amp;date=2026-11-23">INOXINDIA chart</a>
+                or click the <a href="stock.html?symbol=GRANULES&amp;model=confluence&amp;date=2026-11-25">GRANULES chart</a>
                 for context.
               </div>
             </td>
@@ -460,55 +516,27 @@ footer { color:var(--muted); font-size:12px; margin-top:24px; line-height:1.6 }
         
 
           <tr>
-            <td><strong><a href="stock.html?symbol=CYIENT&amp;model=confluence&amp;date=2026-11-23">CYIENT</a></strong></td>
+            <td><strong><a href="stock.html?symbol=ABSLAMC&amp;model=confluence&amp;date=2026-11-25">ABSLAMC</a></strong></td>
             <td>confluence</td>
-            <td title="Today's close as of 2026-11-23">&#8377;1160.50</td>
-            <td>&#8377;1160.50</td>
-            <td>&#8377;1313.90</td>
-            <td>&#8377;1094.76</td>
+            <td title="Today's close as of 2026-11-25">&#8377;958.70</td>
+            <td>&#8377;958.70</td>
+            <td>&#8377;1074.60</td>
+            <td>&#8377;909.03</td>
             <td>2.33</td>
             <td class="weak" title="Fraction of historical signals that exited profitably (target hit OR positive timeout). Random baseline ~50%.">45%</td>
-            <td title="Fraction of historical signals that touched the full target before stop. Random baseline ~33% for 2:1 R:R.">15%</td>
+            <td title="Fraction of historical signals that touched the full target before stop. Random baseline ~33% for 2:1 R:R.">14%</td>
             <td class="weak">Low</td>
-            <td>92</td>
-            <td>2026-11-23</td>
-            <td><button class="reason-toggle" id="btn-CYIENT-confluence-2026-11-23" onclick="toggleReason('CYIENT-confluence-2026-11-23')">Reason</button></td>
+            <td>86</td>
+            <td>2026-11-25</td>
+            <td><button class="reason-toggle" id="btn-ABSLAMC-confluence-2026-11-25" onclick="toggleReason('ABSLAMC-confluence-2026-11-25')">Reason</button></td>
           </tr>
-          <tr class="reason-row" id="reason-CYIENT-confluence-2026-11-23">
+          <tr class="reason-row" id="reason-ABSLAMC-confluence-2026-11-25">
             <td colspan="13">
-              <strong>Why this stock was picked &mdash; confluence signal on 2026-11-23:</strong>
-              <ul class='reason-list'><li>3 of 4 votes agree (threshold: 3) - high-confidence confluence:</li><li>Trend vote OK: price (Rs.1160.50) > 50-EMA (Rs.1100.87) and 50-EMA is rising.</li><li>Momentum vote OK: MACD (0.55) > Signal (-1.53) and RSI (58.6) > 50.</li><li>Volatility vote OK: price is above Bollinger midline (Rs.1127.86) but not yet at the upper band (Rs.1199.80) - room to run.</li></ul>
+              <strong>Why this stock was picked &mdash; confluence signal on 2026-11-25:</strong>
+              <ul class='reason-list'><li>3 of 4 votes agree (threshold: 3) - high-confidence confluence:</li><li>Momentum vote OK: MACD (0.07) > Signal (-12.45) and RSI (59.0) > 50.</li><li>Volatility vote OK: price is above Bollinger midline (Rs.888.29) but not yet at the upper band (Rs.976.98) - room to run.</li><li>Volume vote OK: today's volume is at or above 1.2x the 20-day average (4.6L vs. 2.1L).</li></ul>
               <div class="muted" style="margin-top:8px">
                 See the <a href="models.html#confluence">full confluence model description</a>
-                or click the <a href="stock.html?symbol=CYIENT&amp;model=confluence&amp;date=2026-11-23">CYIENT chart</a>
-                for context.
-              </div>
-            </td>
-          </tr>
-        
-
-          <tr>
-            <td><strong><a href="stock.html?symbol=INTELLECT&amp;model=confluence&amp;date=2026-11-23">INTELLECT</a></strong></td>
-            <td>confluence</td>
-            <td title="Today's close as of 2026-11-23">&#8377;578.45</td>
-            <td>&#8377;578.45</td>
-            <td>&#8377;672.85</td>
-            <td>&#8377;537.99</td>
-            <td>2.33</td>
-            <td class="weak" title="Fraction of historical signals that exited profitably (target hit OR positive timeout). Random baseline ~50%.">44%</td>
-            <td title="Fraction of historical signals that touched the full target before stop. Random baseline ~33% for 2:1 R:R.">19%</td>
-            <td class="weak">Low</td>
-            <td>79</td>
-            <td>2026-11-23</td>
-            <td><button class="reason-toggle" id="btn-INTELLECT-confluence-2026-11-23" onclick="toggleReason('INTELLECT-confluence-2026-11-23')">Reason</button></td>
-          </tr>
-          <tr class="reason-row" id="reason-INTELLECT-confluence-2026-11-23">
-            <td colspan="13">
-              <strong>Why this stock was picked &mdash; confluence signal on 2026-11-23:</strong>
-              <ul class='reason-list'><li>3 of 4 votes agree (threshold: 3) - high-confidence confluence:</li><li>Momentum vote OK: MACD (-14.35) > Signal (-21.75) and RSI (54.9) > 50.</li><li>Volatility vote OK: price is above Bollinger midline (Rs.544.71) but not yet at the upper band (Rs.610.09) - room to run.</li><li>Volume vote OK: today's volume is at or above 1.2x the 20-day average (33.5L vs. 10.3L).</li></ul>
-              <div class="muted" style="margin-top:8px">
-                See the <a href="models.html#confluence">full confluence model description</a>
-                or click the <a href="stock.html?symbol=INTELLECT&amp;model=confluence&amp;date=2026-11-23">INTELLECT chart</a>
+                or click the <a href="stock.html?symbol=ABSLAMC&amp;model=confluence&amp;date=2026-11-25">ABSLAMC chart</a>
                 for context.
               </div>
             </td>
@@ -533,27 +561,111 @@ footer { color:var(--muted); font-size:12px; margin-top:24px; line-height:1.6 }
   </thead>
   <tbody>
           <tr>
-            <td><strong><a href="stock.html?symbol=BRIGADE&amp;model=confluence&amp;date=2026-11-23">BRIGADE</a></strong></td>
+            <td><strong><a href="stock.html?symbol=ACMESOLAR&amp;model=trend_momentum&amp;date=2026-11-25">ACMESOLAR</a></strong></td>
+            <td>trend_momentum</td>
+            <td title="Today's close as of 2026-11-25">&#8377;416.70</td>
+            <td>&#8377;416.70</td>
+            <td>&#8377;461.95</td>
+            <td>&#8377;394.08</td>
+            <td>2.00</td>
+            <td class="good" title="Fraction of historical signals that exited profitably (target hit OR positive timeout). Random baseline ~50%.">62%</td>
+            <td title="Fraction of historical signals that touched the full target before stop. Random baseline ~33% for 2:1 R:R.">38%</td>
+            <td class="good">High</td>
+            <td>8</td>
+            <td>2026-11-25</td>
+            <td><button class="reason-toggle" id="btn-ACMESOLAR-trend_momentum-2026-11-25" onclick="toggleReason('ACMESOLAR-trend_momentum-2026-11-25')">Reason</button></td>
+          </tr>
+          <tr class="reason-row" id="reason-ACMESOLAR-trend_momentum-2026-11-25">
+            <td colspan="13">
+              <strong>Why this stock was picked &mdash; trend_momentum signal on 2026-11-25:</strong>
+              <ul class='reason-list'><li>Price (Rs.416.70) is above its 50-day EMA (Rs.409.33) - structural uptrend intact.</li><li>50-EMA is sloping up vs. 5 days ago - trend is healthy, not just a bounce.</li><li>RSI(14) is at 52.9, inside the 40-55 pullback zone - momentum has cooled enough to offer a low-risk entry.</li><li>MACD histogram has turned up for two bars - momentum is rotating from down to up.</li><li>Today's volume (9.4L) is at or above the 20-day average (8.8L) - participation confirms the signal.</li></ul>
+              <div class="muted" style="margin-top:8px">
+                See the <a href="models.html#trend_momentum">full trend_momentum model description</a>
+                or click the <a href="stock.html?symbol=ACMESOLAR&amp;model=trend_momentum&amp;date=2026-11-25">ACMESOLAR chart</a>
+                for context.
+              </div>
+            </td>
+          </tr>
+        
+
+          <tr>
+            <td><strong><a href="stock.html?symbol=MOTHERSON&amp;model=trend_momentum&amp;date=2026-11-25">MOTHERSON</a></strong></td>
+            <td>trend_momentum</td>
+            <td title="Today's close as of 2026-11-25">&#8377;166.26</td>
+            <td>&#8377;166.26</td>
+            <td>&#8377;183.04</td>
+            <td>&#8377;157.87</td>
+            <td>2.00</td>
+            <td class="ok" title="Fraction of historical signals that exited profitably (target hit OR positive timeout). Random baseline ~50%.">57%</td>
+            <td title="Fraction of historical signals that touched the full target before stop. Random baseline ~33% for 2:1 R:R.">24%</td>
+            <td class="ok">Medium</td>
+            <td>21</td>
+            <td>2026-11-25</td>
+            <td><button class="reason-toggle" id="btn-MOTHERSON-trend_momentum-2026-11-25" onclick="toggleReason('MOTHERSON-trend_momentum-2026-11-25')">Reason</button></td>
+          </tr>
+          <tr class="reason-row" id="reason-MOTHERSON-trend_momentum-2026-11-25">
+            <td colspan="13">
+              <strong>Why this stock was picked &mdash; trend_momentum signal on 2026-11-25:</strong>
+              <ul class='reason-list'><li>Price (Rs.166.26) is above its 50-day EMA (Rs.160.92) - structural uptrend intact.</li><li>50-EMA is sloping up vs. 5 days ago - trend is healthy, not just a bounce.</li><li>RSI(14) is at 55.0, inside the 40-55 pullback zone - momentum has cooled enough to offer a low-risk entry.</li><li>MACD histogram has turned up for two bars - momentum is rotating from down to up.</li><li>Today's volume (272.9L) is at or above the 20-day average (193.6L) - participation confirms the signal.</li></ul>
+              <div class="muted" style="margin-top:8px">
+                See the <a href="models.html#trend_momentum">full trend_momentum model description</a>
+                or click the <a href="stock.html?symbol=MOTHERSON&amp;model=trend_momentum&amp;date=2026-11-25">MOTHERSON chart</a>
+                for context.
+              </div>
+            </td>
+          </tr>
+        
+
+          <tr>
+            <td><strong><a href="stock.html?symbol=BAJAJ-AUTO&amp;model=confluence&amp;date=2026-11-25">BAJAJ-AUTO</a></strong></td>
             <td>confluence</td>
-            <td title="Today's close as of 2026-11-23">&#8377;581.65</td>
-            <td>&#8377;581.65</td>
-            <td>&#8377;652.33</td>
-            <td>&#8377;551.36</td>
+            <td title="Today's close as of 2026-11-25">&#8377;10868.00</td>
+            <td>&#8377;10868.00</td>
+            <td>&#8377;11716.95</td>
+            <td>&#8377;10504.16</td>
+            <td>2.33</td>
+            <td class="ok" title="Fraction of historical signals that exited profitably (target hit OR positive timeout). Random baseline ~50%.">56%</td>
+            <td title="Fraction of historical signals that touched the full target before stop. Random baseline ~33% for 2:1 R:R.">23%</td>
+            <td class="ok">Medium</td>
+            <td>108</td>
+            <td>2026-11-25</td>
+            <td><button class="reason-toggle" id="btn-BAJAJ-AUTO-confluence-2026-11-25" onclick="toggleReason('BAJAJ-AUTO-confluence-2026-11-25')">Reason</button></td>
+          </tr>
+          <tr class="reason-row" id="reason-BAJAJ-AUTO-confluence-2026-11-25">
+            <td colspan="13">
+              <strong>Why this stock was picked &mdash; confluence signal on 2026-11-25:</strong>
+              <ul class='reason-list'><li>3 of 4 votes agree (threshold: 3) - high-confidence confluence:</li><li>Trend vote OK: price (Rs.10868.00) > 50-EMA (Rs.10722.56) and 50-EMA is rising.</li><li>Momentum vote OK: MACD (63.30) > Signal (51.60) and RSI (55.8) > 50.</li><li>Volatility vote OK: price is above Bollinger midline (Rs.10686.70) but not yet at the upper band (Rs.11126.28) - room to run.</li></ul>
+              <div class="muted" style="margin-top:8px">
+                See the <a href="models.html#confluence">full confluence model description</a>
+                or click the <a href="stock.html?symbol=BAJAJ-AUTO&amp;model=confluence&amp;date=2026-11-25">BAJAJ-AUTO chart</a>
+                for context.
+              </div>
+            </td>
+          </tr>
+        
+
+          <tr>
+            <td><strong><a href="stock.html?symbol=NEULANDLAB&amp;model=confluence&amp;date=2026-11-25">NEULANDLAB</a></strong></td>
+            <td>confluence</td>
+            <td title="Today's close as of 2026-11-25">&#8377;20968.00</td>
+            <td>&#8377;20968.00</td>
+            <td>&#8377;23465.57</td>
+            <td>&#8377;19897.61</td>
             <td>2.33</td>
             <td class="ok" title="Fraction of historical signals that exited profitably (target hit OR positive timeout). Random baseline ~50%.">50%</td>
-            <td title="Fraction of historical signals that touched the full target before stop. Random baseline ~33% for 2:1 R:R.">12%</td>
+            <td title="Fraction of historical signals that touched the full target before stop. Random baseline ~33% for 2:1 R:R.">20%</td>
             <td class="ok">Medium</td>
-            <td>107</td>
-            <td>2026-11-23</td>
-            <td><button class="reason-toggle" id="btn-BRIGADE-confluence-2026-11-23" onclick="toggleReason('BRIGADE-confluence-2026-11-23')">Reason</button></td>
+            <td>90</td>
+            <td>2026-11-25</td>
+            <td><button class="reason-toggle" id="btn-NEULANDLAB-confluence-2026-11-25" onclick="toggleReason('NEULANDLAB-confluence-2026-11-25')">Reason</button></td>
           </tr>
-          <tr class="reason-row" id="reason-BRIGADE-confluence-2026-11-23">
+          <tr class="reason-row" id="reason-NEULANDLAB-confluence-2026-11-25">
             <td colspan="13">
-              <strong>Why this stock was picked &mdash; confluence signal on 2026-11-23:</strong>
-              <ul class='reason-list'><li>3 of 4 votes agree (threshold: 3) - high-confidence confluence:</li><li>Trend vote OK: price (Rs.581.65) > 50-EMA (Rs.569.59) and 50-EMA is rising.</li><li>Momentum vote OK: MACD (0.78) > Signal (-4.95) and RSI (59.4) > 50.</li><li>Volatility vote OK: price is above Bollinger midline (Rs.550.45) but not yet at the upper band (Rs.583.03) - room to run.</li></ul>
+              <strong>Why this stock was picked &mdash; confluence signal on 2026-11-25:</strong>
+              <ul class='reason-list'><li>3 of 4 votes agree (threshold: 3) - high-confidence confluence:</li><li>Trend vote OK: price (Rs.20968.00) > 50-EMA (Rs.20702.05) and 50-EMA is rising.</li><li>Momentum vote OK: MACD (150.52) > Signal (35.85) and RSI (54.8) > 50.</li><li>Volatility vote OK: price is above Bollinger midline (Rs.20332.60) but not yet at the upper band (Rs.21896.36) - room to run.</li></ul>
               <div class="muted" style="margin-top:8px">
                 See the <a href="models.html#confluence">full confluence model description</a>
-                or click the <a href="stock.html?symbol=BRIGADE&amp;model=confluence&amp;date=2026-11-23">BRIGADE chart</a>
+                or click the <a href="stock.html?symbol=NEULANDLAB&amp;model=confluence&amp;date=2026-11-25">NEULANDLAB chart</a>
                 for context.
               </div>
             </td>
@@ -561,27 +673,27 @@ footer { color:var(--muted); font-size:12px; margin-top:24px; line-height:1.6 }
         
 
           <tr>
-            <td><strong><a href="stock.html?symbol=GRAPHITE&amp;model=confluence&amp;date=2026-11-23">GRAPHITE</a></strong></td>
+            <td><strong><a href="stock.html?symbol=ETERNAL&amp;model=confluence&amp;date=2026-11-25">ETERNAL</a></strong></td>
             <td>confluence</td>
-            <td title="Today's close as of 2026-11-23">&#8377;789.90</td>
-            <td>&#8377;789.90</td>
-            <td>&#8377;883.70</td>
-            <td>&#8377;749.70</td>
+            <td title="Today's close as of 2026-11-25">&#8377;371.70</td>
+            <td>&#8377;371.70</td>
+            <td>&#8377;406.20</td>
+            <td>&#8377;356.91</td>
             <td>2.33</td>
             <td class="weak" title="Fraction of historical signals that exited profitably (target hit OR positive timeout). Random baseline ~50%.">49%</td>
-            <td title="Fraction of historical signals that touched the full target before stop. Random baseline ~33% for 2:1 R:R.">23%</td>
+            <td title="Fraction of historical signals that touched the full target before stop. Random baseline ~33% for 2:1 R:R.">14%</td>
             <td class="weak">Low</td>
-            <td>82</td>
-            <td>2026-11-23</td>
-            <td><button class="reason-toggle" id="btn-GRAPHITE-confluence-2026-11-23" onclick="toggleReason('GRAPHITE-confluence-2026-11-23')">Reason</button></td>
+            <td>92</td>
+            <td>2026-11-25</td>
+            <td><button class="reason-toggle" id="btn-ETERNAL-confluence-2026-11-25" onclick="toggleReason('ETERNAL-confluence-2026-11-25')">Reason</button></td>
           </tr>
-          <tr class="reason-row" id="reason-GRAPHITE-confluence-2026-11-23">
+          <tr class="reason-row" id="reason-ETERNAL-confluence-2026-11-25">
             <td colspan="13">
-              <strong>Why this stock was picked &mdash; confluence signal on 2026-11-23:</strong>
-              <ul class='reason-list'><li>3 of 4 votes agree (threshold: 3) - high-confidence confluence:</li><li>Trend vote OK: price (Rs.789.90) > 50-EMA (Rs.764.56) and 50-EMA is rising.</li><li>Momentum vote OK: MACD (5.77) > Signal (2.26) and RSI (54.9) > 50.</li><li>Volatility vote OK: price is above Bollinger midline (Rs.762.93) but not yet at the upper band (Rs.813.68) - room to run.</li></ul>
+              <strong>Why this stock was picked &mdash; confluence signal on 2026-11-25:</strong>
+              <ul class='reason-list'><li>3 of 4 votes agree (threshold: 3) - high-confidence confluence:</li><li>Trend vote OK: price (Rs.371.70) > 50-EMA (Rs.340.65) and 50-EMA is rising.</li><li>Volatility vote OK: price is above Bollinger midline (Rs.356.36) but not yet at the upper band (Rs.384.44) - room to run.</li><li>Volume vote OK: today's volume is at or above 1.2x the 20-day average (296.9L vs. 237.4L).</li></ul>
               <div class="muted" style="margin-top:8px">
                 See the <a href="models.html#confluence">full confluence model description</a>
-                or click the <a href="stock.html?symbol=GRAPHITE&amp;model=confluence&amp;date=2026-11-23">GRAPHITE chart</a>
+                or click the <a href="stock.html?symbol=ETERNAL&amp;model=confluence&amp;date=2026-11-25">ETERNAL chart</a>
                 for context.
               </div>
             </td>
@@ -589,83 +701,83 @@ footer { color:var(--muted); font-size:12px; margin-top:24px; line-height:1.6 }
         
 
           <tr>
-            <td><strong><a href="stock.html?symbol=INOXINDIA&amp;model=confluence&amp;date=2026-11-23">INOXINDIA</a></strong></td>
+            <td><strong><a href="stock.html?symbol=TITAGARH&amp;model=confluence&amp;date=2026-11-25">TITAGARH</a></strong></td>
             <td>confluence</td>
-            <td title="Today's close as of 2026-11-23">&#8377;2088.00</td>
-            <td>&#8377;2088.00</td>
-            <td>&#8377;2414.36</td>
-            <td>&#8377;1948.13</td>
+            <td title="Today's close as of 2026-11-25">&#8377;745.00</td>
+            <td>&#8377;745.00</td>
+            <td>&#8377;832.63</td>
+            <td>&#8377;707.44</td>
+            <td>2.33</td>
+            <td class="weak" title="Fraction of historical signals that exited profitably (target hit OR positive timeout). Random baseline ~50%.">48%</td>
+            <td title="Fraction of historical signals that touched the full target before stop. Random baseline ~33% for 2:1 R:R.">25%</td>
+            <td class="weak">Low</td>
+            <td>91</td>
+            <td>2026-11-25</td>
+            <td><button class="reason-toggle" id="btn-TITAGARH-confluence-2026-11-25" onclick="toggleReason('TITAGARH-confluence-2026-11-25')">Reason</button></td>
+          </tr>
+          <tr class="reason-row" id="reason-TITAGARH-confluence-2026-11-25">
+            <td colspan="13">
+              <strong>Why this stock was picked &mdash; confluence signal on 2026-11-25:</strong>
+              <ul class='reason-list'><li>3 of 4 votes agree (threshold: 3) - high-confidence confluence:</li><li>Momentum vote OK: MACD (-1.57) > Signal (-8.88) and RSI (55.7) > 50.</li><li>Volatility vote OK: price is above Bollinger midline (Rs.706.30) but not yet at the upper band (Rs.766.01) - room to run.</li><li>Volume vote OK: today's volume is at or above 1.2x the 20-day average (17.8L vs. 9.9L).</li></ul>
+              <div class="muted" style="margin-top:8px">
+                See the <a href="models.html#confluence">full confluence model description</a>
+                or click the <a href="stock.html?symbol=TITAGARH&amp;model=confluence&amp;date=2026-11-25">TITAGARH chart</a>
+                for context.
+              </div>
+            </td>
+          </tr>
+        
+
+          <tr>
+            <td><strong><a href="stock.html?symbol=BRITANNIA&amp;model=confluence&amp;date=2026-11-25">BRITANNIA</a></strong></td>
+            <td>confluence</td>
+            <td title="Today's close as of 2026-11-25">&#8377;5076.20</td>
+            <td>&#8377;5076.20</td>
+            <td>&#8377;5510.35</td>
+            <td>&#8377;4890.14</td>
+            <td>2.33</td>
+            <td class="weak" title="Fraction of historical signals that exited profitably (target hit OR positive timeout). Random baseline ~50%.">48%</td>
+            <td title="Fraction of historical signals that touched the full target before stop. Random baseline ~33% for 2:1 R:R.">15%</td>
+            <td class="weak">Low</td>
+            <td>94</td>
+            <td>2026-11-25</td>
+            <td><button class="reason-toggle" id="btn-BRITANNIA-confluence-2026-11-25" onclick="toggleReason('BRITANNIA-confluence-2026-11-25')">Reason</button></td>
+          </tr>
+          <tr class="reason-row" id="reason-BRITANNIA-confluence-2026-11-25">
+            <td colspan="13">
+              <strong>Why this stock was picked &mdash; confluence signal on 2026-11-25:</strong>
+              <ul class='reason-list'><li>3 of 4 votes agree (threshold: 3) - high-confidence confluence:</li><li>Trend vote OK: price (Rs.5076.20) > 50-EMA (Rs.4865.13) and 50-EMA is rising.</li><li>Momentum vote OK: MACD (25.92) > Signal (-4.42) and RSI (63.7) > 50.</li><li>Volume vote OK: today's volume is at or above 1.2x the 20-day average (6.0L vs. 3.1L).</li></ul>
+              <div class="muted" style="margin-top:8px">
+                See the <a href="models.html#confluence">full confluence model description</a>
+                or click the <a href="stock.html?symbol=BRITANNIA&amp;model=confluence&amp;date=2026-11-25">BRITANNIA chart</a>
+                for context.
+              </div>
+            </td>
+          </tr>
+        
+
+          <tr>
+            <td><strong><a href="stock.html?symbol=GRANULES&amp;model=confluence&amp;date=2026-11-25">GRANULES</a></strong></td>
+            <td>confluence</td>
+            <td title="Today's close as of 2026-11-25">&#8377;840.80</td>
+            <td>&#8377;840.80</td>
+            <td>&#8377;950.13</td>
+            <td>&#8377;793.94</td>
             <td>2.33</td>
             <td class="weak" title="Fraction of historical signals that exited profitably (target hit OR positive timeout). Random baseline ~50%.">48%</td>
             <td title="Fraction of historical signals that touched the full target before stop. Random baseline ~33% for 2:1 R:R.">16%</td>
             <td class="weak">Low</td>
-            <td>44</td>
-            <td>2026-11-23</td>
-            <td><button class="reason-toggle" id="btn-INOXINDIA-confluence-2026-11-23" onclick="toggleReason('INOXINDIA-confluence-2026-11-23')">Reason</button></td>
-          </tr>
-          <tr class="reason-row" id="reason-INOXINDIA-confluence-2026-11-23">
-            <td colspan="13">
-              <strong>Why this stock was picked &mdash; confluence signal on 2026-11-23:</strong>
-              <ul class='reason-list'><li>3 of 4 votes agree (threshold: 3) - high-confidence confluence:</li><li>Trend vote OK: price (Rs.2088.00) > 50-EMA (Rs.1998.27) and 50-EMA is rising.</li><li>Momentum vote OK: MACD (23.91) > Signal (-4.69) and RSI (58.2) > 50.</li><li>Volatility vote OK: price is above Bollinger midline (Rs.1955.03) but not yet at the upper band (Rs.2137.17) - room to run.</li></ul>
-              <div class="muted" style="margin-top:8px">
-                See the <a href="models.html#confluence">full confluence model description</a>
-                or click the <a href="stock.html?symbol=INOXINDIA&amp;model=confluence&amp;date=2026-11-23">INOXINDIA chart</a>
-                for context.
-              </div>
-            </td>
-          </tr>
-        
-
-          <tr>
-            <td><strong><a href="stock.html?symbol=EICHERMOT&amp;model=confluence&amp;date=2026-11-23">EICHERMOT</a></strong></td>
-            <td>confluence</td>
-            <td title="Today's close as of 2026-11-23">&#8377;8172.50</td>
-            <td>&#8377;8172.50</td>
-            <td>&#8377;8898.22</td>
-            <td>&#8377;7861.48</td>
-            <td>2.33</td>
-            <td class="weak" title="Fraction of historical signals that exited profitably (target hit OR positive timeout). Random baseline ~50%.">46%</td>
-            <td title="Fraction of historical signals that touched the full target before stop. Random baseline ~33% for 2:1 R:R.">14%</td>
-            <td class="weak">Low</td>
-            <td>91</td>
-            <td>2026-11-23</td>
-            <td><button class="reason-toggle" id="btn-EICHERMOT-confluence-2026-11-23" onclick="toggleReason('EICHERMOT-confluence-2026-11-23')">Reason</button></td>
-          </tr>
-          <tr class="reason-row" id="reason-EICHERMOT-confluence-2026-11-23">
-            <td colspan="13">
-              <strong>Why this stock was picked &mdash; confluence signal on 2026-11-23:</strong>
-              <ul class='reason-list'><li>4 of 4 votes agree (threshold: 3) - high-confidence confluence:</li><li>Trend vote OK: price (Rs.8172.50) > 50-EMA (Rs.7510.33) and 50-EMA is rising.</li><li>Momentum vote OK: MACD (198.77) > Signal (129.10) and RSI (71.5) > 50.</li><li>Volatility vote OK: price is above Bollinger midline (Rs.7568.45) but not yet at the upper band (Rs.8197.53) - room to run.</li><li>Volume vote OK: today's volume is at or above 1.2x the 20-day average (7.6L vs. 5.9L).</li></ul>
-              <div class="muted" style="margin-top:8px">
-                See the <a href="models.html#confluence">full confluence model description</a>
-                or click the <a href="stock.html?symbol=EICHERMOT&amp;model=confluence&amp;date=2026-11-23">EICHERMOT chart</a>
-                for context.
-              </div>
-            </td>
-          </tr>
-        
-
-          <tr>
-            <td><strong><a href="stock.html?symbol=CYIENT&amp;model=confluence&amp;date=2026-11-23">CYIENT</a></strong></td>
-            <td>confluence</td>
-            <td title="Today's close as of 2026-11-23">&#8377;1160.50</td>
-            <td>&#8377;1160.50</td>
-            <td>&#8377;1313.90</td>
-            <td>&#8377;1094.76</td>
-            <td>2.33</td>
-            <td class="weak" title="Fraction of historical signals that exited profitably (target hit OR positive timeout). Random baseline ~50%.">45%</td>
-            <td title="Fraction of historical signals that touched the full target before stop. Random baseline ~33% for 2:1 R:R.">15%</td>
-            <td class="weak">Low</td>
             <td>92</td>
-            <td>2026-11-23</td>
-            <td><button class="reason-toggle" id="btn-CYIENT-confluence-2026-11-23" onclick="toggleReason('CYIENT-confluence-2026-11-23')">Reason</button></td>
+            <td>2026-11-25</td>
+            <td><button class="reason-toggle" id="btn-GRANULES-confluence-2026-11-25" onclick="toggleReason('GRANULES-confluence-2026-11-25')">Reason</button></td>
           </tr>
-          <tr class="reason-row" id="reason-CYIENT-confluence-2026-11-23">
+          <tr class="reason-row" id="reason-GRANULES-confluence-2026-11-25">
             <td colspan="13">
-              <strong>Why this stock was picked &mdash; confluence signal on 2026-11-23:</strong>
-              <ul class='reason-list'><li>3 of 4 votes agree (threshold: 3) - high-confidence confluence:</li><li>Trend vote OK: price (Rs.1160.50) > 50-EMA (Rs.1100.87) and 50-EMA is rising.</li><li>Momentum vote OK: MACD (0.55) > Signal (-1.53) and RSI (58.6) > 50.</li><li>Volatility vote OK: price is above Bollinger midline (Rs.1127.86) but not yet at the upper band (Rs.1199.80) - room to run.</li></ul>
+              <strong>Why this stock was picked &mdash; confluence signal on 2026-11-25:</strong>
+              <ul class='reason-list'><li>3 of 4 votes agree (threshold: 3) - high-confidence confluence:</li><li>Momentum vote OK: MACD (-0.09) > Signal (-4.50) and RSI (56.6) > 50.</li><li>Volatility vote OK: price is above Bollinger midline (Rs.816.08) but not yet at the upper band (Rs.853.17) - room to run.</li><li>Volume vote OK: today's volume is at or above 1.2x the 20-day average (23.1L vs. 18.6L).</li></ul>
               <div class="muted" style="margin-top:8px">
                 See the <a href="models.html#confluence">full confluence model description</a>
-                or click the <a href="stock.html?symbol=CYIENT&amp;model=confluence&amp;date=2026-11-23">CYIENT chart</a>
+                or click the <a href="stock.html?symbol=GRANULES&amp;model=confluence&amp;date=2026-11-25">GRANULES chart</a>
                 for context.
               </div>
             </td>
@@ -673,27 +785,27 @@ footer { color:var(--muted); font-size:12px; margin-top:24px; line-height:1.6 }
         
 
           <tr>
-            <td><strong><a href="stock.html?symbol=INTELLECT&amp;model=confluence&amp;date=2026-11-23">INTELLECT</a></strong></td>
+            <td><strong><a href="stock.html?symbol=VBL&amp;model=confluence&amp;date=2026-11-25">VBL</a></strong></td>
             <td>confluence</td>
-            <td title="Today's close as of 2026-11-23">&#8377;578.45</td>
-            <td>&#8377;578.45</td>
-            <td>&#8377;672.85</td>
-            <td>&#8377;537.99</td>
+            <td title="Today's close as of 2026-11-25">&#8377;437.10</td>
+            <td>&#8377;437.10</td>
+            <td>&#8377;476.00</td>
+            <td>&#8377;420.43</td>
             <td>2.33</td>
-            <td class="weak" title="Fraction of historical signals that exited profitably (target hit OR positive timeout). Random baseline ~50%.">44%</td>
+            <td class="weak" title="Fraction of historical signals that exited profitably (target hit OR positive timeout). Random baseline ~50%.">47%</td>
             <td title="Fraction of historical signals that touched the full target before stop. Random baseline ~33% for 2:1 R:R.">19%</td>
             <td class="weak">Low</td>
-            <td>79</td>
-            <td>2026-11-23</td>
-            <td><button class="reason-toggle" id="btn-INTELLECT-confluence-2026-11-23" onclick="toggleReason('INTELLECT-confluence-2026-11-23')">Reason</button></td>
+            <td>108</td>
+            <td>2026-11-25</td>
+            <td><button class="reason-toggle" id="btn-VBL-confluence-2026-11-25" onclick="toggleReason('VBL-confluence-2026-11-25')">Reason</button></td>
           </tr>
-          <tr class="reason-row" id="reason-INTELLECT-confluence-2026-11-23">
+          <tr class="reason-row" id="reason-VBL-confluence-2026-11-25">
             <td colspan="13">
-              <strong>Why this stock was picked &mdash; confluence signal on 2026-11-23:</strong>
-              <ul class='reason-list'><li>3 of 4 votes agree (threshold: 3) - high-confidence confluence:</li><li>Momentum vote OK: MACD (-14.35) > Signal (-21.75) and RSI (54.9) > 50.</li><li>Volatility vote OK: price is above Bollinger midline (Rs.544.71) but not yet at the upper band (Rs.610.09) - room to run.</li><li>Volume vote OK: today's volume is at or above 1.2x the 20-day average (33.5L vs. 10.3L).</li></ul>
+              <strong>Why this stock was picked &mdash; confluence signal on 2026-11-25:</strong>
+              <ul class='reason-list'><li>3 of 4 votes agree (threshold: 3) - high-confidence confluence:</li><li>Trend vote OK: price (Rs.437.10) > 50-EMA (Rs.426.84) and 50-EMA is rising.</li><li>Momentum vote OK: MACD (2.57) > Signal (1.73) and RSI (57.0) > 50.</li><li>Volatility vote OK: price is above Bollinger midline (Rs.423.06) but not yet at the upper band (Rs.451.11) - room to run.</li></ul>
               <div class="muted" style="margin-top:8px">
                 See the <a href="models.html#confluence">full confluence model description</a>
-                or click the <a href="stock.html?symbol=INTELLECT&amp;model=confluence&amp;date=2026-11-23">INTELLECT chart</a>
+                or click the <a href="stock.html?symbol=VBL&amp;model=confluence&amp;date=2026-11-25">VBL chart</a>
                 for context.
               </div>
             </td>
@@ -701,27 +813,27 @@ footer { color:var(--muted); font-size:12px; margin-top:24px; line-height:1.6 }
         
 
           <tr>
-            <td><strong><a href="stock.html?symbol=NESTLEIND&amp;model=confluence&amp;date=2026-11-23">NESTLEIND</a></strong></td>
+            <td><strong><a href="stock.html?symbol=DMART&amp;model=confluence&amp;date=2026-11-25">DMART</a></strong></td>
             <td>confluence</td>
-            <td title="Today's close as of 2026-11-23">&#8377;1305.90</td>
-            <td>&#8377;1305.90</td>
-            <td>&#8377;1417.58</td>
-            <td>&#8377;1258.04</td>
+            <td title="Today's close as of 2026-11-25">&#8377;3592.00</td>
+            <td>&#8377;3592.00</td>
+            <td>&#8377;3856.17</td>
+            <td>&#8377;3478.78</td>
             <td>2.33</td>
-            <td class="weak" title="Fraction of historical signals that exited profitably (target hit OR positive timeout). Random baseline ~50%.">43%</td>
-            <td title="Fraction of historical signals that touched the full target before stop. Random baseline ~33% for 2:1 R:R.">7%</td>
+            <td class="weak" title="Fraction of historical signals that exited profitably (target hit OR positive timeout). Random baseline ~50%.">47%</td>
+            <td title="Fraction of historical signals that touched the full target before stop. Random baseline ~33% for 2:1 R:R.">17%</td>
             <td class="weak">Low</td>
-            <td>95</td>
-            <td>2026-11-23</td>
-            <td><button class="reason-toggle" id="btn-NESTLEIND-confluence-2026-11-23" onclick="toggleReason('NESTLEIND-confluence-2026-11-23')">Reason</button></td>
+            <td>66</td>
+            <td>2026-11-25</td>
+            <td><button class="reason-toggle" id="btn-DMART-confluence-2026-11-25" onclick="toggleReason('DMART-confluence-2026-11-25')">Reason</button></td>
           </tr>
-          <tr class="reason-row" id="reason-NESTLEIND-confluence-2026-11-23">
+          <tr class="reason-row" id="reason-DMART-confluence-2026-11-25">
             <td colspan="13">
-              <strong>Why this stock was picked &mdash; confluence signal on 2026-11-23:</strong>
-              <ul class='reason-list'><li>3 of 4 votes agree (threshold: 3) - high-confidence confluence:</li><li>Trend vote OK: price (Rs.1305.90) > 50-EMA (Rs.1301.49) and 50-EMA is rising.</li><li>Momentum vote OK: MACD (6.98) > Signal (-4.36) and RSI (55.5) > 50.</li><li>Volatility vote OK: price is above Bollinger midline (Rs.1251.33) but not yet at the upper band (Rs.1356.91) - room to run.</li></ul>
+              <strong>Why this stock was picked &mdash; confluence signal on 2026-11-25:</strong>
+              <ul class='reason-list'><li>3 of 4 votes agree (threshold: 3) - high-confidence confluence:</li><li>Momentum vote OK: MACD (17.10) > Signal (-9.04) and RSI (62.4) > 50.</li><li>Volatility vote OK: price is above Bollinger midline (Rs.3387.90) but not yet at the upper band (Rs.3643.77) - room to run.</li><li>Volume vote OK: today's volume is at or above 1.2x the 20-day average (11.4L vs. 4.8L).</li></ul>
               <div class="muted" style="margin-top:8px">
                 See the <a href="models.html#confluence">full confluence model description</a>
-                or click the <a href="stock.html?symbol=NESTLEIND&amp;model=confluence&amp;date=2026-11-23">NESTLEIND chart</a>
+                or click the <a href="stock.html?symbol=DMART&amp;model=confluence&amp;date=2026-11-25">DMART chart</a>
                 for context.
               </div>
             </td>
@@ -729,55 +841,27 @@ footer { color:var(--muted); font-size:12px; margin-top:24px; line-height:1.6 }
         
 
           <tr>
-            <td><strong><a href="stock.html?symbol=PERSISTENT&amp;model=breakout_volume&amp;date=2026-11-23">PERSISTENT</a></strong></td>
-            <td>breakout_volume</td>
-            <td title="Today's close as of 2026-11-23">&#8377;6282.50</td>
-            <td>&#8377;6282.50</td>
-            <td>&#8377;6802.01</td>
-            <td>&#8377;6022.75</td>
-            <td>2.00</td>
-            <td class="weak" title="Fraction of historical signals that exited profitably (target hit OR positive timeout). Random baseline ~50%.">42%</td>
-            <td title="Fraction of historical signals that touched the full target before stop. Random baseline ~33% for 2:1 R:R.">21%</td>
-            <td class="weak">Low</td>
-            <td>19</td>
-            <td>2026-11-23</td>
-            <td><button class="reason-toggle" id="btn-PERSISTENT-breakout_volume-2026-11-23" onclick="toggleReason('PERSISTENT-breakout_volume-2026-11-23')">Reason</button></td>
-          </tr>
-          <tr class="reason-row" id="reason-PERSISTENT-breakout_volume-2026-11-23">
-            <td colspan="13">
-              <strong>Why this stock was picked &mdash; breakout_volume signal on 2026-11-23:</strong>
-              <ul class='reason-list'><li>Close (Rs.6282.50) broke above the prior 20-day Donchian high (Rs.6240.00) - fresh momentum.</li><li>Volume on the breakout is 2.1x the 20-day average - real participation, not a low-liquidity fakeout.</li><li>Bollinger bandwidth was in the bottom 10% of the last 100 bars within the past 10 sessions - the stock was coiled before this expansion.</li><li>Price is above the 50-EMA (Rs.5796.05) - the breakout aligns with the larger trend.</li></ul>
-              <div class="muted" style="margin-top:8px">
-                See the <a href="models.html#breakout_volume">full breakout_volume model description</a>
-                or click the <a href="stock.html?symbol=PERSISTENT&amp;model=breakout_volume&amp;date=2026-11-23">PERSISTENT chart</a>
-                for context.
-              </div>
-            </td>
-          </tr>
-        
-
-          <tr>
-            <td><strong><a href="stock.html?symbol=LTF&amp;model=confluence&amp;date=2026-11-23">LTF</a></strong></td>
+            <td><strong><a href="stock.html?symbol=GRASIM&amp;model=confluence&amp;date=2026-11-25">GRASIM</a></strong></td>
             <td>confluence</td>
-            <td title="Today's close as of 2026-11-23">&#8377;274.00</td>
-            <td>&#8377;274.00</td>
-            <td>&#8377;304.18</td>
-            <td>&#8377;261.07</td>
+            <td title="Today's close as of 2026-11-25">&#8377;3162.00</td>
+            <td>&#8377;3162.00</td>
+            <td>&#8377;3406.00</td>
+            <td>&#8377;3057.43</td>
             <td>2.33</td>
-            <td class="weak" title="Fraction of historical signals that exited profitably (target hit OR positive timeout). Random baseline ~50%.">42%</td>
+            <td class="weak" title="Fraction of historical signals that exited profitably (target hit OR positive timeout). Random baseline ~50%.">46%</td>
             <td title="Fraction of historical signals that touched the full target before stop. Random baseline ~33% for 2:1 R:R.">12%</td>
             <td class="weak">Low</td>
-            <td>88</td>
-            <td>2026-11-23</td>
-            <td><button class="reason-toggle" id="btn-LTF-confluence-2026-11-23" onclick="toggleReason('LTF-confluence-2026-11-23')">Reason</button></td>
+            <td>104</td>
+            <td>2026-11-25</td>
+            <td><button class="reason-toggle" id="btn-GRASIM-confluence-2026-11-25" onclick="toggleReason('GRASIM-confluence-2026-11-25')">Reason</button></td>
           </tr>
-          <tr class="reason-row" id="reason-LTF-confluence-2026-11-23">
+          <tr class="reason-row" id="reason-GRASIM-confluence-2026-11-25">
             <td colspan="13">
-              <strong>Why this stock was picked &mdash; confluence signal on 2026-11-23:</strong>
-              <ul class='reason-list'><li>3 of 4 votes agree (threshold: 3) - high-confidence confluence:</li><li>Trend vote OK: price (Rs.274.00) > 50-EMA (Rs.273.78) and 50-EMA is rising.</li><li>Momentum vote OK: MACD (2.96) > Signal (1.49) and RSI (53.9) > 50.</li><li>Volatility vote OK: price is above Bollinger midline (Rs.265.36) but not yet at the upper band (Rs.294.78) - room to run.</li></ul>
+              <strong>Why this stock was picked &mdash; confluence signal on 2026-11-25:</strong>
+              <ul class='reason-list'><li>3 of 4 votes agree (threshold: 3) - high-confidence confluence:</li><li>Trend vote OK: price (Rs.3162.00) > 50-EMA (Rs.3074.24) and 50-EMA is rising.</li><li>Momentum vote OK: MACD (25.03) > Signal (21.63) and RSI (59.0) > 50.</li><li>Volatility vote OK: price is above Bollinger midline (Rs.3079.16) but not yet at the upper band (Rs.3268.22) - room to run.</li></ul>
               <div class="muted" style="margin-top:8px">
                 See the <a href="models.html#confluence">full confluence model description</a>
-                or click the <a href="stock.html?symbol=LTF&amp;model=confluence&amp;date=2026-11-23">LTF chart</a>
+                or click the <a href="stock.html?symbol=GRASIM&amp;model=confluence&amp;date=2026-11-25">GRASIM chart</a>
                 for context.
               </div>
             </td>
@@ -785,111 +869,27 @@ footer { color:var(--muted); font-size:12px; margin-top:24px; line-height:1.6 }
         
 
           <tr>
-            <td><strong><a href="stock.html?symbol=PTCIL&amp;model=trend_momentum&amp;date=2026-11-23">PTCIL</a></strong></td>
-            <td>trend_momentum</td>
-            <td title="Today's close as of 2026-11-23">&#8377;24425.00</td>
-            <td>&#8377;24425.00</td>
-            <td>&#8377;26936.34</td>
-            <td>&#8377;23169.33</td>
-            <td>2.00</td>
-            <td class="weak" title="Fraction of historical signals that exited profitably (target hit OR positive timeout). Random baseline ~50%.">42%</td>
-            <td title="Fraction of historical signals that touched the full target before stop. Random baseline ~33% for 2:1 R:R.">0%</td>
-            <td class="weak">Low</td>
-            <td>12</td>
-            <td>2026-11-23</td>
-            <td><button class="reason-toggle" id="btn-PTCIL-trend_momentum-2026-11-23" onclick="toggleReason('PTCIL-trend_momentum-2026-11-23')">Reason</button></td>
-          </tr>
-          <tr class="reason-row" id="reason-PTCIL-trend_momentum-2026-11-23">
-            <td colspan="13">
-              <strong>Why this stock was picked &mdash; trend_momentum signal on 2026-11-23:</strong>
-              <ul class='reason-list'><li>Price (Rs.24425.00) is above its 50-day EMA (Rs.23453.42) - structural uptrend intact.</li><li>50-EMA is sloping up vs. 5 days ago - trend is healthy, not just a bounce.</li><li>RSI(14) is at 54.4, inside the 40-55 pullback zone - momentum has cooled enough to offer a low-risk entry.</li><li>MACD histogram has turned up for two bars - momentum is rotating from down to up.</li><li>Today's volume (0.3L) is at or above the 20-day average (0.2L) - participation confirms the signal.</li></ul>
-              <div class="muted" style="margin-top:8px">
-                See the <a href="models.html#trend_momentum">full trend_momentum model description</a>
-                or click the <a href="stock.html?symbol=PTCIL&amp;model=trend_momentum&amp;date=2026-11-23">PTCIL chart</a>
-                for context.
-              </div>
-            </td>
-          </tr>
-        
-
-          <tr>
-            <td><strong><a href="stock.html?symbol=TORNTPHARM&amp;model=confluence&amp;date=2026-11-23">TORNTPHARM</a></strong></td>
+            <td><strong><a href="stock.html?symbol=ABSLAMC&amp;model=confluence&amp;date=2026-11-25">ABSLAMC</a></strong></td>
             <td>confluence</td>
-            <td title="Today's close as of 2026-11-23">&#8377;4763.70</td>
-            <td>&#8377;4763.70</td>
-            <td>&#8377;5113.00</td>
-            <td>&#8377;4614.00</td>
+            <td title="Today's close as of 2026-11-25">&#8377;958.70</td>
+            <td>&#8377;958.70</td>
+            <td>&#8377;1074.60</td>
+            <td>&#8377;909.03</td>
             <td>2.33</td>
-            <td class="weak" title="Fraction of historical signals that exited profitably (target hit OR positive timeout). Random baseline ~50%.">41%</td>
-            <td title="Fraction of historical signals that touched the full target before stop. Random baseline ~33% for 2:1 R:R.">9%</td>
-            <td class="weak">Low</td>
-            <td>118</td>
-            <td>2026-11-23</td>
-            <td><button class="reason-toggle" id="btn-TORNTPHARM-confluence-2026-11-23" onclick="toggleReason('TORNTPHARM-confluence-2026-11-23')">Reason</button></td>
-          </tr>
-          <tr class="reason-row" id="reason-TORNTPHARM-confluence-2026-11-23">
-            <td colspan="13">
-              <strong>Why this stock was picked &mdash; confluence signal on 2026-11-23:</strong>
-              <ul class='reason-list'><li>3 of 4 votes agree (threshold: 3) - high-confidence confluence:</li><li>Momentum vote OK: MACD (-1.34) > Signal (-9.79) and RSI (56.9) > 50.</li><li>Volatility vote OK: price is above Bollinger midline (Rs.4667.10) but not yet at the upper band (Rs.4811.69) - room to run.</li><li>Volume vote OK: today's volume is at or above 1.2x the 20-day average (5.9L vs. 3.5L).</li></ul>
-              <div class="muted" style="margin-top:8px">
-                See the <a href="models.html#confluence">full confluence model description</a>
-                or click the <a href="stock.html?symbol=TORNTPHARM&amp;model=confluence&amp;date=2026-11-23">TORNTPHARM chart</a>
-                for context.
-              </div>
-            </td>
-          </tr>
-        
-
-          <tr>
-            <td><strong><a href="stock.html?symbol=ITI&amp;model=confluence&amp;date=2026-11-23">ITI</a></strong></td>
-            <td>confluence</td>
-            <td title="Today's close as of 2026-11-23">&#8377;276.21</td>
-            <td>&#8377;276.21</td>
-            <td>&#8377;316.38</td>
-            <td>&#8377;258.99</td>
-            <td>2.33</td>
-            <td class="weak" title="Fraction of historical signals that exited profitably (target hit OR positive timeout). Random baseline ~50%.">40%</td>
-            <td title="Fraction of historical signals that touched the full target before stop. Random baseline ~33% for 2:1 R:R.">15%</td>
-            <td class="weak">Low</td>
-            <td>85</td>
-            <td>2026-11-23</td>
-            <td><button class="reason-toggle" id="btn-ITI-confluence-2026-11-23" onclick="toggleReason('ITI-confluence-2026-11-23')">Reason</button></td>
-          </tr>
-          <tr class="reason-row" id="reason-ITI-confluence-2026-11-23">
-            <td colspan="13">
-              <strong>Why this stock was picked &mdash; confluence signal on 2026-11-23:</strong>
-              <ul class='reason-list'><li>4 of 4 votes agree (threshold: 3) - high-confidence confluence:</li><li>Trend vote OK: price (Rs.276.21) > 50-EMA (Rs.250.77) and 50-EMA is rising.</li><li>Momentum vote OK: MACD (4.37) > Signal (2.37) and RSI (65.1) > 50.</li><li>Volatility vote OK: price is above Bollinger midline (Rs.245.67) but not yet at the upper band (Rs.280.81) - room to run.</li><li>Volume vote OK: today's volume is at or above 1.2x the 20-day average (497.4L vs. 61.6L).</li></ul>
-              <div class="muted" style="margin-top:8px">
-                See the <a href="models.html#confluence">full confluence model description</a>
-                or click the <a href="stock.html?symbol=ITI&amp;model=confluence&amp;date=2026-11-23">ITI chart</a>
-                for context.
-              </div>
-            </td>
-          </tr>
-        
-
-          <tr>
-            <td><strong><a href="stock.html?symbol=POLICYBZR&amp;model=confluence&amp;date=2026-11-23">POLICYBZR</a></strong></td>
-            <td>confluence</td>
-            <td title="Today's close as of 2026-11-23">&#8377;1089.10</td>
-            <td>&#8377;1089.10</td>
-            <td>&#8377;1279.51</td>
-            <td>&#8377;1007.50</td>
-            <td>2.33</td>
-            <td class="weak" title="Fraction of historical signals that exited profitably (target hit OR positive timeout). Random baseline ~50%.">40%</td>
+            <td class="weak" title="Fraction of historical signals that exited profitably (target hit OR positive timeout). Random baseline ~50%.">45%</td>
             <td title="Fraction of historical signals that touched the full target before stop. Random baseline ~33% for 2:1 R:R.">14%</td>
             <td class="weak">Low</td>
-            <td>90</td>
-            <td>2026-11-23</td>
-            <td><button class="reason-toggle" id="btn-POLICYBZR-confluence-2026-11-23" onclick="toggleReason('POLICYBZR-confluence-2026-11-23')">Reason</button></td>
+            <td>86</td>
+            <td>2026-11-25</td>
+            <td><button class="reason-toggle" id="btn-ABSLAMC-confluence-2026-11-25" onclick="toggleReason('ABSLAMC-confluence-2026-11-25')">Reason</button></td>
           </tr>
-          <tr class="reason-row" id="reason-POLICYBZR-confluence-2026-11-23">
+          <tr class="reason-row" id="reason-ABSLAMC-confluence-2026-11-25">
             <td colspan="13">
-              <strong>Why this stock was picked &mdash; confluence signal on 2026-11-23:</strong>
-              <ul class='reason-list'><li>3 of 4 votes agree (threshold: 3) - high-confidence confluence:</li><li>Momentum vote OK: MACD (-22.70) > Signal (-44.39) and RSI (53.4) > 50.</li><li>Volatility vote OK: price is above Bollinger midline (Rs.1009.05) but not yet at the upper band (Rs.1109.53) - room to run.</li><li>Volume vote OK: today's volume is at or above 1.2x the 20-day average (104.2L vs. 38.5L).</li></ul>
+              <strong>Why this stock was picked &mdash; confluence signal on 2026-11-25:</strong>
+              <ul class='reason-list'><li>3 of 4 votes agree (threshold: 3) - high-confidence confluence:</li><li>Momentum vote OK: MACD (0.07) > Signal (-12.45) and RSI (59.0) > 50.</li><li>Volatility vote OK: price is above Bollinger midline (Rs.888.29) but not yet at the upper band (Rs.976.98) - room to run.</li><li>Volume vote OK: today's volume is at or above 1.2x the 20-day average (4.6L vs. 2.1L).</li></ul>
               <div class="muted" style="margin-top:8px">
                 See the <a href="models.html#confluence">full confluence model description</a>
-                or click the <a href="stock.html?symbol=POLICYBZR&amp;model=confluence&amp;date=2026-11-23">POLICYBZR chart</a>
+                or click the <a href="stock.html?symbol=ABSLAMC&amp;model=confluence&amp;date=2026-11-25">ABSLAMC chart</a>
                 for context.
               </div>
             </td>
@@ -897,195 +897,27 @@ footer { color:var(--muted); font-size:12px; margin-top:24px; line-height:1.6 }
         
 
           <tr>
-            <td><strong><a href="stock.html?symbol=JINDALSTEL&amp;model=confluence&amp;date=2026-11-23">JINDALSTEL</a></strong></td>
+            <td><strong><a href="stock.html?symbol=AMBER&amp;model=confluence&amp;date=2026-11-25">AMBER</a></strong></td>
             <td>confluence</td>
-            <td title="Today's close as of 2026-11-23">&#8377;1131.30</td>
-            <td>&#8377;1131.30</td>
-            <td>&#8377;1237.08</td>
-            <td>&#8377;1085.97</td>
+            <td title="Today's close as of 2026-11-25">&#8377;6940.00</td>
+            <td>&#8377;6940.00</td>
+            <td>&#8377;7919.59</td>
+            <td>&#8377;6520.18</td>
             <td>2.33</td>
-            <td class="weak" title="Fraction of historical signals that exited profitably (target hit OR positive timeout). Random baseline ~50%.">40%</td>
-            <td title="Fraction of historical signals that touched the full target before stop. Random baseline ~33% for 2:1 R:R.">6%</td>
-            <td class="weak">Low</td>
-            <td>95</td>
-            <td>2026-11-23</td>
-            <td><button class="reason-toggle" id="btn-JINDALSTEL-confluence-2026-11-23" onclick="toggleReason('JINDALSTEL-confluence-2026-11-23')">Reason</button></td>
-          </tr>
-          <tr class="reason-row" id="reason-JINDALSTEL-confluence-2026-11-23">
-            <td colspan="13">
-              <strong>Why this stock was picked &mdash; confluence signal on 2026-11-23:</strong>
-              <ul class='reason-list'><li>3 of 4 votes agree (threshold: 3) - high-confidence confluence:</li><li>Trend vote OK: price (Rs.1131.30) > 50-EMA (Rs.1106.71) and 50-EMA is rising.</li><li>Volatility vote OK: price is above Bollinger midline (Rs.1116.30) but not yet at the upper band (Rs.1199.94) - room to run.</li><li>Volume vote OK: today's volume is at or above 1.2x the 20-day average (16.2L vs. 12.8L).</li></ul>
-              <div class="muted" style="margin-top:8px">
-                See the <a href="models.html#confluence">full confluence model description</a>
-                or click the <a href="stock.html?symbol=JINDALSTEL&amp;model=confluence&amp;date=2026-11-23">JINDALSTEL chart</a>
-                for context.
-              </div>
-            </td>
-          </tr>
-        
-
-          <tr>
-            <td><strong><a href="stock.html?symbol=ACMESOLAR&amp;model=confluence&amp;date=2026-11-23">ACMESOLAR</a></strong></td>
-            <td>confluence</td>
-            <td title="Today's close as of 2026-11-23">&#8377;411.60</td>
-            <td>&#8377;411.60</td>
-            <td>&#8377;465.36</td>
-            <td>&#8377;388.56</td>
-            <td>2.33</td>
-            <td class="weak" title="Fraction of historical signals that exited profitably (target hit OR positive timeout). Random baseline ~50%.">39%</td>
-            <td title="Fraction of historical signals that touched the full target before stop. Random baseline ~33% for 2:1 R:R.">16%</td>
-            <td class="weak">Low</td>
-            <td>31</td>
-            <td>2026-11-23</td>
-            <td><button class="reason-toggle" id="btn-ACMESOLAR-confluence-2026-11-23" onclick="toggleReason('ACMESOLAR-confluence-2026-11-23')">Reason</button></td>
-          </tr>
-          <tr class="reason-row" id="reason-ACMESOLAR-confluence-2026-11-23">
-            <td colspan="13">
-              <strong>Why this stock was picked &mdash; confluence signal on 2026-11-23:</strong>
-              <ul class='reason-list'><li>3 of 4 votes agree (threshold: 3) - high-confidence confluence:</li><li>Momentum vote OK: MACD (-1.31) > Signal (-1.64) and RSI (50.5) > 50.</li><li>Volatility vote OK: price is above Bollinger midline (Rs.409.31) but not yet at the upper band (Rs.427.71) - room to run.</li><li>Volume vote OK: today's volume is at or above 1.2x the 20-day average (16.8L vs. 8.9L).</li></ul>
-              <div class="muted" style="margin-top:8px">
-                See the <a href="models.html#confluence">full confluence model description</a>
-                or click the <a href="stock.html?symbol=ACMESOLAR&amp;model=confluence&amp;date=2026-11-23">ACMESOLAR chart</a>
-                for context.
-              </div>
-            </td>
-          </tr>
-        
-
-          <tr>
-            <td><strong><a href="stock.html?symbol=PNBHOUSING&amp;model=confluence&amp;date=2026-11-23">PNBHOUSING</a></strong></td>
-            <td>confluence</td>
-            <td title="Today's close as of 2026-11-23">&#8377;1180.20</td>
-            <td>&#8377;1180.20</td>
-            <td>&#8377;1306.92</td>
-            <td>&#8377;1125.89</td>
-            <td>2.33</td>
-            <td class="weak" title="Fraction of historical signals that exited profitably (target hit OR positive timeout). Random baseline ~50%.">38%</td>
-            <td title="Fraction of historical signals that touched the full target before stop. Random baseline ~33% for 2:1 R:R.">12%</td>
-            <td class="weak">Low</td>
-            <td>82</td>
-            <td>2026-11-23</td>
-            <td><button class="reason-toggle" id="btn-PNBHOUSING-confluence-2026-11-23" onclick="toggleReason('PNBHOUSING-confluence-2026-11-23')">Reason</button></td>
-          </tr>
-          <tr class="reason-row" id="reason-PNBHOUSING-confluence-2026-11-23">
-            <td colspan="13">
-              <strong>Why this stock was picked &mdash; confluence signal on 2026-11-23:</strong>
-              <ul class='reason-list'><li>3 of 4 votes agree (threshold: 3) - high-confidence confluence:</li><li>Trend vote OK: price (Rs.1180.20) > 50-EMA (Rs.1126.69) and 50-EMA is rising.</li><li>Momentum vote OK: MACD (10.97) > Signal (0.97) and RSI (61.4) > 50.</li><li>Volatility vote OK: price is above Bollinger midline (Rs.1113.71) but not yet at the upper band (Rs.1187.01) - room to run.</li></ul>
-              <div class="muted" style="margin-top:8px">
-                See the <a href="models.html#confluence">full confluence model description</a>
-                or click the <a href="stock.html?symbol=PNBHOUSING&amp;model=confluence&amp;date=2026-11-23">PNBHOUSING chart</a>
-                for context.
-              </div>
-            </td>
-          </tr>
-        
-
-          <tr>
-            <td><strong><a href="stock.html?symbol=IGL&amp;model=confluence&amp;date=2026-11-23">IGL</a></strong></td>
-            <td>confluence</td>
-            <td title="Today's close as of 2026-11-23">&#8377;153.31</td>
-            <td>&#8377;153.31</td>
-            <td>&#8377;168.11</td>
-            <td>&#8377;146.97</td>
-            <td>2.33</td>
-            <td class="weak" title="Fraction of historical signals that exited profitably (target hit OR positive timeout). Random baseline ~50%.">38%</td>
-            <td title="Fraction of historical signals that touched the full target before stop. Random baseline ~33% for 2:1 R:R.">5%</td>
-            <td class="weak">Low</td>
-            <td>96</td>
-            <td>2026-11-23</td>
-            <td><button class="reason-toggle" id="btn-IGL-confluence-2026-11-23" onclick="toggleReason('IGL-confluence-2026-11-23')">Reason</button></td>
-          </tr>
-          <tr class="reason-row" id="reason-IGL-confluence-2026-11-23">
-            <td colspan="13">
-              <strong>Why this stock was picked &mdash; confluence signal on 2026-11-23:</strong>
-              <ul class='reason-list'><li>3 of 4 votes agree (threshold: 3) - high-confidence confluence:</li><li>Trend vote OK: price (Rs.153.31) > 50-EMA (Rs.145.39) and 50-EMA is rising.</li><li>Momentum vote OK: MACD (2.53) > Signal (0.89) and RSI (65.5) > 50.</li><li>Volatility vote OK: price is above Bollinger midline (Rs.143.37) but not yet at the upper band (Rs.155.42) - room to run.</li></ul>
-              <div class="muted" style="margin-top:8px">
-                See the <a href="models.html#confluence">full confluence model description</a>
-                or click the <a href="stock.html?symbol=IGL&amp;model=confluence&amp;date=2026-11-23">IGL chart</a>
-                for context.
-              </div>
-            </td>
-          </tr>
-        
-
-          <tr>
-            <td><strong><a href="stock.html?symbol=PTCIL&amp;model=confluence&amp;date=2026-11-23">PTCIL</a></strong></td>
-            <td>confluence</td>
-            <td title="Today's close as of 2026-11-23">&#8377;24425.00</td>
-            <td>&#8377;24425.00</td>
-            <td>&#8377;27354.90</td>
-            <td>&#8377;23169.33</td>
-            <td>2.33</td>
-            <td class="weak" title="Fraction of historical signals that exited profitably (target hit OR positive timeout). Random baseline ~50%.">36%</td>
-            <td title="Fraction of historical signals that touched the full target before stop. Random baseline ~33% for 2:1 R:R.">20%</td>
-            <td class="weak">Low</td>
-            <td>55</td>
-            <td>2026-11-23</td>
-            <td><button class="reason-toggle" id="btn-PTCIL-confluence-2026-11-23" onclick="toggleReason('PTCIL-confluence-2026-11-23')">Reason</button></td>
-          </tr>
-          <tr class="reason-row" id="reason-PTCIL-confluence-2026-11-23">
-            <td colspan="13">
-              <strong>Why this stock was picked &mdash; confluence signal on 2026-11-23:</strong>
-              <ul class='reason-list'><li>3 of 4 votes agree (threshold: 3) - high-confidence confluence:</li><li>Trend vote OK: price (Rs.24425.00) > 50-EMA (Rs.23453.42) and 50-EMA is rising.</li><li>Volatility vote OK: price is above Bollinger midline (Rs.24125.75) but not yet at the upper band (Rs.24837.87) - room to run.</li><li>Volume vote OK: today's volume is at or above 1.2x the 20-day average (0.3L vs. 0.2L).</li></ul>
-              <div class="muted" style="margin-top:8px">
-                See the <a href="models.html#confluence">full confluence model description</a>
-                or click the <a href="stock.html?symbol=PTCIL&amp;model=confluence&amp;date=2026-11-23">PTCIL chart</a>
-                for context.
-              </div>
-            </td>
-          </tr>
-        
-
-          <tr>
-            <td><strong><a href="stock.html?symbol=VMM&amp;model=confluence&amp;date=2026-11-23">VMM</a></strong></td>
-            <td>confluence</td>
-            <td title="Today's close as of 2026-11-23">&#8377;94.50</td>
-            <td>&#8377;94.50</td>
-            <td>&#8377;104.52</td>
-            <td>&#8377;90.20</td>
-            <td>2.33</td>
-            <td class="weak" title="Fraction of historical signals that exited profitably (target hit OR positive timeout). Random baseline ~50%.">35%</td>
-            <td title="Fraction of historical signals that touched the full target before stop. Random baseline ~33% for 2:1 R:R.">10%</td>
-            <td class="weak">Low</td>
-            <td>20</td>
-            <td>2026-11-23</td>
-            <td><button class="reason-toggle" id="btn-VMM-confluence-2026-11-23" onclick="toggleReason('VMM-confluence-2026-11-23')">Reason</button></td>
-          </tr>
-          <tr class="reason-row" id="reason-VMM-confluence-2026-11-23">
-            <td colspan="13">
-              <strong>Why this stock was picked &mdash; confluence signal on 2026-11-23:</strong>
-              <ul class='reason-list'><li>3 of 4 votes agree (threshold: 3) - high-confidence confluence:</li><li>Momentum vote OK: MACD (-0.53) > Signal (-0.97) and RSI (52.1) > 50.</li><li>Volatility vote OK: price is above Bollinger midline (Rs.91.62) but not yet at the upper band (Rs.98.50) - room to run.</li><li>Volume vote OK: today's volume is at or above 1.2x the 20-day average (139.5L vs. 68.6L).</li></ul>
-              <div class="muted" style="margin-top:8px">
-                See the <a href="models.html#confluence">full confluence model description</a>
-                or click the <a href="stock.html?symbol=VMM&amp;model=confluence&amp;date=2026-11-23">VMM chart</a>
-                for context.
-              </div>
-            </td>
-          </tr>
-        
-
-          <tr>
-            <td><strong><a href="stock.html?symbol=TCS&amp;model=confluence&amp;date=2026-11-23">TCS</a></strong></td>
-            <td>confluence</td>
-            <td title="Today's close as of 2026-11-23">&#8377;2460.00</td>
-            <td>&#8377;2460.00</td>
-            <td>&#8377;2703.70</td>
-            <td>&#8377;2355.56</td>
-            <td>2.33</td>
-            <td class="weak" title="Fraction of historical signals that exited profitably (target hit OR positive timeout). Random baseline ~50%.">34%</td>
+            <td class="weak" title="Fraction of historical signals that exited profitably (target hit OR positive timeout). Random baseline ~50%.">44%</td>
             <td title="Fraction of historical signals that touched the full target before stop. Random baseline ~33% for 2:1 R:R.">15%</td>
             <td class="weak">Low</td>
-            <td>79</td>
-            <td>2026-11-23</td>
-            <td><button class="reason-toggle" id="btn-TCS-confluence-2026-11-23" onclick="toggleReason('TCS-confluence-2026-11-23')">Reason</button></td>
+            <td>81</td>
+            <td>2026-11-25</td>
+            <td><button class="reason-toggle" id="btn-AMBER-confluence-2026-11-25" onclick="toggleReason('AMBER-confluence-2026-11-25')">Reason</button></td>
           </tr>
-          <tr class="reason-row" id="reason-TCS-confluence-2026-11-23">
+          <tr class="reason-row" id="reason-AMBER-confluence-2026-11-25">
             <td colspan="13">
-              <strong>Why this stock was picked &mdash; confluence signal on 2026-11-23:</strong>
-              <ul class='reason-list'><li>3 of 4 votes agree (threshold: 3) - high-confidence confluence:</li><li>Trend vote OK: price (Rs.2460.00) > 50-EMA (Rs.2356.61) and 50-EMA is rising.</li><li>Volatility vote OK: price is above Bollinger midline (Rs.2453.54) but not yet at the upper band (Rs.2557.65) - room to run.</li><li>Volume vote OK: today's volume is at or above 1.2x the 20-day average (73.9L vs. 35.1L).</li></ul>
+              <strong>Why this stock was picked &mdash; confluence signal on 2026-11-25:</strong>
+              <ul class='reason-list'><li>3 of 4 votes agree (threshold: 3) - high-confidence confluence:</li><li>Trend vote OK: price (Rs.6940.00) > 50-EMA (Rs.6627.94) and 50-EMA is rising.</li><li>Momentum vote OK: MACD (57.99) > Signal (-34.58) and RSI (60.1) > 50.</li><li>Volatility vote OK: price is above Bollinger midline (Rs.6381.68) but not yet at the upper band (Rs.6959.69) - room to run.</li></ul>
               <div class="muted" style="margin-top:8px">
                 See the <a href="models.html#confluence">full confluence model description</a>
-                or click the <a href="stock.html?symbol=TCS&amp;model=confluence&amp;date=2026-11-23">TCS chart</a>
+                or click the <a href="stock.html?symbol=AMBER&amp;model=confluence&amp;date=2026-11-25">AMBER chart</a>
                 for context.
               </div>
             </td>
@@ -1093,27 +925,447 @@ footer { color:var(--muted); font-size:12px; margin-top:24px; line-height:1.6 }
         
 
           <tr>
-            <td><strong><a href="stock.html?symbol=HCLTECH&amp;model=trend_momentum&amp;date=2026-11-23">HCLTECH</a></strong></td>
-            <td>trend_momentum</td>
-            <td title="Today's close as of 2026-11-23">&#8377;1364.30</td>
-            <td>&#8377;1364.30</td>
-            <td>&#8377;1475.37</td>
-            <td>&#8377;1308.76</td>
+            <td><strong><a href="stock.html?symbol=BRIGADE&amp;model=breakout_volume&amp;date=2026-11-25">BRIGADE</a></strong></td>
+            <td>breakout_volume</td>
+            <td title="Today's close as of 2026-11-25">&#8377;589.70</td>
+            <td>&#8377;589.70</td>
+            <td>&#8377;654.74</td>
+            <td>&#8377;557.18</td>
             <td>2.00</td>
-            <td class="weak" title="Fraction of historical signals that exited profitably (target hit OR positive timeout). Random baseline ~50%.">31%</td>
-            <td title="Fraction of historical signals that touched the full target before stop. Random baseline ~33% for 2:1 R:R.">6%</td>
+            <td class="weak" title="Fraction of historical signals that exited profitably (target hit OR positive timeout). Random baseline ~50%.">44%</td>
+            <td title="Fraction of historical signals that touched the full target before stop. Random baseline ~33% for 2:1 R:R.">11%</td>
             <td class="weak">Low</td>
-            <td>16</td>
-            <td>2026-11-23</td>
-            <td><button class="reason-toggle" id="btn-HCLTECH-trend_momentum-2026-11-23" onclick="toggleReason('HCLTECH-trend_momentum-2026-11-23')">Reason</button></td>
+            <td>9</td>
+            <td>2026-11-25</td>
+            <td><button class="reason-toggle" id="btn-BRIGADE-breakout_volume-2026-11-25" onclick="toggleReason('BRIGADE-breakout_volume-2026-11-25')">Reason</button></td>
           </tr>
-          <tr class="reason-row" id="reason-HCLTECH-trend_momentum-2026-11-23">
+          <tr class="reason-row" id="reason-BRIGADE-breakout_volume-2026-11-25">
             <td colspan="13">
-              <strong>Why this stock was picked &mdash; trend_momentum signal on 2026-11-23:</strong>
-              <ul class='reason-list'><li>Price (Rs.1364.30) is above its 50-day EMA (Rs.1340.29) - structural uptrend intact.</li><li>50-EMA is sloping up vs. 5 days ago - trend is healthy, not just a bounce.</li><li>RSI(14) is at 50.0, inside the 40-55 pullback zone - momentum has cooled enough to offer a low-risk entry.</li><li>MACD histogram has turned up for two bars - momentum is rotating from down to up.</li><li>Today's volume (39.8L) is at or above the 20-day average (30.8L) - participation confirms the signal.</li></ul>
+              <strong>Why this stock was picked &mdash; breakout_volume signal on 2026-11-25:</strong>
+              <ul class='reason-list'><li>Close (Rs.589.70) broke above the prior 20-day Donchian high (Rs.583.90) - fresh momentum.</li><li>Volume on the breakout is 7.9x the 20-day average - real participation, not a low-liquidity fakeout.</li><li>Bollinger bandwidth was in the bottom 10% of the last 100 bars within the past 10 sessions - the stock was coiled before this expansion.</li><li>Price is above the 50-EMA (Rs.570.38) - the breakout aligns with the larger trend.</li></ul>
+              <div class="muted" style="margin-top:8px">
+                See the <a href="models.html#breakout_volume">full breakout_volume model description</a>
+                or click the <a href="stock.html?symbol=BRIGADE&amp;model=breakout_volume&amp;date=2026-11-25">BRIGADE chart</a>
+                for context.
+              </div>
+            </td>
+          </tr>
+        
+
+          <tr>
+            <td><strong><a href="stock.html?symbol=ADANIPORTS&amp;model=confluence&amp;date=2026-11-25">ADANIPORTS</a></strong></td>
+            <td>confluence</td>
+            <td title="Today's close as of 2026-11-25">&#8377;1926.30</td>
+            <td>&#8377;1926.30</td>
+            <td>&#8377;2078.77</td>
+            <td>&#8377;1860.96</td>
+            <td>2.33</td>
+            <td class="weak" title="Fraction of historical signals that exited profitably (target hit OR positive timeout). Random baseline ~50%.">43%</td>
+            <td title="Fraction of historical signals that touched the full target before stop. Random baseline ~33% for 2:1 R:R.">13%</td>
+            <td class="weak">Low</td>
+            <td>83</td>
+            <td>2026-11-25</td>
+            <td><button class="reason-toggle" id="btn-ADANIPORTS-confluence-2026-11-25" onclick="toggleReason('ADANIPORTS-confluence-2026-11-25')">Reason</button></td>
+          </tr>
+          <tr class="reason-row" id="reason-ADANIPORTS-confluence-2026-11-25">
+            <td colspan="13">
+              <strong>Why this stock was picked &mdash; confluence signal on 2026-11-25:</strong>
+              <ul class='reason-list'><li>3 of 4 votes agree (threshold: 3) - high-confidence confluence:</li><li>Trend vote OK: price (Rs.1926.30) > 50-EMA (Rs.1828.87) and 50-EMA is rising.</li><li>Volatility vote OK: price is above Bollinger midline (Rs.1888.25) but not yet at the upper band (Rs.1991.43) - room to run.</li><li>Volume vote OK: today's volume is at or above 1.2x the 20-day average (43.0L vs. 28.8L).</li></ul>
+              <div class="muted" style="margin-top:8px">
+                See the <a href="models.html#confluence">full confluence model description</a>
+                or click the <a href="stock.html?symbol=ADANIPORTS&amp;model=confluence&amp;date=2026-11-25">ADANIPORTS chart</a>
+                for context.
+              </div>
+            </td>
+          </tr>
+        
+
+          <tr>
+            <td><strong><a href="stock.html?symbol=SARDAEN&amp;model=confluence&amp;date=2026-11-25">SARDAEN</a></strong></td>
+            <td>confluence</td>
+            <td title="Today's close as of 2026-11-25">&#8377;476.75</td>
+            <td>&#8377;476.75</td>
+            <td>&#8377;531.02</td>
+            <td>&#8377;453.49</td>
+            <td>2.33</td>
+            <td class="weak" title="Fraction of historical signals that exited profitably (target hit OR positive timeout). Random baseline ~50%.">43%</td>
+            <td title="Fraction of historical signals that touched the full target before stop. Random baseline ~33% for 2:1 R:R.">18%</td>
+            <td class="weak">Low</td>
+            <td>90</td>
+            <td>2026-11-25</td>
+            <td><button class="reason-toggle" id="btn-SARDAEN-confluence-2026-11-25" onclick="toggleReason('SARDAEN-confluence-2026-11-25')">Reason</button></td>
+          </tr>
+          <tr class="reason-row" id="reason-SARDAEN-confluence-2026-11-25">
+            <td colspan="13">
+              <strong>Why this stock was picked &mdash; confluence signal on 2026-11-25:</strong>
+              <ul class='reason-list'><li>3 of 4 votes agree (threshold: 3) - high-confidence confluence:</li><li>Momentum vote OK: MACD (-1.49) > Signal (-6.66) and RSI (57.3) > 50.</li><li>Volatility vote OK: price is above Bollinger midline (Rs.449.89) but not yet at the upper band (Rs.476.75) - room to run.</li><li>Volume vote OK: today's volume is at or above 1.2x the 20-day average (5.3L vs. 2.5L).</li></ul>
+              <div class="muted" style="margin-top:8px">
+                See the <a href="models.html#confluence">full confluence model description</a>
+                or click the <a href="stock.html?symbol=SARDAEN&amp;model=confluence&amp;date=2026-11-25">SARDAEN chart</a>
+                for context.
+              </div>
+            </td>
+          </tr>
+        
+
+          <tr>
+            <td><strong><a href="stock.html?symbol=BLUESTARCO&amp;model=confluence&amp;date=2026-11-25">BLUESTARCO</a></strong></td>
+            <td>confluence</td>
+            <td title="Today's close as of 2026-11-25">&#8377;1821.50</td>
+            <td>&#8377;1821.50</td>
+            <td>&#8377;2037.35</td>
+            <td>&#8377;1728.99</td>
+            <td>2.33</td>
+            <td class="weak" title="Fraction of historical signals that exited profitably (target hit OR positive timeout). Random baseline ~50%.">43%</td>
+            <td title="Fraction of historical signals that touched the full target before stop. Random baseline ~33% for 2:1 R:R.">14%</td>
+            <td class="weak">Low</td>
+            <td>100</td>
+            <td>2026-11-25</td>
+            <td><button class="reason-toggle" id="btn-BLUESTARCO-confluence-2026-11-25" onclick="toggleReason('BLUESTARCO-confluence-2026-11-25')">Reason</button></td>
+          </tr>
+          <tr class="reason-row" id="reason-BLUESTARCO-confluence-2026-11-25">
+            <td colspan="13">
+              <strong>Why this stock was picked &mdash; confluence signal on 2026-11-25:</strong>
+              <ul class='reason-list'><li>3 of 4 votes agree (threshold: 3) - high-confidence confluence:</li><li>Trend vote OK: price (Rs.1821.50) > 50-EMA (Rs.1601.12) and 50-EMA is rising.</li><li>Momentum vote OK: MACD (55.94) > Signal (31.30) and RSI (74.2) > 50.</li><li>Volume vote OK: today's volume is at or above 1.2x the 20-day average (8.6L vs. 6.8L).</li></ul>
+              <div class="muted" style="margin-top:8px">
+                See the <a href="models.html#confluence">full confluence model description</a>
+                or click the <a href="stock.html?symbol=BLUESTARCO&amp;model=confluence&amp;date=2026-11-25">BLUESTARCO chart</a>
+                for context.
+              </div>
+            </td>
+          </tr>
+        
+
+          <tr>
+            <td><strong><a href="stock.html?symbol=ZYDUSLIFE&amp;model=confluence&amp;date=2026-11-25">ZYDUSLIFE</a></strong></td>
+            <td>confluence</td>
+            <td title="Today's close as of 2026-11-25">&#8377;1236.00</td>
+            <td>&#8377;1236.00</td>
+            <td>&#8377;1334.91</td>
+            <td>&#8377;1193.61</td>
+            <td>2.33</td>
+            <td class="weak" title="Fraction of historical signals that exited profitably (target hit OR positive timeout). Random baseline ~50%.">43%</td>
+            <td title="Fraction of historical signals that touched the full target before stop. Random baseline ~33% for 2:1 R:R.">16%</td>
+            <td class="weak">Low</td>
+            <td>91</td>
+            <td>2026-11-25</td>
+            <td><button class="reason-toggle" id="btn-ZYDUSLIFE-confluence-2026-11-25" onclick="toggleReason('ZYDUSLIFE-confluence-2026-11-25')">Reason</button></td>
+          </tr>
+          <tr class="reason-row" id="reason-ZYDUSLIFE-confluence-2026-11-25">
+            <td colspan="13">
+              <strong>Why this stock was picked &mdash; confluence signal on 2026-11-25:</strong>
+              <ul class='reason-list'><li>3 of 4 votes agree (threshold: 3) - high-confidence confluence:</li><li>Trend vote OK: price (Rs.1236.00) > 50-EMA (Rs.1174.61) and 50-EMA is rising.</li><li>Momentum vote OK: MACD (13.09) > Signal (13.01) and RSI (63.8) > 50.</li><li>Volatility vote OK: price is above Bollinger midline (Rs.1204.32) but not yet at the upper band (Rs.1246.72) - room to run.</li></ul>
+              <div class="muted" style="margin-top:8px">
+                See the <a href="models.html#confluence">full confluence model description</a>
+                or click the <a href="stock.html?symbol=ZYDUSLIFE&amp;model=confluence&amp;date=2026-11-25">ZYDUSLIFE chart</a>
+                for context.
+              </div>
+            </td>
+          </tr>
+        
+
+          <tr>
+            <td><strong><a href="stock.html?symbol=COLPAL&amp;model=confluence&amp;date=2026-11-25">COLPAL</a></strong></td>
+            <td>confluence</td>
+            <td title="Today's close as of 2026-11-25">&#8377;1825.00</td>
+            <td>&#8377;1825.00</td>
+            <td>&#8377;1988.22</td>
+            <td>&#8377;1755.05</td>
+            <td>2.33</td>
+            <td class="weak" title="Fraction of historical signals that exited profitably (target hit OR positive timeout). Random baseline ~50%.">43%</td>
+            <td title="Fraction of historical signals that touched the full target before stop. Random baseline ~33% for 2:1 R:R.">8%</td>
+            <td class="weak">Low</td>
+            <td>91</td>
+            <td>2026-11-25</td>
+            <td><button class="reason-toggle" id="btn-COLPAL-confluence-2026-11-25" onclick="toggleReason('COLPAL-confluence-2026-11-25')">Reason</button></td>
+          </tr>
+          <tr class="reason-row" id="reason-COLPAL-confluence-2026-11-25">
+            <td colspan="13">
+              <strong>Why this stock was picked &mdash; confluence signal on 2026-11-25:</strong>
+              <ul class='reason-list'><li>4 of 4 votes agree (threshold: 3) - high-confidence confluence:</li><li>Trend vote OK: price (Rs.1825.00) > 50-EMA (Rs.1746.73) and 50-EMA is rising.</li><li>Momentum vote OK: MACD (16.98) > Signal (-1.63) and RSI (63.6) > 50.</li><li>Volatility vote OK: price is above Bollinger midline (Rs.1684.08) but not yet at the upper band (Rs.1832.01) - room to run.</li><li>Volume vote OK: today's volume is at or above 1.2x the 20-day average (8.9L vs. 4.4L).</li></ul>
+              <div class="muted" style="margin-top:8px">
+                See the <a href="models.html#confluence">full confluence model description</a>
+                or click the <a href="stock.html?symbol=COLPAL&amp;model=confluence&amp;date=2026-11-25">COLPAL chart</a>
+                for context.
+              </div>
+            </td>
+          </tr>
+        
+
+          <tr>
+            <td><strong><a href="stock.html?symbol=LUPIN&amp;model=confluence&amp;date=2026-11-25">LUPIN</a></strong></td>
+            <td>confluence</td>
+            <td title="Today's close as of 2026-11-25">&#8377;2003.80</td>
+            <td>&#8377;2003.80</td>
+            <td>&#8377;2148.82</td>
+            <td>&#8377;1941.65</td>
+            <td>2.33</td>
+            <td class="weak" title="Fraction of historical signals that exited profitably (target hit OR positive timeout). Random baseline ~50%.">41%</td>
+            <td title="Fraction of historical signals that touched the full target before stop. Random baseline ~33% for 2:1 R:R.">15%</td>
+            <td class="weak">Low</td>
+            <td>95</td>
+            <td>2026-11-25</td>
+            <td><button class="reason-toggle" id="btn-LUPIN-confluence-2026-11-25" onclick="toggleReason('LUPIN-confluence-2026-11-25')">Reason</button></td>
+          </tr>
+          <tr class="reason-row" id="reason-LUPIN-confluence-2026-11-25">
+            <td colspan="13">
+              <strong>Why this stock was picked &mdash; confluence signal on 2026-11-25:</strong>
+              <ul class='reason-list'><li>3 of 4 votes agree (threshold: 3) - high-confidence confluence:</li><li>Momentum vote OK: MACD (-4.52) > Signal (-7.81) and RSI (51.3) > 50.</li><li>Volatility vote OK: price is above Bollinger midline (Rs.1992.86) but not yet at the upper band (Rs.2037.11) - room to run.</li><li>Volume vote OK: today's volume is at or above 1.2x the 20-day average (11.1L vs. 7.5L).</li></ul>
+              <div class="muted" style="margin-top:8px">
+                See the <a href="models.html#confluence">full confluence model description</a>
+                or click the <a href="stock.html?symbol=LUPIN&amp;model=confluence&amp;date=2026-11-25">LUPIN chart</a>
+                for context.
+              </div>
+            </td>
+          </tr>
+        
+
+          <tr>
+            <td><strong><a href="stock.html?symbol=DRREDDY&amp;model=confluence&amp;date=2026-11-25">DRREDDY</a></strong></td>
+            <td>confluence</td>
+            <td title="Today's close as of 2026-11-25">&#8377;1398.00</td>
+            <td>&#8377;1398.00</td>
+            <td>&#8377;1487.03</td>
+            <td>&#8377;1359.84</td>
+            <td>2.33</td>
+            <td class="weak" title="Fraction of historical signals that exited profitably (target hit OR positive timeout). Random baseline ~50%.">41%</td>
+            <td title="Fraction of historical signals that touched the full target before stop. Random baseline ~33% for 2:1 R:R.">10%</td>
+            <td class="weak">Low</td>
+            <td>91</td>
+            <td>2026-11-25</td>
+            <td><button class="reason-toggle" id="btn-DRREDDY-confluence-2026-11-25" onclick="toggleReason('DRREDDY-confluence-2026-11-25')">Reason</button></td>
+          </tr>
+          <tr class="reason-row" id="reason-DRREDDY-confluence-2026-11-25">
+            <td colspan="13">
+              <strong>Why this stock was picked &mdash; confluence signal on 2026-11-25:</strong>
+              <ul class='reason-list'><li>3 of 4 votes agree (threshold: 3) - high-confidence confluence:</li><li>Trend vote OK: price (Rs.1398.00) > 50-EMA (Rs.1301.98) and 50-EMA is rising.</li><li>Volatility vote OK: price is above Bollinger midline (Rs.1371.38) but not yet at the upper band (Rs.1418.66) - room to run.</li><li>Volume vote OK: today's volume is at or above 1.2x the 20-day average (24.8L vs. 16.1L).</li></ul>
+              <div class="muted" style="margin-top:8px">
+                See the <a href="models.html#confluence">full confluence model description</a>
+                or click the <a href="stock.html?symbol=DRREDDY&amp;model=confluence&amp;date=2026-11-25">DRREDDY chart</a>
+                for context.
+              </div>
+            </td>
+          </tr>
+        
+
+          <tr>
+            <td><strong><a href="stock.html?symbol=AETHER&amp;model=confluence&amp;date=2026-11-25">AETHER</a></strong></td>
+            <td>confluence</td>
+            <td title="Today's close as of 2026-11-25">&#8377;1676.50</td>
+            <td>&#8377;1676.50</td>
+            <td>&#8377;1926.13</td>
+            <td>&#8377;1569.52</td>
+            <td>2.33</td>
+            <td class="weak" title="Fraction of historical signals that exited profitably (target hit OR positive timeout). Random baseline ~50%.">40%</td>
+            <td title="Fraction of historical signals that touched the full target before stop. Random baseline ~33% for 2:1 R:R.">24%</td>
+            <td class="weak">Low</td>
+            <td>76</td>
+            <td>2026-11-25</td>
+            <td><button class="reason-toggle" id="btn-AETHER-confluence-2026-11-25" onclick="toggleReason('AETHER-confluence-2026-11-25')">Reason</button></td>
+          </tr>
+          <tr class="reason-row" id="reason-AETHER-confluence-2026-11-25">
+            <td colspan="13">
+              <strong>Why this stock was picked &mdash; confluence signal on 2026-11-25:</strong>
+              <ul class='reason-list'><li>3 of 4 votes agree (threshold: 3) - high-confidence confluence:</li><li>Trend vote OK: price (Rs.1676.50) > 50-EMA (Rs.1609.92) and 50-EMA is rising.</li><li>Momentum vote OK: MACD (13.67) > Signal (5.88) and RSI (55.5) > 50.</li><li>Volatility vote OK: price is above Bollinger midline (Rs.1606.28) but not yet at the upper band (Rs.1723.40) - room to run.</li></ul>
+              <div class="muted" style="margin-top:8px">
+                See the <a href="models.html#confluence">full confluence model description</a>
+                or click the <a href="stock.html?symbol=AETHER&amp;model=confluence&amp;date=2026-11-25">AETHER chart</a>
+                for context.
+              </div>
+            </td>
+          </tr>
+        
+
+          <tr>
+            <td><strong><a href="stock.html?symbol=BBOX&amp;model=confluence&amp;date=2026-11-25">BBOX</a></strong></td>
+            <td>confluence</td>
+            <td title="Today's close as of 2026-11-25">&#8377;857.30</td>
+            <td>&#8377;857.30</td>
+            <td>&#8377;1009.75</td>
+            <td>&#8377;791.97</td>
+            <td>2.33</td>
+            <td class="weak" title="Fraction of historical signals that exited profitably (target hit OR positive timeout). Random baseline ~50%.">39%</td>
+            <td title="Fraction of historical signals that touched the full target before stop. Random baseline ~33% for 2:1 R:R.">14%</td>
+            <td class="weak">Low</td>
+            <td>69</td>
+            <td>2026-11-25</td>
+            <td><button class="reason-toggle" id="btn-BBOX-confluence-2026-11-25" onclick="toggleReason('BBOX-confluence-2026-11-25')">Reason</button></td>
+          </tr>
+          <tr class="reason-row" id="reason-BBOX-confluence-2026-11-25">
+            <td colspan="13">
+              <strong>Why this stock was picked &mdash; confluence signal on 2026-11-25:</strong>
+              <ul class='reason-list'><li>3 of 4 votes agree (threshold: 3) - high-confidence confluence:</li><li>Trend vote OK: price (Rs.857.30) > 50-EMA (Rs.842.80) and 50-EMA is rising.</li><li>Momentum vote OK: MACD (12.17) > Signal (11.61) and RSI (50.2) > 50.</li><li>Volatility vote OK: price is above Bollinger midline (Rs.847.74) but not yet at the upper band (Rs.930.29) - room to run.</li></ul>
+              <div class="muted" style="margin-top:8px">
+                See the <a href="models.html#confluence">full confluence model description</a>
+                or click the <a href="stock.html?symbol=BBOX&amp;model=confluence&amp;date=2026-11-25">BBOX chart</a>
+                for context.
+              </div>
+            </td>
+          </tr>
+        
+
+          <tr>
+            <td><strong><a href="stock.html?symbol=CANHLIFE&amp;model=confluence&amp;date=2026-11-25">CANHLIFE</a></strong></td>
+            <td>confluence</td>
+            <td title="Today's close as of 2026-11-25">&#8377;132.96</td>
+            <td>&#8377;132.96</td>
+            <td>&#8377;151.73</td>
+            <td>&#8377;124.92</td>
+            <td>2.33</td>
+            <td class="weak" title="Fraction of historical signals that exited profitably (target hit OR positive timeout). Random baseline ~50%.">39%</td>
+            <td title="Fraction of historical signals that touched the full target before stop. Random baseline ~33% for 2:1 R:R.">17%</td>
+            <td class="weak">Low</td>
+            <td>18</td>
+            <td>2026-11-25</td>
+            <td><button class="reason-toggle" id="btn-CANHLIFE-confluence-2026-11-25" onclick="toggleReason('CANHLIFE-confluence-2026-11-25')">Reason</button></td>
+          </tr>
+          <tr class="reason-row" id="reason-CANHLIFE-confluence-2026-11-25">
+            <td colspan="13">
+              <strong>Why this stock was picked &mdash; confluence signal on 2026-11-25:</strong>
+              <ul class='reason-list'><li>3 of 4 votes agree (threshold: 3) - high-confidence confluence:</li><li>Momentum vote OK: MACD (-1.24) > Signal (-2.45) and RSI (54.9) > 50.</li><li>Volatility vote OK: price is above Bollinger midline (Rs.125.80) but not yet at the upper band (Rs.135.32) - room to run.</li><li>Volume vote OK: today's volume is at or above 1.2x the 20-day average (28.2L vs. 8.9L).</li></ul>
+              <div class="muted" style="margin-top:8px">
+                See the <a href="models.html#confluence">full confluence model description</a>
+                or click the <a href="stock.html?symbol=CANHLIFE&amp;model=confluence&amp;date=2026-11-25">CANHLIFE chart</a>
+                for context.
+              </div>
+            </td>
+          </tr>
+        
+
+          <tr>
+            <td><strong><a href="stock.html?symbol=INFY&amp;model=trend_momentum&amp;date=2026-11-25">INFY</a></strong></td>
+            <td>trend_momentum</td>
+            <td title="Today's close as of 2026-11-25">&#8377;1130.00</td>
+            <td>&#8377;1130.00</td>
+            <td>&#8377;1235.15</td>
+            <td>&#8377;1077.43</td>
+            <td>2.00</td>
+            <td class="weak" title="Fraction of historical signals that exited profitably (target hit OR positive timeout). Random baseline ~50%.">39%</td>
+            <td title="Fraction of historical signals that touched the full target before stop. Random baseline ~33% for 2:1 R:R.">17%</td>
+            <td class="weak">Low</td>
+            <td>18</td>
+            <td>2026-11-25</td>
+            <td><button class="reason-toggle" id="btn-INFY-trend_momentum-2026-11-25" onclick="toggleReason('INFY-trend_momentum-2026-11-25')">Reason</button></td>
+          </tr>
+          <tr class="reason-row" id="reason-INFY-trend_momentum-2026-11-25">
+            <td colspan="13">
+              <strong>Why this stock was picked &mdash; trend_momentum signal on 2026-11-25:</strong>
+              <ul class='reason-list'><li>Price (Rs.1130.00) is above its 50-day EMA (Rs.1104.68) - structural uptrend intact.</li><li>50-EMA is sloping up vs. 5 days ago - trend is healthy, not just a bounce.</li><li>RSI(14) is at 53.3, inside the 40-55 pullback zone - momentum has cooled enough to offer a low-risk entry.</li><li>MACD histogram has turned up for two bars - momentum is rotating from down to up.</li><li>Today's volume (145.0L) is at or above the 20-day average (111.8L) - participation confirms the signal.</li></ul>
               <div class="muted" style="margin-top:8px">
                 See the <a href="models.html#trend_momentum">full trend_momentum model description</a>
-                or click the <a href="stock.html?symbol=HCLTECH&amp;model=trend_momentum&amp;date=2026-11-23">HCLTECH chart</a>
+                or click the <a href="stock.html?symbol=INFY&amp;model=trend_momentum&amp;date=2026-11-25">INFY chart</a>
+                for context.
+              </div>
+            </td>
+          </tr>
+        
+
+          <tr>
+            <td><strong><a href="stock.html?symbol=PTCIL&amp;model=trend_momentum&amp;date=2026-11-25">PTCIL</a></strong></td>
+            <td>trend_momentum</td>
+            <td title="Today's close as of 2026-11-25">&#8377;24380.00</td>
+            <td>&#8377;24380.00</td>
+            <td>&#8377;26920.89</td>
+            <td>&#8377;23109.56</td>
+            <td>2.00</td>
+            <td class="weak" title="Fraction of historical signals that exited profitably (target hit OR positive timeout). Random baseline ~50%.">38%</td>
+            <td title="Fraction of historical signals that touched the full target before stop. Random baseline ~33% for 2:1 R:R.">0%</td>
+            <td class="weak">Low</td>
+            <td>13</td>
+            <td>2026-11-25</td>
+            <td><button class="reason-toggle" id="btn-PTCIL-trend_momentum-2026-11-25" onclick="toggleReason('PTCIL-trend_momentum-2026-11-25')">Reason</button></td>
+          </tr>
+          <tr class="reason-row" id="reason-PTCIL-trend_momentum-2026-11-25">
+            <td colspan="13">
+              <strong>Why this stock was picked &mdash; trend_momentum signal on 2026-11-25:</strong>
+              <ul class='reason-list'><li>Price (Rs.24380.00) is above its 50-day EMA (Rs.23489.75) - structural uptrend intact.</li><li>50-EMA is sloping up vs. 5 days ago - trend is healthy, not just a bounce.</li><li>RSI(14) is at 53.9, inside the 40-55 pullback zone - momentum has cooled enough to offer a low-risk entry.</li><li>MACD histogram has turned up for two bars - momentum is rotating from down to up.</li><li>Today's volume (0.2L) is at or above the 20-day average (0.2L) - participation confirms the signal.</li></ul>
+              <div class="muted" style="margin-top:8px">
+                See the <a href="models.html#trend_momentum">full trend_momentum model description</a>
+                or click the <a href="stock.html?symbol=PTCIL&amp;model=trend_momentum&amp;date=2026-11-25">PTCIL chart</a>
+                for context.
+              </div>
+            </td>
+          </tr>
+        
+
+          <tr>
+            <td><strong><a href="stock.html?symbol=MPHASIS&amp;model=confluence&amp;date=2026-11-25">MPHASIS</a></strong></td>
+            <td>confluence</td>
+            <td title="Today's close as of 2026-11-25">&#8377;2532.90</td>
+            <td>&#8377;2532.90</td>
+            <td>&#8377;2829.23</td>
+            <td>&#8377;2405.90</td>
+            <td>2.33</td>
+            <td class="weak" title="Fraction of historical signals that exited profitably (target hit OR positive timeout). Random baseline ~50%.">37%</td>
+            <td title="Fraction of historical signals that touched the full target before stop. Random baseline ~33% for 2:1 R:R.">6%</td>
+            <td class="weak">Low</td>
+            <td>97</td>
+            <td>2026-11-25</td>
+            <td><button class="reason-toggle" id="btn-MPHASIS-confluence-2026-11-25" onclick="toggleReason('MPHASIS-confluence-2026-11-25')">Reason</button></td>
+          </tr>
+          <tr class="reason-row" id="reason-MPHASIS-confluence-2026-11-25">
+            <td colspan="13">
+              <strong>Why this stock was picked &mdash; confluence signal on 2026-11-25:</strong>
+              <ul class='reason-list'><li>3 of 4 votes agree (threshold: 3) - high-confidence confluence:</li><li>Trend vote OK: price (Rs.2532.90) > 50-EMA (Rs.2427.91) and 50-EMA is rising.</li><li>Volatility vote OK: price is above Bollinger midline (Rs.2479.14) but not yet at the upper band (Rs.2615.61) - room to run.</li><li>Volume vote OK: today's volume is at or above 1.2x the 20-day average (9.5L vs. 7.8L).</li></ul>
+              <div class="muted" style="margin-top:8px">
+                See the <a href="models.html#confluence">full confluence model description</a>
+                or click the <a href="stock.html?symbol=MPHASIS&amp;model=confluence&amp;date=2026-11-25">MPHASIS chart</a>
+                for context.
+              </div>
+            </td>
+          </tr>
+        
+
+          <tr>
+            <td><strong><a href="stock.html?symbol=ABB&amp;model=confluence&amp;date=2026-11-25">ABB</a></strong></td>
+            <td>confluence</td>
+            <td title="Today's close as of 2026-11-25">&#8377;7028.50</td>
+            <td>&#8377;7028.50</td>
+            <td>&#8377;7762.17</td>
+            <td>&#8377;6714.07</td>
+            <td>2.33</td>
+            <td class="weak" title="Fraction of historical signals that exited profitably (target hit OR positive timeout). Random baseline ~50%.">34%</td>
+            <td title="Fraction of historical signals that touched the full target before stop. Random baseline ~33% for 2:1 R:R.">11%</td>
+            <td class="weak">Low</td>
+            <td>105</td>
+            <td>2026-11-25</td>
+            <td><button class="reason-toggle" id="btn-ABB-confluence-2026-11-25" onclick="toggleReason('ABB-confluence-2026-11-25')">Reason</button></td>
+          </tr>
+          <tr class="reason-row" id="reason-ABB-confluence-2026-11-25">
+            <td colspan="13">
+              <strong>Why this stock was picked &mdash; confluence signal on 2026-11-25:</strong>
+              <ul class='reason-list'><li>3 of 4 votes agree (threshold: 3) - high-confidence confluence:</li><li>Trend vote OK: price (Rs.7028.50) > 50-EMA (Rs.6896.00) and 50-EMA is rising.</li><li>Momentum vote OK: MACD (44.72) > Signal (13.45) and RSI (56.7) > 50.</li><li>Volatility vote OK: price is above Bollinger midline (Rs.6782.35) but not yet at the upper band (Rs.7174.39) - room to run.</li></ul>
+              <div class="muted" style="margin-top:8px">
+                See the <a href="models.html#confluence">full confluence model description</a>
+                or click the <a href="stock.html?symbol=ABB&amp;model=confluence&amp;date=2026-11-25">ABB chart</a>
+                for context.
+              </div>
+            </td>
+          </tr>
+        
+
+          <tr>
+            <td><strong><a href="stock.html?symbol=SBICARD&amp;model=confluence&amp;date=2026-11-25">SBICARD</a></strong></td>
+            <td>confluence</td>
+            <td title="Today's close as of 2026-11-25">&#8377;589.00</td>
+            <td>&#8377;589.00</td>
+            <td>&#8377;646.19</td>
+            <td>&#8377;564.49</td>
+            <td>2.33</td>
+            <td class="weak" title="Fraction of historical signals that exited profitably (target hit OR positive timeout). Random baseline ~50%.">25%</td>
+            <td title="Fraction of historical signals that touched the full target before stop. Random baseline ~33% for 2:1 R:R.">11%</td>
+            <td class="weak">Low</td>
+            <td>71</td>
+            <td>2026-11-25</td>
+            <td><button class="reason-toggle" id="btn-SBICARD-confluence-2026-11-25" onclick="toggleReason('SBICARD-confluence-2026-11-25')">Reason</button></td>
+          </tr>
+          <tr class="reason-row" id="reason-SBICARD-confluence-2026-11-25">
+            <td colspan="13">
+              <strong>Why this stock was picked &mdash; confluence signal on 2026-11-25:</strong>
+              <ul class='reason-list'><li>3 of 4 votes agree (threshold: 3) - high-confidence confluence:</li><li>Momentum vote OK: MACD (2.45) > Signal (-0.54) and RSI (57.2) > 50.</li><li>Volatility vote OK: price is above Bollinger midline (Rs.564.09) but not yet at the upper band (Rs.611.47) - room to run.</li><li>Volume vote OK: today's volume is at or above 1.2x the 20-day average (12.8L vs. 10.0L).</li></ul>
+              <div class="muted" style="margin-top:8px">
+                See the <a href="models.html#confluence">full confluence model description</a>
+                or click the <a href="stock.html?symbol=SBICARD&amp;model=confluence&amp;date=2026-11-25">SBICARD chart</a>
                 for context.
               </div>
             </td>
